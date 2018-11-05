@@ -1,0 +1,333 @@
+@charset "utf-8";html{background-color:#fff;color:#000;font-size:12px}
+body,ul,ol,dl,dd,h1,h2,h3,h4,h5,h6,figure,form,fieldset,legend,input,textarea,button,p,blockquote,th,td,pre,xmp{margin:0;padding:0}
+body,input,textarea,button,select,pre,xmp,tt,code,kbd,samp{line-height:1.5;font-family:tahoma,arial,"Hiragino Sans GB",simsun,sans-serif}
+h1,h2,h3,h4,h5,h6,small,big,input,textarea,button,select{font-size:100%}
+h1,h2,h3,h4,h5,h6{font-family:tahoma,arial,"Hiragino Sans GB","微软雅黑",simsun,sans-serif}
+h1,h2,h3,h4,h5,h6,b,strong{font-weight:normal}
+address,cite,dfn,em,i,optgroup,var{font-style:normal}
+table{border-collapse:collapse;border-spacing:0;text-align:left}
+caption,th{text-align:inherit}
+ul,ol,menu{list-style:none}
+fieldset,img{border:0}
+img,object,input,textarea,button,select{vertical-align:middle}
+article,aside,footer,header,section,nav,figure,figcaption,hgroup,details,menu{display:block}
+audio,canvas,video{display:inline-block;*display:inline;*zoom:1}
+blockquote:before,blockquote:after,q:before,q:after{content:"\0020"}
+textarea{overflow:auto;resize:vertical}
+input,textarea,button,select,a{outline:0 none}
+button::-moz-focus-inner,input::-moz-focus-inner{padding:0;border:0}
+mark{background-color:transparent}
+a,ins,s,u,del{text-decoration:none}
+sup,sub{vertical-align:baseline}
+.mobile-dialog{width:460px;height:180px;background:#fff;border-radius:5px;color:#999;text-align:center}
+.mobile-dialog .js_close{float:right;width:11px;height:11px;cursor:pointer;margin-top:10px;background:url('//source.qunar.com/site/images/travel/travel_destination/poidianping.png') -180px -16px}
+.mobile-dialog .tit{height:34px;padding:0 18px;background-color:#f4f4f4;line-height:34px;font-size:14px;text-align:left;border-radius:5px 5px 0 0;color:#666;font-size:14px;font-weight:bold}
+.mobile-dialog .tips{color:#666;font-size:14px;line-height:18px;padding:25px 0}
+.mobile-dialog .icon{width:16px;height:16px;vertical-align:middle;margin-right:4px}
+.mobile-dialog .bind-btn{display:inline-block;*display:inline;*zoom:1;width:100px;height:30px;border-radius:3px;line-height:30px;text-align:center;background-color:#ff9316;cursor:pointer}
+.mobile-dialog .bind-btn:link,.mobile-dialog .bind-btn:visited,.mobile-dialog .bind-btn:hover{color:#fff}
+.clr,.clear{clear:both;height:0;overflow:hidden}
+.clrfix,.clr_after{zoom:1}
+.clrfix:after,.clr_after:after{clear:both;display:block;height:0;visibility:hidden;content:"."}
+.hide{display:none}
+.hidden{visibility:hidden}
+.visibility{visibility:hidden}
+.qn_page{clear:both;margin:0 auto;padding:5px;width:980px;background-color:#fff}
+.qn_travelspace_page{clear:both;margin:0 auto;width:990px;background-color:#fff}
+.qn_main{width:100%;height:100%}
+.qn_page_top{clear:both;margin:0 auto;padding:5px;width:980px;background-color:#fff}
+.qn_page_con{clear:both;margin:0 auto;padding:5px;width:980px;background-color:#fff}
+.l_745r235{clear:both;margin:0 auto;width:990px}
+.l_745r235_l{float:left;display:inline;width:745px;overflow:hidden}
+.l_745r235_r{float:right;display:inline;width:235px;overflow:hidden}
+.con_box{background-color:#fff;margin-top:10px;padding:10px;clear:both}
+.placeholder{display:inline-block;clear:both;height:10px;line-height:0;font-size:0;color:#ccc}
+.PlaceHolder{padding-top:5px;padding-left:10px;font-size:14px;color:#888}
+.qn_page input.focus::-webkit-input-PlaceHolder{color:transparent}
+.qn_page input:-moz-PlaceHolder{color:#888}
+.qn_page input::-ms-clear{display:none}
+.qn_page input{outline:0}
+.unselectable{-webkit-touch-callout:none;-webkit-user-select:none;-khtml-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}
+.qunar-dp{position:absolute;left:0;top:0}
+.dp-info{text-align:right;float:right;position:absolute;line-height:1.9;right:0;top:0;height:100%}
+.dp-info b{background:#f00;display:block;margin:7px 5px 0 6px;*margin:7px 5px 0 6px!important;display:inline;*margin:8px 5px 0 6px;height:15px;width:15px;float:right;background:url(//source.qunarzz.com/site/images/travel/new_plan/date.gif) no-repeat 0 0}
+.dp-text{float:right;margin-top:2px;display:none}
+.q-datepicker{background:#fff}
+.qunar-dp .q-datepicker .g{position:absolute;top:26px;left:0;z-index:2;border:1px solid #dbdbdb;width:195px;*width:196px;background-color:#fff;overflow:hidden;*background-color:#fff}
+.qunar-dp .q-datepicker .g:after{clear:both;display:block;height:0;visibility:hidden;content:"\20"}
+.qunar-dp .q-datepicker .c{position:relative;z-index:1;float:left;display:inline;margin-left:-1px;border-left:1px solid #ccc;width:100%}
+.qunar-dp .q-datepicker .h{background:0;padding:8px 0 0 0;height:20px;text-align:center}
+.qunar-dp .q-datepicker .p{position:absolute;top:5px;left:5px;width:16px;height:16px;background:url(//source.qunarzz.com/site/images/travel/plan/media/date_bg.png) 2px 3px no-repeat;cursor:pointer}
+.qunar-dp .q-datepicker .n{position:absolute;top:5px;right:5px;width:16px;height:16px;background:url(//source.qunarzz.com/site/images/travel/plan/media/date_bg.png) -12px 3px no-repeat;cursor:pointer}
+.qunar-dp .q-datepicker table{border:1px solid #fff;border-collapse:collapse;width:100%;margin:7px 0}
+.qunar-dp .q-datepicker th{border-bottom:1px solid #ccc;width:14.286%;height:20px;text-align:center}
+.qunar-dp .q-datepicker td{height:18px;text-align:center;cursor:pointer;vertical-align:middle}
+.qunar-dp .q-datepicker .w0{color:#c60b02}
+.qunar-dp .q-datepicker .w6{color:#c60b02}
+.qunar-dp .q-datepicker .st-t{color:#00F}
+.qunar-dp .q-datepicker .st-a{background-color:#1badb6;color:#fff}
+.qunar-dp .q-datepicker .st-s{background-color:transparent;cursor:default}
+.qunar-dp .q-datepicker .st-s:hover,.qunar-dp .q-datepicker .st-s-hover{background-color:#fff;cursor:default}
+.qunar-dp .q-datepicker .st-h{background-color:#1badb6;color:#fff}
+.qunar-dp .q-datepicker .st-d{color:#999;cursor:not-allowed}
+.qunar-dp .q-datepicker .st-d:hover,.qunar-dp .q-datepicker .st-d-hover{background-color:transparent;color:#999;cursor:not-allowed}
+.qunar-dp .q-datepicker .st-a-r{background-color:#6899ff;color:#fff}
+.qunar-dp .q-datepicker .holi{color:#c60b02}
+.qunar-dp .qunar-dp-toD td:hover,.qunar-dp .qunar-dp-toD .td-hover{background-color:#6899ff;color:#fff;cursor:pointer}
+.qunar-dp .qunar-dp-toD td.st-a-r{background-color:#6899ff;color:#fff}
+.qunar-dp .errtext{color:red}
+.iconfont{font-family:"travel_web"!important;font-size:16px;font-style:normal;-webkit-font-smoothing:antialiased;-webkit-text-stroke-width:.2px;-moz-osx-font-smoothing:grayscale}
+@font-face{font-family:'travel_web';src:url('//s.qunarzz.com/travel/fonts/travel_web/0.0.19/travel_web.eot');src:url('//s.qunarzz.com/travel/fonts/travel_web/0.0.19/travel_web.eot?#iefix') format('embedded-opentype'),url('//s.qunarzz.com/travel/fonts/travel_web/0.0.19/travel_web.woff') format('woff'),url('//s.qunarzz.com/travel/fonts/travel_web/0.0.19/travel_web.ttf') format('truetype'),url('//s.qunarzz.com/travel/fonts/travel_web/0.0.19/travel_web.svg#travel_web') format('svg')}
+.clearfix{overflow:hidden;_zoom:1}
+.clearfix:after{clear:both;display:block;height:0;visibility:hidden;content:"."}
+.rmb{font-family:Arial;font-style:normal}
+body{overflow:hidden}
+.qn_main_box{width:100%;background-color:#fff;clear:both;overflow:hidden}
+.b_dialog_mask{background-color:#000;width:100%;height:120%;opacity:.8;position:fixed;top:0;left:0;filter:alpha(opacity=50);-ms-filter:alpha(opacity=50);_height:3000px;_position:absolute;_overflow:hidden;z-index:1000}
+.b_dialog{position:absolute;top:50%;left:50%;background-color:#fff;padding:10px;z-index:5000}
+.b_dialog .btn_close{background:url("//source.qunarzz.com/site/images/travel/place/icon_close_02.gif") no-repeat 0 0;display:block;text-indent:-9999px;font:normal 18px/32px Verdana,arial,sans-serif;color:#555;width:32px;height:32px;position:absolute;top:0;right:-32px}
+.b_dialog .btn_close_small{background:url("//source.qunarzz.com/site/images/travel/btn.close.gif") no-repeat 0 0;display:block;text-indent:-9999px;font:normal 18px/32px Verdana,arial,sans-serif;color:#555;width:10px;height:10px;position:absolute;top:6px;right:6px}
+.b_dialog .e_dialog_hd{font:16px/30px "microsoft yahei",arial,sans-serif;color:#555;padding-bottom:5px;border-bottom:1px solid #d1d1d1;position:relative;z-index:300}
+.b_dialog .e_dialog_ct{width:100%;z-index:200}
+.b_dialog .e_dialog_ft{padding:10px 0;text-align:center;z-index:100}
+.b_dialog .e_dialog_ft .box_ops{padding:0;text-align:center;z-index:30}
+.b_dialog .e_dialog_ft .box_ops .ops_btn{background:url("//source.qunarzz.com/site/images/travel/place/btn_bg_blue.gif") repeat-x scroll 100px 100px #5ec0f2;color:#fff;width:100px;height:30px;font:14px/30px arial,sans-serif;text-align:center;border:0 none;-webkit-border-radius:2px;-moz-border-radius:2px;-ms-border-radius:2px;border-radius:2px;margin:0 5px}
+.dlg_mask{background:#000;filter:alpha(opacity=30);-ms-filter:alpha(opacity=30);width:100%;height:100%;_height:3000px;opacity:.3;position:fixed;_position:absolute;top:0;left:0;_overflow:hidden}
+.dlg_mask .dlg_miframe{width:100%;height:100%;_height:3000px;position:absolute;top:0;left:0;z-index:0;filter:alpha(opacity=0);-ms-filter:alpha(opacity=0)}
+.g_mask_body{position:fixed;overflow-y:scroll;width:100%;_background-image:url(about:blank);_background-attachment:fixed}
+.g_dlg_box{display:none;width:100%;height:100%;top:0;left:0;overflow:auto;_position:absolute}
+.g_dlg_wrap_css3{-moz-transition:top 400ms ease-out,opacity 200ms,height 300ms ease-out;-webkit-transition:top 400ms ease-out,opacity 200ms,height 300ms ease-out;-ms-transition:top 400ms ease-out,opacity 200ms,height 300ms ease-out;-o-transition:top 400ms ease-out,opacity 200ms,height 300ms ease-out;transition:top 400ms ease-out,opacity 200ms,height 300ms ease-out}
+.pop_msg{background:url(//source.qunarzz.com/site/images/travel/plan/media/pop_msg.png);_background:0;_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src="//source.qunarzz.com/site/images/travel/plan/media/pop_msg.png",sizingMethod="scale");padding:10px;width:355px;height:50px}
+.pop_msg table{width:100%;height:100%}
+.pop_msg td{text-align:center;vertical-align:middle;line-height:1.6}
+.qn_header{z-index:600}
+.b_header{color:#f7f7f7}
+.b_header .e_header_top{position:relative;height:28px;background:#1badb6;line-height:28px;z-index:500}
+.b_header .e_header_top h1.logo{background:transparent url("//source.qunarzz.com/site/images/travel/new_plan/logo_white.gif") no-repeat 0 6px;float:left;margin-left:15px;height:28px;_display:inline}
+.b_header .e_header_top h1 a{padding-left:26px;line-height:28px;color:#f7f7f7}
+.b_header .e_header_top h1 a:hover{color:#fff}
+.b_header .e_header_top .m_tr_list{height:28px;float:left;margin-left:20px;overflow:hidden}
+.b_header .e_header_top .m_tr_list a{font-size:12px;color:#f7f7f7;margin:0 7px}
+.b_header .e_header_top .m_tr_list a:hover{color:#fff}
+.b_header .e_header_top .m_tr_list a.selected{color:#dedede}
+.b_header .e_header_top .m_tr_nav{float:right;margin-right:10px;height:28px;overflow:hidden;_display:inline}
+.b_header .e_header_top .m_tr_nav a{margin:0 5px;color:#f7f7f7;font-family:tahoma,arial,sans-serif}
+.b_header .e_header_top .m_tr_nav a:hover{color:#fff}
+.b_header .e_header_top .m_tr_nav .menu a{margin:0}
+.b_header .e_header_top .m_tr_nav .login_panel_user{color:#ff7222;font-family:Arial}
+.b_header .e_header_bottom{position:relative;height:51px;background:transparent url("//source.qunarzz.com/site/images/travel/plan/seo/header_bottom_bg.gif") repeat-x 0 0 scroll;z-index:400}
+.b_header .e_header_bottom .m_meta_l{float:left;display:inline;margin-left:15px;_width:400px;height:51px;line-height:51px}
+.b_header .e_header_bottom .m_meta_l .edit_title_icon{line-height:12px;font-size:12px;overflow:hidden;width:48px;height:12px;display:inline-block}
+.b_header .e_header_bottom .m_meta_l .icon_calendar{background:url("//source.qunarzz.com/site/images/travel/plan/seo/icons_calendar.gif") no-repeat -2px -43px;line-height:0;font-size:0;overflow:hidden;width:16px;height:16px;position:absolute;top:23px;right:-20px}
+.b_header .e_header_bottom .m_meta_l .book_title{float:left;display:inline;color:#ff8f01;font-size:24px;font-family:"Microsoft YaHei";position:relative;height:51px}
+.b_header .e_header_bottom .m_meta_l .title_text{color:#ff8f01;margin:0 41px 0 1px}
+.b_header .e_header_bottom .m_meta_l .title_text:hover{border:1px solid #999;margin:0 40px 0 0}
+.b_header .e_header_bottom .m_meta_l .book_title input{background:transparent url("//source.qunarzz.com/site/images/travel/plan/seo/header_bottom_bg.gif") repeat-x 0 center scroll;border:1px solid #999;color:#ff8f01;font:normal 14px/31px tahoma,arial;padding:0 5px;height:31px;width:154px;vertical-align:top;float:left;height:33px;margin:8px 20px 0 0;vertical-align:middle;width:164px}
+.b_header .e_header_bottom .m_meta_l .t_datepicker{float:left;position:relative}
+.b_header .e_header_bottom .m_meta_l .t_datepicker h5{height:37px;border-bottom:1px solid #ccc;font-size:14px;font-weight:bold;line-height:39px;text-align:center;color:#c8bfad}
+.b_header .e_header_bottom .m_meta_l .sdate{float:left;display:inline;position:relative;height:46px;color:#c0c0c0;padding-top:5px;cursor:pointer}
+.b_header .e_header_bottom .m_meta_l .sdate a{color:#fff}
+.b_header .e_header_bottom .m_meta_l .sdate a:hover{color:#ff8f01}
+.b_header .e_header_bottom .m_meta_l .sdate a:hover .icon_calendar{background:url("//source.qunarzz.com/site/images/travel/plan/seo/icons_calendar.gif") no-repeat -2px -2px}
+.b_header .e_header_bottom .m_control_r{position:relative;float:right;display:inline;font-size:12px;color:#c0c0c0;width:300px;height:51px;line-height:51px}
+.b_header .e_header_bottom .t_datepicker{float:left;position:relative}
+.b_header .e_header_bottom .t_datepicker h5{height:37px;border-bottom:1px solid #ccc;font-size:14px;font-weight:bold;line-height:39px;text-align:center;color:#c8bfad}
+.b_header .e_header_bottom .sdate{float:left;display:inline;position:relative;height:46px;color:#c0c0c0;padding-top:5px;cursor:pointer}
+.b_header .e_header_bottom .sdate a{color:#fff}
+.b_header .e_header_bottom .sdate a:hover{color:#ff8f01}
+.b_header .e_header_bottom .sdate a:hover .icon_calendar{background:url("//source.qunarzz.com/site/images/travel/plan/seo/icons_calendar.gif") no-repeat -2px -2px}
+.feedback_link{padding-left:17px;background:url("//source.qunarzz.com/site/images/travel/new_plan/i.gif") no-repeat 0 center}
+.highclr{color:#f60}
+.qunar-dp .q-datepicker{line-height:16px}
+.qunar-dp .q-datepicker .g{padding:10px;width:218px}
+.qunar-dp .q-datepicker .g .c{border:0}
+.qunar-dp .q-datepicker .g table{*border:1px solid #e6e6e6;margin:0}
+.qunar-dp .q-datepicker .g table td,.qunar-dp .q-datepicker .g table th{border:1px solid #e6e6e6;width:30px;height:28px;vertical-align:middle}
+.qunar-dp .q-datepicker .g table .st-t{background:#e6e6e6;color:#636363}
+.msg_info_box{width:380px;height:84px;background-color:#fffee5;position:absolute;top:0;left:50%;margin-left:-170px;overflow:hidden;border:1px solid #dedede;z-index:5000;padding:0 20px}
+.msg_info_box .msg_info_box_inner{border-top:0;text-align:center;font-size:14px;display:table;height:84px;*position:absolute;*top:50%;*height:auto;width:380px}
+.msg_info_box .msg_info_box_inner .msg_content{vertical-align:middle;display:table-cell;color:#666;line-height:24px;*position:relative;*top:-50%;word-wrap:break-word;word-break:break-all}
+.msg_info_box .msg_info_box_inner .msg_content img{margin-right:10px;vertical-align:bottom}
+.msg_info_box_hide{height:0;border-width:0;-moz-transition:all .5s ease-in;-webkit-transition:all .5s ease-in;-o-transition:all .5s ease-in;transition:all .5s ease-in}
+.button{display:inline-block;*display:inline;*zoom:1;margin:0 5px;background:#f90;font-family:"microsoft yahei";font-size:16px;line-height:38px;padding:0 15px;color:#fff;cursor:pointer;border:1px solid #f90;-webkit-border-radius:4px;-moz-border-radius:4px;-ms-border-radius:4px;border-radius:4px}
+.button:hover{background:#ff7400;border:1px solid #ff7400;color:#fff;cursor:pointer}
+.button_disable{background:#ccc;cursor:default;border:1px solid #ccc}
+.button_disable:hover{cursor:default;background:#ccc;border:1px solid #ccc}
+.del{display:block;position:absolute;width:16px;height:16px;text-indent:-9999px;overflow:hidden;background:url("//source.qunarzz.com/site/images/travel/new_plan/plan.gif") 1px -302px no-repeat;right:-8px;top:-8px;cursor:pointer;display:none}
+.del:hover{background-position:-25px -303px}
+.del:hover{background:url("//source.qunarzz.com/site/images/travel/new_plan/plan_sprit.png") no-repeat -119px -20px;_background:url("//source.qunarzz.com/site/images/travel/new_plan/plan_sprit.gif") no-repeat -119px -20px}
+.q-suggest{position:absolute;top:0;margin-left:-1px;left:-1px;border:1px solid #e0e0e0;z-index:500;background:#fdfdfd;line-height:26px;margin-top:1px}
+.q-suggest table{background:#fdfdfd;cursor:default;width:100%;table-layout:fixed}
+.q-suggest table tr,.q-suggest table td{line-height:0}
+.q-suggest table td{width:100%}
+.q-suggest .item{color:#999;cursor:pointer}
+.q-suggest .active .item{background:#eaf6f7}
+.sctext_box{border:1px solid #d3d3d3;background:#fdfdfd}
+.sctext_box .sctext{margin:0;border:0;padding:8px 3px 8px 10px;line-height:16px;color:#666;background:transparent;font-size:14px;overflow:hidden}
+.sctext_box .sctext:placeholder{color:#ccc}
+.sliderbox{position:absolute;right:5px;top:0;width:10px;height:400px;-webkit-border-radius:4px;-moz-border-radius:4px;-ms-border-radius:4px;border-radius:4px}
+.sliderbox .bar{background:#dcdcdc;width:10px}
+.sliderbox .slider{-webkit-border-radius:4px;-moz-border-radius:4px;-ms-border-radius:4px;border-radius:4px;background:#ddd;width:10px}
+.sctext_box_on{border:1px solid #1badb6;-webkit-box-shadow:0 0 4px #eee;-moz-box-shadow:0 0 4px #eee;box-shadow:0 0 4px #eee}
+.point{font-weight:800;font-family:arial;padding:0 4px}
+.input_empty{position:absolute;right:0;top:0;width:24px;height:24px;text-indent:-9999px;overflow:hidden;background:url("//source.qunarzz.com/site/images/travel/new_plan/plan.gif") no-repeat 5px -298px}
+.input_empty:hover{background:url("//source.qunarzz.com/site/images/travel/new_plan/plan_sprit.png") no-repeat -115px -15px;_background:url("//source.qunarzz.com/site/images/travel/new_plan/plan_sprit.gif") no-repeat -115px -15px}
+.dest_item{margin:0 19px 19px 0;display:inline-block;*display:inline;*zoom:1;width:233px;height:174px;border:1px solid #d4d4d4;-webkit-box-shadow:0 0 3px #efefef;-moz-box-shadow:0 0 3px #efefef;box-shadow:0 0 3px #efefef;position:relative;overflow:hidden}
+.dest_item img{width:233px;height:174px}
+.dest_item .tit,.dest_item .btm{position:absolute;bottom:0;width:100%;left:0;color:#fff;font-size:18px;font-family:"microsoft yahei";line-height:40px;text-indent:10px}
+.dest_item .btm{height:40px;background:url("//source.qunarzz.com/site/images/travel/new_plan/titbg.png") no-repeat;_background:0;_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled='true',sizingMethod='corp',src='//source.qunarzz.com/site/images/travel/new_plan/titbg.png')}
+.dest_item .bg{display:block;width:233px;height:174px;background:#000;opacity:.4;filter:alpha(opacity=40);position:absolute;top:0;left:0;display:none}
+.dest_item .sel,.dest_item .serc{position:absolute;display:block;width:102px;height:35px;top:50%;left:50%;text-indent:-9999px;margin:-17px 0 0 -51px;background:url("//source.qunarzz.com/site/images/travel/new_plan/plan.gif") no-repeat 0 -105px;display:none}
+.dest_item .serc{background-position:0 -192px}
+.dest_item .sel:hover{background-position:0 -150px}
+.dest_item .serc:hover{background-position:0 -236px}
+.dest_item .status{width:22px;height:17px;overflow:hidden;text-indent:-9999px;position:absolute;right:10px;top:10px;background:url("//source.qunarzz.com/site/images/travel/new_plan/check_mark_png24.png") center center no-repeat;_background:url("//source.qunarzz.com/site/images/travel/new_plan/check_mark.gif") center center no-repeat;_filter:alpha(opacity=50);_opacity:.5;display:none}
+.seled .status{display:block}
+.dest_item:hover .bg,.dest_item:focus .bg,.dest_item_hover .bg,.dest_item:hover .sel,.dest_item:focus .sel,.dest_item_hover .sel,.dest_item:hover .serc,.dest_item:focus .serc,.dest_item_hover .serc{display:block}
+.dest_selected:hover .status{display:block}
+.city_sug{border-top:0;*margin-top:2px}
+.city_sug td .first_item,.city_sug td .first_type{border-top:0}
+.city_sug .sug_item{display:block;line-height:26px;height:26px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;padding:0 5px 0 10px;color:#999}
+.city_sug .sug_selfdefine{white-space:pre-wrap;word-break:break-all;height:auto}
+.area_sug{border-top:0;margin-left:1px;_margin-top:2px;width:338px}
+.area_sug table{table-layout:auto}
+.area_sug table td{vertical-align:top}
+.area_sug .sug_type{border-top:1px dotted #c9c9c9;width:55px;line-height:50px;color:#999;font-weight:bold;text-align:center}
+.area_sug td .sug_item{border:1px dotted #c9c9c9;border-width:1px 0 0 1px;width:282px;text-indent:15px;position:relative;padding:4px 0}
+.area_sug td .sug_item span{display:block;line-height:22px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
+.area_sug td .sug_item .addbtn{display:block;right:10px;top:50%;margin-top:-9px;padding:0 5px;position:absolute;color:#fff;background:#7fc1c5;line-height:18px;height:18px;text-indent:0;-webkit-border-radius:2px;-moz-border-radius:2px;-ms-border-radius:2px;border-radius:2px;display:none}
+.area_sug td .sug_item .addbtn:hover{background:#1badb6}
+.area_sug td .first_item,.area_sug td .first_type{border-top:0}
+.area_sug .active .sug_item .addbtn{display:block}
+.qn_main_box{background:#f8f9f9}
+.qn_left{height:100%;position:relative;z-index:100;-webkit-box-shadow:3px 0 2px #ddd;-moz-box-shadow:3px 0 2px #ddd;box-shadow:3px 0 2px #ddd;float:left;display:inline;width:299px;border-right:1px solid #d8d8d8}
+.qn_right{margin-left:300px;position:relative;z-index:50;*zoom:1}
+.qn_right .hidemap{height:0;overflow:hidden}
+.mp_header{font:normal 18px/20px "microsoft yahei","arial";height:20px;border-bottom:1px solid #d8d8d8;margin:0 20px;padding:30px 0 10px}
+.mp_header .viewmap_btn{float:right;font-size:14px;display:none}
+.mp_cont{text-align:center;height:400px;padding-top:10px}
+.mp_cont .mp_cont_inner{padding:1px 0}
+.mp_cont .scrollbar{background:#fff}
+.mp_cont .paper_placehoder{font-size:14px;width:250px;border:1px dashed #ccc;background:#f3f3f3;height:44px;line-height:44px;text-align:center;color:#999;margin:0 auto 10px}
+.mp_cont .cyinput_empty{top:4px;right:0}
+.mp_cont .holder{color:#1badb6;margin:7px auto;padding-left:20px;font-size:14px;background:url("//source.qunarzz.com/site/images/travel/new_plan/plan.gif") no-repeat 0 3px;display:inline-block;*display:inline;*zoom:1}
+.mp_cont .fulltip{margin:7px auto;height:21px;line-height:21px;overflow:hidden;color:#999;font-size:14px}
+.mp_cont .searchcity_wrap{height:35px;padding:0 0 27px}
+.mp_cont .mycity{width:253px;padding:1px 0;margin:0 auto;font-size:0}
+.mp_cont .mycity .city_tr{display:block;line-height:18px;font-size:12px;position:relative;width:253px;cursor:default;margin:0 0 10px 0}
+.mp_cont .mycity .city_tr .icity{display:block;height:40px;font-size:14px;font-weight:bold;line-height:40px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;text-align:left;padding-left:39px;padding-right:5px;background:url("//source.qunarzz.com/site/images/travel/new_plan/plan.gif") 11px -338px no-repeat #f4f4f4;color:#666;cursor:move}
+.mp_cont .mycity .city_tr .icity .del{display:block;position:absolute;width:16px;height:16px;text-indent:-9999px;overflow:hidden;background:url("//source.qunarzz.com/site/images/travel/new_plan/plan.gif") 1px -302px no-repeat;right:-8px;top:-8px;cursor:pointer;display:none}
+.mp_cont .mycity .city_tr .icity .del:hover{background-position:-25px -303px}
+.mp_cont .mycity .city_tr .icity .del:hover{background:url("//source.qunarzz.com/site/images/travel/new_plan/plan_sprit.png") no-repeat -119px -20px;_background:url("//source.qunarzz.com/site/images/travel/new_plan/plan_sprit.gif") no-repeat -119px -20px}
+.mp_cont .mycity .city_tr .days{position:absolute;right:10px;top:10px;background:#f4f4f4}
+.mp_cont .mycity .city_tr .days em{display:inline-block;width:10px;vertical-align:middle}
+.mp_cont .mycity .city_tr .days .reduce,.mp_cont .mycity .city_tr .days .add{width:16px;height:16px;color:#fdfdfd;-webkit-border-radius:2px;-moz-border-radius:2px;-ms-border-radius:2px;border-radius:2px;font-size:14px;font-weight:bold;line-height:16px;cursor:pointer;overflow:hidden;background:url("//source.qunarzz.com/site/images/travel/new_plan/abs.gif") 3px 3px no-repeat #bfbfbf}
+.mp_cont .mycity .city_tr .days .reduce:hover,.mp_cont .mycity .city_tr .days .add:hover{background-color:#999}
+.mp_cont .mycity .city_tr .days .add{background-position:3px -23px}
+.mp_cont .mycity .city_tr .days .num{color:#666;width:40px;text-align:center}
+.mp_cont .mycity .city_tr .days .disable{background-color:#d8d8d8;cursor:default}
+.mp_cont .mycity .city_tr .days .disable:hover{background-color:#d8d8d8}
+.mp_cont .mycity .city_tr:link .del{display:none}
+.mp_cont .mycity .city_tr:hover{-webkit-box-shadow:0 0 2px #ccc;-moz-box-shadow:0 0 2px #ccc;box-shadow:0 0 2px #ccc}
+.mp_cont .mycity .city_tr:hover .del{display:block}
+.mp_cont .mycity .temp_space{height:38px;border:1px dashed #ddd;margin:0 0 10px 0;line-height:36px;color:#ccc}
+.mp_cont .searchcity{width:252px;position:relative;margin:0 auto}
+.mp_cont .searchcity .sctext_box{width:250px}
+.mp_cont .searchcity .sctext_box .sctext{width:237px}
+.mp_cont .inputrow{padding:10px 0 20px 22px;line-height:32px;text-align:left;font-size:14px;height:33px}
+.mp_cont .inputrow .sctext_box{display:inline-block;*display:inline;*zoom:1;background:#fdfdfd;width:157px;height:33px;vertical-align:middle;margin-left:10px}
+.mp_cont .inputrow .sctext_box .sctext{width:144px}
+.mp_cont .date_start{position:relative;z-index:1000}
+.mp_cont .date_start .sctext_box{position:relative;z-index:500}
+.mp_cont .date_start .sctext_box .sctext{padding:7px 5px 7px 10px}
+.mp_cont .date_start .sctext_box .startdate .g{top:34px;right:-2px;left:auto}
+.mp_cont .date_start .tip{background:#ff9595;color:#fff;height:22px;line-height:22px;position:absolute;right:-1px;top:-23px;padding:0 5px;display:none;font-size:14px;overflow:hidden;margin:0}
+.mp_cont .date_start .sctext_box_on{border:1px solid #ff9595}
+.mp_cont .showtip .tip{display:block}
+.mp_cont .dpstartdate b{margin-top:9px}
+.step_one .mp_cont_inner .mycity .city_tr .icity{padding-right:85px;*white-space:normal;*overflow:hidden;*word-break:break-all;*word-wrap:break-word}
+.step_one .mp_cont_inner .mycity .city_tr .days{display:inline-block}
+.mp_foot{position:relative;z-index:100;text-align:center;padding:20px 0 40px;border-top:1px solid #e6e6e6;background:#f8f9f9}
+.mp_foot .prevbtn{border:1px solid #dadada;background:#fafafa;color:#666}
+.mp_foot .prevbtn:hover{border:1px solid #dadada;background:#f2f2f2;color:#666}
+.searchwrap{padding:0 20px 0 32px;position:absolute;right:10px;top:15px;z-index:500}
+.searchwrap .search{position:relative}
+.searchwrap .search .area_sug_wrap{position:absolute;left:0;top:33px;_top:35px}
+.searchwrap .sctext_box{width:325px;padding:0 3px 0 10px;height:32px;position:relative}
+.searchwrap .sctext{width:300px;margin:0;padding:0;padding:7px 0 7px 0}
+.searchwrap .sctext:placeholder{padding-left:30px;color:#999;font-size:14px}
+.searchwrap .sctext::-webkit-input-placeholder{color:#999;font-size:14px;padding-left:30px}
+.searchwrap .sctext:-moz-placeholder{color:#999;padding-left:30px;font-size:14px}
+.searchwrap .area_placeholder{display:block;font-size:14px;color:#999;position:absolute;left:0;top:0;height:32px;line-height:32px;padding-left:35px;background:url("//source.qunarzz.com/site/images/travel/new_plan/plan.gif") 10px -54px no-repeat #fdfdfd}
+.searchwrap .areainput_empty{right:2px;top:4px}
+.e_store_box{background:#f8f9f9}
+.storetabwrap{padding-top:15px}
+.storetabwrap .store_tits{background:url("//source.qunarzz.com/site/images/travel/new_plan/point.gif") repeat-x left bottom;padding-left:32px;height:44px}
+.storetabwrap .store_tits .tabtit_item{display:inline-block;*display:inline;*zoom:1;vertical-align:top;padding:0 21px;line-height:41px;height:41px;border-color:#f8f9f9;border-width:3px 0 0;border-style:solid;color:#333;font-size:18px;font-family:"microsoft yahei";position:relative}
+.storetabwrap .store_tits .tabtit_item:hover .del{display:none}
+.storetabwrap .store_tits .tabtit_item .q{display:inline-block;*display:inline;*zoom:1}
+.storetabwrap .store_tits .hide{display:none}
+.storetabwrap .store_tits .current{background:#fdfdfd;border-width:3px 1px 0;padding:0 20px;border-color:#1badb6 #d8d8d8 #fdfdfd}
+.storetabwrap .store_tits .current:link .del,.storetabwrap .store_tits .current:visited .del{display:none}
+.storetabwrap .store_tits .current:hover .del{display:block}
+.storetabwrap .store_conts{background:#fdfdfd}
+.storetabwrap .store_conts .filter{padding-bottom:10px;background:#fdfdfd;position:relative;z-index:300;line-height:16px;font-size:14px}
+.storetabwrap .store_conts .filter .nav{display:inline-block;*display:inline;*zoom:1;margin:0 20px 5px 0;color:#666}
+.storetabwrap .store_conts .filter .nav:hover{color:#f60}
+.storetabwrap .store_conts .filter .current{color:#1badb6}
+.storetabwrap .store_conts .tabcont_item{padding-left:32px;overflow:hidden;position:relative;z-index:100;display:none;border-top:19px solid #fdfdfd}
+.storetabwrap .store_conts .tabcont_item_cur{z-index:200;display:block}
+.storetabwrap .rightcitys .group_tit{font-size:12px;color:#333;color:#1badb6;padding-top:15px}
+.storetabwrap .elescitys .group_tit{font-size:16px;color:#333;font-family:"microsoft yahei";padding-top:15px}
+.storetabwrap .othercitys h4{font-size:18px;font-family:"microsoft yahei";padding:5px 0 25px;color:#333}
+.storetabwrap .rightcitys h4{font-size:18px;font-family:"microsoft yahei";padding:5px 0 25px;color:#333}
+.b_loading{background:url(//source.qunarzz.com/site/images/travel/plan/listmode/loading_03.gif) center center no-repeat;height:31px;line-height:31px;overflow:hidden}
+.map_box{position:relative;display:none}
+.map_box .close_btn{width:40px;height:40px;background:url('//source.qunarzz.com/site/images/travel/new_plan/traffic.png') no-repeat -68px -30px;_background:url('//source.qunarzz.com/site/images/travel/new_plan/traffic.gif') no-repeat -68px -30px;background-color:#7c7c7c;display:block;position:absolute;right:0;top:0;z-index:2000}
+.map_box .close_btn:hover{background-color:#323232}
+.m_mark{position:absolute;width:1px;height:1px;word-break:break-all;bottom:0;white-space:nowrap}
+.m_mark .mkcont span{white-space:nowrap}
+.m_mark .mkcont .bm_tri{position:absolute;bottom:7px;left:-10px;width:23px;height:7px;overflow:hidden;background:url("//source.qunarzz.com/site/images/travel/new_plan/plan.gif") 0 -393px no-repeat}
+.m_mark .mkcont .bm_title{position:absolute;bottom:13px;left:-11px;color:#333;border:2px solid #7fc1c5;background:#fff;padding-right:3px;line-height:22px;height:22px;-webkit-border-radius:2px;-moz-border-radius:2px;-ms-border-radius:2px;border-radius:2px;font-family:"microsoft yahei"}
+.m_mark .mkcont .bm_title em{white-space:nowrap;display:inline-block;*display:inline;*zoom:1}
+.m_mark .mkcont .bm_title .ind{color:#fff;background:#7fc1c5;padding:0 8px}
+.m_mark .mkcont .bm_title .shut,.m_mark .mkcont .bm_title .all{padding:0 3px}
+.m_mark .mkcont .bm_title .all{display:none}
+.m_mark .mkcont:hover .bm_tri{background-position:-32px -393px}
+.m_mark .mkcont:hover .bm_title{border-color:#1badb6}
+.m_mark .mkcont:hover .bm_title .ind{background:#1badb6}
+.m_mark .mkcont:hover .bm_title .shut{display:none}
+.m_mark .mkcont:hover .bm_title .all{display:inline-block;*display:inline;*zoom:1}
+.m_mark .inner{position:absolute;padding:4px;line-height:1.4;background:#fff}
+.m_poi_point{position:absolute}
+.m_poi_point a{display:inline-block;*display:inline;*zoom:1;line-height:24px;text-align:center;font-weight:bold;color:#fff;width:23px;height:38px;white-space:nowrap;background:url("//source.qunarzz.com/site/images/travel/new_plan/around_point_bg.png") no-repeat scroll 0 0;_background:url("//source.qunarzz.com/site/images/travel/new_plan/around_point_bg.gif") no-repeat scroll 0 0}
+.m_poi_point a:hover{background-position:0 -55px}
+.m_poi_point_hover a{background-position:0 -55px}
+.mark_ico{width:21px;height:32px;background:url("//source.qunarzz.com/site/images/travel/new_plan/v3/mark.png") no-repeat 0 0;_background:url("//source.qunarzz.com/site/images/travel/new_plan/v3/mark.png") no-repeat 0 0}
+.mark_ico_yellow{width:23px;height:38px;background:url("//source.qunarzz.com/site/images/travel/new_plan/v3/yellow_mark.png") no-repeat 0 0;_background:url("//source.qunarzz.com/site/images/travel/new_plan/v3/yellow_mark.png") no-repeat 0 0}
+.user_tip_mod{width:100%;height:100%;position:absolute;top:0;left:0;z-index:1000}
+.user_tip_mod .user_tip_bg{width:100%;height:100%;position:absolute;top:0;left:0;background:#000;opacity:.6;filter:alpha(opacity=60);-ms-filter:alpha(opacity=0.6)}
+.user_tip_mod .user_tip_content{position:absolute;top:0;left:0;width:100%;height:100%}
+.user_tip_mod .user_tip_content .user_tip_one{position:absolute;top:180px;left:36px;width:335px;height:144px;background:url('//source.qunarzz.com/site/images/travel/new_plan/tip_step_1.png') 0 0;_background:url('//source.qunarzz.com/site/images/travel/new_plan/tip_step_1.gif') 0 0}
+.user_tip_mod .user_tip_content .user_tip_two{position:absolute;bottom:18px;left:80px;width:294px;height:227px;background:url('//source.qunarzz.com/site/images/travel/new_plan/tip_step_2.png') 0 0;_background:url('//source.qunarzz.com/site/images/travel/new_plan/tip_step_2.gif') 0 0}
+.user_tip_mod .user_tip_content .user_tip_three{cursor:pointer;position:absolute;bottom:50px;right:210px;width:188px;height:69px;background:url('//source.qunarzz.com/site/images/travel/new_plan/tip_step_3.png') 0 0;_background:url('//source.qunarzz.com/site/images/travel/new_plan/tip_step_3.gif') 0 0}
+.b_books_shortcut{width:600px;height:376px;background:#fafafa;padding:0;display:none}
+.b_books_shortcut .e_dialog_hd{background:#f8f8f8;border-bottom:1px solid #d8d8d8;height:60px;line-height:60px;font-size:20px;color:#1badb6;padding:0 30px}
+.b_books_shortcut .e_dialog_hd em{font-size:12px;color:#999;padding-left:10px}
+.b_books_shortcut .e_dialog_ct{height:234px;overflow:auto;position:relative}
+.b_books_shortcut .e_dialog_ct .booklist_unit{font-size:0}
+.b_books_shortcut .e_dialog_ct .booklist_unit .book_item{height:77px;display:block;zoom:1;border-bottom:1px dotted #d8d8d8;background:#fafafa;padding:0 30px;overflow:hidden;cursor:pointer;position:relative}
+.b_books_shortcut .e_dialog_ct .booklist_unit .book_item:hover{background:#f7f7f7}
+.b_books_shortcut .e_dialog_ct .booklist_unit .book_item:hover .edit_txt{display:block}
+.b_books_shortcut .e_dialog_ct .booklist_unit .book_item h3{color:#333;font-size:16px;font-family:"microsoft yahei";padding:16px 0 5px;margin-right:90px}
+.b_books_shortcut .e_dialog_ct .booklist_unit .book_item .destline{color:#999;font-size:12px;margin-right:90px;white-space:nowrap;text-overflow:ellipsis;overflow:hidden}
+.b_books_shortcut .e_dialog_ct .booklist_unit .book_item .edit_txt{position:absolute;z-index:100;display:none;right:30px;top:28px;font-size:12px;color:#1badb6;padding-left:20px;background:url("//source.qunarzz.com/site/images/travel/new_plan/edit_icon.gif") no-repeat 0 2px}
+.b_books_shortcut .e_dialog_ct .booklist_unit .book_item .edit_txt:hover{color:#0b99a2}
+.b_books_shortcut .e_dialog_ct .booklist_unit .book_item .edit_link{display:block;height:77px;width:600px;position:absolute;left:0;top:0;background:#fff;opacity:0;z-index:200;filter:alpha(opacity=0)}
+.b_books_shortcut .e_dialog_ct .booklist_unit .book_item_hover{background:#f7f7f7}
+.b_books_shortcut .e_dialog_ct .booklist_unit .book_item_hover .edit_txt{display:block}
+.b_books_shortcut .e_dialog_ft{background:#fafafa;padding-top:20px}
+.b_books_shortcut .e_dialog_ft .btn_confirm{display:inline-block;*display:inline;*zoom:1;background:#1badb6;color:#fff;-webkit-border-radius:4px;-moz-border-radius:4px;-ms-border-radius:4px;border-radius:4px;height:30px;line-height:30px;padding:0 30px;font-family:"microsoft yahei";font-size:14px}
+.b_books_shortcut .e_dialog_ft .btn_confirm:hover{background:#0b99a2}
+.b_books_shortcut .btn_close{width:30px;height:30px;background:url("//source.qunarzz.com/site/images/travel/new_plan/cus_close.gif") no-repeat center center;top:15px;right:15px;z-index:500;opacity:.8;filter:alpha(opacity=80)}
+.b_books_shortcut .btn_close:hover{opacity:1.0;filter:alpha(opacity=100)}
