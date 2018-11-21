@@ -25,28 +25,28 @@
 		<li class="visible">
 			<div>
 				<h1 class="text-1">新发现</h1><br>
-			    <a href="shouye.jsp" class="text-uppercase header-btn">Let's Go Now</a>
+			    <a href="index.jsp" class="text-uppercase header-btn">Let's Go Now</a>
 			</div>
 		</li>
 			
 		<li>
 			<div>
 				<h1 class="text-1">新美食</h1><br>
-				<a href="shouye.jsp" class="text-uppercase header-btn">Let's Go Now</a>
+				<a href="index.jsp" class="text-uppercase header-btn">Let's Go Now</a>
 			</div>
 		</li>
 	
 		<li>
 			<div>
 				<h1 class="text-1">新乐趣</h1><br>
-				<a href="shouye.jsp" class="text-uppercase header-btn">Let's Go Now</a>
+				<a href="index.jsp" class="text-uppercase header-btn">Let's Go Now</a>
 			</div>
 		</li>
 	
 		<li>
 			<div>
 				<h1 class="text-1">新大陆</h1><br>
-				<a href="shouye.jsp" class="text-uppercase header-btn">Let's Go Now</a>
+				<a href="index.jsp" class="text-uppercase header-btn">Let's Go Now</a>
 			</div>
 		</li>
 	</ul> <!-- .cd-slider -->
