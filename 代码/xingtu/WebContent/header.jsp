@@ -88,7 +88,7 @@
                 <div style="width: 35%;display: inline-block;position: relative;margin: auto; left: 20%;top: -18px;">
                     <div style="position:relative; display: inline-block;">
                     	<form>
-                    	<span style="margin: auto;font-family:'宋体';color: rgba(100,100,100,0.7);font-weight: 600">当前城市</span>
+                    	<span style="margin: auto;font-family:'宋体';color: rgba(100,100,100,0.8);font-weight: 600">当前城市</span>
 						<select name="select1">
   						<option value="option1" selected="selected">石家庄</option>
   						<option value="option2" >山东</option>
