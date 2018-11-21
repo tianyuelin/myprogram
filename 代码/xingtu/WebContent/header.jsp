@@ -7,7 +7,7 @@
         <div class="container-fluid">
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <div class="blue_nav">
+                <div class="blue_nav" style="display: inline-block;">
                     <ul class="nav navbar-nav col-md-12 col-sm-12">
                     <li class="logo">
                 		<img src="img/logo.png">
@@ -85,21 +85,23 @@
                         </li>
                     </ul>
                 </div>
-                <form style="position:absolute; margin-left: 79%;margin-top: 0.6%">
-                    <div>
-                    	<label style="margin: auto;font-family:'宋体';">当前城市</label>
+                <div style="width: 35%;display: inline-block;position: relative;margin: auto; left: 20%;top: -18px;">
+                    <div style="position:relative; display: inline-block;">
+                    	<form>
+                    	<span style="margin: auto;font-family:'宋体';color: rgba(100,100,100,0.7);font-weight: 600">当前城市</span>
 						<select name="select1">
   						<option value="option1" selected="selected">石家庄</option>
   						<option value="option2" >山东</option>
   						<option value="option3">武汉</option>
-						</select>   
+						</select>  
+						</form> 
                    	</div>
-                </form>
-                <div style="width: 8%;height: 1.25%;margin-left: 90%;position: absolute;margin-top: 0.3%">
+                    <div style="width: 25%;height: 1.25%;position:relative;display: inline-block;">
                  	<img src="img/addpeople.png" style="width: 30%">
                     <a class="login"><span style="font-size: 1em;">登录/注册</span></a>
-                </div>
-                 
+                   </div>
+              </div>   
+                
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
         	 
