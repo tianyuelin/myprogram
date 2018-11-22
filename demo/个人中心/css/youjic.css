@@ -1,0 +1,27 @@
+.qn-skin {
+    background-color: #f4f4f4;
+}
+
+.qn-page {
+    clear: both;
+    width: 976px;
+    margin: 0 auto;
+    padding: 0;
+}
+.img1{
+	margin-top:130px;
+	margin-left:290px;
+}
+.tips {
+    margin-top: 18px;
+    margin-bottom: 6px;
+    font-size: 18px;
+    color: #333;
+    margin-left:310px;
+}
+.create {
+    font-size: 14px;
+    color: #0084bb;
+    margin-left:330px;
+    margin-bottom:30px;
+}
