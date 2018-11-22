@@ -103,8 +103,7 @@
               </div>   
                 
             </div><!-- /.navbar-collapse -->
-        </div><!-- /.container-fluid -->
-        	 
+        </div><!-- /.container-fluid --> 
     </nav>
     <!-- nav end -->
 </header>
