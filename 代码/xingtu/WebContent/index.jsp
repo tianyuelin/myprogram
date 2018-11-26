@@ -54,7 +54,7 @@
     </div>
     <div class="row">
     <div style="width: 100%;position:static;background-image:url('img/bg.jpg'); margin-bottom: 1%;">
-    <span style="font-size: 2em;">热门景点</span><span style="margin-left: 80%"><a>更多</a></span>
+    <span style="font-size: 2em;">美食&美景</span><span style="margin-left: 80%"><a>更多</a></span>
     </div>
     <div class="col-md-6 col-lg-4">
             <div class="category-item effect-1">
@@ -264,7 +264,7 @@
 </div>
 
 
-<div class="container-fluid blue_bg">
+<div class="container-fluid blue_bg" style="margin-bottom: 5%">
     <div class="blue_title text-center">
         <span>是什么让我们与众不同</span>
     </div>
