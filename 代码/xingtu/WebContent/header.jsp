@@ -111,7 +111,7 @@
                    	</div>
                     <div style="width: 25%;height: 1.25%;position:relative;display: inline-block;">
                  	<img src="img/addpeople.png" style="width: 30%">
-                    <span style="font-size: 1em;"><a href="signUp.jsp">登录/注册</a></span>
+                    <span style="font-size: 1em;"><a href="sign.jsp">登录/注册</a></span>
                    </div>
               </div>   
                 
