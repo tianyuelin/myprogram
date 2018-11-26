@@ -1,0 +1,102 @@
+.yjall{
+	width:100%;
+	height:1200px;
+}
+.yoush{
+	border:2px solid #cccccc;
+	width:100%;
+	height:300px;
+	background-color:#eff1f1;
+}
+.tupian{
+	margin-left:550px;
+	margin-top:110px;
+}
+.titl{
+	margin-left:300px;
+	margin-top:60px;
+	font-size:25px;
+}
+.youzuo{
+	border-right:5px solid #cccccc;
+	width:18%;
+	height:600px;
+	margin-top:30px;
+	float:left;
+}
+.mu{
+	text-align:center;
+	font-size:30px;
+	margin-top:20px;
+}
+.qian{
+	margin-left:50px;
+	font-size:25px;
+	margin-top:20px;
+}
+.shuo{
+	margin-left:50px;
+	font-size:20px;
+	margin-top:20px;
+}
+.yi{
+	margin-left:50px;
+	font-size:25px;
+	margin-top:20px;
+}
+.didi{
+	margin-left:50px;
+	font-size:20px;
+	margin-top:20px;
+}
+.er{
+	margin-left:50px;
+	font-size:25px;
+	margin-top:20px;
+}
+.youzhong{
+	margin-left:10px;
+	width:50%;
+	height:800px;
+	margin-top:30px;
+	margin-left:30px;
+	float:left;
+}	
+.ti1,.ti2,.ti3{
+	width:80%;
+	height:200px;
+	margin-left:30px;
+	margin-top:30px;
+}
+.ti2{
+	margin-top:70px;
+}
+.ti3{
+	margin-top:70px;
+}
+.lo1,.lo2,.lo3{
+	font-size:30px;
+}
+.dian1,.dian2,.dian3{
+	margin-top:40px;
+	width:585px;
+	height:40px;
+	background-color:#eff1f1;
+	font-size:25px;
+}
+.youbi{
+	border:2px solid #cccccc;
+	width:100%;
+	height:300px;
+	background-color:#eff1f1;
+	float:left;
+	margin-top:40px;
+	
+}
+.youyou{
+	float:left;
+	width:23%;
+	height:200px;
+	border:2px solid #cccccc;
+	margin-top:90px;
+}
