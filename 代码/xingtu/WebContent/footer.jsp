@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     <!-- footer -->
-<footer class="container-fluid blue_bg blue_footer">
+<footer class="container-fluid blue_footer" style="background-image: url('img/bg.jpg');">
     <div class="container">
         <div class="row">
             <div class="col-md-4 col-xs-12">
