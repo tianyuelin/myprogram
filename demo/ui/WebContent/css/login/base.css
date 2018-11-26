@@ -1,0 +1,35 @@
+@charset "utf-8";
+body{
+	color:#333;
+	font-family: "宋";
+	background-color:#f5f5f5 !important;
+}
+body,ul,ol,li,p,dl,dd,dt,h1,h2,h3,h4,h5,h6,th,td{
+	margin:0;
+	padding:0;
+}
+img{
+	border:none;
+	vertical-align:middle;
+}
+ul,ol,li{
+	list-style:none;
+}
+input,button{
+	outline:none;
+	margin:0;
+	padding:0;
+}
+.lf{
+	float:left !important;
+}
+.rg{
+	float:right !important;
+}
+.clearfix:after{
+	content:"";
+	display:block;
+	width:0;
+	height:0;
+	clear:both;
+}

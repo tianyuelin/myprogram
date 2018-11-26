@@ -1,0 +1,32 @@
+.xingxia{
+	background-color:#eff1f1;
+	width:100%;
+	height:700px;
+}
+.xingzuo{
+	width:50px;
+	height:500px;
+	background-color:#eff1f1;
+	margin-left:230px;
+	float:left;
+	margin-top:50px;
+}
+.ch1{
+	padding-left:30px;
+	padding-top:90px;
+	width:650px;
+	height:170px;
+	float:left;
+}
+.ch2,.ch3{
+	padding-top:18px;
+	padding-left:30px;
+	width:650px;
+	height:200px;
+		float:left;
+}
+.xingyou{
+	float:left;
+	width:250px;
+	height:50px;
+}
