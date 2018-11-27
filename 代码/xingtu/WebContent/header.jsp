@@ -14,7 +14,7 @@
                     </li>
                         <li class="col-md-nav"><a href="index.jsp">首页</a></li>
                         <li class="col-md-nav dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                            <a href="liebiao.jsp" class="dropdown-toggle" data-toggle="dropdown" role="button"
                                aria-haspopup="true" aria-expanded="false">
                                 美食 <span class="glyphicon glyphicon-menu-down"></span>
                             </a>
@@ -22,7 +22,7 @@
                                 <li class="dropdown-item col-md-nav">
                                     <dl>
                                         <dt>北美洲</dt>
-                                        <dd><a href="#">意大利</a></dd>
+                                        <dd><a href="liebiao.jsp">意大利</a></dd>
                                         <dd><a href="#">美国</a></dd>
                                     </dl>
                                     <dl>

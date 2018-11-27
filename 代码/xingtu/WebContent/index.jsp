@@ -97,7 +97,7 @@
                   <p class="description">公交：117路</p>
                   <p class="description">票价：40元</p>
                 </div>
-                <a href="#">View more</a>
+                <a href="xiangqing.jsp">View more</a>
               </div>     
             </div>
           </div>

@@ -85,7 +85,6 @@
 				<div class="flmainbox-left">
 					<div class="b-home-detail">
 						<div class="b-fansb-home-fans">
-							<h2 class="tit-traveller">TA们都是聪明旅行家</h2>
 							<ul class="fans-listclrfix">
 								<li class="myitem"><dl class="fans-info clrfix">
 										<dt class="pic fl">
