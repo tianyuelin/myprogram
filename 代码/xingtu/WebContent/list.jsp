@@ -47,11 +47,11 @@
                   <div class="row">
                     <article class="col-md-6">
                       <div class="bloginner">
-                        <figure><a href="#"><img src="img/blog1-grid.jpg" alt=""></a>
+                        <figure><a href="routepic.jsp"><img src="img/blog1-grid.jpg" alt=""></a>
                           <figcaption><a href="#" class="fa fa-plus-heart"></a></figcaption>  
                         </figure>
                         <section class="kd-bloginfo">
-                          <h2 class="tiezi_text"><a href="#">发帖人题目</a></h2>
+                          <h2 class="tiezi_text"><a href="routepic.jsp">发帖人题目</a></h2>
                           <ul class="kd-postoption">
                             <li><a href="#" class="thcolorhover">作者</a></li>
                             <li><time datetime="2008-02-14 20:00">| January 15, 2015</time></li>
