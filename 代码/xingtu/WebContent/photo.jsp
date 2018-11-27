@@ -68,7 +68,7 @@
 					data-beacon="favorites">收藏</a></li>
 				<li class="item"><a
 					href="comment.jsp"
-					data-beacon="comments">评论</a></li>
+					data-beacon="comments">关注</a></li>
 				<li class="item"><a
 					href="photo.jsp"
 					data-beacon="photos">相册</a></li>

@@ -66,7 +66,7 @@
 					data-beacon="favorites">收藏</a></li>
 				<li class="item"><a
 					href="comment.jsp"
-					data-beacon="comments">评论</a></li>
+					data-beacon="comments">关注</a></li>
 				<li class="item"><a
 					href="photo.jsp"
 					data-beacon="photos">相册</a></li>
@@ -116,8 +116,8 @@
 		         <div class="sphoto4" >
 		              <div class="sc4"><img src="img/sc4.jpg"></div>
 		              <div class="sz4"><img src="img/tou6.jpg">
-		                     <div><a href="#">严冬里北京最火爆的火锅店</a></div>
-		                     <p>不爱吃鱼的猫&nbsp;&nbsp;2018年11月11日出发&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;共一天&nbsp;&nbsp;|&nbsp;&nbsp;12图</p>
+		                     <div><a href="#">北京超高人气的火锅店</a></div>
+		                     <p>抱着树的考拉&nbsp;&nbsp;2018年11月19日出发&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;共一天&nbsp;&nbsp;|&nbsp;&nbsp;12图</p>
 		              </div>
 		         </div>
 		    </div>
