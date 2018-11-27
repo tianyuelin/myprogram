@@ -8,49 +8,48 @@
 	width:20%;
 	height:800px;
 	background-color:#eff1f1;
-	margin-left:88px;
+	margin-left:91px;
 	float:left;
 }
 .myright{
 	border-left:5px solid #cccccc;
-	width:74%;
+	width:73%;
 	height:803px;
 	float:right;
-	margin-right:1px;
 	backdround-color:#ffffff;
 }
 .tit{
 	border-bottom:5px solid #ffffff;
-	width:260px;
+	width:240px;
 	height:50px;
 	font-size:30px;
-	margin-left:30px;
+	margin-left:15px;
 	margin-top:20px;	
 	
 }
 .titna{
 	border:2px solid #ffffff;
-	width:260px;
+	width:240px;
 	height:40px;
 	font-size:19px;
 	margin-top:20px;
-	margin-left:30px;
+	margin-left:15px;
 	text-align:center;
 }
 .tianjia{
-	width:260px;
+	width:240px;
 	height:40px;
 	font-size:19px;
 	margin-top:20px;
-	margin-left:30px;
+	margin-left:15px;
 	text-align:center;
 }
 .bian{
 	border-top:2px solid #ffffff;
-	width:260px;
+	width:240px;
 	height:50px;
 	margin-top:500px;
-	margin-left:30px;
+	margin-left:20px;
 }
 .bj{
 	border:2px solid #ffffff;
@@ -58,7 +57,7 @@
 	height:40px;
 	font-size:20px;
 	margin-top:20px;
-	margin-left:50px;
+	margin-left:30px;
 	text-align:center;
 	
 }

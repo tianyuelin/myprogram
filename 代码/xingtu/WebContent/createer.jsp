@@ -15,7 +15,7 @@
 </head>
 <body>
 <jsp:include page="header.jsp" flush="true"></jsp:include>
-<div class="erall">
+<div class="erall" style="margin-top:5%">
    <div class="tou">石家庄一游</div>
    <div class="zuo">
         <div class="xc">我的行程</div>
