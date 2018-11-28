@@ -16,7 +16,7 @@
                         <li class="col-md-nav dropdown">
                             <a href="liebiao.jsp" class="dropdown-toggle" data-toggle="dropdown" role="button"
                                aria-haspopup="true" aria-expanded="false">
-                                美食 <span class="glyphicon glyphicon-menu-down"></span>
+                                旅行主题 <span class="glyphicon glyphicon-menu-down"></span>
                             </a>
                             <ul class="dropdown-menu dropdown-list">
                                 <li class="dropdown-item col-md-nav">
@@ -45,7 +45,7 @@
                         <li class="col-md-nav dropdown">
                             <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
                                aria-expanded="false">
-                                景点<span class="glyphicon glyphicon-menu-down"></span>
+                                他人行程<span class="glyphicon glyphicon-menu-down"></span>
                             </a>
                             <ul class="dropdown-menu dropdown-list">
                                 <li class="dropdown-item col-md-nav">
@@ -71,8 +71,7 @@
                                 </li>
                             </ul>
                         </li>
-                        <li class="col-md-nav"><a href="list.jsp">
-                       攻略<span class="glyphicon glyphicon-menu-down"></span></a>
+                        <li class="col-md-nav"><a href="list.jsp"> 个性定制</a>
                         <ul class="dropdown-menu dropdown-list">
                                 <li class="dropdown-item col-md-nav">
                                     <dl>
@@ -98,18 +97,8 @@
                         </li>
                     </ul>
                 </div>
-                <div style="width: 35%;display: inline-block;position: relative;margin: auto; left: 20%;top: -18px;">
-                    <div style="position:relative; display: inline-block;">
-                    	<form>
-                    	<span style="margin: auto;font-family:'宋体';color: rgba(100,100,100,0.8);font-weight: 600">当前城市</span>
-						<select name="select1">
-  						<option value="option1" selected="selected">石家庄</option>
-  						<option value="option2" >山东</option>
-  						<option value="option3">武汉</option>
-						</select>  
-						</form> 
-                   	</div>
-                    <div style="width: 25%;height: 1.25%;position:relative;display: inline-block;">
+                <div style="width: 20%;display: inline-block;position: relative;margin: auto;float: right;text-align: right;">
+                    <div style="width: 50%;height: 1.25%;position:relative;display: inline-block;">
                  	<img src="img/addpeople.png" style="width: 30%">
                     <span style="font-size: 1em;"><a href="sign.jsp">登录/注册</a></span>
                    </div>

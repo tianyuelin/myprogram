@@ -23,24 +23,33 @@
         <!-- Wrapper for slides -->
         <div class="carousel-inner" role="listbox">
             <div class="item active">
-                <img src="img/banner0.jpg" alt="banner">
-                <div class="carousel-caption">
-                    <h2>Only food and love can live up to it.</h2>
-                    <h3>唯有美食与爱不可辜负</h3>
+                <img src="img/b1.jpg" alt="banner">
+                <div class="carousel-caption" style="text-align: center;">
+                    <h2 style="font-size: 45px;margin-top: 0">看攻略好累？来一场定制旅行！</h2>
+                    <p class="banner_text">这里有各地的景色的介绍，有各个旅游发布的攻略和行程日志</p>
+                    <p class="banner_text">拒绝漫无目的的无聊行程！</p>
+                    <p class="banner_text">你可以参考他们的行程和攻略，自行定制属于自己的出行计划，让您的每一次出行，都能够妥当安排</p>
+                    <button class="bubbly-button">定制行程</button>
                 </div>
             </div>
             <div class="item">
-                <img src="img/banner2.jpg" alt="banner">
-                <div class="carousel-caption">
-                    <h2>The most healing thing in the world, the first is food, and the second is the text.</h2>
-                    <h3>世界上最治愈的东西第一是美食，第二才是文字</h3>
+                <img src="img/b2.jpg" alt="banner">
+                <div class="carousel-caption" style="text-align: center;">
+                    <h2 style="font-size: 45px;margin-top: 0">看攻略好累？来一场定制旅行！</h2>
+                    <p class="banner_text">这里有各地的景色的介绍，有各个旅游发布的攻略和行程日志</p>
+                    <p class="banner_text">拒绝漫无目的的无聊行程！</p>
+                    <p class="banner_text">你可以参考他们的行程和攻略，自行定制属于自己的出行计划，让您的每一次出行，都能够妥当安排</p>
+                    <button class="bubbly-button">定制行程</button>
                 </div>
             </div>
             <div class="item">
-                <img src="img/banner3.jpg" alt="banner">
-                <div class="carousel-caption">
-                    <h2>People don't take trips,trips take people</h2>
-                    <h3>非庄生梦蝶，蝶梦庄生也</h3>
+                <img src="img/b3.jpg" alt="banner">
+                <div class="carousel-caption" style="text-align: center;">
+                    <h2 style="font-size: 45px;margin-top: 0">看攻略好累？来一场定制旅行！</h2>
+                    <p class="banner_text">这里有各地的景色的介绍，有各个旅游发布的攻略和行程日志</p>
+                    <p class="banner_text">拒绝漫无目的的无聊行程！</p>
+                    <p class="banner_text">你可以参考他们的行程和攻略，自行定制属于自己的出行计划，让您的每一次出行，都能够妥当安排</p>
+                    <button class="bubbly-button">定制行程</button>
                 </div>
             </div>
         </div>
@@ -53,7 +62,7 @@
     </div>
     <div class="row">
     <div style="width: 100%;position:static;background-image:url('img/bg.jpg'); margin-bottom: 1%;">
-    <span style="font-size: 2em;">美食&美景</span><span style="margin-left: 80%"><a>更多</a></span>
+    <span style="font-size: 2em;">热门地点</span><span style="margin-left: 80%"><a>更多</a></span>
     </div>
     <div class="col-md-6 col-lg-4">
             <div class="category-item effect-1">
@@ -323,5 +332,23 @@
 <script src="js/home/bootstrap.min.js"></script>
 <script src="js/home/swiper.min.js"></script>
 <script src="js/home/main.js"></script>
+<script>
+var animateButton = function(e) {
+
+  e.preventDefault;
+  //reset animation
+  e.target.classList.remove('animate');
+  
+  e.target.classList.add('animate');
+  setTimeout(function(){
+    e.target.classList.remove('animate');
+  },700);
+};
+
+var classname = document.getElementsByClassName("bubbly-button");
+
+for (var i = 0; i < classname.length; i++) {
+  classname[i].addEventListener('click', animateButton, false);
+}</script>
 </body>
 </html>
