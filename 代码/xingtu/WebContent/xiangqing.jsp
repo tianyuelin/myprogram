@@ -15,6 +15,12 @@
 <script src="js/home/bootstrap.min.js"></script>
 <script src="js/home/swiper.min.js"></script>
 <script src="js/home/main.js"></script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+	<style type="text/css">
+	#allmap {width:100%;height:150px;overflow: hidden;margin:0;font-family:"微软雅黑"}
+	</style>
+	<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=no84ceXVi8gDw2sbzALgBU2HxUkcwEpM"></script>
 </head>
 <body>
 <jsp:include page="header.jsp" flush="true"></jsp:include>
@@ -25,7 +31,7 @@
 <!-- 点击查看大图 -->
 <div class="product">
 <div class="title">
-<span class="jing_title">正定趣那公园</span>
+<span id="jing_title">正定趣那公园</span>
 <span class="shoucang">加入收藏<img src="img/shoucang.png"/></span>
 </div>
 		<div class="xiangqing1">
@@ -167,9 +173,8 @@
 		</div>
 	</div>
 	<div class="left">
-			<div class="map">
-					<img alt="" src="img/quna.png" style="width: 250px;height: 180px;">
-			</div>
+			<div id="lookMap" onclick="div2Show()">查看地图</div>
+			<div id="allmap" style="display: none"></div>
 			<div class="tuijian">
 				<h4>周边推荐</h4>
 				<span class="fenlei" style="background-color: #eeee;border-bottom:5px #c09b75 solid;">景点</span><span class="fenlei" style="border-bottom:5px #fff solid;" >美食</span><span class="fenlei">游玩场所</span>
@@ -244,5 +249,32 @@
 
 <script src="js/xiangqing/jquery-1.4.2.js"></script>
 <script src="js/xiangqing/new_file.js"></script>
+
 </body>
 </html>
+<script type="text/javascript">
+	// 百度地图API功能 
+	alert(1);
+	var ad = document.getElementById("jing_title").innerText;
+	alert(ad);
+	 var   gettype=Object.prototype.toString;
+	 alert(gettype.call(ad));
+	var map = new BMap.Map("allmap");    // 创建Map实例
+	map.centerAndZoom(ad, 14);  // 初始化地图,设置中心点坐标和地图级别
+	//添加地图类型控件
+	map.addControl(new BMap.MapTypeControl({
+		mapTypes:[
+            BMAP_NORMAL_MAP,
+            BMAP_HYBRID_MAP
+        ]}));	  
+	map.setCurrentCity("石家庄");          // 设置地图显示的城市 此项是必须设置的
+	map.enableScrollWheelZoom(true);     //开启鼠标滚轮缩放
+</script>
+<script type="text/javascript">
+function div2Show() {
+    var div1 = document.getElementById("lookMap");
+    var div2 = document.getElementById("allmap");
+    div1.style.display = "none";
+    div2.style.display = "";
+}
+    </script>
