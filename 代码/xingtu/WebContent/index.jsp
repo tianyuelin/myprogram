@@ -16,7 +16,6 @@
     <link href="css/home/main.css" rel="stylesheet">
 </head>
 <body>
-
 <jsp:include page="header.jsp" flush="true"></jsp:include>
 <!--*********************** banner start ***************************-->
 <section>
@@ -65,7 +64,6 @@
                   <p class="description">地址：石家庄市植物园街60号</p>
                   <p class="description">公交：旅游1路；旅游11路</p>
                   <p class="description">票价：植物园：20元/人；科普馆：30元/人；游乐场：120元/人</p>
-                  
                 </div>
                 <a href="#">View more</a>
               </div>     
