@@ -15,6 +15,8 @@
 <script src="js/home/bootstrap.min.js"></script>
 <script src="js/home/swiper.min.js"></script>
 <script src="js/home/main.js"></script>
+<script type="text/javascript" src="js/xiangqing/jquery.min.js"></script>
+<script type="text/javascript" src="js/xiangqing/jquery.SuperSlide.2.1.1.js"></script>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
 	<style type="text/css">
@@ -177,43 +179,151 @@
 			<div id="allmap" style="display: none"></div>
 			<div class="tuijian">
 				<h4>周边推荐</h4>
-				<span class="fenlei" style="background-color: #eeee;border-bottom:5px #c09b75 solid;">景点</span><span class="fenlei" style="border-bottom:5px #fff solid;" >美食</span><span class="fenlei">游玩场所</span>
-				<div class="tuijian">
-				<div style="display: inline; width: 40%">
-					<img alt="" src="img/zd.jpg">
+				<dl class="tab-rank">
+	<dt class="hd">
+		<h3 class="on"><a href="#">会员活动</a></h3>
+		<h3><a href="#">经验分享</a></h3> 
+	</dt> 
+	<dd class="bd"> 
+		<ul class="ulList"> 
+			<li class="t on">
+				<span class="num">1</span> 
+				<div class="c"> 
+					<div class="pubpic">
+						<a href="#"><img src="img/c1.jpg" /></a>
+					</div> 
+					<div class="pubtitle">
+						<a href="#">品桃花，赢好礼</a>
+						<p>2013/02/15—2013/03/15</p>
+					</div> 
 				</div>
-				<div style="display: inline;width: 40%;">
-					<div class="tuijian_xinxi">
-						<span>太平河公园</span>
-						<img alt="" src="img/xingxing.png"><br>
-						<span style="font-size: 8px;color: gray">相距：1.4km</span>
+			</li> 
+			<li class="t">
+				<span class="num">2</span> 
+				<div class="c"> 
+					<div class="pubpic">
+						<a href="#"><img src="img/c1.jpg" /></a>
+					</div> 
+					<div class="pubtitle">
+						<a href="#">中华儿女孝心行动---“熬胶孝敬..</a>
+						<p>2012/02/02—2012/02/28</p>
+					</div> 
+				</div>
+			</li> 
+			<li class="t">
+				<span class="num">3</span> 
+				<div class="c"> 
+					<div class="pubpic">
+						<a href="#"><img src="images/3.jpg" /></a>
+					</div> 
+					<div class="pubtitle">
+						<a href="#">中国贫血关爱行动——复方阿胶浆..</a>
+						<p>2012/09/01—2012/09/30</p>
+					</div> 
+				</div>
+			</li> 
+			<li>
+				<span class="num">4</span> 
+				<div class="c"> 
+					<div class="pubpic">
+						<a href="#"><img src="images/4.jpg" /></a>
+					</div> 
+					<div class="pubtitle">
+						<a href="#">阿胶糕进厨房，健康美丽吃出来</a>
+						<p>2012/10/15—2012/12/31</p>
+					</div> 
+				</div> 
+			</li> 
+			<li>
+				<span class="num">5</span> 
+				<div class="c"> 
+					<div class="pubpic">
+						<a href="#"><img src="images/5.jpg" /></a>
+					</div> 
+					<div class="pubtitle">
+						<a href="#">桃花姬阿胶糕，阿胶达人免费申领..</a>
+						<p>2011/04/01—2011/04/25</p> 
+					</div> 
+				</div></li> 
+			<li>
+				<span class="num">6</span> 
+				<div class="c"> 
+					<div class="pubpic">
+						<a href="#"><img src="images/6.jpg" /></a>
+					</div> 
+					<div class="pubtitle">
+						<a href="#">秋冬滋补进行时，免费品尝东阿阿..</a>
+						<p>2012/09/16—2012/11/30</p>
+					</div> 
+				</div>
+			</li> 
+		</ul> 
+		
+		<ul class="ulList2"> 
+			<li class="t">
+				<div class="pic">
+					<img src="images/1.jpg" />
+				</div>
+				<div class="con">
+					<div class="title">
+						<a href="#">解密杨贵妃的倾城容颜，探寻阿胶文化的源远流长！</a>
 					</div>
 				</div>
+			</li> 
+			<li class="n">
+				<div class="pic">
+					<img src="images/1.jpg" />
 				</div>
-				<div class="tuijian">
-				<div style="display: inline; width: 40%">
-					<img alt="" src="img/zd.jpg">
-				</div>
-				<div style="display: inline;width: 40%;">
-					<div class="tuijian_xinxi">
-						<span>太平河公园</span>
-						<img alt="" src="img/xingxing.png"><br>
-						<span style="font-size: 8px;color: gray">相距：1.4km</span>
+				<div class="con">
+					<div class="title">
+						<a href="#">阿胶文化之旅，探寻阿胶滋补的秘密！！</a>
 					</div>
 				</div>
-				</div><div class="tuijian">
-				<div style="display: inline; width: 40%">
-					<img alt="" src="img/zd.jpg">
+			</li> 
+			<li class="n">
+				<div class="pic">
+					<img src="images/1.jpg" />
 				</div>
-				<div style="display: inline;width: 40%;">
-					<div class="tuijian_xinxi">
-						<span>太平河公园</span>
-						<img alt="" src="img/xingxing.png"><br>
-						<span style="font-size: 8px;color: gray">相距：1.4km</span>
+				<div class="con">
+					<div class="title">
+						<a href="#">天天吃鸡蛋不利女性健康</a>
 					</div>
 				</div>
+			</li> 
+			<li class="n">
+				<div class="pic">
+					<img src="images/1.jpg" />
 				</div>
-			</div>
+				<div class="con">
+					<div class="title">
+						<a href="#">樱桃可治疗贫血带来的妇科病</a>
+					</div>
+				</div>
+			</li> 
+			<li class="n">
+				<div class="pic">
+					<img src="images/1.jpg" />
+				</div>
+				<div class="con">
+					<div class="title">
+						<a href="#">桃花姬——吃出好身体，吃出好容颜</a>
+					</div>
+				</div>
+			</li> 
+			<li class="n last">
+				<div class="pic">
+					<img src="images/1.jpg" />
+				</div>
+				<div class="con">
+					<div class="title">
+						<a href="#">桃花伊面春常驻，阿胶养容润枯颜</a>
+					</div>
+				</div>
+			</li> 
+		</ul>
+	</dd> 
+</dl> 
+</div>
 </div>
 </div>
 <div class="center2">
@@ -249,7 +359,10 @@
 
 <script src="js/xiangqing/jquery-1.4.2.js"></script>
 <script src="js/xiangqing/new_file.js"></script>
-
+    <script type="text/javascript">
+jQuery(".tab-rank li").hover(function(){ jQuery(this).addClass("on").siblings().removeClass("on")},function(){ });
+jQuery(".tab-rank").slide({ titCell:"dt h3", mainCell:"dd",autoPlay:false,effect:"left",delayTime:300 });
+</script> 
 </body>
 </html>
 <script type="text/javascript">
