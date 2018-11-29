@@ -29,7 +29,7 @@
                     <p class="banner_text">这里有各地的景色的介绍，有各个旅游发布的攻略和行程日志</p>
                     <p class="banner_text">拒绝漫无目的的无聊行程！</p>
                     <p class="banner_text">你可以参考他们的行程和攻略，自行定制属于自己的出行计划，让您的每一次出行，都能够妥当安排</p>
-                    <button class="bubbly-button">定制行程</button>
+                    <a href="user.jsp"><button class="bubbly-button">定制行程</button></a>
                 </div>
             </div>
             <div class="item">
@@ -39,17 +39,17 @@
                     <p class="banner_text">这里有各地的景色的介绍，有各个旅游发布的攻略和行程日志</p>
                     <p class="banner_text">拒绝漫无目的的无聊行程！</p>
                     <p class="banner_text">你可以参考他们的行程和攻略，自行定制属于自己的出行计划，让您的每一次出行，都能够妥当安排</p>
-                    <button class="bubbly-button">定制行程</button>
+                    <a href="user.jsp"><button class="bubbly-button">定制行程</button></a>
                 </div>
             </div>
             <div class="item">
                 <img src="img/b3.jpg" alt="banner">
                 <div class="carousel-caption" style="text-align: center;">
-                    <h2 style="font-size: 45px;margin-top: 0">看攻略好累？来一场定制旅行！</h2>
+                    <h2 style="font-size: 45px;margin-top: 0;font-family: fantasy;">看攻略好累？来一场定制旅行！</h2>
                     <p class="banner_text">这里有各地的景色的介绍，有各个旅游发布的攻略和行程日志</p>
                     <p class="banner_text">拒绝漫无目的的无聊行程！</p>
                     <p class="banner_text">你可以参考他们的行程和攻略，自行定制属于自己的出行计划，让您的每一次出行，都能够妥当安排</p>
-                    <button class="bubbly-button">定制行程</button>
+                    <a href="user.jsp"><button class="bubbly-button">定制行程</button></a>
                 </div>
             </div>
         </div>
