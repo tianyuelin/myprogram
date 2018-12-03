@@ -133,6 +133,7 @@
 						<img src="img/logo.png" alt="Logo" />
 					</h3>
 				</div>
+				
 				<div class="control-group">
 					<div class="controls">
 						<div class="main_input_box">
@@ -142,6 +143,16 @@
 						</div>
 					</div>
 				</div>
+				<div class="control-group">
+					<div class="controls">
+						<div class="main_input_box">
+							<span class="add-on bg_lg">
+							<i>邮箱</i>
+							</span><input type="text" name="EMAIL" id="EMAIL" value="" placeholder="请输入邮箱" />
+						</div>
+					</div>
+				</div>
+				
 				<div class="control-group">
 					<div class="controls">
 						<div class="main_input_box">
@@ -160,24 +171,8 @@
 						</div>
 					</div>
 				</div>
-				<div class="control-group">
-					<div class="controls">
-						<div class="main_input_box">
-							<span class="add-on bg_lg">
-							<i>姓名</i>
-							</span><input type="text" name="NAME" id="name" value="" placeholder="请输入姓名" />
-						</div>
-					</div>
-				</div>
-				<div class="control-group">
-					<div class="controls">
-						<div class="main_input_box">
-							<span class="add-on bg_lg">
-							<i>邮箱</i>
-							</span><input type="text" name="EMAIL" id="EMAIL" value="" placeholder="请输入邮箱" />
-						</div>
-					</div>
-				</div>
+				
+				
 				<div class="form-actions">
 					<div style="width:86%;padding-left:8%;">
 
