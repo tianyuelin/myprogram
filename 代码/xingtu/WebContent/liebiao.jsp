@@ -20,7 +20,7 @@
       }
       .left{
                float:left;
-               border-right:1px solid #C0C0C0;
+               
                width:30%; 
       }
       
