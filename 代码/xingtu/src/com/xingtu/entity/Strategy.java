@@ -2,6 +2,9 @@ package com.xingtu.entity;
 
 import java.util.Date;
 
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+
 /**
  * ¹¥ÂÔµÄÊµÌåbean
  * */
@@ -19,6 +22,8 @@ public class Strategy {
 	public void setsId(int sId) {
 		this.sId = sId;
 	}
+	@ManyToOne
+	@JoinColumn(name="useremail")
 	public Users getUser() {
 		return user;
 	}

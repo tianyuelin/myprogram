@@ -1,4 +1,8 @@
 package com.xingtu.entity;
+
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+
 /**
  * 景点评论的实体bean
  * */
@@ -15,12 +19,16 @@ public class Scenecomment {
 	public void setScommid(int scommid) {
 		this.scommid = scommid;
 	}
+	@ManyToOne
+	@JoinColumn(name="useremail")
 	public Users getUser() {
 		return user;
 	}
 	public void setUser(Users user) {
 		this.user = user;
 	}
+	@ManyToOne
+	@JoinColumn(name="sceneId")
 	public Scene getScene() {
 		return scene;
 	}
