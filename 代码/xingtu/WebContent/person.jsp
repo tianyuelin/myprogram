@@ -15,6 +15,7 @@
 </head>
 <body>
 <jsp:include page="header.jsp" flush="true"></jsp:include>
+<div class="phall">
     <div class="xixi">
         <form action="">
         头像：<img src="img/tou2.jpg"><br/>
@@ -36,6 +37,7 @@
    <input type="submit" value="提交" class="tijiao" style="width:100px;height:35px"/> 
         </form>
     </div>
+</div>
  <jsp:include page="footer.jsp" flush="true"></jsp:include>
 </body>
 </html>

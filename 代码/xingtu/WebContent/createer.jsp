@@ -15,8 +15,8 @@
 </head>
 <body>
 <jsp:include page="header.jsp" flush="true"></jsp:include>
-<div class="erall" style="margin-top:5%">
-   <div class="tou">石家庄一游</div>
+<div class="erall">
+   <div class="tou"><p class="sjz">石家庄一游</p></div>
    <div class="zuo">
         <div class="xc">我的行程</div>
    </div>
@@ -50,21 +50,21 @@
                    <div class="jie1">空中花园</div>
                    <div class="biao1">标签：景观台</div>
                    <div class="ping1">评论（300+）</div>
-                   <div class="jia1">加入编辑</div>
+                   <div class="jia1" onclick="add()">加入编辑</div>
                </div>
                <div class="jing2">
                    <div class="jd2"><img src="img/c2.jpg"></div>
                    <div class="jie2">正定古城墙</div>
                    <div class="biao2">标签：遗址</div>
                    <div class="ping2">评论（280+）</div>
-                   <div class="jia2">加入编辑</div>
+                   <div class="jia2" onclick="add()">加入编辑</div>
                </div>
                <div class="jing3">
                    <div class="jd3"><img src="img/c1.jpg"></div>
                    <div class="jie3">抱犊寨</div>
                    <div class="biao3">标签：山峦</div>
                    <div class="ping3">评论（280+）</div>
-                   <div class="jia3">加入编辑</div>
+                   <div class="jia3" onclick="add()">加入编辑</div>
                </div>
         </div>
         

@@ -4,7 +4,23 @@
 }
 .flmainbox-left{
 	float:left;
-	width:70%;
+	width:15%;
+	height:400px;
+	margin-left:50px;
+	margin-top:25px;
+}
+.xxz1,.xxz2,.xxz3,.xxz4{
+	width:120px;
+	height:60px;
+	margin-top:20px;
+	margin-left:50px;
+	text-align:right;
+	font-size:29px;
+}
+.flmainbox-right{
+	overflow-y:scroll; 
+	float:left;
+	width:75%;
 	height:1100px;
 	margin-left:50px;
 }
@@ -12,16 +28,152 @@
 	text-align:center;
 	margin-top:40px;
 }
+#myxc{
+	width:85%;
+	height:450px;
+	margin-top:3%;
+	margin-left:40px;
+}
+.zjxc{
+	width:80%;
+	height:40px;
+	font-size:30px;
+	color:#880000;
+}
+.xich1,.xich2{
+	border:2px solid #e4e4e4;
+	width:68%;
+	height:150px;
+	margin-top:20px;
+	margin-left:100px;
+	background-image:url(../../img/plan1.jpg);
+}
+.wcj1,.wcj2{
+	margin-top:20px;
+	margin-left:40px;
+	font-size:15px;
+	color:#8d8d8d;
+	width:200px;
+}
+.zbt1,.zbt2{
+	margin-top:10px;
+	margin-left:40px;
+	font-size:22px;
+	width:200px;
+}
+.rq1,.rq2{
+	float:right;
+	width:100px;
+	height:80px;
+	margin-right:45px;
+	
+}
+.ts1,.ts2{
+	font-size:22px;
+	width:100px;
+	height:55px;
+	background-color:#e6d8ca;
+	padding-left:19px;
+	padding-top:12px;
+}
+.mycf1,.mycf2{
+	font-size:12px;
+	background-color:#c09b75;
+}
+#mygl{
+	width:85%;
+	height:700px;
+	margin-top:2%;
+	margin-left:40px;
+}
+.zdgl{
+	width:80%;
+	height:40px;
+	font-size:30px;
+	color:#880000;
+}
+.gol1,.gol2{
+	border:2px solid #e4e4e4;
+	width:68%;
+	height:300px;
+	margin-top:20px;
+	margin-left:100px;
+}
+.wgl1,.wgl2{
+	margin-top:20px;
+	margin-left:40px;
+	font-size:15px;
+	color:#8d8d8d;
+	width:200px;
+}
+.glbt1,.glbt2{
+	margin-top:10px;
+	margin-left:40px;
+	font-size:22px;
+	width:200px;
+}
+.tpic1,.tpic2{
+	width:90%;
+	height:200px;
+	margin-left:35px;
+	margin-top:5px;
+}
+#mysc{
+	width:85%;
+	height:880px;
+	margin-top:3%;
+	margin-left:40px;
+}
+.zdsc{
+	width:80%;
+	height:40px;
+	font-size:30px;
+	color:#880000;
+}
+.sphoto1,.sphoto2,.sphoto3,.sphoto4{
+	margin-top:25px;
+	width:780px;
+	border:2px solid #cccccc;
+	height:240px;
+	float:left;
+	margin-left:15px;
+}
+.sc1,.sc2,.sc3,.sc4{
+	margin-left:35px;
+	margin-top:25px;
+	float:left;
+	margin-right:30px;
+}
+.sz1,.sz2,.sz3,.sz4{
+	float:left;
+	margin-top:20px;
+	font-size:20px;
+}
+.sz1 p,.sz2 p,.sz3 p,.sz4 p{
+	margin-top:20px;
+	font-size:14px;
+}
+#mygz{
+	width:85%;
+	height:600px;
+	margin-top:3%;
+	margin-left:40px;
+}
+.zdgz{
+	width:80%;
+	height:40px;
+	font-size:30px;
+	color:#880000;
+}
 .myitem{
 	border:2px solid #cccccc;
-	width:350px;
-	height:250px;
+	width:300px;
+	height:220px;
 	display:block;
 	float:left;
-	margin-top:45px;
-	margin-left:100px;
+	margin-top:20px;
+	margin-left:50px;
 	padding-left:20px;
-	padding-top:20px;
 }
 .btn-huan{
 	width:500px;
@@ -29,31 +181,6 @@
 	text-align:center;
 	float:left;
 	margin-top:30px;
-	margin-left:300px;
+	margin-left:160px;
 	font-size:20px;
-}
-.frmainbox-right{
-	float:left;
-	width:18%;
-	height:1100px;
-	margin-left:50px;
-}
-.new-plan{
-	border:2px solid #cccccc;
-	float:left;
-	width:100px;
-	height:35px;
-	background-color:#ff0000;
-	margin-top:235px;
-	margin-left:30px;
-	
-}
-.new-note{
-	border:2px solid #cccccc;
-	float:left;
-	width:100px;
-	height:35px;
-	background-color:#538727;
-	margin-top:50px;
-	margin-left:30px;
 }

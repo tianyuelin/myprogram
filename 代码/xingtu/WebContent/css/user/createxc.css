@@ -105,6 +105,10 @@
 	height:730px;
 	
 }
+img:hover
+{
+	opacity: 0.6;
+}
 .dian1{
 	margin-top:50px;
 	width:220px;
