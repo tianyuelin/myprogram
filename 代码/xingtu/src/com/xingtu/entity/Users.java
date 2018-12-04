@@ -115,19 +115,24 @@ public class Users {
 	public void setStc(List<StrategyComment> stc) {
 		this.stc = stc;
 	}
-	
+	@OneToMany(mappedBy="user",targetEntity=Scenecomment.class,
+			cascade= {CascadeType.ALL})
 	public List<Scenecomment> getScc() {
 		return scc;
 	}
 	public void setScc(List<Scenecomment> scc) {
 		this.scc = scc;
 	}
+	@OneToMany(mappedBy="user",targetEntity=Strategy.class,
+			cascade= {CascadeType.ALL})
 	public List<Strategy> getSt() {
 		return st;
 	}
 	public void setSt(List<Strategy> st) {
 		this.st = st;
 	}
+	@OneToMany(mappedBy="user",targetEntity=Journey.class,
+			cascade= {CascadeType.ALL})
 	public List<Journey> getJourneys() {
 		return journeys;
 	}
