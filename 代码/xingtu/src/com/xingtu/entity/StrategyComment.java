@@ -2,12 +2,19 @@ package com.xingtu.entity;
 
 import java.util.Date;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
 /**
  * 攻略的
  * */
+@Entity
+@Table(name="strategycomment")
 public class StrategyComment {
 	private int scId;//序号
 	//一个评论对应一个攻略，对应外键：sId
@@ -16,6 +23,8 @@ public class StrategyComment {
 	private Users user;//对应的用户
 	private Date createtime;//创建攻略的时间
 	private String content;//评论的内容
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	public int getScId() {
 		return scId;
 	}

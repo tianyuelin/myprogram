@@ -2,12 +2,19 @@ package com.xingtu.entity;
 
 import java.util.Date;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
 /**
  * 攻略的实体bean
  * */
+@Entity
+@Table(name="strategy")
 public class Strategy {
 	private int sId;
 	//一个攻略对应一个用户，对应外键：useremail
@@ -16,6 +23,8 @@ public class Strategy {
 	private String title;//攻略标题
 	private String Content;//内容
 	private String tag;//标签
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	public int getsId() {
 		return sId;
 	}
