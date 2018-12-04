@@ -3,9 +3,20 @@ package com.xingtu.entity;
 import java.util.Date;
 import java.util.List;
 
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+
+import org.hibernate.annotations.GenericGenerator;
+
 /**
  * 用户的实体bean
  * */
+@Entity
+@Table(name="users")
 public class Users {
 	private String email;//邮箱
 	private String username;//用户名
@@ -27,6 +38,9 @@ public class Users {
 	private List<Strategy> st;//攻略
 	//一个用户可以创建多个行程
 	private List<Journey> journeys;//创建的行程
+	@Id
+	@GeneratedValue(generator="assigned")
+	@GenericGenerator(name="assigned",strategy="assigned")
 	public String getEmail() {
 		return email;
 	}
@@ -93,12 +107,15 @@ public class Users {
 	public void setAttentions(List<Users> attentions) {
 		this.attentions = attentions;
 	}
+	@OneToMany(mappedBy="user",targetEntity=StrategyComment.class,
+			cascade= {CascadeType.ALL})
 	public List<StrategyComment> getStc() {
 		return stc;
 	}
 	public void setStc(List<StrategyComment> stc) {
 		this.stc = stc;
 	}
+	
 	public List<Scenecomment> getScc() {
 		return scc;
 	}

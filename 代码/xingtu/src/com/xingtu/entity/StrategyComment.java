@@ -2,6 +2,9 @@ package com.xingtu.entity;
 
 import java.util.Date;
 
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+
 /**
  * 攻略的
  * */
@@ -19,12 +22,17 @@ public class StrategyComment {
 	public void setScId(int scId) {
 		this.scId = scId;
 	}
+	@ManyToOne
+	@JoinColumn(name="sId")
 	public Strategy getStrategy() {
 		return strategy;
 	}
 	public void setStrategy(Strategy strategy) {
 		this.strategy = strategy;
 	}
+	//多对多映射
+	@ManyToOne
+	@JoinColumn(name="useremail")
 	public Users getUser() {
 		return user;
 	}
