@@ -1,3 +1,11 @@
+.phall{
+	background-image:url(../../img/bj3.jpg);
+	width:100%;
+	height:950px;
+	background-repeat:no-repeat;
+	overflow: hidden;
+	background-size:cover;
+}
 .xixi{
 	text-align:center;
 	font-size:25px;
@@ -8,7 +16,10 @@
 	width:800px;
 	margin-left:300px;
 	padding-top:25px;
-	
+	background-color: #e6e6e6;
+	opacity:0.9;
+    z-index:-1;
+    position:absolute;
 }
 .xingge,.nicheng,.xingbie,.sheng,.you,.yong,.tijiao,.miyi,.huida{
 	margin-top:27px;

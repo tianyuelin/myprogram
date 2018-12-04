@@ -9,12 +9,16 @@
 <link rel="stylesheet" href="css/user/cropper.min.css">
 <title>QTL的空间</title>
 <link href="css/user/myhead.css" rel="stylesheet">
+<link href="css/user/pho.css" rel="stylesheet">
 <link href="css/home/header.css" rel="stylesheet">
 <link href="css/home/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="css/user/home.css">
 <script src="js/home/jquery-1.11.3.min.js"></script>
 <script src="js/home/bootstrap.min.js"></script>
 <script src="js/home/swiper.min.js"></script>
 <script src="js/home/main.js"></script>
+<script type="text/javascript" src="js/user/jquery.min.js"></script>
+<script type="text/javascript" src="js/user/up.js"></script>
 </head>
 <body>
 <jsp:include page="header.jsp" flush="true"></jsp:include>
@@ -32,12 +36,9 @@
 							href="#">100积分</a></span>
 					</h3>
 					<div class="intro-body">
-						<div class="view" data-beacon="signature">
-							<span class="view-text">编辑个人签名</span><span class="view-ico"></span>
-						</div>
-						<div class="edit">
-							<textarea style="height:30px;width:200px"></textarea>
-						</div>
+						<form action="">
+						    <input type="text" placeholder="编辑个人签名" style="width:400px;">
+						</form>
 					</div>
 				</dd>
 			</div>
@@ -54,45 +55,49 @@
 			</div>
 		</div>
 		<div class="mynav">
-			<ul class="clrfix">
+			<ul id="mydao">
 				<li class="item item-hover item-active" data-beacon="myhomepage"><a
 					href="user.jsp">首页</a></li>
-				<li class="item"><a
-					href="youji.jsp"
-					data-beacon="youji">游记</a></li>
-				<li class="item"><a
-					href="xingcheng.jsp"
-					data-beacon="plan">行程</a></li>
-				<li class="item"><a
-					href="shoucang.jsp"
-					data-beacon="favorites">收藏</a></li>
-				<li class="item"><a
-					href="comment.jsp"
-					data-beacon="comments">关注</a></li>
 				<li class="item"><a
 					href="photo.jsp"
 					data-beacon="photos">相册</a></li>
 				<li class="item"><a
 					href="sixin.jsp"
-					data-beacon="letter">私信</a></li>
+					data-beacon="letter">消息</a></li>
 				<li class="item"><a
 					href="person.jsp"
 					data-beacon="letter">个人信息</a></li>
+				<li class="item"><a
+					href="createxingcheng.jsp"
+					data-beacon="letter">创建行程</a></li>
+				<li class="item"><a
+					href="createyouji.jsp"
+					data-beacon="letter">创建攻略</a></li>
 			</ul>
 		</div>
 	</div>
-	<div style="margin-bottom:25px">
-	<form class="pure-form" action="" method="post">
-			<!-- 上传图片的预览区域 -->
-			<section class="upload-box" id="J_upload_box" style="margin-left:310px">
-				<div class="upload" id="J_file_wrap">
-					<input type="file" accept="image/*" name="pic" id="J_file">
+	<div style="margin-bottom: 25px" class="phzt">
+		<div class="aui-form-input">
+			<div class="aui-content-img-box aui-content-full">
+				<div class="aui-photo aui-up-img clear">
+					<section class="aui-file-up fl"> <img src="img/up.png"
+						class="add-img"> <input type="file" name="file" id="file"
+						class="file" value=""
+						accept="image/jpg,image/jpeg,image/png,image/bmp" multiple /></section>
 				</div>
-			</section>
-			<a class="pure-button pure-button-primary">提交</a>
-	</form>
+			</div>
+		</div>
 	</div>
-<jsp:include page="footer.jsp" flush="true"></jsp:include>
+	<div class="aui-mask aui-works-mask">
+            <div class="aui-mask-content">
+                <p class="aui-delete-text">确定要删除你上传的资料？</p>
+                <p class="aui-check-text">
+                    <span class="aui-delete aui-accept-ok">确定</span>
+                    <span class="aui-accept-no">取消</span>
+                </p>
+            </div>
+        </div>
+	<jsp:include page="footer.jsp" flush="true"></jsp:include>
 		<script src="js/user/jquery.min.js"></script>
 		<script src="js/user/upload.js"></script>
 		<script src="js/user/demo.js"></script>
