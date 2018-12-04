@@ -27,9 +27,6 @@ public class Users {
 	private Date birthday;//生日
 	private String hobby;//爱好
 	private Date registtime;//注册时间
-	//一个用户可以有多个粉丝，一个人可以关注多个用户：多对多
-	private List<Users> fans;//粉丝
-	private List<Users> attentions;//关注
 	//一个用户可以有多对攻略的个评论
 	private List<StrategyComment> stc;//对攻略的评论
 	//一个用户可以有多个对景点的评论
@@ -95,18 +92,7 @@ public class Users {
 	public void setRegisttime(Date registtime) {
 		this.registtime = registtime;
 	}
-	public List<Users> getFans() {
-		return fans;
-	}
-	public void setFans(List<Users> fans) {
-		this.fans = fans;
-	}
-	public List<Users> getAttentions() {
-		return attentions;
-	}
-	public void setAttentions(List<Users> attentions) {
-		this.attentions = attentions;
-	}
+	
 	@OneToMany(mappedBy="user",targetEntity=StrategyComment.class,
 			cascade= {CascadeType.ALL})
 	public List<StrategyComment> getStc() {

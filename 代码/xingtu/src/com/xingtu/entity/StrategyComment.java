@@ -11,7 +11,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 /**
- * 攻略的
+ * 攻略的实体bean
  * */
 @Entity
 @Table(name="strategycomment")
