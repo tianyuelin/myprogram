@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-     <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -60,26 +60,30 @@
 <div class="blue_title text-center">
         <span>行途中，随心行</span>
     </div>
-    <div class="row">
-    <div style="width: 100%;position:static;background-image:url('img/bg.jpg'); margin-bottom: 1%;">
-    <span style="font-size: 2em;">热门地点</span><span style="margin-left: 80%"><a>更多</a></span>
-    </div>
-    <div class="col-md-6 col-lg-4">
-            <div class="category-item effect-1">
-              <img src="img/zhiwuyuan.jpg" alt="img12">
-              <div class="caption">
-                <div>
-                  <p class="title">植物园</p>
-                  <p class="description">地址：石家庄市植物园街60号</p>
-                  <p class="description">公交：旅游1路；旅游11路</p>
-                  <p class="description">票价：植物园：20元/人；科普馆：30元/人；游乐场：120元/人</p>
-                </div>
-                <a href="#">View more</a>
-              </div>     
-            </div>
-          </div>
-           
-          <div class="col-md-6 col-lg-4">
+	<div class="row">
+		<div
+			style="width: 100%; position: static; background-image: url('img/bg.jpg'); margin-bottom: 1%;">
+			<span style="font-size: 2em;">热门地点</span><span
+				style="margin-left: 80%"><a>更多</a></span>
+		</div>
+		<c:forEach var="scelist1" items="${scelist }">
+		<div class="col-md-6 col-lg-4">
+			<div class="category-item effect-1">
+				<img src="img/zhiwuyuan.jpg" alt="img12">
+				<div class="caption">
+					<div>
+						<p class="title">${scelist1.sname }</p><!-- 景点名称 -->
+						<p class="description">${scelist1.addr }</p><!-- 景点地址 -->
+						<p class="description">${scelist1.route }</p><!-- 路线 -->
+						<p class="description">${scelist1.ticketPrice }</p><!--票价  -->
+					</div>
+					<a href="#">View more</a>
+				</div>
+			</div>
+		</div>
+		</c:forEach>
+
+		<!-- <div class="col-md-6 col-lg-4">
             <div class="category-item effect-1">
               <img src="img/zhengding.jpg" alt="img12">
               <div class="caption">
@@ -155,9 +159,9 @@
                 <a href="#">View more</a>
               </div>     
             </div>
-          </div>
-    </div>
-      <!-- *******************************上半部分**************************** -->
+          </div> -->
+	</div>
+	<!-- *******************************上半部分**************************** -->
       <div class="blue_title text-center">
         <span>行途中，吃喝玩儿乐</span>
     </div>
