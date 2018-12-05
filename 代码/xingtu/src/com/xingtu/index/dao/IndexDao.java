@@ -1,4 +1,4 @@
-package com.xingtu.index.dao;
+/*package com.xingtu.index.dao;
 
 import java.util.List;
 
@@ -13,10 +13,10 @@ import com.xingtu.entity.Scene;
 
 
 
-/**
+*//**
  *  获取前8的热门景点
 * @return
-*/
+*//*
 @Repository
 public class IndexDao {
 	@Resource
@@ -27,4 +27,4 @@ public class IndexDao {
 		return q.list();
 	}
 
-}
+}*/
