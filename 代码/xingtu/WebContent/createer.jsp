@@ -16,7 +16,10 @@
 <body>
 <jsp:include page="header.jsp" flush="true"></jsp:include>
 <div class="erall">
-   <div class="tou"><p class="sjz">石家庄一游</p></div>
+   <div class="tou">
+         <div class="sjz">石家庄一游</div>
+         <div class="wc"><input type="submit" style="width:80px;height:30px" value="完成" ></div>
+   </div>
    <div class="zuo">
         <div class="xc">我的行程</div>
    </div>
@@ -32,13 +35,13 @@
         </div>
    </div>
    <div class="you">
-        <div class="re">热门推荐
+        <div class="re"><a href="#">热门推荐</a>
         </div>
-        <div class="shou">我的收藏</div>
+        <div class="shou"><a href="#">我的收藏</a></div>
         <div class="dao">
-               <div class="dian">景点</div>
-               <div class="shi">美食</div>
-               <div class="duo">更多</div>
+               <div class="dian"><a href="#">景点</a></div>
+               <div class="shi"><a href="#">美食</a></div>
+               <div class="duo"><a href="#">更多</a></div>
                <div class="sou">
                    <form>
                         <input type="text" style="width:140px;height:23px">

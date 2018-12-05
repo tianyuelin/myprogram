@@ -19,7 +19,7 @@
 		<div class="left" style="margin-top: 5%;back">
 			<div class="tit">已选目的地</div>
 			<div class="titna" >从右侧添加想去的地点</div>
-			<div class="tianjia">+手动添加地点</div>
+			<div class="tianjia"><input type="text" value="+手动添加行程"></div>
 			<div class="bian">
 				<div class="bj">
 					<a href="createer.jsp">开始编辑</a>
