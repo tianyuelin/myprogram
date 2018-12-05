@@ -205,6 +205,7 @@
         </div>
     </div>
 </div>
+<div id = "type">
 <div class="container-fluid">
     <div class="blue_title text-center">
         <span>出行类型</span>
@@ -268,6 +269,7 @@
             <div class="swiper-button swiper-button-next"><span class="glyphicon glyphicon-menu-right"></span></div>
         </div>
     </div>
+</div>
 </div>
 
 

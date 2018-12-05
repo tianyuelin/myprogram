@@ -12,15 +12,13 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-@Entity
-@Table(name="navlist")
+
 public class Nav {
 	private int navId; 
 	private String Name;
 	private List<Nav> childNav;
 	private Nav ParentNav;
-	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	
 	public int getNavId() {
 		return navId;
 	}
@@ -33,16 +31,14 @@ public class Nav {
 	public void setName(String name) {
 		Name = name;
 	}
-	@OneToMany(mappedBy="ParentNav",targetEntity=Nav.class,
-			cascade= {CascadeType.ALL})
+	
 	public List<Nav> getChildNav() {
 		return childNav;
 	}
 	public void setChildNav(List<Nav> childNav) {
 		this.childNav = childNav;
 	}
-	@ManyToOne
-	@JoinColumn(name="parentId")
+	
 	public Nav getParentNav() {
 		return ParentNav;
 	}
