@@ -1,8 +1,8 @@
 package com.xingtu.scene.dao;
 
-public class SenceDao {
+public class SceneDao {
 
-	public SenceDao() {
+	public SceneDao() {
 		// TODO Auto-generated constructor stub
 	}
 

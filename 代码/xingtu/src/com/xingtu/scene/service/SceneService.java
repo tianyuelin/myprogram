@@ -1,8 +1,8 @@
 package com.xingtu.scene.service;
 
-public class SenceService {
+public class SceneService {
 
-	public SenceService() {
+	public SceneService() {
 		// TODO Auto-generated constructor stub
 	}
 
