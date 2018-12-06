@@ -1,25 +1,27 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+     <c:set var="ctx" value="${pageContext.request.contextPath}"/>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
-<link href="css/home/header.css" rel="stylesheet">
-<link href="css/home/bootstrap.min.css" rel="stylesheet">
-<link href="css/xiangqing/xiangqing.css" rel="stylesheet">
-<link href="css/home/swiper.min.css" rel="stylesheet">
-<script src="js/home/jquery-1.11.3.min.js"></script>
-<script src="js/home/bootstrap.min.js"></script>
-<script src="js/home/swiper.min.js"></script>
-<script src="js/home/main.js"></script>
-<link  rel="stylesheet" href="css/pinglun/main.css" />
-<link rel="stylesheet" type="text/css" href="css/pinglun/sinaFaceAndEffec.css" />
+<link href="${ctx }/css/home/header.css" rel="stylesheet">
+<link href="${ctx }/css/home/bootstrap.min.css" rel="stylesheet">
+<link href="${ctx }/css/xiangqing/xiangqing.css" rel="stylesheet">
+<link href="${ctx }/css/home/swiper.min.css" rel="stylesheet">
+<script src="${ctx }/js/home/jquery-1.11.3.min.js"></script>
+<script src="${ctx }/js/home/bootstrap.min.js"></script>
+<script src="${ctx }/js/home/swiper.min.js"></script>
+<script src="${ctx }/js/home/main.js"></script>
+<link  rel="stylesheet" href="${ctx }/css/pinglun/main.css" />
+<link rel="stylesheet" type="text/css" href="${ctx }/css/pinglun/sinaFaceAndEffec.css" />
 
-<script type="text/javascript" src="js/pinglun/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="${ctx }/js/pinglun/jquery-1.8.3.min.js"></script>
 
-<script type="text/javascript" src="js/xiangqing/script.js"></script>
+<script type="text/javascript" src="${ctx }/js/xiangqing/script.js"></script>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
 	<style type="text/css">
@@ -34,8 +36,8 @@
 <div>
 <div class="center_right">
 	<div class="title">
-		<span id="jing_title">正定森林河趣那主题公园</span>
-		<span class="shoucang">加入收藏<img src="img/shoucang.png"/></span>
+		<span id="jing_title">${singlescene.sname }</span>
+		<span class="shoucang">加入收藏<img src="${ctx }/img/shoucang.png"/></span>
 	</div>
 	<div class="imgs">
 			<div class="product_introduce">
@@ -69,7 +71,7 @@
 					<div class="picture_right">
 						<div class="picture_name">
 							<a href="###">
-								<h3>趣那公园</h3>
+								<h3>${singlescene.sname }</h3>
 							</a>
 						</div>
 						<div class="picture_suo">
@@ -134,15 +136,11 @@
 			</div>
 		</div>
 	<div class="miaoshu">
-		<div style="margin-bottom: 20px;">评分：<span style="font-size: 25px;font-weight: 600;color: red;">4.7</span>/5</div>
-		<div>地址：河北省石家庄市正定区森林河趣那主题公园</div>
-		<div>票价：40元</div>
+		<div style="margin-bottom: 20px;">评分：<span style="font-size: 25px;font-weight: 600;color: red;">${singlescene.score }</span>/5</div>
+		<div>地址：${singlescene.address }</div>
+		<div>票价：${singlescene.ticketPrice }</div>
 		<div>
-			<p style="font-weight: 600">公交路线</p>
-			<p>乘坐117路，终点站经贸大学北站下车，沿指路牌即到</p>
-			<p style="font-weight: 600">自驾路线：</p>
-			<p>线路1：中华北大街高架桥学府路出口下辅路，北行即有趣那主题公园路标。</p>
-			<p>线路2：胜利北街滹沱河大桥南转辅路，沿滹沱河南岸西行至云龙大桥即到。</p>
+			${singlescene.route }
 		</div>
 	</div>
 	<div class="gaishu">

@@ -50,11 +50,11 @@
                   <div class="row">
                     <article class="col-md-3">
                       <div class="bloginner">
-                        <figure><a href="routepic.jsp"><img src="img/blog1-grid.jpg" alt=""></a>
+                        <figure><a href="sence/singlesence?id=1"><img src="img/blog1-grid.jpg" alt=""></a>
                           <figcaption><a href="#" class="fa fa-plus-heart"></a></figcaption>  
                         </figure>
                         <section class="kd-bloginfo">
-                          <h2 class="tiezi_text"><a href="routepic.jsp">TOP1 景点</a></h2>
+                          <h2 class="tiezi_text"><a href="sence/singlesence?id=1">TOP1 景点</a></h2>
                           <ul class="kd-postoption">
                             <li><a href="#" class="thcolorhover"></a></li>
                             <li><time datetime="2008-02-14 20:00">| January 15, 2015</time></li>

@@ -18,11 +18,14 @@ import javax.persistence.Table;
 public class Scene {
 	private int sceneId;///景点序号
 	private String sname;//名称
-	private String addr;//地址
-	private float ticketPrice;//票价
+	private String address;//地址
+	private String ticketPrice;//票价
 	private float score;//评分
 	private String describee;//描述
 	private String route;//路线
+	private String playtime;//建议游玩儿时间
+	private String opentime;//开放时间
+	private String city;//城市
 	private List<Scenecomment> sc;
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
@@ -38,17 +41,37 @@ public class Scene {
 	public void setSname(String sname) {
 		this.sname = sname;
 	}
-	public String getAddr() {
-		return addr;
+	
+	public String getAddress() {
+		return address;
 	}
-	public void setAddr(String addr) {
-		this.addr = addr;
+	public void setAddress(String address) {
+		this.address = address;
 	}
-	public float getTicketPrice() {
+	
+	public String getTicketPrice() {
 		return ticketPrice;
 	}
-	public void setTicketPrice(float ticketPrice) {
+	public void setTicketPrice(String ticketPrice) {
 		this.ticketPrice = ticketPrice;
+	}
+	public String getPlaytime() {
+		return playtime;
+	}
+	public void setPlaytime(String playtime) {
+		this.playtime = playtime;
+	}
+	public String getOpentime() {
+		return opentime;
+	}
+	public void setOpentime(String opentime) {
+		this.opentime = opentime;
+	}
+	public String getCity() {
+		return city;
+	}
+	public void setCity(String city) {
+		this.city = city;
 	}
 	public float getScore() {
 		return score;

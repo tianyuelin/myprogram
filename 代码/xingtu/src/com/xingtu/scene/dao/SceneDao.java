@@ -1,9 +1,22 @@
 package com.xingtu.scene.dao;
 
-public class SceneDao {
+import java.io.Serializable;
 
-	public SceneDao() {
-		// TODO Auto-generated constructor stub
+import javax.annotation.Resource;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.springframework.stereotype.Repository;
+
+import com.xingtu.entity.Scene;
+@Repository
+public class SceneDao{
+	@Resource
+	private SessionFactory sf;
+	public Scene findSceneById(int id) {
+		Session session = sf.getCurrentSession();
+		Scene s = (Scene)session.createQuery("from Scene where sceneId="+id).uniqueResult();
+		return s;
 	}
-
+	
 }
