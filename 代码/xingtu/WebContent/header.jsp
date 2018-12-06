@@ -15,7 +15,7 @@
                 		<img src="img/logo.png">
                     </li>
                         <li class="col-md-nav"><a href="index.jsp">首页</a></li>
-                        <li class="col-md-nav"><a href="#type">旅行主题</a></li>
+                        <li class="col-md-nav"><a href="#type">美食</a></li>
                         
                         <li class="col-md-nav"><a href="index.jsp">他人攻略</a></li>
                         <li class="col-md-nav"><a href="list.jsp"> 个性定制</a>
