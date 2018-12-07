@@ -1,11 +1,14 @@
 package com.xingtu.scene.service;
 
+import java.util.List;
+
 import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.xingtu.entity.Scene;
+import com.xingtu.entity.SceneImgs;
 import com.xingtu.scene.dao.SceneDao;
 
 @Service
@@ -16,5 +19,8 @@ public class SceneService {
 	public Scene findScene(int id) {
 		System.out.println("service"+sd.findSceneById(id).getTicketPrice());
 		return sd.findSceneById(id);
+	}
+	public List<SceneImgs> findSceneimg(String name) {
+		return sd.findSceneImgs(name);
 	}
 }

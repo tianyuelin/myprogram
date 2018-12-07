@@ -42,7 +42,7 @@
 			<div class="product_introduce">
 				<div class="product_picture" style="display: inline-block;">
 					<div class="product_picture1">
-						<a href="###"><img src="http://img1.qunarzz.com/wugc/p123/201211/19/a2045d091f02b25493835fbb.png_710x360_cc503e47.png"/></a>
+						<a href="###"><img src="${imglist[1].imgsrc }"/></a>
 						<span>点击查看更多图集</span>
 					</div>
 				</div>
@@ -75,30 +75,11 @@
 						</div>
 						<div class="picture_suo">
 							<div class="picture_suo_t">
+							<c:forEach items="${imglist }" var="img">
 								<div class="picture_suo_img suo-img">
-									<img class="lazy" src="http://img1.qunarzz.com/sight/p55/201211/04/fbcab3e5d6479ce893835fbb.jpg_710x360_a489e25d.jpg" />
+									<img class="lazy" src="${img.imgsrc }" />
 								</div>
-								<div class="picture_suo_img">
-									<img class="lazy" src="http://img1.qunarzz.com/wugc/p123/201211/19/a2045d091f02b25493835fbb.png_710x360_cc503e47.png" />
-								</div>
-								<div class="picture_suo_img">
-									<img class="lazy" src="http://img1.qunarzz.com/sight/p0/1410/e3/73da8d3e19cdc41c1932d4fcd22ec792.water.jpg_710x360_6029c0c3.jpg" />
-								</div>
-								<div class="picture_suo_img">
-									<img class="lazy" src="http://img1.qunarzz.com/sight/p0/1410/34/f540a04367d06820af4dfeaf0ad40257.water.jpg_710x360_c86bcf76.jpg" />
-								</div>
-								<div class="picture_suo_img">
-									<img class="lazy" src="http://img1.qunarzz.com/sight/p0/1410/9d/fe8109ab5df1c9c324e74284fa802e72.water.jpg_710x360_3777f44e.jpg" />
-								</div>
-								<div class="picture_suo_img">
-									<img class="lazy" src="http://img1.qunarzz.com/sight/p0/1410/be/d44bb81ae3218a627a65ded451326b2c.water.jpg_710x360_1aa4d515.jpg" />
-								</div>
-								<div class="picture_suo_img">
-									<img class="lazy" src="http://img1.qunarzz.com/sight/p0/1501/af/af47583adca3f972.water.jpg_710x360_d16edca5.jpg" />
-								</div>
-								<div class="picture_suo_img">
-									<img class="lazy" src="http://img1.qunarzz.com/wugc/p238/201306/16/d9090c728fed64eb93835fbb.jpg_710x360_fc9d9d71.jpg" />
-								</div>
+							</c:forEach>
 							</div>
 						</div>
 					</div>
@@ -108,10 +89,10 @@
 		</div>
 		<div class="right_pic">
 			<div class="right_pic1"> 
-				<img alt="" src="http://img1.qunarzz.com/wugc/p238/201306/16/d9090c728fed64eb93835fbb.jpg_710x360_fc9d9d71.jpg">
+				<img alt="" src="${imglist[2].imgsrc }">
 			</div>
 			<div class="right_pic2"> 
-				<img alt="" src="http://img1.qunarzz.com/sight/p0/1410/e3/73da8d3e19cdc41c1932d4fcd22ec792.water.jpg_710x360_6029c0c3.jpg">
+				<img alt="" src="${imglist[3].imgsrc }">
 			</div>
 		</div>
 		</div>
