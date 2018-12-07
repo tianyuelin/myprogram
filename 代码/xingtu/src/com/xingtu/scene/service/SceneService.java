@@ -14,6 +14,7 @@ public class SceneService {
 	@Resource
 	private SceneDao sd;
 	public Scene findScene(int id) {
+		System.out.println("service"+sd.findSceneById(id).getTicketPrice());
 		return sd.findSceneById(id);
 	}
 }

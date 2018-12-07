@@ -20,6 +20,7 @@ public class SceneController {
 	public String findSingleScene(HttpServletRequest request,@RequestParam("id") int id) {
 		Scene s = ss.findScene(id);
 		request.setAttribute("singlescene", s);
-		return "xiangqing2";
+		System.out.println("controller"+s.getTicketPrice());
+		return "Detilstest";
 	}
 }

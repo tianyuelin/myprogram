@@ -12,7 +12,7 @@
                 <div class="blue_nav" style="display: inline-block;">
                     <ul class="nav navbar-nav col-md-12 col-sm-12">
                     <li class="logo">
-                		<img src="img/logo.png">
+                		<img src="${ctx }/img/logo.png">
                     </li>
                         <li class="col-md-nav"><a href="index.jsp">首页</a></li>
                         <li class="col-md-nav"><a href="#type">美食</a></li>
@@ -38,7 +38,7 @@
                 </div>
                 <div style="width: 20%;display: inline-block;position: relative;margin: auto;float: right;text-align: right;">
                     <div style="width: 50%;height: 1.25%;position:relative;display: inline-block;">
-                 	<img src="img/addpeople.png" style="width: 30%">
+                 	<img src="${ctx }/img/addpeople.png" style="width: 30%">
                     <span style="font-size: 1em;"><a href="sign.jsp">登录/注册</a></span>
                    </div>
               </div>   

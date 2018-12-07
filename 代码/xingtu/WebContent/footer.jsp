@@ -1,7 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+    <c:set var="ctx" value="${pageContext.request.contextPath}"/>
     <!-- footer -->
-<footer class="container-fluid blue_footer" style="background-image: url('img/bg.jpg');clear: both">
+<footer class="container-fluid blue_footer" style="background-image: url('${ctx}/img/bg.jpg');clear: both">
     <div class="container">
         <div class="row">
             <div class="col-md-4 col-xs-12">
@@ -39,17 +41,17 @@
         <div class="row blue_link">
             <div class="col-md-8 col-xs-12">
                 <div style="width: 40%;height: 30%">
-                    <a href="#"><img src="img/logo.png" alt=""></a>
+                    <a href="#"><img src="${ctx}/img/logo.png" alt=""></a>
                 </div>
             </div>
             <div class="col-md-4 col-xs-6 blue_code">
                 <div class="col-md-3 col-xs-12">
-                    <img src="img/sdm.jpg" alt="">
+                    <img src="${ctx}/img/sdm.jpg" alt="">
                     <p>官方公众号</p>
                     <p>河北师范大学</p>
                 </div>
                 <div class="col-md-3 col-xs-6">
-                    <img src="img/WM.png" alt="">
+                    <img src="${ctx}/img/WM.png" alt="">
                     <p>官方微博</p>
                     <p>@QQ倩倩小仙女</p>
                 </div>
