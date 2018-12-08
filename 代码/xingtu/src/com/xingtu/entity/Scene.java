@@ -26,6 +26,7 @@ public class Scene {
 	private String playtime;//建议游玩儿时间
 	private String opentime;//开放时间
 	private String city;//城市
+	private String img;//代表图片
 	private List<Scenecomment> sc;
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
@@ -98,6 +99,12 @@ public class Scene {
 	}
 	public void setSc(List<Scenecomment> sc) {
 		this.sc = sc;
+	}
+	public String getImg() {
+		return img;
+	}
+	public void setImg(String img) {
+		this.img = img;
 	}
 	
 }

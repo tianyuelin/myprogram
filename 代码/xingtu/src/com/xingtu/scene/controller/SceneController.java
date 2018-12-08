@@ -28,4 +28,10 @@ public class SceneController {
 		request.setAttribute("imglist", imgs);
 		return "Detilstest";
 	}
+	@RequestMapping(value="/allsence",method=RequestMethod.GET)
+	public String findScenes(HttpServletRequest request) {
+		List<Scene> scenes = ss.findAllScene();
+		request.setAttribute("scenes", scenes);
+		return "meijing";
+	}
 }

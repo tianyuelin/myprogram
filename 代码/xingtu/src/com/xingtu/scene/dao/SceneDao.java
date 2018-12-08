@@ -37,5 +37,11 @@ public class SceneDao{
 		Query q = session.createQuery("from SceneImgs where pname='"+name+"'");
 		return q.list();
 	}
-	
+	public List<Scene> findAllScene(){
+		Session session = sf.getCurrentSession();
+		Query q = session.createQuery("from Scene where img is not null");
+		q.setFirstResult(0);
+		q.setMaxResults(8);
+		return q.list();
+	}
 }

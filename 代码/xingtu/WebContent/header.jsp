@@ -15,7 +15,7 @@
                 		<img src="${ctx }/img/logo.png">
                     </li>
                         <li class="col-md-nav"><a href="index.jsp">首页</a></li>
-                        <li class="col-md-nav"><a href="#type">美食</a></li>
+                        <li class="col-md-nav"><a href="${ctx }/sence/allsence">美食</a></li>
                         <li class="col-md-nav"><a href="#type">景点</a></li>
                         <li class="col-md-nav"><a href="index.jsp">他人攻略</a></li>
                         <li class="col-md-nav"><a href="list.jsp"> 个性定制</a>
@@ -40,8 +40,7 @@
                  	<img src="${ctx }/img/addpeople.png" style="width: 30%">
                     <span style="font-size: 1em;"><a href="sign.jsp">登录/注册</a></span>
                    </div>
-              </div>   
-                
+              </div>
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid --> 
     </nav>
