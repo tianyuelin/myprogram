@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50506
 File Encoding         : 65001
 
-Date: 2018-12-06 09:06:02
+Date: 2018-12-08 17:57:22
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -870,16 +870,6 @@ INSERT INTO `sceneimg` VALUES ('1044', 'http://img1.qunarzz.com/sight/p0/1410/e2
 INSERT INTO `sceneimg` VALUES ('1045', 'http://img1.qunarzz.com/sight/p0/201401/26/ca6b2d9edd11327eb7cc36cafb26ccb6.jpg_710x360_c8cafca2.jpg', '紫竹院公园');
 INSERT INTO `sceneimg` VALUES ('1046', 'http://img1.qunarzz.com/sight/p0/201401/26/5251805ee8ab6d4e111998fcb4ee0f12.jpg_710x360_a30f8f3f.jpg', '紫竹院公园');
 INSERT INTO `sceneimg` VALUES ('1047', 'http://img1.qunarzz.com/sight/p0/201401/26/3025b7ce42d4c15730719398b6724bdb.jpg_710x360_a210a483.jpg', '紫竹院公园');
-INSERT INTO `sceneimg` VALUES ('1048', 'http://img1.qunarzz.com/sight/p0/201301/19/2200c7738e5220ae93835fbb.jpg_710x360_1fd738b6.jpg', '神路');
-INSERT INTO `sceneimg` VALUES ('1049', 'http://img1.qunarzz.com/sight/p0/201307/26/5e9555775afd9b67c8d65eac.jpg_710x360_339c5c85.jpg', '神路');
-INSERT INTO `sceneimg` VALUES ('1050', 'http://img1.qunarzz.com/sight/p0/201307/26/22f08e72c53944b1c8d65eac.jpg_710x360_1d76f0d4.jpg', '神路');
-INSERT INTO `sceneimg` VALUES ('1051', 'http://img1.qunarzz.com/sight/p0/201307/26/625f5f064d3be515c8d65eac.jpg_710x360_79e0c813.jpg', '神路');
-INSERT INTO `sceneimg` VALUES ('1052', 'http://img1.qunarzz.com/sight/p0/201403/11/434f3b72f639b0f61c04cebea1875f11.jpg_710x360_c5d90b1d.jpg', '神路');
-INSERT INTO `sceneimg` VALUES ('1053', 'http://img1.qunarzz.com/sight/p0/201307/26/59dfa8382ab55da0c8d65eac.jpg_710x360_d5e3da2d.jpg', '神路');
-INSERT INTO `sceneimg` VALUES ('1054', 'http://img1.qunarzz.com/sight/p0/201403/11/619d4e652df7eb1bf631dad31488b5da.jpg_710x360_f4ed1e50.jpg', '神路');
-INSERT INTO `sceneimg` VALUES ('1055', 'http://img1.qunarzz.com/sight/p0/1808/cf/cf9e113e9d843c8a3.img.jpg_710x360_6c598be4.jpg', '空手到行李寄送');
-INSERT INTO `sceneimg` VALUES ('1056', 'http://img1.qunarzz.com/sight/p0/1808/b7/b72143d646b7c1b4a3.img.jpg_710x360_944d11a3.jpg', '空手到行李寄送');
-INSERT INTO `sceneimg` VALUES ('1057', 'http://img1.qunarzz.com/sight/p0/1808/d9/d932733a04b7985da3.img.jpg_710x360_68f5f2e9.jpg', '空手到行李寄送');
 INSERT INTO `sceneimg` VALUES ('1058', 'http://img1.qunarzz.com/sight/p0/201309/06/a51a52c67b8ac37ac8d65eac.jpg_710x360_171dd07e.jpg', '中国国家博物馆');
 INSERT INTO `sceneimg` VALUES ('1059', 'http://img1.qunarzz.com/sight/p0/201309/06/83a24d5336c264d5c8d65eac.jpg_710x360_995eb7b3.jpg', '中国国家博物馆');
 INSERT INTO `sceneimg` VALUES ('1060', 'http://img1.qunarzz.com/sight/p0/201309/06/53677b81bd3491bcc8d65eac.jpg_710x360_0b30c193.jpg', '中国国家博物馆');
@@ -1003,7 +993,6 @@ INSERT INTO `sceneimg` VALUES ('1177', 'http://img1.qunarzz.com/sight/p0/1501/ae
 INSERT INTO `sceneimg` VALUES ('1178', 'http://img1.qunarzz.com/sight/p0/1501/94/946361d780bb8bcd.water.jpg_710x360_aadfeb91.jpg', '长陵');
 INSERT INTO `sceneimg` VALUES ('1179', 'http://img1.qunarzz.com/sight/p0/1501/6c/6c8daff1a7867daf.water.jpg_710x360_77b428b5.jpg', '长陵');
 INSERT INTO `sceneimg` VALUES ('1180', 'http://img1.qunarzz.com/sight/p0/1501/42/42602140bfc1e94d.water.jpg_710x360_5ebcfbfe.jpg', '长陵');
-INSERT INTO `sceneimg` VALUES ('1181', 'http://img1.qunarzz.com/sight/p0/1611/57/574c495ada1d479a3.water.jpg_710x360_caa1cdd3.jpg', '韩国洗浴汗蒸馆');
 INSERT INTO `sceneimg` VALUES ('1182', 'http://img1.qunarzz.com/sight/p0/1811/b6/b6f3b4b67cb7a64fa3.img.jpg_710x360_16e5e8d3.jpg', '运河苑温泉水世界');
 INSERT INTO `sceneimg` VALUES ('1183', 'http://img1.qunarzz.com/sight/p0/1811/31/31270d2aa71bf21ba3.img.jpg_710x360_7acea934.jpg', '运河苑温泉水世界');
 INSERT INTO `sceneimg` VALUES ('1184', 'http://img1.qunarzz.com/sight/p0/1811/a3/a3d22f106fb7a76ca3.img.jpg_710x360_ea50feb7.jpg', '运河苑温泉水世界');
@@ -1089,21 +1078,6 @@ INSERT INTO `sceneimg` VALUES ('1263', 'http://img1.qunarzz.com/sight/p0/201403/
 INSERT INTO `sceneimg` VALUES ('1264', 'http://img1.qunarzz.com/sight/p0/201403/07/84d8c8fac40979a53038fd3ef72066d8.jpg_710x360_7a3ed546.jpg', '中国紫檀博物馆');
 INSERT INTO `sceneimg` VALUES ('1265', 'http://img1.qunarzz.com/sight/p0/201403/07/c65396234779f14553d1a1e68059741e.jpg_710x360_96a4577f.jpg', '中国紫檀博物馆');
 INSERT INTO `sceneimg` VALUES ('1266', 'http://img1.qunarzz.com/sight/p0/1508/8c/36db56dd417f2259c62f584c4958fb22.water.jpg_710x360_dc72eaa3.jpg', '中国紫檀博物馆');
-INSERT INTO `sceneimg` VALUES ('1267', 'http://img1.qunarzz.com/sight/p0/1810/81/81e9101b32c5044aa3.img.jpg_710x360_feea0dc8.jpg', '家乔温泉洗浴');
-INSERT INTO `sceneimg` VALUES ('1268', 'http://img1.qunarzz.com/sight/p0/1810/b1/b10fa10434ff8c47a3.img.jpg_710x360_4f4be2ab.jpg', '家乔温泉洗浴');
-INSERT INTO `sceneimg` VALUES ('1269', 'http://img1.qunarzz.com/sight/p0/1810/17/17f323d55c352ad8a3.img.jpg_710x360_fec47b18.jpg', '家乔温泉洗浴');
-INSERT INTO `sceneimg` VALUES ('1270', 'http://img1.qunarzz.com/sight/p0/1810/f9/f93e4057ac71492aa3.img.jpg_710x360_7f2655ba.jpg', '家乔温泉洗浴');
-INSERT INTO `sceneimg` VALUES ('1271', 'http://img1.qunarzz.com/sight/p0/1810/54/54de641b4dc0dee5a3.img.jpg_710x360_0ae5de9a.jpg', '家乔温泉洗浴');
-INSERT INTO `sceneimg` VALUES ('1272', 'http://img1.qunarzz.com/sight/p0/1810/90/903723452ebd36faa3.img.jpg_710x360_a80874e0.jpg', '家乔温泉洗浴');
-INSERT INTO `sceneimg` VALUES ('1273', 'http://img1.qunarzz.com/sight/p0/1810/80/805463114b89055ea3.img.jpg_710x360_64801e32.jpg', '家乔温泉洗浴');
-INSERT INTO `sceneimg` VALUES ('1274', 'http://img1.qunarzz.com/sight/p0/1810/42/42950da7a2b300fda3.img.jpg_710x360_ecf17fa1.jpg', '家乔温泉洗浴');
-INSERT INTO `sceneimg` VALUES ('1275', 'http://img1.qunarzz.com/sight/p0/1810/3b/3b353b82c31dfa06a3.img.jpg_710x360_5f8d2d29.jpg', '家乔温泉洗浴');
-INSERT INTO `sceneimg` VALUES ('1276', 'http://img1.qunarzz.com/sight/p0/1810/41/411c45e87de10e9ba3.img.jpg_710x360_e9ac43d4.jpg', '家乔温泉洗浴');
-INSERT INTO `sceneimg` VALUES ('1277', 'http://img1.qunarzz.com/sight/p0/1810/ce/cee35b21f9ac13e1a3.img.jpg_710x360_aae7c8cd.jpg', '家乔温泉洗浴');
-INSERT INTO `sceneimg` VALUES ('1278', 'http://img1.qunarzz.com/sight/p0/1810/f9/f9ed1e7a67990052a3.img.jpg_710x360_a3465045.jpg', '家乔温泉洗浴');
-INSERT INTO `sceneimg` VALUES ('1279', 'http://img1.qunarzz.com/sight/p0/1810/4a/4a33d5138df6851a3.img.jpg_710x360_c5b6273b.jpg', '家乔温泉洗浴');
-INSERT INTO `sceneimg` VALUES ('1280', 'http://img1.qunarzz.com/sight/p0/1810/73/73fc0d4b826b7a7ca3.img.jpg_710x360_464c83f7.jpg', '家乔温泉洗浴');
-INSERT INTO `sceneimg` VALUES ('1281', 'http://img1.qunarzz.com/sight/p0/1810/73/73fc0d4b826b7a7ca3.img.jpg_710x360_464c83f7.jpg', '家乔温泉洗浴');
 INSERT INTO `sceneimg` VALUES ('1282', 'http://img1.qunarzz.com/sight/p0/201403/13/1dfaa46f4d023cb2e927249549c33992.jpg_710x360_844d2067.jpg', '世贸天阶');
 INSERT INTO `sceneimg` VALUES ('1283', 'http://img1.qunarzz.com/sight/p0/201403/13/5243db6fac5a95a2c01b14db3211493b.jpg_710x360_eac08001.jpg', '世贸天阶');
 INSERT INTO `sceneimg` VALUES ('1284', 'http://img1.qunarzz.com/sight/p0/201403/13/9587e426429b2da17d0e6e95ce25e99a.jpg_710x360_023862ba.jpg', '世贸天阶');
@@ -2807,9 +2781,9 @@ INSERT INTO `sceneimg` VALUES ('2987', 'http://img1.qunarzz.com/tuan/team2/1507/
 INSERT INTO `sceneimg` VALUES ('2988', 'http://img1.qunarzz.com/sight/p0/1508/bb/58230923b9daa8306b6e1bbe7b5ad682.water.jpg_710x360_1c1cd59f.jpg', '上海影视乐园');
 INSERT INTO `sceneimg` VALUES ('2989', 'http://img1.qunarzz.com/sight/p0/1508/b7/4d8198f2c090c1b65b71b1f20ec7cf30.water.jpg_710x360_2db1421c.jpg', '上海影视乐园');
 INSERT INTO `sceneimg` VALUES ('2990', 'http://img1.qunarzz.com/sight/p0/1508/f5/0dab5b7fa401fd6bfd310cc0559c008b.water.jpg_710x360_ce99c96d.jpg', '上海影视乐园');
-INSERT INTO `sceneimg` VALUES ('2991', 'http://img1.qunarzz.com/sight/p0/1512/e9/e92c4b0d98659be790.water.jpg_710x360_36014866.jpg', '城隍庙旅游区');
-INSERT INTO `sceneimg` VALUES ('2992', 'http://img1.qunarzz.com/sight/p0/1512/54/5430b716904622d190.water.jpg_710x360_ae485dae.jpg', '城隍庙旅游区');
-INSERT INTO `sceneimg` VALUES ('2993', 'http://img1.qunarzz.com/sight/p0/1512/c1/c109cc9a7079f72290.water.jpg_710x360_145827a1.jpg', '城隍庙旅游区');
+INSERT INTO `sceneimg` VALUES ('2991', 'http://img1.qunarzz.com/sight/p0/1512/e9/e92c4b0d98659be790.water.jpg_710x360_36014866.jpg', '老城隍庙旅游区');
+INSERT INTO `sceneimg` VALUES ('2992', 'http://img1.qunarzz.com/sight/p0/1512/54/5430b716904622d190.water.jpg_710x360_ae485dae.jpg', '老城隍庙旅游区');
+INSERT INTO `sceneimg` VALUES ('2993', 'http://img1.qunarzz.com/sight/p0/1512/c1/c109cc9a7079f72290.water.jpg_710x360_145827a1.jpg', '老城隍庙旅游区');
 INSERT INTO `sceneimg` VALUES ('2994', 'http://img1.qunarzz.com/sight/p0/201307/24/1f6d80a3463fbf99c8d65eac.jpg_710x360_31a10042.jpg', '南京路步行街');
 INSERT INTO `sceneimg` VALUES ('2995', 'http://img1.qunarzz.com/sight/p0/201307/24/9d0c13e36e9bd82dc8d65eac.jpg_710x360_79132a90.jpg', '南京路步行街');
 INSERT INTO `sceneimg` VALUES ('2996', 'http://img1.qunarzz.com/sight/p0/201307/24/6e7dfd7de9f43903c8d65eac.jpg_710x360_c3f1999c.jpg', '南京路步行街');
@@ -2885,13 +2859,13 @@ INSERT INTO `sceneimg` VALUES ('3065', 'http://img1.qunarzz.com/sight/p0/1508/c8
 INSERT INTO `sceneimg` VALUES ('3066', 'http://img1.qunarzz.com/sight/p0/1508/7d/7d0ee2dbf3270de8.img.jpg_710x360_44d798e8.jpg', '上海星空错觉艺术馆');
 INSERT INTO `sceneimg` VALUES ('3067', 'http://img1.qunarzz.com/sight/p0/1508/95/95859066538cb5fd.img.jpg_710x360_ef10a74d.jpg', '上海星空错觉艺术馆');
 INSERT INTO `sceneimg` VALUES ('3068', 'http://img1.qunarzz.com/sight/p0/1508/d5/d59725d95a4282d7.img.jpg_710x360_a91a0888.jpg', '上海星空错觉艺术馆');
-INSERT INTO `sceneimg` VALUES ('3069', 'http://img1.qunarzz.com/sight/p0/1802/37/378776742f535d01a3.water.jpg_710x360_d1cfba6f.jpg', '上海城隍庙');
-INSERT INTO `sceneimg` VALUES ('3070', 'http://img1.qunarzz.com/sight/p0/201307/18/585cfef1eeb07ea5c8d65eac.jpg_710x360_0fd16fff.jpg', '上海城隍庙');
-INSERT INTO `sceneimg` VALUES ('3071', 'http://img1.qunarzz.com/sight/p0/201307/18/4a14b4f1909be8afc8d65eac.jpg_710x360_660c9c91.jpg', '上海城隍庙');
-INSERT INTO `sceneimg` VALUES ('3072', 'http://img1.qunarzz.com/sight/p0/201307/18/87ad2bf04fd6d571c8d65eac.jpg_710x360_76f19a45.jpg', '上海城隍庙');
-INSERT INTO `sceneimg` VALUES ('3073', 'http://img1.qunarzz.com/sight/p0/201307/18/ee05e90c97c1b46ec8d65eac.jpg_710x360_9ed2abc6.jpg', '上海城隍庙');
-INSERT INTO `sceneimg` VALUES ('3074', 'http://img1.qunarzz.com/wugc/p221/201204/20/92ce3a498455813e93835fbb.jpg_710x360_38924a27.jpg', '上海城隍庙');
-INSERT INTO `sceneimg` VALUES ('3075', 'http://img1.qunarzz.com/wugc/p25/201204/20/fbcbe1f6b913c5fe93835fbb.jpg_710x360_ec3190da.jpg', '上海城隍庙');
+INSERT INTO `sceneimg` VALUES ('3069', 'http://img1.qunarzz.com/sight/p0/1802/37/378776742f535d01a3.water.jpg_710x360_d1cfba6f.jpg', '老城隍庙旅游区');
+INSERT INTO `sceneimg` VALUES ('3070', 'http://img1.qunarzz.com/sight/p0/201307/18/585cfef1eeb07ea5c8d65eac.jpg_710x360_0fd16fff.jpg', '老城隍庙旅游区');
+INSERT INTO `sceneimg` VALUES ('3071', 'http://img1.qunarzz.com/sight/p0/201307/18/4a14b4f1909be8afc8d65eac.jpg_710x360_660c9c91.jpg', '老城隍庙旅游区');
+INSERT INTO `sceneimg` VALUES ('3072', 'http://img1.qunarzz.com/sight/p0/201307/18/87ad2bf04fd6d571c8d65eac.jpg_710x360_76f19a45.jpg', '老城隍庙旅游区');
+INSERT INTO `sceneimg` VALUES ('3073', 'http://img1.qunarzz.com/sight/p0/201307/18/ee05e90c97c1b46ec8d65eac.jpg_710x360_9ed2abc6.jpg', '老城隍庙旅游区');
+INSERT INTO `sceneimg` VALUES ('3074', 'http://img1.qunarzz.com/wugc/p221/201204/20/92ce3a498455813e93835fbb.jpg_710x360_38924a27.jpg', '老城隍庙旅游区');
+INSERT INTO `sceneimg` VALUES ('3075', 'http://img1.qunarzz.com/wugc/p25/201204/20/fbcbe1f6b913c5fe93835fbb.jpg_710x360_ec3190da.jpg', '老城隍庙旅游区');
 INSERT INTO `sceneimg` VALUES ('3076', 'http://img1.qunarzz.com/sight/p0/1507/69/d4a91013097adabb9e886a5a6f770a01.water.jpg_710x360_854e9e6a.jpg', '上海历史发展陈列馆');
 INSERT INTO `sceneimg` VALUES ('3077', 'http://img1.qunarzz.com/sight/p0/201307/17/43eb43bea7560ac8c8d65eac.jpg_710x360_721275b2.jpg', '上海历史发展陈列馆');
 INSERT INTO `sceneimg` VALUES ('3078', 'http://img1.qunarzz.com/sight/p0/1507/34/f267e4b7f525db152ee417b4c546a42d.water.jpg_710x360_e4900784.jpg', '上海历史发展陈列馆');
