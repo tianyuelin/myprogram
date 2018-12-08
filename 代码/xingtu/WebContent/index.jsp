@@ -74,8 +74,6 @@
 					<div>
 						<p class="title">${scelist1.sname }</p><!-- 景点名称 -->
 						<p class="description">${scelist1.addr }</p><!-- 景点地址 -->
-						<p class="description">${scelist1.route }</p><!-- 路线 -->
-						<p class="description">${scelist1.ticketPrice }</p><!--票价  -->
 					</div>
 					<a href="#">View more</a>
 				</div>
