@@ -14,7 +14,7 @@
                     <li class="logo">
                 		<img src="${ctx }/img/logo.png">
                     </li>
-                        <li class="col-md-nav"><a href="index.jsp">首页</a></li>
+                        <li class="col-md-nav"><a href="${ctx }/index.jsp">首页</a></li>
                         <li class="col-md-nav"><a href="${ctx }/sence/allsence">景点</a></li>
                         <li class="col-md-nav"><a href="index.jsp">他人攻略</a></li>
                         <li class="col-md-nav"><a href="list.jsp"> 个性定制</a>
@@ -37,7 +37,12 @@
                 <div style="width: 20%;display: inline-block;position: relative;margin: auto;float: right;text-align: right;">
                     <div style="width: 50%;height: 1.25%;position:relative;display: inline-block;">
                  	<img src="${ctx }/img/addpeople.png" style="width: 30%">
+                    <c:if test="${isSigned==flase or isSigned==null }">
                     <span style="font-size: 1em;"><a href="sign.jsp">登录/注册</a></span>
+                    </c:if>
+                    <c:if test="${isSigned==true }">
+                    <span style="font-size: 1em;"><a href="${ctx }/user.jsp">个人空间</a></span>
+                    </c:if>
                    </div>
               </div>
             </div><!-- /.navbar-collapse -->

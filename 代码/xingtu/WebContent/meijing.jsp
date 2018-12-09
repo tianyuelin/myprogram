@@ -57,9 +57,9 @@
                           <figcaption><a href="#" class="fa fa-plus-heart"></a></figcaption>  
                         </figure>
                         <section class="kd-bloginfo">
-                          <h2 class="tiezi_text"><a href="sence/singlesence?id=1">${scene.sname }</a></h2>
+                          <h2 class="tiezi_text"><a href="${ctx }/sence/singlesence?id=${scene.sceneId }">${scene.sname }</a></h2>
                           <ul class="kd-postoption">
-                            <li><a href="#" class="thcolorhover"></a>${scene.address }</li>
+                            <li><a href="#" class="thcolorhover"></a>建议游玩时长：${scene.playtime }</li>
                           </ul>
                           <p>徒步游览  观光游览 </p>
                           <div class="kd-usernetwork">
