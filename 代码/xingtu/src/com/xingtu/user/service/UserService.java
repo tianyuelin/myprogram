@@ -1,9 +1,65 @@
 package com.xingtu.user.service;
 
+import java.util.Date;
+
+import javax.annotation.Resource;
+
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.xingtu.entity.Md5Encode;
+import com.xingtu.entity.Users;
+import com.xingtu.user.dao.UserDao;
+
+@Service
+@Transactional(readOnly=false)  //一定要设置事务提交方式
 public class UserService {
 
-	public UserService() {
-		// TODO Auto-generated constructor stub
+	@Resource
+	private UserDao userDao;
+	
+	//关于注册
+	//在这里面加注册时间，加密码验证,判断各部分信息是否符合格式要求
+	@Transactional(readOnly=false)
+	public String getRegistPerson1(Users users) {
+		try {	
+			//获取注册时间
+			users.setRegisttime(new Date());
+			//将密码加密
+			String passMD5=Md5Encode.getMD5(users.getPassword().toString().getBytes());
+			users.setPassword(passMD5);
+			//判断邮箱是否存在于数据库中
+			Boolean b1= this.userDao.getRegistPerson(users);
+			if(b1==true) {
+				 return "true";
+			}
+			else {
+				String emerror="该邮箱已存在，可直接登录";
+				return emerror;
+			}	   
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+			return "false";
+		}
+	
 	}
+	
+	
+	//关于登录
+	@Transactional(readOnly=true)
+	public Boolean getLoginPerson1(Users users) {
+		try {
+			return this.userDao.getLoginPerson(users);		
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return false;
+		}
+	}
+	
+	
+	
+	
 
 }

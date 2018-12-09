@@ -11,6 +11,9 @@
 <link rel="stylesheet" href="css/sign/matrix-login.css" />
 <link rel="stylesheet" href="css/sign/font-awesome.css" />
 <script type="text/javascript" src="static/login/js/jquery-1.5.1.min.js"></script>
+
+
+
  <style type="text/css">
    body{
    		background-image: url("img/xingtu.jpg");
@@ -62,21 +65,27 @@
 <body>
 <jsp:include page="header.jsp" flush="true"></jsp:include>
 	<div style="width:100%;text-align: center;margin: 0 auto;position: absolute; margin-top: 5%">
-		<!-- 登录 -->
+		<!--登录 -->
 		<div id="windows1">
 		<div id="loginbox" >
-			<form action="" method="post" name="loginForm" id="loginForm">
+			<form action="loginController" method="post" name="loginForm" id="loginForm">
 				<div class="control-group normal_text">
 					<h3>
+					
 						<img src="img/logo.png" alt="Logo" />
+						
 					</h3>
+					<span style="font-size:12px;color:red">${errormessage }</span>
 				</div>
+				
 				<div class="control-group">
 					<div class="controls">
 						<div class="main_input_box">
+						
 							<span class="add-on bg_lg">
+							
 							<i><img height="37" src="img/user.png" /></i>
-							</span><input type="text" name="loginname" id="loginname" value="" placeholder="请输入用户名" />
+							</span><input type="text" name="email" id="loginname" value="" placeholder="请输入邮箱 " />
 						</div>
 					</div>
 				</div>
@@ -101,22 +110,20 @@
 				<div class="form-actions">
 					<div style="width:86%;padding-left:8%;">
 
-						<div style="float: left;padding-top:2px;">
+						<!-- div style="float: left;padding-top:2px;">
 							<i><img src="img/yan.png" /></i>
-						</div>
+						</div>				
 						<div style="float: left;" class="codediv">
-						
-						    
 						<input type="text" name="code" id="code" class="login_code"
 								style="height:16px; padding-top:4px;">
 						</div>   
 						
 						<div style="float: left;">
 							<i><img style="height:22px;" id="codeImg" alt="点击更换" title="点击更换" src="" /></i>
-						</div>
+						</div-->
 						<span class="pull-right" style="padding-right:3%;"><a href="javascript:changepage(1);" class="btn btn-success">注册</a></span>
 						
-						<span class="pull-right"><a onclick="severCheck();" class="flip-link btn btn-info" id="to-recover">登录</a></span>
+						<span class="pull-right"><a onclick="severCheck();" class="flip-link btn btn-info" id="to-recover"><input type="submit" value="登录" style="opacity: 0;">登录</a></span>
 					</div>
 				</div>
 			</form>
@@ -124,10 +131,16 @@
 		</div>
 		</div>
 		
+		
+		
+		
+		
+		
+			
 		<!-- 注册 -->
 		<div id="windows2" style="display: none;">
 		<div id="loginbox">
-			<form action="" method="post" name="loginForm" id="loginForm">
+			<form action="registController" method="post" name="loginForm" id="loginForm">
 				<div class="control-group normal_text">
 					<h3>
 						<img src="img/logo.png" alt="Logo" />
@@ -139,7 +152,7 @@
 						<div class="main_input_box">
 							<span class="add-on bg_lg">
 							<i>用户</i>
-							</span><input type="text" name="USERNAME" id="USERNAME" value="" placeholder="请输入用户名"/>
+							</span><input type="text" name="username" id="USERNAME" value="" placeholder="请输入用户名"/>
 						</div>
 					</div>
 				</div>
@@ -148,7 +161,7 @@
 						<div class="main_input_box">
 							<span class="add-on bg_lg">
 							<i>邮箱</i>
-							</span><input type="text" name="EMAIL" id="EMAIL" value="" placeholder="请输入邮箱" />
+							</span><input type="text" name="email" id="EMAIL" value="" placeholder="请输入邮箱" />
 						</div>
 					</div>
 				</div>
@@ -158,7 +171,7 @@
 						<div class="main_input_box">
 							<span class="add-on bg_ly">
 							<i>密码</i>
-							</span><input type="password" name="PASSWORD" id="PASSWORD" placeholder="请输入密码" class="keypad" keypadMode="full" allowKeyboard="true" value=""/>
+							</span><input type="password" name="password" id="PASSWORD" placeholder="请输入密码" class="keypad" keypadMode="full" allowKeyboard="true" value=""/>
 						</div>
 					</div>
 				</div>
@@ -176,7 +189,7 @@
 				<div class="form-actions">
 					<div style="width:86%;padding-left:8%;">
 
-						<div style="float: left;padding-top:2px;">
+						<!-- div style="float: left;padding-top:2px;">
 							<i><img src="img/yan.png" /></i>
 						</div>
 						<div style="float: left;" class="codediv">
@@ -185,9 +198,11 @@
 						</div>
 						<div style="float: left;">
 							<i><img style="height:22px;" id="zcodeImg" alt="点击更换" title="点击更换" src="" /></i>
-						</div>
+						</div-->
 						<span class="pull-right" style="padding-right:3%;"><a href="javascript:changepage(2);" class="btn btn-success">取消</a></span>
-						<span class="pull-right"><a onclick="register();" class="flip-link btn btn-info" id="to-recover">提交</a></span>
+						<!--  span class="pull-right"><a  class="flip-link btn btn-info" id="to-recover">提交</a></span-->
+						<span class="pull-right"><input onclick="return rcheck()" type="submit" value="提交">   </span>
+												
 					</div>
 				</div>
 			</form>
@@ -399,6 +414,7 @@
 	            time:3
 	        });
 			$("#chkpwd").focus();
+			console.log("false");
 			return false;
 		}
 		if($("#name").val()==""){
@@ -443,50 +459,7 @@
 		return true;
 	}
 	
-	//提交注册
-	function register(){
-		if(rcheck()){
-			var nowtime = date2str(new Date(),"yyyyMMdd");
-			$.ajax({
-				type: "POST",
-				url: 'appSysUser/registerSysUser.do',
-		    	data: {USERNAME:$("#USERNAME").val(),PASSWORD:$("#PASSWORD").val(),NAME:$("#name").val(),EMAIL:$("#EMAIL").val(),rcode:$("#rcode").val(),FKEY:$.md5('USERNAME'+nowtime+',fh,'),tm:new Date().getTime()},
-				dataType:'json',
-				cache: false,
-				success: function(data){
-					if("00" == data.result){
-						$("#windows2").hide();
-						$("#windows1").show();
-						$("#loginbox").tips({
-							side : 1,
-							msg : '注册成功，请登录',
-							bg : '#68B500',
-							time : 3
-						});
-						changeCode1();
-					}else if("04" == data.result){
-						$("#USERNAME").tips({
-							side : 1,
-							msg : "用户名已存在",
-							bg : '#FF5080',
-							time : 15
-						});
-						showfh();
-						$("#USERNAME").focus();
-					}else if("06" == data.result){
-						$("#rcode").tips({
-							side : 1,
-							msg : "验证码输入有误",
-							bg : '#FF5080',
-							time : 15
-						});
-						showfh();
-						$("#rcode").focus();
-					}
-				}
-			});
-		}
-	}
+	
 	
 	//邮箱格式校验
 	function ismail(mail){
