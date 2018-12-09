@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<c:set var="ctx" value="${pageContext.request.contextPath}"/>
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -11,42 +12,42 @@
     <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
     <title>行途</title>
     <!-- Bootstrap -->
-    <link href="css/home/bootstrap.min.css" rel="stylesheet">
-    <link href="css/home/swiper.min.css" rel="stylesheet">
-    <link href="css/home/main.css" rel="stylesheet">
+    <link href="${ctx }/css/home/bootstrap.min.css" rel="stylesheet">
+    <link href="${ctx }/css/home/swiper.min.css" rel="stylesheet">
+    <link href="${ctx }/css/home/main.css" rel="stylesheet">
 </head>
 <body>
-<jsp:include page="header.jsp" flush="true"></jsp:include>
+<%@include file="header.jsp" %>
 <!--*********************** banner start ***************************-->
 <section>
     <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
         <!-- Wrapper for slides -->
         <div class="carousel-inner" role="listbox">
             <div class="item active">
-                <img src="img/b1.jpg" alt="banner">
+                <img src="${ctx }/img/b1.jpg" alt="banner">
                 <div class="carousel-caption" style="text-align: center;">
                     <h2 style="font-size: 45px;margin-top: 0">看攻略好累？来一场定制旅行！</h2>
-                    <p class="banner_text">这里有各地的景色的介绍，有各个旅游发布的攻略和行程日志</p>
+                    <p class="banner_text">这里有各地的景色的介绍，有各个旅游者发布的攻略和行程日志</p>
                     <p class="banner_text">拒绝漫无目的的无聊行程！</p>
                     <p class="banner_text">你可以参考他们的行程和攻略，自行定制属于自己的出行计划，让您的每一次出行，都能够妥当安排</p>
                     <a href="user.jsp"><button class="bubbly-button">定制行程</button></a>
                 </div>
             </div>
             <div class="item">
-                <img src="img/b2.jpg" alt="banner">
+                <img src="${ctx }/img/b2.jpg" alt="banner">
                 <div class="carousel-caption" style="text-align: center;">
                     <h2 style="font-size: 45px;margin-top: 0">看攻略好累？来一场定制旅行！</h2>
-                    <p class="banner_text">这里有各地的景色的介绍，有各个旅游发布的攻略和行程日志</p>
+                    <p class="banner_text">这里有各地的景色的介绍，有各个旅游者发布的攻略和行程日志</p>
                     <p class="banner_text">拒绝漫无目的的无聊行程！</p>
                     <p class="banner_text">你可以参考他们的行程和攻略，自行定制属于自己的出行计划，让您的每一次出行，都能够妥当安排</p>
                     <a href="user.jsp"><button class="bubbly-button">定制行程</button></a>
                 </div>
             </div>
             <div class="item">
-                <img src="img/b3.jpg" alt="banner">
+                <img src="${ctx }/img/b3.jpg" alt="banner">
                 <div class="carousel-caption" style="text-align: center;">
                     <h2 style="font-size: 45px;margin-top: 0;font-family: fantasy;">看攻略好累？来一场定制旅行！</h2>
-                    <p class="banner_text">这里有各地的景色的介绍，有各个旅游发布的攻略和行程日志</p>
+                    <p class="banner_text">这里有各地的景色的介绍，有各个旅游者发布的攻略和行程日志</p>
                     <p class="banner_text">拒绝漫无目的的无聊行程！</p>
                     <p class="banner_text">你可以参考他们的行程和攻略，自行定制属于自己的出行计划，让您的每一次出行，都能够妥当安排</p>
                     <a href="user.jsp"><button class="bubbly-button">定制行程</button></a>
@@ -62,22 +63,20 @@
     </div>
 	<div class="row">
 		<div
-			style="width: 100%; position: static; background-image: url('img/bg.jpg'); margin-bottom: 1%;">
+			style="width: 100%; position: static; background-image: url('${ctx}/img/bg.jpg'); margin-bottom: 1%;">
 			<span style="font-size: 2em;">热门地点</span><span
 				style="margin-left: 80%"><a>更多</a></span>
 		</div>
-		<c:forEach var="scelist1" items="${scelist }">
+		<c:forEach var="scelist" items="${scelist }">
 		<div class="col-md-6 col-lg-4">
 			<div class="category-item effect-1">
-				<img src="img/zhiwuyuan.jpg" alt="img12">
+				<img src="${scelist.img }" alt="img12">
 				<div class="caption">
 					<div>
-						<p class="title">${scelist1.sname }</p><!-- 景点名称 -->
-						<p class="description">${scelist1.addr }</p><!-- 景点地址 -->
-						<p class="description">${scelist1.route }</p><!-- 路线 -->
-						<p class="description">${scelist1.ticketPrice }</p><!--票价  -->
+						<p class="title">${scelist.sname }</p><!-- 景点名称 -->
+						<p class="description">地址：${scelist.address }</p><!-- 景点地址 -->
 					</div>
-					<a href="#">View more</a>
+					<a href="${ctx }/sence/singlesence?id=${scelist.sceneId}">View more</a>
 				</div>
 			</div>
 		</div>
@@ -168,9 +167,9 @@
 <div class="container blue_still">
     <div class="row">
         <div class="col-md-3 col-xs-6">
-            <div class="blue_bg blue_still_box" style="background-image: url('img/bg.jpg');">
+            <div class="blue_bg blue_still_box" style="background-image: url('${ctx}/img/bg.jpg');">
                 <div class="blue_still_img">
-                    <img src="img/shanbei.jpg" alt="">
+                    <img src="${ctx }/img/shanbei.jpg" alt="">
                 </div>
                  <h2 style="font-size: 2em;font-weight: 400">各色小吃</h2>
                 <p style="font-weight: 600">时光将味道烙在了我们的味蕾上，随生而生，永不磨灭</p>
@@ -178,9 +177,9 @@
             </div>
         </div>
         <div class="col-md-3 col-xs-6">
-            <div class="blue_bg blue_still_box" style="background-image: url('img/bg.jpg');">
+            <div class="blue_bg blue_still_box" style="background-image: url('${ctx}/img/bg.jpg');">
                 <div class="blue_still_img">
-                    <img src="img/cha.png" alt="">
+                    <img src="${ctx }/img/cha.png" alt="">
                 </div>
                  <h2 style="font-size: 2em;font-weight: 400">精美茶点</h2>
                 <p style="font-weight: 600">最美的时光，不过午后的是一杯茶，一本书，三两闺蜜，或执手之人，浪漫惬意</p>
@@ -188,9 +187,9 @@
             </div>
         </div>
         <div class="col-md-3 col-xs-6">
-            <div class="blue_bg blue_still_box" style="background-image: url('img/bg.jpg');">
+            <div class="blue_bg blue_still_box" style="background-image: url('${ctx}/img/bg.jpg');">
                 <div class="blue_still_img">
-                    <img src="img/qixing.jpg" alt="">
+                    <img src="${ctx }/img/qixing.jpg" alt="">
                 </div>
                  <h2 style="font-size: 2em;font-weight: 400">周边美景</h2>
                 <p style="font-weight: 600">没有值得分享的感伤爱情故事，唯有讲述此间途经的美景，分享没有男主角的相片。</p>
@@ -198,9 +197,9 @@
             </div>
         </div>
         <div class="col-md-3 col-xs-6">
-            <div class="blue_bg blue_still_box" style="background-image: url('img/bg.jpg');">
+            <div class="blue_bg blue_still_box" style="background-image: url('${ctx}/img/bg.jpg');">
                 <div class="blue_still_img">
-                    <img src="img/motianlun.jpg" alt="">
+                    <img src="${ctx }/img/motianlun.jpg" alt="">
                 </div>
                  <h2 style="font-size: 2em;font-weight: 400">游玩场所</h2>
                 <p style="font-weight: 600">欢快的游乐场，烧脑的密室，恐怖的鬼屋，热闹的演唱会，邀三两好友，一起进入欢乐世界</p>
@@ -222,7 +221,7 @@
                     <div class="swiper-slide">
                         <a href="javascript:;">
                             <div class="blue_img">
-                                <img src="img/type_1.jpg" alt="">
+                                <img src="${ctx }/img/type_1.jpg" alt="">
                             </div>
                             <p>家庭出游</p>
                         </a>
@@ -230,7 +229,7 @@
                     <div class="swiper-slide">
                         <a href="javascript:;">
                             <div class="blue_img">
-                                <img src="img/type_2.jpg" alt="">
+                                <img src="${ctx }/img/type_2.jpg" alt="">
                             </div>
                             <p>个人旅游</p>
                         </a>
@@ -238,7 +237,7 @@
                     <div class="swiper-slide">
                         <a href="javascript:;">
                             <div class="blue_img">
-                                <img src="img/type_3.jpg" alt="">
+                                <img src="${ctx }/img/type_3.jpg" alt="">
                             </div>
                             <p>情侣出游</p>
                         </a>
@@ -246,7 +245,7 @@
                     <div class="swiper-slide">
                         <a href="javascript:;">
                             <div class="blue_img">
-                                <img src="img/type_4.jpg" alt="">
+                                <img src="${ctx }/img/type_4.jpg" alt="">
                             </div>
                             <p>生日聚餐</p>
                         </a>
@@ -254,7 +253,7 @@
                     <div class="swiper-slide">
                         <a href="javascript:;">
                             <div class="blue_img">
-                                <img src="img/type_5.jpg" alt="">
+                                <img src="${ctx }/img/type_5.jpg" alt="">
                             </div>
                             <p>朋友相聚</p>
                         </a>
@@ -262,7 +261,7 @@
                     <div class="swiper-slide">
                         <a href="javascript:;">
                             <div class="blue_img">
-                                <img src="img/type_6.jpg" alt="">
+                                <img src="${ctx }/img/type_6.jpg" alt="">
                             </div>
                             <p>团队团建</p>
                         </a>
@@ -333,11 +332,11 @@
 -->
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="js/home/jquery-1.11.3.min.js"></script>
+<script src="${ctx }/js/home/jquery-1.11.3.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="js/home/bootstrap.min.js"></script>
-<script src="js/home/swiper.min.js"></script>
-<script src="js/home/main.js"></script>
+<script src="${ctx }/js/home/bootstrap.min.js"></script>
+<script src="${ctx }/js/home/swiper.min.js"></script>
+<script src="${ctx }/js/home/main.js"></script>
 <script>
 var animateButton = function(e) {
 

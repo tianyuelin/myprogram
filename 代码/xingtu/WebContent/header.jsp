@@ -12,14 +12,12 @@
                 <div class="blue_nav" style="display: inline-block;">
                     <ul class="nav navbar-nav col-md-12 col-sm-12">
                     <li class="logo">
-                		<img src="img/logo.png">
+                		<img src="${ctx }/img/logo.png">
                     </li>
-                        <li class="col-md-nav"><a href="index.jsp">首页</a></li>
-                        <li class="col-md-nav"><a href="#type">旅行主题</a></li>
-                        
-                        <li class="col-md-nav"><a href="index.jsp">他人攻略</a></li>
-                        <li class="col-md-nav"><a href="list.jsp"> 个性定制</a>
-                        
+                        <li class="col-md-nav"><a href="${ctx }/index/scelist">首页</a></li>
+                        <li class="col-md-nav"><a href="${ctx }/sence/allsence">景点</a></li>
+                        <li class="col-md-nav"><a href="${ctx }/list.jsp">他人攻略</a></li>
+                        <li class="col-md-nav"><a href="${ctx }/user.jsp"> 个性定制</a>
                         <li class="col-md-nav dropdown">
                             <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
                                aria-expanded="false">
@@ -38,11 +36,15 @@
                 </div>
                 <div style="width: 20%;display: inline-block;position: relative;margin: auto;float: right;text-align: right;">
                     <div style="width: 50%;height: 1.25%;position:relative;display: inline-block;">
-                 	<img src="img/addpeople.png" style="width: 30%">
+                 	<img src="${ctx }/img/addpeople.png" style="width: 30%">
+                    <c:if test="${isSigned==flase or isSigned==null }">
                     <span style="font-size: 1em;"><a href="sign.jsp">登录/注册</a></span>
+                    </c:if>
+                    <c:if test="${isSigned==true }">
+                    <span style="font-size: 1em;"><a href="${ctx }/user.jsp">个人空间</a></span>
+                    </c:if>
                    </div>
-              </div>   
-                
+              </div>
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid --> 
     </nav>

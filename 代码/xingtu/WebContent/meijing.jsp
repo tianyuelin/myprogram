@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+     <c:set var="ctx" value="${pageContext.request.contextPath}"/>
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,25 +15,25 @@
     <title>meishi</title>
 
     <!-- Css Folder -->
-    <link href="css/list/bootstrap.css" rel="stylesheet">
-    <link href="css/list/font-awesome.css" rel="stylesheet">
-    <link href="css/list/color.css" rel="stylesheet">
-    <link href="css/list/style.css" rel="stylesheet">
-    <link href="css/list/themetypo.css" rel="stylesheet">
-    <link href="css/home/header.css" rel="stylesheet">
-    <link href="css/home/bootstrap.min.css" rel="stylesheet">
-    <link href="css/home/swiper.min.css" rel="stylesheet">
+    <link href="${ctx }/css/list/bootstrap.css" rel="stylesheet">
+    <link href="${ctx }/css/list/font-awesome.css" rel="stylesheet">
+    <link href="${ctx }/css/list/color.css" rel="stylesheet">
+    <link href="${ctx }/css/list/style.css" rel="stylesheet">
+    <link href="${ctx }/css/list/themetypo.css" rel="stylesheet">
+    <link href="${ctx }/css/home/header.css" rel="stylesheet">
+    <link href="${ctx }/css/home/bootstrap.min.css" rel="stylesheet">
+    <link href="${ctx }/css/home/swiper.min.css" rel="stylesheet">
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
       <script src="http://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="http://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-    <script src="js/home/jquery-1.11.3.min.js"></script>
+    <script src="${ctx }/js/home/jquery-1.11.3.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="js/home/bootstrap.min.js"></script>
-<script src="js/home/swiper.min.js"></script>
-<script src="js/home/main.js"></script>
+<script src="${ctx }/js/home/bootstrap.min.js"></script>
+<script src="${ctx }/js/home/swiper.min.js"></script>
+<script src="${ctx }/js/home/main.js"></script>
   </head>
   <body>
   <jsp:include page="header.jsp" flush="true"></jsp:include>
@@ -48,16 +50,16 @@
                 <div class="kd-section-title"><h3>美景</h3></div>
                 <div class="kd-blog-list kd-bloggrid">
                   <div class="row">
+                    <c:forEach items="${page.list }" var="scene">
                     <article class="col-md-3">
                       <div class="bloginner">
-                        <figure><a href="routepic.jsp"><img src="img/blog1-grid.jpg" alt=""></a>
+                        <figure><a href="/sence/singlesence?id=${scene.sceneId }"><img src="${scene.img }" alt=""></a>
                           <figcaption><a href="#" class="fa fa-plus-heart"></a></figcaption>  
                         </figure>
                         <section class="kd-bloginfo">
-                          <h2 class="tiezi_text"><a href="routepic.jsp">TOP1 景点</a></h2>
+                          <h2 class="tiezi_text"><a href="${ctx }/sence/singlesence?id=${scene.sceneId }">${scene.sname }</a></h2>
                           <ul class="kd-postoption">
-                            <li><a href="#" class="thcolorhover"></a></li>
-                            <li><time datetime="2008-02-14 20:00">| January 15, 2015</time></li>
+                            <li><a href="#" class="thcolorhover"></a>建议游玩时长：${scene.playtime }</li>
                           </ul>
                           <p>徒步游览  观光游览 </p>
                           <div class="kd-usernetwork">
@@ -70,179 +72,15 @@
                         </section>
                       </div>
                     </article>
-                    <article class="col-md-3">
-                      <div class="bloginner">
-                        <figure><a href="#"><img src="img/blog2-grid.jpg" alt=""></a>
-                          <figcaption><a href="#" class="fa fa-plus-heart"></a></figcaption>
-                        </figure>
-                        <section class="kd-bloginfo">
-                          <h2 class="tiezi_text"><a href="#"> 发帖人题目</a></h2>
-                          <ul class="kd-postoption">
-                            <li><a href="#" class="thcolorhover">作者 </a></li>
-                            <li><time datetime="2008-02-14 20:00">| January 15, 2015</time></li>
-                          </ul>
-                          <p>旅游路线</p>
-                          <div class="kd-usernetwork">
-                            <ul class="kd-blogcomment">
-                                <li><a href="#" class="thcolorhover"><i class="fa fa-eye"></i>565</a></li>
-                                <li><a href="#" class="thcolorhover"><i class="fa fa-comments-o"></i> 15</a></li>
-                              <li><a href="#" class="thcolorhover"><i class="fa fa-heart-o"></i> 456</a></li>
-                            </ul>
-                          </div>
-                        </section>
-                      </div>
-                    </article>
-                    <article class="col-md-3">
-                      <div class="bloginner">
-                        <figure><a href="#"><img src="img/blog3-grid.jpg" alt=""></a>
-                          <figcaption><a href="#" class="fa fa-plus-heart"></a></figcaption>
-                        </figure>
-                        <section class="kd-bloginfo">
-                          <h2 class="tiezi_text"><a href="#"> 发帖人题目</a></h2>
-                          <ul class="kd-postoption">
-                            <li><a href="#" class="thcolorhover">作者 </a></li>
-                            <li><time datetime="2008-02-14 20:00">| January 15, 2015</time></li>
-                          </ul>
-                          <p>旅游路线</p>
-                          <div class="kd-usernetwork">
-                            <ul class="kd-blogcomment">
-                                <li><a href="#" class="thcolorhover"><i class="fa fa-eye"></i>565</a></li>
-                                <li><a href="#" class="thcolorhover"><i class="fa fa-comments-o"></i> 15</a></li>
-                              <li><a href="#" class="thcolorhover"><i class="fa fa-heart-o"></i> 456</a></li>
-                            </ul>
-                          </div>
-                        </section>
-                      </div>
-                    </article>
-                    <article class="col-md-3">
-                      <div class="bloginner">
-                        <figure><a href="#"><img src="img/blog4-grid.jpg" alt=""></a>
-                          <figcaption><a href="#" class="fa fa-plus-heart"></a></figcaption>
-                        </figure>
-                        <section class="kd-bloginfo">
-                          <h2 class="tiezi_text"><a href="#">发帖人题目</a></h2>
-                          <ul class="kd-postoption">
-                            <li><a href="#" class="thcolorhover">作者 </a></li>
-                            <li><time datetime="2008-02-14 20:00">| January 15, 2015</time></li>
-                          </ul>
-                          <p>旅游路线</p>
-                          <div class="kd-usernetwork">
-                            <ul class="kd-blogcomment">
-                                <li><a href="#" class="thcolorhover"><i class="fa fa-eye"></i>565</a></li>
-                                <li><a href="#" class="thcolorhover"><i class="fa fa-comments-o"></i> 15</a></li>
-                              <li><a href="#" class="thcolorhover"><i class="fa fa-heart-o"></i> 456</a></li>
-                            </ul>
-                            
-                          </div>
-                        </section>
-                      </div>
-                    </article>
-                   
-                   
-                    <article class="col-md-3">
-                      <div class="bloginner">
-                        <figure><a href="routepic.jsp"><img src="img/blog1-grid.jpg" alt=""></a>
-                          <figcaption><a href="#" class="fa fa-plus-heart"></a></figcaption>  
-                        </figure>
-                        <section class="kd-bloginfo">
-                          <h2 class="tiezi_text"><a href="routepic.jsp">发帖人题目</a></h2>
-                          <ul class="kd-postoption">
-                            <li><a href="#" class="thcolorhover">作者</a></li>
-                            <li><time datetime="2008-02-14 20:00">| January 15, 2015</time></li>
-                          </ul>
-                          <p>旅游路线</p>
-                          <div class="kd-usernetwork">
-                            <ul class="kd-blogcomment">
-                                <li><a href="#" class="thcolorhover"><i class="fa fa-eye"></i>565</a></li>
-                                <li><a href="#" class="thcolorhover"><i class="fa fa-comments-o"></i> 15</a></li>
-                              <li><a href="#" class="thcolorhover"><i class="fa fa-heart-o"></i> 456</a></li>
-
-                             
-                            </ul>
-                          </div>
-                        </section>
-                      </div>
-                    </article>
-                    <article class="col-md-3">
-                      <div class="bloginner">
-                        <figure><a href="#"><img src="img/blog2-grid.jpg" alt=""></a>
-                          <figcaption><a href="#" class="fa fa-plus-heart"></a></figcaption>
-                        </figure>
-                        <section class="kd-bloginfo">
-                          <h2 class="tiezi_text"><a href="#"> 发帖人题目</a></h2>
-                          <ul class="kd-postoption">
-                            <li><a href="#" class="thcolorhover">作者 </a></li>
-                            <li><time datetime="2008-02-14 20:00">| January 15, 2015</time></li>
-                          </ul>
-                          <p>旅游路线</p>
-                          <div class="kd-usernetwork">
-                            <ul class="kd-blogcomment">
-                                <li><a href="#" class="thcolorhover"><i class="fa fa-eye"></i>565</a></li>
-                                <li><a href="#" class="thcolorhover"><i class="fa fa-comments-o"></i> 15</a></li>
-                              <li><a href="#" class="thcolorhover"><i class="fa fa-heart-o"></i> 456</a></li>
-                            </ul>
-                          </div>
-                        </section>
-                      </div>
-                    </article>
-                    <article class="col-md-3">
-                      <div class="bloginner">
-                        <figure><a href="#"><img src="img/blog3-grid.jpg" alt=""></a>
-                          <figcaption><a href="#" class="fa fa-plus-heart"></a></figcaption>
-                        </figure>
-                        <section class="kd-bloginfo">
-                          <h2 class="tiezi_text"><a href="#"> 发帖人题目</a></h2>
-                          <ul class="kd-postoption">
-                            <li><a href="#" class="thcolorhover">作者 </a></li>
-                            <li><time datetime="2008-02-14 20:00">| January 15, 2015</time></li>
-                          </ul>
-                          <p>旅游路线</p>
-                          <div class="kd-usernetwork">
-                            <ul class="kd-blogcomment">
-                                <li><a href="#" class="thcolorhover"><i class="fa fa-eye"></i>565</a></li>
-                                <li><a href="#" class="thcolorhover"><i class="fa fa-comments-o"></i> 15</a></li>
-                              <li><a href="#" class="thcolorhover"><i class="fa fa-heart-o"></i> 456</a></li>
-                            </ul>
-                          </div>
-                        </section>
-                      </div>
-                    </article>
-                    <article class="col-md-3">
-                      <div class="bloginner">
-                        <figure><a href="#"><img src="img/blog4-grid.jpg" alt=""></a>
-                          <figcaption><a href="#" class="fa fa-plus-heart"></a></figcaption>
-                        </figure>
-                        <section class="kd-bloginfo">
-                          <h2 class="tiezi_text"><a href="#">发帖人题目</a></h2>
-                          <ul class="kd-postoption">
-                            <li><a href="#" class="thcolorhover">作者 </a></li>
-                            <li><time datetime="2008-02-14 20:00">| January 15, 2015</time></li>
-                          </ul>
-                          <p>旅游路线</p>
-                          <div class="kd-usernetwork">
-                            <ul class="kd-blogcomment">
-                                <li><a href="#" class="thcolorhover"><i class="fa fa-eye"></i>565</a></li>
-                                <li><a href="#" class="thcolorhover"><i class="fa fa-comments-o"></i> 15</a></li>
-                              <li><a href="#" class="thcolorhover"><i class="fa fa-heart-o"></i> 456</a></li>
-                            </ul>
-                          </div>
-                        </section>
-                      </div>
-                    </article>
-                   
-                   
+               </c:forEach>
                   </div>
                 </div>
                 <div class="pagination-wrap">
                   <div class="pagination">
-                    <a href="#"><i class="fa fa-angle-double-left"></i></a>
-                    <a href="#">1</a>
-                    <a href="#">2</a>
-                    <span>3</span>
-                    <a href="#">4</a>
-                    <a href="#">5</a>
-                    <a href="#">6</a>
-                    <a href="#"><i class="fa fa-angle-double-right"></i></a>
+                    <a href="${ctx }/sence/allsence?pageNum=1">首页</a>
+                    <a href="${ctx }/sence/allsence?pageNum=${page.prePageNum }">上一页</a>
+                    <a href="${ctx }/sence/allsence?pageNum=${page.nextPageNum }">下一页</a>
+                    <a href="${ctx }/sence/allsence?pageNum=${page.totalPageNum }">末页</a>
                   </div>
                 </div>
               </div>
@@ -304,14 +142,14 @@
                         <div class="widget-blogpost">
                           <ul>
                             <li>
-                              <figure><a href="#"><img alt="" src="img/widget1.jpg"></a></figure>
+                              <figure><a href="#"><img alt="" src="${ctx }/img/widget1.jpg"></a></figure>
                               <div class="kd-post-info">
                                 <h6><a href="#">发帖人题目</a></h6>
                                 <time datetime="2008-02-14 20:00">January 15, 2015</time>
                               </div>
                             </li>
                             <li>
-                              <figure><a href="#"><img alt="" src="img/widget1.jpg"></a></figure>
+                              <figure><a href="#"><img alt="" src="${ctx }/img/widget1.jpg"></a></figure>
                               <div class="kd-post-info">
                                 <h6><a href="#">发帖人题目</a></h6>
                                 <time datetime="2008-02-14 20:00">January 15, 2015</time>
