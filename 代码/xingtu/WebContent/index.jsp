@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-	<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-     <c:set var="ctx" value="${pageContext.request.contextPath}"/>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<c:set var="ctx" value="${pageContext.request.contextPath}"/>
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -67,20 +67,18 @@
 			<span style="font-size: 2em;">热门地点</span><span
 				style="margin-left: 80%"><a>更多</a></span>
 		</div>
-		<c:forEach var="scelist1" items="${scelist }">
 		<div class="col-md-6 col-lg-4">
 			<div class="category-item effect-1">
 				<img src="img/zhiwuyuan.jpg" alt="img12">
 				<div class="caption">
 					<div>
-						<p class="title">${scelist1.sname }</p><!-- 景点名称 -->
-						<p class="description">${scelist1.addr }</p><!-- 景点地址 -->
+						<p class="title">${scelist.sname }</p><!-- 景点名称 -->
+						<p class="description">地址：${scelist.address }</p><!-- 景点地址 -->
 					</div>
 					<a href="#">View more</a>
 				</div>
 			</div>
 		</div>
-		</c:forEach>
 
 		<!-- <div class="col-md-6 col-lg-4">
             <div class="category-item effect-1">

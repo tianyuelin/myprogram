@@ -26,4 +26,7 @@ public class SceneService {
 	public List<Scene> findAllScene(int pageNum,int pageSize){
 		return sd.findAllScene(pageNum,pageSize);
 	}
+	public List<Scene> getSceList(){
+		return sd.getSceList();
+	}
 }

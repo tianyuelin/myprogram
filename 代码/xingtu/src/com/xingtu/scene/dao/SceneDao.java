@@ -45,4 +45,13 @@ public class SceneDao{
 		q.setMaxResults(pageSize);
 		return q.list();
 	}
+	/**
+	  *  获取热门6个景点
+	 * @return
+	 */
+	public List<Scene> getSceList(){
+		Session session = sf.getCurrentSession();
+		Query q = session.createQuery("from Scene s where s.sceneId<7");
+		return q.list();
+	}
 }
