@@ -23,8 +23,8 @@ public class SceneDao{
 		s.setRoute(route);
 		String ticketPrice = s.getTicketPrice().replaceAll("\\r\\n", "<br>");
 		s.setTicketPrice(ticketPrice);
-		System.out.println("1"+ticketPrice);
-		System.out.println("secend:"+s.getTicketPrice());
+		//System.out.println("1"+ticketPrice);
+		//System.out.println("secend:"+s.getTicketPrice());
 		String opentime = s.getOpentime().replaceAll("\\r\\n", "<br>");
 		s.setOpentime(opentime);
 		String describee = s.getDescribee().replaceAll("\\r\\n", "<br>");
@@ -37,11 +37,12 @@ public class SceneDao{
 		Query q = session.createQuery("from SceneImgs where pname='"+name+"'");
 		return q.list();
 	}
-	public List<Scene> findAllScene(){
+	public List<Scene> findAllScene(int pageNum,int pageSize){
 		Session session = sf.getCurrentSession();
 		Query q = session.createQuery("from Scene where img is not null");
-		q.setFirstResult(0);
-		q.setMaxResults(8);
+		q.setFirstResult((pageNum-1)*pageSize);
+		System.out.println(pageNum);
+		q.setMaxResults(pageSize);
 		return q.list();
 	}
 }

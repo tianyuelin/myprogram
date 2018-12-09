@@ -50,7 +50,7 @@
                 <div class="kd-section-title"><h3>美景</h3></div>
                 <div class="kd-blog-list kd-bloggrid">
                   <div class="row">
-                    <c:forEach items="${scenes }" var="scene">
+                    <c:forEach items="${page.list }" var="scene">
                     <article class="col-md-3">
                       <div class="bloginner">
                         <figure><a href="/sence/singlesence?id=${scene.sceneId }"><img src="${scene.img }" alt=""></a>
@@ -77,14 +77,10 @@
                 </div>
                 <div class="pagination-wrap">
                   <div class="pagination">
-                    <a href="#"><i class="fa fa-angle-double-left"></i></a>
-                    <a href="#">1</a>
-                    <a href="#">2</a>
-                    <span>3</span>
-                    <a href="#">4</a>
-                    <a href="#">5</a>
-                    <a href="#">6</a>
-                    <a href="#"><i class="fa fa-angle-double-right"></i></a>
+                    <a href="${ctx }/sence/allsence?pageNum=1">首页</a>
+                    <a href="${ctx }/sence/allsence?pageNum=${page.prePageNum }">上一页</a>
+                    <a href="${ctx }/sence/allsence?pageNum=${page.nextPageNum }">下一页</a>
+                    <a href="${ctx }/sence/allsence?pageNum=${page.totalPageNum }">末页</a>
                   </div>
                 </div>
               </div>

@@ -11,42 +11,42 @@
     <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
     <title>行途</title>
     <!-- Bootstrap -->
-    <link href="css/home/bootstrap.min.css" rel="stylesheet">
-    <link href="css/home/swiper.min.css" rel="stylesheet">
-    <link href="css/home/main.css" rel="stylesheet">
+    <link href="${ctx }/css/home/bootstrap.min.css" rel="stylesheet">
+    <link href="${ctx }/css/home/swiper.min.css" rel="stylesheet">
+    <link href="${ctx }/css/home/main.css" rel="stylesheet">
 </head>
 <body>
-<jsp:include page="header.jsp" flush="true"></jsp:include>
+<%@include file="header.jsp" %>
 <!--*********************** banner start ***************************-->
 <section>
     <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
         <!-- Wrapper for slides -->
         <div class="carousel-inner" role="listbox">
             <div class="item active">
-                <img src="img/b1.jpg" alt="banner">
+                <img src="${ctx }/img/b1.jpg" alt="banner">
                 <div class="carousel-caption" style="text-align: center;">
                     <h2 style="font-size: 45px;margin-top: 0">看攻略好累？来一场定制旅行！</h2>
-                    <p class="banner_text">这里有各地的景色的介绍，有各个旅游发布的攻略和行程日志</p>
+                    <p class="banner_text">这里有各地的景色的介绍，有各个旅游者发布的攻略和行程日志</p>
                     <p class="banner_text">拒绝漫无目的的无聊行程！</p>
                     <p class="banner_text">你可以参考他们的行程和攻略，自行定制属于自己的出行计划，让您的每一次出行，都能够妥当安排</p>
                     <a href="user.jsp"><button class="bubbly-button">定制行程</button></a>
                 </div>
             </div>
             <div class="item">
-                <img src="img/b2.jpg" alt="banner">
+                <img src="${ctx }/img/b2.jpg" alt="banner">
                 <div class="carousel-caption" style="text-align: center;">
                     <h2 style="font-size: 45px;margin-top: 0">看攻略好累？来一场定制旅行！</h2>
-                    <p class="banner_text">这里有各地的景色的介绍，有各个旅游发布的攻略和行程日志</p>
+                    <p class="banner_text">这里有各地的景色的介绍，有各个旅游者发布的攻略和行程日志</p>
                     <p class="banner_text">拒绝漫无目的的无聊行程！</p>
                     <p class="banner_text">你可以参考他们的行程和攻略，自行定制属于自己的出行计划，让您的每一次出行，都能够妥当安排</p>
                     <a href="user.jsp"><button class="bubbly-button">定制行程</button></a>
                 </div>
             </div>
             <div class="item">
-                <img src="img/b3.jpg" alt="banner">
+                <img src="${ctx }/img/b3.jpg" alt="banner">
                 <div class="carousel-caption" style="text-align: center;">
                     <h2 style="font-size: 45px;margin-top: 0;font-family: fantasy;">看攻略好累？来一场定制旅行！</h2>
-                    <p class="banner_text">这里有各地的景色的介绍，有各个旅游发布的攻略和行程日志</p>
+                    <p class="banner_text">这里有各地的景色的介绍，有各个旅游者发布的攻略和行程日志</p>
                     <p class="banner_text">拒绝漫无目的的无聊行程！</p>
                     <p class="banner_text">你可以参考他们的行程和攻略，自行定制属于自己的出行计划，让您的每一次出行，都能够妥当安排</p>
                     <a href="user.jsp"><button class="bubbly-button">定制行程</button></a>
@@ -220,7 +220,7 @@
                     <div class="swiper-slide">
                         <a href="javascript:;">
                             <div class="blue_img">
-                                <img src="img/type_1.jpg" alt="">
+                                <img src="${ctx }/img/type_1.jpg" alt="">
                             </div>
                             <p>家庭出游</p>
                         </a>
@@ -228,7 +228,7 @@
                     <div class="swiper-slide">
                         <a href="javascript:;">
                             <div class="blue_img">
-                                <img src="img/type_2.jpg" alt="">
+                                <img src="${ctx }/img/type_2.jpg" alt="">
                             </div>
                             <p>个人旅游</p>
                         </a>
@@ -236,7 +236,7 @@
                     <div class="swiper-slide">
                         <a href="javascript:;">
                             <div class="blue_img">
-                                <img src="img/type_3.jpg" alt="">
+                                <img src="${ctx }/img/type_3.jpg" alt="">
                             </div>
                             <p>情侣出游</p>
                         </a>
@@ -244,7 +244,7 @@
                     <div class="swiper-slide">
                         <a href="javascript:;">
                             <div class="blue_img">
-                                <img src="img/type_4.jpg" alt="">
+                                <img src="${ctx }/img/type_4.jpg" alt="">
                             </div>
                             <p>生日聚餐</p>
                         </a>
@@ -252,7 +252,7 @@
                     <div class="swiper-slide">
                         <a href="javascript:;">
                             <div class="blue_img">
-                                <img src="img/type_5.jpg" alt="">
+                                <img src="${ctx }/img/type_5.jpg" alt="">
                             </div>
                             <p>朋友相聚</p>
                         </a>
@@ -260,7 +260,7 @@
                     <div class="swiper-slide">
                         <a href="javascript:;">
                             <div class="blue_img">
-                                <img src="img/type_6.jpg" alt="">
+                                <img src="${ctx }/img/type_6.jpg" alt="">
                             </div>
                             <p>团队团建</p>
                         </a>
@@ -331,11 +331,11 @@
 -->
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="js/home/jquery-1.11.3.min.js"></script>
+<script src="${ctx }/js/home/jquery-1.11.3.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="js/home/bootstrap.min.js"></script>
-<script src="js/home/swiper.min.js"></script>
-<script src="js/home/main.js"></script>
+<script src="${ctx }/js/home/bootstrap.min.js"></script>
+<script src="${ctx }/js/home/swiper.min.js"></script>
+<script src="${ctx }/js/home/main.js"></script>
 <script>
 var animateButton = function(e) {
 

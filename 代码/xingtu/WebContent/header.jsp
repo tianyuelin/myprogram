@@ -15,8 +15,7 @@
                 		<img src="${ctx }/img/logo.png">
                     </li>
                         <li class="col-md-nav"><a href="index.jsp">首页</a></li>
-                        <li class="col-md-nav"><a href="${ctx }/sence/allsence">美食</a></li>
-                        <li class="col-md-nav"><a href="#type">景点</a></li>
+                        <li class="col-md-nav"><a href="${ctx }/sence/allsence">景点</a></li>
                         <li class="col-md-nav"><a href="index.jsp">他人攻略</a></li>
                         <li class="col-md-nav"><a href="list.jsp"> 个性定制</a>
                         <li class="col-md-nav dropdown">

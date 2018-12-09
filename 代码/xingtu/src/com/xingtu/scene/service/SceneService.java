@@ -23,7 +23,7 @@ public class SceneService {
 	public List<SceneImgs> findSceneimg(String name) {
 		return sd.findSceneImgs(name);
 	}
-	public List<Scene> findAllScene(){
-		return sd.findAllScene();
+	public List<Scene> findAllScene(int pageNum,int pageSize){
+		return sd.findAllScene(pageNum,pageSize);
 	}
 }
