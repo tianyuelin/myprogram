@@ -63,20 +63,20 @@
     </div>
 	<div class="row">
 		<div
-			style="width: 100%; position: static; background-image: url('img/bg.jpg'); margin-bottom: 1%;">
+			style="width: 100%; position: static; background-image: url('${ctx}/img/bg.jpg'); margin-bottom: 1%;">
 			<span style="font-size: 2em;">热门地点</span><span
 				style="margin-left: 80%"><a>更多</a></span>
 		</div>
 		<c:forEach var="scelist" items="${scelist }">
 		<div class="col-md-6 col-lg-4">
 			<div class="category-item effect-1">
-				<img src="img/zhiwuyuan.jpg" alt="img12">
+				<img src="${scelist.img }" alt="img12">
 				<div class="caption">
 					<div>
 						<p class="title">${scelist.sname }</p><!-- 景点名称 -->
 						<p class="description">地址：${scelist.address }</p><!-- 景点地址 -->
 					</div>
-					<a href="#">View more</a>
+					<a href="${ctx }/sence/singlesence?id=${scelist.sceneId}">View more</a>
 				</div>
 			</div>
 		</div>
@@ -167,9 +167,9 @@
 <div class="container blue_still">
     <div class="row">
         <div class="col-md-3 col-xs-6">
-            <div class="blue_bg blue_still_box" style="background-image: url('img/bg.jpg');">
+            <div class="blue_bg blue_still_box" style="background-image: url('${ctx}/img/bg.jpg');">
                 <div class="blue_still_img">
-                    <img src="img/shanbei.jpg" alt="">
+                    <img src="${ctx }/img/shanbei.jpg" alt="">
                 </div>
                  <h2 style="font-size: 2em;font-weight: 400">各色小吃</h2>
                 <p style="font-weight: 600">时光将味道烙在了我们的味蕾上，随生而生，永不磨灭</p>
@@ -177,9 +177,9 @@
             </div>
         </div>
         <div class="col-md-3 col-xs-6">
-            <div class="blue_bg blue_still_box" style="background-image: url('img/bg.jpg');">
+            <div class="blue_bg blue_still_box" style="background-image: url('${ctx}/img/bg.jpg');">
                 <div class="blue_still_img">
-                    <img src="img/cha.png" alt="">
+                    <img src="${ctx }/img/cha.png" alt="">
                 </div>
                  <h2 style="font-size: 2em;font-weight: 400">精美茶点</h2>
                 <p style="font-weight: 600">最美的时光，不过午后的是一杯茶，一本书，三两闺蜜，或执手之人，浪漫惬意</p>
@@ -187,9 +187,9 @@
             </div>
         </div>
         <div class="col-md-3 col-xs-6">
-            <div class="blue_bg blue_still_box" style="background-image: url('img/bg.jpg');">
+            <div class="blue_bg blue_still_box" style="background-image: url('${ctx}/img/bg.jpg');">
                 <div class="blue_still_img">
-                    <img src="img/qixing.jpg" alt="">
+                    <img src="${ctx }/img/qixing.jpg" alt="">
                 </div>
                  <h2 style="font-size: 2em;font-weight: 400">周边美景</h2>
                 <p style="font-weight: 600">没有值得分享的感伤爱情故事，唯有讲述此间途经的美景，分享没有男主角的相片。</p>
@@ -197,9 +197,9 @@
             </div>
         </div>
         <div class="col-md-3 col-xs-6">
-            <div class="blue_bg blue_still_box" style="background-image: url('img/bg.jpg');">
+            <div class="blue_bg blue_still_box" style="background-image: url('${ctx}/img/bg.jpg');">
                 <div class="blue_still_img">
-                    <img src="img/motianlun.jpg" alt="">
+                    <img src="${ctx }/img/motianlun.jpg" alt="">
                 </div>
                  <h2 style="font-size: 2em;font-weight: 400">游玩场所</h2>
                 <p style="font-weight: 600">欢快的游乐场，烧脑的密室，恐怖的鬼屋，热闹的演唱会，邀三两好友，一起进入欢乐世界</p>

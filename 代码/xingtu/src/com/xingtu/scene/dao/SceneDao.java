@@ -41,7 +41,6 @@ public class SceneDao{
 		Session session = sf.getCurrentSession();
 		Query q = session.createQuery("from Scene where img is not null");
 		q.setFirstResult((pageNum-1)*pageSize);
-		System.out.println(pageNum);
 		q.setMaxResults(pageSize);
 		return q.list();
 	}
@@ -51,7 +50,9 @@ public class SceneDao{
 	 */
 	public List<Scene> getSceList(){
 		Session session = sf.getCurrentSession();
-		Query q = session.createQuery("from Scene s where s.sceneId<7");
+		Query q = session.createQuery("from Scene where img is not null");
+		q.setFirstResult(0);
+		q.setMaxResults(6);
 		return q.list();
 	}
 }

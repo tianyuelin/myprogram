@@ -1,5 +1,7 @@
 ﻿<%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
+    <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+     <c:set var="ctx" value="${pageContext.request.contextPath}"/>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -25,28 +27,28 @@
 		<li class="visible">
 			<div>
 				<h1 class="text-1">新发现</h1><br>
-			    <a href="index.jsp" class="text-uppercase header-btn">Let's Go Now</a>
+			    <a href="${ctx }/index/scelist" class="text-uppercase header-btn">Let's Go Now</a>
 			</div>
 		</li>
 			
 		<li>
 			<div>
 				<h1 class="text-1">新美食</h1><br>
-				<a href="index.jsp" class="text-uppercase header-btn">Let's Go Now</a>
+				<a href="${ctx }/index/scelist" class="text-uppercase header-btn">Let's Go Now</a>
 			</div>
 		</li>
 	
 		<li>
 			<div>
 				<h1 class="text-1">新乐趣</h1><br>
-				<a href="index.jsp" class="text-uppercase header-btn">Let's Go Now</a>
+				<a href="${ctx }/index/scelist" class="text-uppercase header-btn">Let's Go Now</a>
 			</div>
 		</li>
 	
 		<li>
 			<div>
 				<h1 class="text-1">新大陆</h1><br>
-				<a href="index.jsp" class="text-uppercase header-btn">Let's Go Now</a>
+				<a href="${ctx }/index/scelist" class="text-uppercase header-btn">Let's Go Now</a>
 			</div>
 		</li>
 	</ul> <!-- .cd-slider -->

@@ -42,11 +42,5 @@ public class SceneController {
 		request.setAttribute("page", p);
 		return "meijing";
 	}
-	@RequestMapping(value="/scelist",method=RequestMethod.GET)
-	public String index(HttpServletRequest request) {
-		/*获取热门八景点*/
-		List<Scene> list1=ss.getSceList();
-		request.setAttribute("scelist", list1);
-		return "index";
-	}
+	
 }
