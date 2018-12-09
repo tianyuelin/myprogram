@@ -67,6 +67,7 @@
 			<span style="font-size: 2em;">热门地点</span><span
 				style="margin-left: 80%"><a>更多</a></span>
 		</div>
+		<c:forEach var="scelist" items="${scelist }">
 		<div class="col-md-6 col-lg-4">
 			<div class="category-item effect-1">
 				<img src="img/zhiwuyuan.jpg" alt="img12">
@@ -79,6 +80,7 @@
 				</div>
 			</div>
 		</div>
+		</c:forEach>
 
 		<!-- <div class="col-md-6 col-lg-4">
             <div class="category-item effect-1">
