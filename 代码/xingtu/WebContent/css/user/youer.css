@@ -108,9 +108,15 @@
 	float:left;
 	width:257px;
 	height:50px;
-	background-color:#ffffff;
 	padding-top:15px;
 }
+.re a:active{
+	background:#ffffff;
+}
+.re a:visited{
+	background:#ffffff;
+}
+
 .shou{
 	float:left;
 	width:257px;

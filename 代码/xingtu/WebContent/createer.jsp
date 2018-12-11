@@ -1,17 +1,19 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<c:set var="ctx" value="${pageContext.request.contextPath}"/>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" href="css/user/youer.css">
-<link href="css/home/header.css" rel="stylesheet">
-<link href="css/home/bootstrap.min.css" rel="stylesheet">
-<script src="js/home/jquery-1.11.3.min.js"></script>
-<script src="js/home/bootstrap.min.js"></script>
-<script src="js/home/swiper.min.js"></script>
-<script src="js/home/main.js"></script>
+<link rel="stylesheet" href="${ctx }/css/user/youer.css">
+<link href="${ctx }/css/home/header.css" rel="stylesheet">
+<link href="${ctx }/css/home/bootstrap.min.css" rel="stylesheet">
+<script src="${ctx }/js/home/jquery-1.11.3.min.js"></script>
+<script src="${ctx }/js/home/bootstrap.min.js"></script>
+<script src="${ctx }/js/home/swiper.min.js"></script>
+<script src="${ctx }/js/home/main.js"></script>
 </head>
 <body>
 <jsp:include page="header.jsp" flush="true"></jsp:include>
@@ -27,7 +29,7 @@
         <div class="bj">编辑</div>
         <div class="sj">石家庄</div>
         <div class="tj">添加城市</div>
-        <div class="xian1"><img src="img/di1.jpg">
+        <div class="xian1"><img src="${ctx }/img/di1.jpg">
              <div class="di1">01&nbsp;&nbsp;&nbsp;&nbsp;空中花园</div>
              <p class="pj1">地址：石家庄桥东区石市翟营南大街</p>
              <a href="#" class="ck">查看周边</a>
@@ -49,21 +51,21 @@
                    </form>
                </div>
                <div class="jing1">
-                   <div class="jd1"><img src="img/c9.jpg"></div>
+                   <div class="jd1"><img src="${ctx }/img/c9.jpg"></div>
                    <div class="jie1">空中花园</div>
                    <div class="biao1">标签：景观台</div>
                    <div class="ping1">评论（300+）</div>
                    <div class="jia1" onclick="add()">加入编辑</div>
                </div>
                <div class="jing2">
-                   <div class="jd2"><img src="img/c2.jpg"></div>
+                   <div class="jd2"><img src="${ctx }/img/c2.jpg"></div>
                    <div class="jie2">正定古城墙</div>
                    <div class="biao2">标签：遗址</div>
                    <div class="ping2">评论（280+）</div>
                    <div class="jia2" onclick="add()">加入编辑</div>
                </div>
                <div class="jing3">
-                   <div class="jd3"><img src="img/c1.jpg"></div>
+                   <div class="jd3"><img src="${ctx }/img/c1.jpg"></div>
                    <div class="jie3">抱犊寨</div>
                    <div class="biao3">标签：山峦</div>
                    <div class="ping3">评论（280+）</div>

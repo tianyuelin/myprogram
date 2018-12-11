@@ -1,17 +1,22 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+     <c:set var="ctx" value="${pageContext.request.contextPath}"/>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
+<meta name="renderer" content="webkit">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Insert title here</title>
-<link href="css/home/header.css" rel="stylesheet">
-<link href="css/home/bootstrap.min.css" rel="stylesheet">
-<link rel="stylesheet" href="css/user/createxc.css">
-<script src="js/home/jquery-1.11.3.min.js"></script>
-<script src="js/home/bootstrap.min.js"></script>
-<script src="js/home/swiper.min.js"></script>
-<script src="js/home/main.js"></script>
+<link href="${ctx }/css/user/createxc.css" rel="stylesheet">
+<link href="${ctx }/css/home/header.css" rel="stylesheet">
+<link href="${ctx }/css/home/bootstrap.min.css" rel="stylesheet">
+<script src="${ctx }/js/home/jquery-1.11.3.min.js"></script>
+<script src="${ctx }/js/home/bootstrap.min.js"></script>
+<script src="${ctx }/js/home/swiper.min.js"></script>
+<script src="${ctx }/js/home/main.js"></script>
 </head>
 <body>
 <jsp:include page="header.jsp" flush="true"></jsp:include>
@@ -22,7 +27,7 @@
 			<div class="tianjia"><input type="text" value="+手动添加行程"></div>
 			<div class="bian">
 				<div class="bj">
-					<a href="createer.jsp">开始编辑</a>
+					<a href="${ctx }/journey/journeylist">开始编辑</a>
 				</div>
 			</div>
 		</div>
@@ -37,42 +42,12 @@
 				</div>
 			</div>
 			<div class="jd9">
+			<c:forEach var="citylist" items="${citylist }">
 				<div class="dian1">
-					<img src="img/c1.jpg" onclick="add()">
-					<div class="ming1">抱犊寨</div>
+					<img src="${citylist.img }" onclick="add()">
+					<div class="ming1">${citylist.city }</div>
 				</div>
-				<div class="dian2">
-					<img src="img/c2.jpg" onclick="add()">
-					<div class="ming2">正定古城墙</div>
-				</div>
-				<div class="dian3">
-					<img src="img/c3.jpg" onclick="add()">
-					<div class="ming3">河北博物馆</div>
-				</div>
-				<div class="dian4" onclick="add()">
-					<img src="img/c4.jpg">
-					<div class="ming4">赵云庙</div>
-				</div>
-				<div class="dian5" onclick="add()">
-					<img src="img/c5.jpg">
-					<div class="ming5">赵州桥</div>
-				</div>
-				<div class="dian6" onclick="add()">
-					<img src="img/c6.jpg">
-					<div class="ming5">开元寺</div>
-				</div>
-				<div class="dian7" onclick="add()">
-					<img src="img/c7.jpg">
-					<div class="ming7">荣国府</div>
-				</div>
-				<div class="dian8" onclick="add()">
-					<img src="img/c8.jpg">
-					<div class="ming8">柏林禅寺</div>
-				</div>
-				<div class="dian9" onclick="add()">
-					<img src="img/c9.jpg">
-					<div class="ming9">空中花园</div>
-				</div>
+			</c:forEach>
 			</div>
 		</div>
 	</div>
