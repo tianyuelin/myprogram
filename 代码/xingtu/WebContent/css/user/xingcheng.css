@@ -28,7 +28,6 @@
 	width: 65%;
 	margin-left: 26%;
 	margin-top:10px;
-	height: 600px;
 }
 .title_text{
 	width: 50%;
@@ -44,6 +43,10 @@
 	height:50px;
 	font-size:35px;
 	width: 80%;
+	color: black;
+}
+input:focus{
+	border-color: black !important;
 }
 #add_f_title:hover{
 	color: #d79166;
@@ -54,6 +57,10 @@
 #add_img{
 	margin: 10px;
 }
+#delete{
+	margin: 10px;
+}
+
 #add_img:hover{
 	color: #d79166;
 }
@@ -65,7 +72,7 @@
 	width: 80%;
 	border: 1px #eee solid;
 }
-.tcp_content{
+textarea{
 	border: none;
 	width: 90%;
 }
@@ -95,4 +102,6 @@
     opacity: 0;
     -ms-filter: 'alpha(opacity=0)';
 }
-
+#delete:hover{
+	color: #d26900
+}

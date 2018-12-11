@@ -1,13 +1,16 @@
 package com.xingtu.entity;
 
 import java.util.Date;
+import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 /**
@@ -21,8 +24,9 @@ public class Strategy {
 	private Users user;
 	private Date stime;//用户设定的出行时间
 	private String title;//攻略标题
-	private String Content;//内容
 	private String tag;//标签
+	private String img;//图片
+	private List<StrategyDiv> sd;
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	public int getsId() {
@@ -51,17 +55,25 @@ public class Strategy {
 	public void setTitle(String title) {
 		this.title = title;
 	}
-	public String getContent() {
-		return Content;
-	}
-	public void setContent(String content) {
-		Content = content;
-	}
 	public String getTag() {
 		return tag;
 	}
 	public void setTag(String tag) {
 		this.tag = tag;
+	}
+	public String getImg() {
+		return img;
+	}
+	public void setImg(String img) {
+		this.img = img;
+	}
+	@OneToMany(mappedBy="strategy",targetEntity=StrategyDiv.class,
+			cascade= {CascadeType.ALL})
+	public List<StrategyDiv> getSd() {
+		return sd;
+	}
+	public void setSd(List<StrategyDiv> sd) {
+		this.sd = sd;
 	}
 	
 }
