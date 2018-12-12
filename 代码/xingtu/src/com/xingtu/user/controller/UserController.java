@@ -27,6 +27,7 @@ public class UserController {
 		if(users.getPassword().equals(chkpwd) && !mymes.equals("该邮箱已存在，可直接登录")) {
 			Boolean issigned=true;
 			request.getSession().setAttribute("isSigned",issigned);//定义一个证明已登录的接口
+			request.getSession().setAttribute("currentUser", users);//将当前使用用户存入session中
 			return "index";
 		}else {
 			request.setAttribute("errormessage",mymes);

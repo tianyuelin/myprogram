@@ -20,20 +20,29 @@
 <script type="text/javascript" src="js/user/jquery.min.js"></script>
 <script type="text/javascript" src="js/user/up.js"></script>
 
-<style>
+<style type="text/css">
     .topdiv{
-        font-size:12px;
-        font-family:'微软雅黑';
-        margin-left:150px;
-        margin-top:25px;
+        width:100%;
+        font-family:'microsoft yahei'; 
+        font-size:14px;
     }
     
-    .secondiv{
-        width:730px;
-        height:120px;
-        border:1px solid #C0C0C0;
+    .seconddiv{
+        width:480px;
+        height:155px;
+        background-color:white;
+        margin-left:150px;
+        margin-top:20px;
+        float:left;
+        border:1px solid #f7f7f7;
+       
+  
     }
+   
 </style>
+
+
+
 
 
 
@@ -95,36 +104,37 @@
 	</div>
 	
 	
-	<!-- 关于私信的内容 -->
+	
+	<!-- 在此处写我的关注的页面 -->
 	<div class="topdiv">
-	      <div style="margin-bottom: 20px;">我的私信(1)</div>
-	      
-	      <a href="#">
-	          <div class="secondiv">
-	              <!-- 左边的div -->
-	              <div style="float:left">
-	                  <div style="float:left;width:480px;">
-	                      <div style="float:left;margin-left:30px;margin-top:28px;">
-	                           <img src="img/icon11.png"/>  
-	                      </div>
-	                  <div style="float:left;margin-left:20px;">
-	                      <div style="margin-top:25px;">zkhu9746</div>
-	                      <div style="color:gray;margin-top:15px;">这里是最后一条聊天信息</div>
-	                  </div>
-	                  </div>
-	             </div>
-	             <!-- 右边的div -->
-	             <div style="float:left;margin-left:150px;margin-top:25px;">
-	                   <div style="color:black;">今天8:30</div>
-	                   <div style="margin-left:25px;margin-top:40px">回复</div>
-	             </div>
-
+	    <div style="padding-top:50px;margin-bottom:20px;">
+	           <span style="margin-left:150px;margin-right:20px;"><a href="fellow.jsp" style="color:black">我的关注</a></span>     <span><a href="fans.jsp">我的粉丝</a></span>
+	    </div>
+	    
+	    <!-- 关注者1 -->
+	    <div class="seconddiv">
+	        <div style="float:left;width:480px;">
+	          <div style="float:left;margin-left:20px;margin-top:25px;">
+	            <img src="img/icon11.png"/>  
 	          </div>
-	      </a>
+	          <div style="float:left;margin-left:20px;">
+	            <div style="margin-top:25px;">zkhu9746</div>
+	            <div style="color:gray;margin-top:10px;">游记&nbsp;3  &nbsp;&nbsp;&nbsp;  行程&nbsp;2  &nbsp;&nbsp;&nbsp; 评论&nbsp;2 &nbsp;&nbsp;&nbsp;  关注&nbsp;2   &nbsp;&nbsp;&nbsp; 粉丝&nbsp;2</div>
+	          </div>
+	        </div>      
+	        <br/>
+	        <div style="float:left;margin-left:200px;margin-top:17px;">
+	            <a href="sixin.jsp"><input style="opacity: 0.9;background-color:white;border:1px solid gray;width:60px;height:30px;" type="button" value="私信"/></a>
+	        </div>   
+	    </div>
+	    
+	</div>   
 	
-	</div>
 	
-
+	
+	
+	
+	
 	<div style="float:left;text-align:center;font-family:'microsoft yahei'; font-size:14px;margin-left:46%;margin-top:5%;margin-bottom:5%">
 	    <a href="#">首页</a> 
 	    <a href="#">上一页</a>
@@ -134,7 +144,6 @@
 	
 
 	<jsp:include page="footer.jsp" flush="true"></jsp:include>
-	
 		<script src="js/user/jquery.min.js"></script>
 		<script src="js/user/upload.js"></script>
 		<script src="js/user/demo.js"></script>
