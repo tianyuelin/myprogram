@@ -7,14 +7,14 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>QTL的空间</title>
-<link href="css/user/myuse.css" rel="stylesheet">
-<link href="css/user/myhead.css" rel="stylesheet">
-<link href="css/home/header.css" rel="stylesheet">
-<link href="css/home/bootstrap.min.css" rel="stylesheet">
-<script src="js/home/jquery-1.11.3.min.js"></script>
-<script src="js/home/bootstrap.min.js"></script>
-<script src="js/home/swiper.min.js"></script>
-<script src="js/home/main.js"></script>
+<link href="${ctx }/css/user/myuse.css" rel="stylesheet">
+<link href="${ctx }/css/user/myhead.css" rel="stylesheet">
+<link href="${ctx }/css/home/header.css" rel="stylesheet">
+<link href="${ctx }/css/home/bootstrap.min.css" rel="stylesheet">
+<script src="${ctx }/js/home/jquery-1.11.3.min.js"></script>
+<script src="${ctx }/js/home/bootstrap.min.js"></script>
+<script src="${ctx }/js/home/swiper.min.js"></script>
+<script src="${ctx }/js/home/main.js"></script>
 </head>
 <body>
 <jsp:include page="header.jsp" flush="true"></jsp:include>
@@ -23,13 +23,11 @@
 			<div class="user-info">
 				<dt class="flpic">
 					<img
-						src="img/tou2.jpg" />
+						src="${ctx }/img/tou2.jpg" />
 				</dt><!-- 个人头像 -->
 				<dd class="flintro">
 					<h3 class="intro-title">
-						<span class="name" title="QTL">QTL</span><span class="score"><a
-							target="_blank"
-							href="#">100积分</a></span>
+						<span class="name" title="QTL">${user.username }</span>
 					</h3>
 					<div class="intro-body">
 						<form action="">
@@ -40,12 +38,12 @@
 			</div>
 			<div class="fruser-fans">
 				<div class="fz">
-					<div class="shu">0</div>
+					<div class="shu">${followedcount }</div>
 					<div class="guzh">关注</div>
 				</div>
 				<div class="hz">|</div>
 				<div class="fy">
-					<div>0</div>
+					<div>${funscount }</div>
 					<div>粉丝</div>
 				</div>
 			</div>
@@ -67,7 +65,7 @@
 					href="${ctx }/journey/citylist"
 					data-beacon="letter">创建行程</a></li>
 				<li class="item"><a
-					href="createyouji.jsp"
+					href="${ctx }/strategy/create"
 					data-beacon="letter">创建攻略</a></li>
 			</ul>
 		</div>
@@ -106,22 +104,22 @@
 				          <div class="gol1">  
 				              <div class="wgl1">我正在写攻略</div>
 				              <div class="glbt1">石家庄一日游</div>
-				              <div class="tpic1"><img src="img/bjgl2.png"></img></div>
+				              <div class="tpic1"><img src="${ctx }/img/bjgl2.png"></img></div>
 				          </div>
 				          <div class="gol2">  
 				              <div class="wgl2">我创建了行程计划</div>
 				              <div class="glbt2">石家庄两日游</div>
-				              <div class="tpic2"><img src="img/bjgl2.png"></img></div>
+				              <div class="tpic2"><img src="${ctx }/img/bjgl2.png"></img></div>
 				          </div>
 				    </div>
 					<div id="mysc">
 						<div class="zdsc">我的收藏</div>
 						<div class="sphoto1">
 							<div class="sc1">
-								<img src="img/sc1.jpg">
+								<img src="${ctx }/img/sc1.jpg">
 							</div>
 							<div class="sz1">
-								<img src="img/tou5.jpg">
+								<img src="${ctx }/img/tou5.jpg">
 									<div>
 										<a href="#">快过年了，旅行不可以放下，南极的风景。。。</a>
 									</div>
@@ -131,10 +129,10 @@
 						</div>
 						<div class="sphoto2">
 							<div class="sc2">
-								<img src="img/sc2.jpg">
+								<img src="${ctx }/img/sc2.jpg">
 							</div>
 							<div class="sz2">
-								<img src="img/tou8.jpg">
+								<img src="${ctx }/img/tou8.jpg">
 									<div>
 										<a href="#">最浪漫的三亚旅游攻略</a>
 									</div>
@@ -144,10 +142,10 @@
 						</div>
 						<div class="sphoto3">
 							<div class="sc3">
-								<img src="img/sc3.jpg">
+								<img src="${ctx }/img/sc3.jpg">
 							</div>
 							<div class="sz3">
-								<img src="img/tou7.jpg">
+								<img src="${ctx }/img/tou7.jpg">
 									<div>
 										<a href="#">严冬里北京最火爆的烤肉</a>
 									</div>
@@ -161,7 +159,7 @@
 							<li class="myitem"><dl class="fans-info clrfix">
 									<dt class="pic fl">
 										<a href="//travel.qunar.com/space/1837996@qunar"
-											target="_blank"><img src="img/tou5.jpg" /></a>
+											target="_blank"><img src="${ctx }/img/tou5.jpg" /></a>
 									</dt>
 									<dd class="intro fr">
 										<h3 class="name">
@@ -184,7 +182,7 @@
 							<li class="myitem"><dl class="fans-info clrfix">
 									<dt class="pic fl">
 										<a href="//travel.qunar.com/space/298229@qunar"
-											target="_blank"><img src="img/tou6.jpg" /></a>
+											target="_blank"><img src="${ctx }/img/tou6.jpg" /></a>
 									</dt>
 									<dd class="intro fr">
 										<h3 class="name">
@@ -208,7 +206,7 @@
 							<li class="myitem"><dl class="fans-info clrfix">
 									<dt class="pic fl">
 										<a href="//travel.qunar.com/space/152966678@qunar"
-											target="_blank"><img src="img/tou8.jpg" /></a>
+											target="_blank"><img src="${ctx }/img/tou8.jpg" /></a>
 									</dt>
 									<dd class="intro fr">
 										<h3 class="name">
@@ -233,7 +231,7 @@
 							<li class="myitem"><dl class="fans-info clrfix">
 									<dt class="pic fl">
 										<a href="//travel.qunar.com/space/123265252@qunar"
-											target="_blank"><img src="img/tou7.jpg" /></a>
+											target="_blank"><img src="${ctx }/img/tou7.jpg" /></a>
 									</dt>
 									<dd class="intro fr">
 										<h3 class="name">

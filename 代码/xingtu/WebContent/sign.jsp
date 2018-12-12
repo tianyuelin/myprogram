@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+     <c:set var="ctx" value="${pageContext.request.contextPath}"/>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,16 +9,16 @@
 <title>登录注册页</title>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<link rel="stylesheet" href="css/sign/bootstrap.min.css" />
-<link rel="stylesheet" href="css/sign/matrix-login.css" />
-<link rel="stylesheet" href="css/sign/font-awesome.css" />
-<script type="text/javascript" src="static/login/js/jquery-1.5.1.min.js"></script>
+<link rel="stylesheet" href="${ctx }/css/sign/bootstrap.min.css" />
+<link rel="stylesheet" href="${ctx }/css/sign/matrix-login.css" />
+<link rel="stylesheet" href="${ctx }/css/sign/font-awesome.css" />
+<script type="text/javascript" src="${ctx }/static/login/js/jquery-1.5.1.min.js"></script>
 
 
 
  <style type="text/css">
    body{
-   		background-image: url("img/xingtu.jpg");
+   		background-image: url("${ctx }/img/xingtu.jpg");
     }
       .cavs{
     	z-index:1;
@@ -68,11 +70,11 @@
 		<!--登录 -->
 		<div id="windows1">
 		<div id="loginbox" >
-			<form action="loginController" method="post" name="loginForm" id="loginForm">
+			<form action="${ctx }/user/loginController" method="post" name="loginForm" id="loginForm">
 				<div class="control-group normal_text">
 					<h3>
 					
-						<img src="img/logo.png" alt="Logo" />
+						<img src="${ctx }/img/logo.png" alt="Logo" />
 						
 					</h3>
 					<span style="font-size:12px;color:red">${errormessage }</span>
@@ -84,7 +86,7 @@
 						
 							<span class="add-on bg_lg">
 							
-							<i><img height="37" src="img/user.png" /></i>
+							<i><img height="37" src="${ctx }/img/user.png" /></i>
 							</span><input type="text" name="email" id="loginname" value="" placeholder="请输入邮箱 " />
 						</div>
 					</div>
@@ -93,7 +95,7 @@
 					<div class="controls">
 						<div class="main_input_box">
 							<span class="add-on bg_ly">
-							<i><img height="37" src="img/suo.png" /></i>
+							<i><img height="37" src="${ctx }/img/suo.png" /></i>
 							</span><input type="password" name="password" id="password" placeholder="请输入密码" class="keypad" keypadMode="full" allowKeyboard="true" value=""/>
 						</div>
 					</div>
@@ -140,10 +142,10 @@
 		<!-- 注册 -->
 		<div id="windows2" style="display: none;">
 		<div id="loginbox">
-			<form action="registController" method="post" name="loginForm" id="loginForm">
+			<form action="${ctx }/user/registController" method="post" name="loginForm" id="loginForm">
 				<div class="control-group normal_text">
 					<h3>
-						<img src="img/logo.png" alt="Logo" />
+						<img src="${ctx }/img/logo.png" alt="Logo" />
 					</h3>
 				</div>
 				
@@ -467,10 +469,10 @@
 	}
 	//js  日期格式
 	</script>
-	<script src="js/sign/bootstrap.min.js"></script>
-	<script src="js/sign/jquery-1.7.2.js"></script>
-	<script type="text/javascript" src="js/sign/jQuery.md5.js"></script>
-	<script type="text/javascript" src="js/sign/jquery.tips.js"></script>
+	<script src="${ctx }/js/sign/bootstrap.min.js"></script>
+	<script src="${ctx }/js/sign/jquery-1.7.2.js"></script>
+	<script type="text/javascript" src="${ctx }/js/sign/jQuery.md5.js"></script>
+	<script type="text/javascript" src="${ctx }/js/sign/jquery.tips.js"></script>
 </body>
 
 </html>

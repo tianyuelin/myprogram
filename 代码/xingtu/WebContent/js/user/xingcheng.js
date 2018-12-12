@@ -1,32 +1,32 @@
 var count=0;
 function jia() {
 	var goimg = document.getElementById('jia1');
-	goimg.setAttribute("src","img/icon/jiaed.png");
+	goimg.setAttribute("src","../img/icon/jiaed.png");
 }
 function qjia() {
 	var goimg = document.getElementById('jia1');
-	goimg.setAttribute("src","img/icon/jia.png");
+	goimg.setAttribute("src","../img/icon/jia.png");
 }
 function jia2() {
 	var goimg = document.getElementById('jia2');
-	goimg.setAttribute("src","img/icon/jiaed.png");
+	goimg.setAttribute("src","../img/icon/jiaed.png");
 }
 function qjia2() {
 	var goimg = document.getElementById('jia2');
-	goimg.setAttribute("src","img/icon/jia.png");
+	goimg.setAttribute("src","../img/icon/jia.png");
 }
 function deleteed() {
 	var goimg = document.getElementById('deleted');
-	goimg.setAttribute("src","img/icon/deleted.png");
+	goimg.setAttribute("src","../img/icon/deleted.png");
 }
 function qdeeted() {
 	var goimg = document.getElementById('deleted');
-	goimg.setAttribute("src","img/icon/delete.png");
+	goimg.setAttribute("src","../img/icon/delete.png");
 }
 $('#add_f_title').click(function(){
 	count++;
-	$('#xingcheng').append('<div id="part'+count+'"><div class="ltitle"></div><input type="text" class="f_title" placeholder="NewTitle" onchange="changetitle()" id="title'+count+'"><div class="context'+count+'"><div class="didian"><img src="img/icon/dizhi.png"><input class="address" type="text" placeholder="添加地点" id="didian'+count+'" onchange="changeaddress()"></div><div class="neirong"><p id="pl_tcp'+count+'">记录下这段旅途中那些美好的点点滴滴吧~</p><textarea id="tcp_content'+count+'" maxlength="2000" onchange="this.value=this.value.substring(0,2000)"onkeydown="this.value=this.value.substring(0,2000)" onkeyup="this.value=this.value.substring(0,2000)"></textarea><span class="t_h"><i>0</i>/2000</span><input type="file"  name="file" id="doc'+count+'" multiple="multiple" onchange="javascript:setImagePreviews();" accept="image/*" /><div id="dd'+count+'"></div></div></div></div>');
-	$("#gailan").append('<div id="g'+count+'"><span id="ltitle'+count+'" class="lt">NewTitle</span><br><span>地点：</span><span id="dizhi'+count+'" class="dz">add'+count+'</span><br></div>');
+	$('#xingcheng').append('<div id="part'+count+'"><div class="ltitle"></div><input type="text" class="f_title" placeholder="NewTitle" onchange="changetitle()" id="title'+count+'"><div class="context'+count+'"><div class="didian"><img src="../img/icon/dizhi.png"><input class="address" type="text" placeholder="添加地点" id="didian'+count+'" onchange="changeaddress()"></div><div class="neirong"><p id="pl_tcp'+count+'">记录下这段旅途中那些美好的点点滴滴吧~</p><textarea id="tcp_content'+count+'" maxlength="2000" onchange="this.value=this.value.substring(0,2000)"onkeydown="this.value=this.value.substring(0,2000)" onkeyup="this.value=this.value.substring(0,2000)"></textarea><span class="t_h"><i>0</i>/2000</span><input type="file"  name="file" id="doc'+count+'" multiple="multiple" onchange="javascript:setImagePreviews();" accept="image/*" /><div id="dd'+count+'"></div></div></div></div>');
+	$("#gailan").append('<div id="g'+count+'"><span>T：</span><span id="ltitle'+count+'" class="lt">NewTitle</span><br><span>地点：</span><span id="dizhi'+count+'" class="dz">add'+count+'</span><br></div>');
 });
 $("#delete").click(function(){
 	if(count!=0){

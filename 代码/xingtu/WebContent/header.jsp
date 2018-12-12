@@ -41,7 +41,7 @@
                     <span style="font-size: 1em;"><a href="sign.jsp">登录/注册</a></span>
                     </c:if>
                     <c:if test="${isSigned==true }">
-                    <span style="font-size: 1em;"><a href="${ctx }/user.jsp">个人空间</a></span>
+                    <span style="font-size: 1em;"><a href="${ctx }/user/usercenter">个人空间</a></span>
                     </c:if>
                    </div>
               </div>

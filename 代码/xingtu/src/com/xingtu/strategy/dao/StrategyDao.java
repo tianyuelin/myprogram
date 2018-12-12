@@ -1,9 +1,16 @@
 package com.xingtu.strategy.dao;
 
-public class StrategyDao {
+import javax.annotation.Resource;
 
-	public StrategyDao() {
-		// TODO Auto-generated constructor stub
+import org.hibernate.SessionFactory;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public class StrategyDao {
+	@Resource
+	private SessionFactory sf;
+	public void saveStrategy() {
+		
 	}
 
 }

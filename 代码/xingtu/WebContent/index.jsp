@@ -65,7 +65,7 @@
 		<div
 			style="width: 100%; position: static; background-image: url('${ctx}/img/bg.jpg'); margin-bottom: 1%;">
 			<span style="font-size: 2em;">热门地点</span><span
-				style="margin-left: 80%"><a>更多</a></span>
+			style="margin-left: 80%"><a>更多</a></span>
 		</div>
 		<c:forEach var="scelist" items="${scelist }">
 		<div class="col-md-6 col-lg-4">

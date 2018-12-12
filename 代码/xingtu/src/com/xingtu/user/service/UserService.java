@@ -17,7 +17,6 @@ public class UserService {
 
 	@Resource
 	private UserDao userDao;
-	
 	//关于注册
 	//在这里面加注册时间，加密码验证,判断各部分信息是否符合格式要求
 	@Transactional(readOnly=false)
@@ -57,9 +56,17 @@ public class UserService {
 			return false;
 		}
 	}
-	
-	
-	
-	
+	//进入个人中心页
+	public Users UserCenter(String email) {
+		return this.userDao.findUserByEmail(email);
+	}
+	@Transactional(readOnly=true)
+	public Long getFunsCount(String email) {
+		return this.userDao.funsCount(email);
+	}
+	@Transactional(readOnly=true)
+	public Long getFollowedCount(String email) {
+		return this.userDao.followedConut(email);
+	}
 
 }
