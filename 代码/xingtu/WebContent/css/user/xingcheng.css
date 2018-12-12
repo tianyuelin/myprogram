@@ -42,11 +42,8 @@
 	border-top:none;
 	height:50px;
 	font-size:35px;
-	width: 80%;
+	width: 77%;
 	color: black;
-}
-input:focus{
-	border-color: black !important;
 }
 #add_f_title:hover{
 	color: #d79166;
@@ -57,14 +54,57 @@ input:focus{
 #add_img{
 	margin: 10px;
 }
-#delete{
+#di{
 	margin: 10px;
 }
-
+#di:hover{
+	color: #d79166;
+}
+#da{
+	margin: 10px;
+}
+#da:hover{
+	color: #d79166;
+}
+#dt{
+	margin: 10px;
+}
+#dt:hover{
+	color: #d79166;
+}
+#dtext{
+	margin: 10px;
+}
+#dtext:hover{
+	color: #d79166;
+}
+#add_text{
+	margin: 10px;
+}
+#add_text:hover{
+	color: #d79166;
+}
+#add_address{
+	margin: 10px;
+}
+#add_address:hover{
+	color: #d79166;
+}
+textarea:focus{
+    border:0;
+  	background-color:transparent;
+  	color: #666464;
+  	height: auto;
+}
+input{
+	border:0;
+	outline: none;
+}
 #add_img:hover{
 	color: #d79166;
 }
-.ltitle{
+
+#ltitle{
 	margin: 10px;
 }
 .context{
@@ -75,15 +115,17 @@ input:focus{
 textarea{
 	border: none;
 	width: 90%;
+	outline: none;
 }
+
 .didian{
 	border-bottom: 1px #eee solid;
-	width: 100%;
+	width: 80%;
 	background-color: #efefef;
 }
 .address{
 	border: none;
-	width: 93.5%;
+	width: 91%;
 	height: 50px;
 	font-size: 25px;
 	background-color: #efefef;
@@ -102,6 +144,13 @@ textarea{
     opacity: 0;
     -ms-filter: 'alpha(opacity=0)';
 }
-#delete:hover{
-	color: #d26900
+.delete{
+	font-size: 25px;
+	text-align: center;
+	background: none;
+	border: none;
+}
+.delete:hover{
+	color: #d26900;
+	cursor: pointer;
 }

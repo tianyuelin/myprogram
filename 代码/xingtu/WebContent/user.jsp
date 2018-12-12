@@ -65,7 +65,7 @@
 					href="${ctx }/journey/citylist"
 					data-beacon="letter">创建行程</a></li>
 				<li class="item"><a
-					href="${ctx }/strategy/create"
+					href="${ctx }/strategy/opencreate"
 					data-beacon="letter">创建攻略</a></li>
 			</ul>
 		</div>
