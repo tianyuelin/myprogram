@@ -116,6 +116,13 @@ img:hover
 	margin-left:70px;
 	float:left;
 }
+.dian1 img{
+	max-width: none;
+	width: calc(100% + 50px);
+	transition: opacity 0.35s, transform 0.35s;
+	transform: translate3d(-40px, 0, 0);
+	margin-bottom: 0;
+}
 .ming1{
 	margin-top:5px;
 	width:120px;
