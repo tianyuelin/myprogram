@@ -6,6 +6,7 @@ import java.util.List;
 
 import javax.annotation.Resource;
 
+import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.stereotype.Repository;
 
@@ -20,6 +21,7 @@ public class StrategyDao {
 	public Strategy saveStrategy(String []titles,String []texts,String []addersses,String title,Users user) {
 		List<StrategyDiv> sds=new ArrayList<StrategyDiv>();
 		Strategy s = new Strategy();
+		Session session=this.sf.getCurrentSession();
 		if(titles.length==texts.length&&texts.length==addersses.length) {
 			for(String ltitle : titles) {
 				StrategyDiv sd=new StrategyDiv();
@@ -30,9 +32,16 @@ public class StrategyDao {
 				sds.get(i).setContext(texts[i]);
 				sds.get(i).setAddress(addersses[i]);
 			}
-			s.setSd(sds);
 			s.setUser(user);
 			s.setStime(new Date());
+			s.setTitle(title);
+			s.setTag("情侣出游，浪漫，花海");
+			session.save(s);
+			for(int i=0;i<sds.size();i++) {
+				sds.get(i).setStrategy(s);
+				session.save(sds.get(i));
+			}
+			s.setSd(sds);
 			return s;
 		}else {
 			return null;

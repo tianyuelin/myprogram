@@ -26,6 +26,7 @@ public class StrategyController {
 	@RequestMapping(value="/create",method=RequestMethod.POST)
 	public String createyouji(@RequestParam("text")String []texts,@RequestParam("ltitle")String []titles,@RequestParam("title")String title,@RequestParam("address")String []addresses,HttpSession session) {
 		Users u= (Users)session.getAttribute("user");
+		ss.createStrategy(titles, texts, addresses, title, u);
 		return "createxc";
 	}
 }
