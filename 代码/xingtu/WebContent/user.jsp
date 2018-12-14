@@ -53,7 +53,7 @@
 				<li class="item item-hover item-active" data-beacon="myhomepage"><a
 					href="user.jsp">首页</a></li>
 				<li class="item"><a
-					href="photo.jsp"
+					href="${ctx }/photo.jsp"
 					data-beacon="photos">相册</a></li>
 				<li class="item"><a
 					href="sixin.jsp"

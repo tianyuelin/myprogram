@@ -43,12 +43,15 @@ String htmlData = request.getParameter("content1") != null ? request.getParamete
 <body>
 <jsp:include page="header.jsp" flush="true"></jsp:include>
 <div class="move"></div>
-<form action="${ctx }/strategy/create" method="post">
+<form action="${ctx }/strategy/create" method="post" enctype="multipart/form-data">
 <div class="header">
-	<div class="title">
+<img src="${ctx }/img/banner2.jpg" style="width: 100%;height: 450px;" id="timg">
+<input type="file" style="opacity: 0; position:absolute;top:20px; width:100%;height: 350px;" id="cimg" name="headerimg" multiple/>
+<span class="spanchange">点击更换头图片</span>
+<div class="title">
 	<img alt="" src="${ctx }/${user.icon }">
 	<input type="text" name="title" placeholder="为你的游记起一个名字吧!" class="title_text"/>
-	</div>
+</div>
 </div>
 <div class="create">
 	<div class="create_left">
@@ -60,6 +63,30 @@ String htmlData = request.getParameter("content1") != null ? request.getParamete
 			<img src="${ctx }/img/icon/delete.png" id="d4">
 			<input type="file" style="opacity: 0; display: inline; width:5px;" id="uploadimg">
 			<span>删除目录</span>
+		</div>
+		<div class="RadioStyle">
+		<h3>添加标签</h3>
+    		<div class="Block PaddingL">
+        		<input type="checkbox" id="love1" name="tag" value="家庭出游"/>
+        		<label for="love1">家庭出游</label>
+        		<input type="checkbox" id="love2" name="tag" value="绘画"/>
+        		<label for="love2">绘画</label>
+        		<input type="checkbox" id="love3" name="tag" value="摄影"/>
+        		<label for="love3">摄影</label>
+        		<input type="checkbox" id="love4" name="tag" value="骑行"/>
+        		<label for="love4">骑行</label>
+        		<input type="checkbox" id="love5" name="tag" value="情侣出行"/>
+        		<label for="love5">情侣出行</label>
+        		<input type="checkbox" id="love6" name="tag" value="独自一人"/>
+        		<label for="love6">独自一人</label>
+        		<input type="checkbox" id="love7" name="tag" value="毕业游"/>
+        		<label for="love7">毕业游</label>
+        		<input type="checkbox" id="love8" name="tag" value="穷游"/>
+        		<label for="love8">穷游</label>
+        		<input type="checkbox" id="love9" name="tag" value="徒步"/>
+        		<label for="love9">徒步</label>
+    		</div>
+    		<div style="clear: both; width: 80px;margin: auto"><a id="changeTag">换一批</a></div>
 		</div>
 		<!--  
 		<div id="add_address"  onmouseover="jia4()" onmouseout="qjia4()" onclick="jia4()">
@@ -99,8 +126,8 @@ String htmlData = request.getParameter("content1") != null ? request.getParamete
 			<h3>游记概览</h3>
 			<div id="gailan">
 			<div id="g0">
-			<span>T：</span><span id="ltitle0" class="lt">前言</span><br>
-			<span>地点：</span><span id="dizhi0" class="dz">add0</span><br>
+			<span class="lt">T：</span><span id="ltitle0" class="lt">前言</span><br>
+			<span class="dz">地点：</span><span id="dizhi0" class="dz">add0</span><br>
 			</div>
 			</div>
 		</div>
@@ -111,7 +138,7 @@ String htmlData = request.getParameter("content1") != null ? request.getParamete
 		<div class="ltitle">
 		<input type="text" class="f_title" placeholder="前言" onchange="changetitle()" id="title0" name="ltitle">
 		</div>
-			<div id="didian0" class="didian">
+			<div class="didian">
 				<img src="${ctx }/img/icon/dizhi.png">
 				<input class="address" type="text" placeholder='添加地点' id="didian0" onchange="changeaddress()" name="address">
 			</div>

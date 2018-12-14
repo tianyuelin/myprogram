@@ -1,7 +1,9 @@
 var titlecount=0;
+/*
 var addresscount=0;
 var imgcount=0;
 var textcount=0;
+*/
 function jia() {
 	var goimg = document.getElementById('jia1');
 	goimg.setAttribute("src","../img/icon/jiaed.png");
@@ -70,8 +72,8 @@ function qdeeted4() {
 //添加小标题
 $('#add_f_title').click(function(){
 	titlecount++;
-	$('#xingcheng').append('<div id="part'+titlecount+'"><div id="ltitle'+titlecount+'"><input type="text" class="f_title" placeholder="NewTitle" onchange="changetitle()" id="title'+titlecount+'" name="ltitle"></div><div id="didian0" class="didian"><img src="../img/icon/dizhi.png"><input class="address" type="text" placeholder="添加地点" id="didian0" onchange="changeaddress()" name="address"></div><div class="neirong"><textarea name=text id="content'+titlecount+'" cols="100" rows="8" style="width:700px;height:200px;visibility:hidden;"></textarea></div>');
-	$("#gailan").append('<div id="t'+titlecount+'"><span>T：</span><span id="ltitle'+titlecount+'" class="lt">NewTitle</span><br/></div>');
+	$('#xingcheng').append('<div id="part'+titlecount+'"><div id="ltitle'+titlecount+'"><input type="text" class="f_title" placeholder="NewTitle" onchange="changetitle()" id="title'+titlecount+'" name="ltitle"></div><div class="didian"><img src="../img/icon/dizhi.png"><input class="address" type="text" placeholder="添加地点" id="didian'+titlecount+'" onchange="changeaddress()" name="address"></div><div class="neirong"><textarea name=text id="content'+titlecount+'" cols="100" rows="8" style="width:700px;height:200px;visibility:hidden;"></textarea></div>');
+	$("#gailan").append('<div id="t'+titlecount+'"><span>T：</span><span id="ltitle'+titlecount+'" class="lt">NewTitle</span><br/><span>地点：</span><span id="dizhi'+titlecount+'" class="dz">add</span><br></div>');
 	KindEditor.ready(function(K) {
 		var editor1 = K.create('textarea[id="content'+titlecount+'"]', {
 			cssPath : '../kindeditor/plugins/code/prettify.css',
@@ -94,6 +96,7 @@ $('#add_f_title').click(function(){
 	});
 });
 //添加地点
+/*
 $('#add_address').click(function(){
 	addresscount++;
 	$('#xingcheng').append('<div class="didian" id="didian'+addresscount+'"><img src="../img/icon/dizhi.png"><input class="address" type="text" placeholder="添加地点" id="didian'+addresscount+'" onchange="changeaddress()" name="address"></div>');
@@ -145,10 +148,13 @@ $(document).on('click', '#di',function(){
 		alert("还没有创建第一个啦！");
 	}
 });
+*/
 //添加图片
-$(document).on('change', '#uploadimg', function () { //PictureUrl为input file 的id
+//获取到上传的图片的地址
+$(document).on('change', '#cimg', function () { //PictureUrl为input file 的id
 	//console.log(this.files[0]); 
-    function getObjectURL(file) { 
+    alert(1);
+	function getObjectURL(file) { 
         var url = null; 
         if (window.createObjcectURL != undefined) { 
             url = window.createOjcectURL(file); 
@@ -156,22 +162,24 @@ $(document).on('change', '#uploadimg', function () { //PictureUrl为input file �
             url = window.URL.createObjectURL(file); 
         } else if (window.webkitURL != undefined) { 
             url = window.webkitURL.createObjectURL(file); 
-        } 
+        }
         return url; 
-    } 
+    }
     var objURL = getObjectURL(this.files[0]);//这里的objURL就是input file的真实路径 
-    imgcount++;
-    $("#part"+titlecount).append("<img src='" + objURL + "' width='200px'; height='200px' id='img"+imgcount+"' name=img/>");
+   $("#timg").attr('src',objURL);
+    
 });
 
 function changetitle(){
-	var span =document.getElementById('ltitle'+count);
-	var inputtitle = document.getElementById('title'+count).value;
+	var span =document.getElementById('ltitle'+titlecount);
+	var inputtitle = document.getElementById('title'+titlecount).value;
 	span.innerHTML=inputtitle;
 }
 function changeaddress(){
-	var span =document.getElementById('dizhi'+count);
-	var inputtitle = document.getElementById('didian'+count).value;
+	var span =document.getElementById('dizhi'+titlecount);
+	alert('didian'+titlecount);
+	var inputtitle = document.getElementById('didian'+titlecount).value;
+	alert(inputtitle);
 	span.innerHTML=inputtitle;
 }
 /*
@@ -245,4 +253,33 @@ KindEditor.ready(function(K) {
 		}
 	});
 	prettyPrint();
+});
+//随机从数组中取几个数据
+function getRandomArrayElements(arr, count) {
+    var shuffled = arr.slice(0), i = arr.length, min = i - count, temp, index;
+    while (i-- > min) {
+        index = Math.floor((i + 1) * Math.random());
+        temp = shuffled[index];
+        shuffled[index] = shuffled[i];
+        shuffled[i] = temp;
+    }
+    return shuffled.slice(min);
+}
+$("#changeTag").click(function(){
+	var items = ['家庭出游','绘画','摄影','骑行','情侣','独自一人','三五好友','穷游','毕业游','亲子','三五好友','美食','潜水','滑雪','自驾','春节','端午','夏季','暑假','寒假','蜜月','学生','海边','徒步','人文'];
+	var tags = getRandomArrayElements(items, 9);
+	var tag  = $("#love1").val();
+	var input = document.getElementById('love1');
+	var label = document.querySelector('label[for="'+input.id+'"]');
+	var value = label.innerText.trim();
+	label.innerText=tags[0];
+	var count=1;
+	for(var i in tags){
+		var input = document.getElementById('love'+count);
+		var label = document.querySelector('label[for="'+input.id+'"]');
+		var value = label.innerText.trim();
+		input.value=value;
+		label.innerText=tags[count-1];
+		count++;
+	}
 });
