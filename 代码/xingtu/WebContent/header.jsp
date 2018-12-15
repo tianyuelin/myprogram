@@ -38,7 +38,7 @@
                     <div style="width: 50%;height: 1.25%;position:relative;display: inline-block;">
                  	<img src="${ctx }/img/addpeople.png" style="width: 30%">
                     <c:if test="${isSigned==flase or isSigned==null }">
-                    <span style="font-size: 1em;"><a href="sign.jsp">登录/注册</a></span>
+                    <span style="font-size: 1em;"><a href="${ctx }/sign.jsp">登录/注册</a></span>
                     </c:if>
                     <c:if test="${isSigned==true }">
                     <span style="font-size: 1em;"><a href="${ctx }/user/usercenter">个人空间</a></span>

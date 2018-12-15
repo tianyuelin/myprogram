@@ -15,7 +15,7 @@ import com.xingtu.strategy.dao.StrategyDao;
 public class StrategyService {
 	@Resource
 	private StrategyDao sd;
-	public Strategy createStrategy(String []tags,String []titles,String []texts,String []addresses,String title,Users user,MultipartFile file) {
-		return sd.saveStrategy(tags,titles, texts, addresses, title, user,file);
+	public Strategy createStrategy(String []tags,String []titles,String []texts,String []addresses,String title,Users user,MultipartFile file,String path) {
+		return sd.saveStrategy(tags,titles, texts, addresses, title, user,file,path);
 	}
 }

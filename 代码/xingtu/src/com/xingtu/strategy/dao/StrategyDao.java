@@ -22,19 +22,18 @@ import com.xingtu.entity.Users;
 public class StrategyDao {
 	@Resource
 	private SessionFactory sf;
-	public Strategy saveStrategy(String []tags,String []titles,String []texts,String []addersses,String title,Users user,MultipartFile file) {
+	public Strategy saveStrategy(String []tags,String []titles,String []texts,String []addersses,String title,Users user,MultipartFile file,String path) {
 		List<StrategyDiv> sds=new ArrayList<StrategyDiv>();
 		Strategy s = new Strategy();
 		Session session=this.sf.getCurrentSession();
 		//头图的上传
-		String rootPath = "E:\\BigData\\upload";
 		if(!file.isEmpty()){//判断文件是否为空
 			try {
 				InputStream is=file.getInputStream();//拿到这个输入流
 				FileOutputStream fos=new FileOutputStream(
-						rootPath+"\\"
+						path+"\\img\\strategy\\"
 						+file.getOriginalFilename());//将这个文件放到我的项目真实路径下的一个upload下
-				s.setImg(rootPath+"\\"
+				s.setImg("img//strategy//"
 						+file.getOriginalFilename());
 				int i=0;
 				while((i=is.read())!=-1) {
@@ -66,11 +65,11 @@ public class StrategyDao {
 			s.setStime(new Date());
 			s.setTitle(title);
 			session.save(s);
+			System.out.println("存入数据库");
 			for(int i=0;i<sds.size();i++) {
 				sds.get(i).setStrategy(s);
 				session.save(sds.get(i));
 			}
-			
 			s.setSd(sds);
 			return s;
 		}else {

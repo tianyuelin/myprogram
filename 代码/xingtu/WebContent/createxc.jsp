@@ -34,10 +34,6 @@ String htmlData = request.getParameter("content1") != null ? request.getParamete
 	<script charset="utf-8" src="${ctx }/kindeditor/kindeditor-all.js"></script>
 	<script charset="utf-8" src="${ctx }/kindeditor/lang/zh-CN.js"></script>
 	<script charset="utf-8" src="${ctx }/kindeditor/plugins/code/prettify.js"></script>
-	<script>
-		
-	</script>
-
 <title>Insert title here</title>
 </head>
 <body>
