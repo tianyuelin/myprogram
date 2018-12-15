@@ -27,6 +27,8 @@
 			<param-value>/WEB-INF/spring-mvc.xml</param-value>
 		</init-param>
 		<load-on-startup>1</load-on-startup>
+		<!-- 基于servlet3.0的上传 -->
+  	<multipart-config></multipart-config>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>springmvc</servlet-name>

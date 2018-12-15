@@ -13,28 +13,28 @@ import javax.persistence.Table;
 import org.hibernate.annotations.GenericGenerator;
 
 /**
- * ÓÃ»§µÄÊµÌåbean
+ * ï¿½Ã»ï¿½ï¿½ï¿½Êµï¿½ï¿½bean
  * */
 @Entity
 @Table(name="users")
 public class Users {
-	private String email;//ÓÊÏä
-	private String username;//ÓÃ»§Ãû
-	private String password;//ÃÜÂë
-	private String icon;//Í·Ïñ
-	private String signature;//¸öĞÔÇ©Ãû
-	private String sex;//ĞÔ±ğ
-	private Date birthday;//ÉúÈÕ
-	private String hobby;//°®ºÃ
-	private Date registtime;//×¢²áÊ±¼ä
-	//Ò»¸öÓÃ»§¿ÉÒÔÓĞ¶à¶Ô¹¥ÂÔµÄ¸öÆÀÂÛ
-	private List<StrategyComment> stc;//¶Ô¹¥ÂÔµÄÆÀÂÛ
-	//Ò»¸öÓÃ»§¿ÉÒÔÓĞ¶à¸ö¶Ô¾°µãµÄÆÀÂÛ
-	private List<Scenecomment> scc;//¶Ô¾°µãµÄÆÀÂÛ
-	//Ò»¸öÓÃ»§¿ÉÒÔ·¢²¼¶à¸ö¹¥ÂÔ
-	private List<Strategy> st;//¹¥ÂÔ
-	//Ò»¸öÓÃ»§¿ÉÒÔ´´½¨¶à¸öĞĞ³Ì
-	private List<Journey> journeys;//´´½¨µÄĞĞ³Ì
+	private String email;//ï¿½ï¿½ï¿½ï¿½
+	private String username;//ï¿½Ã»ï¿½ï¿½ï¿½
+	private String password;//ï¿½ï¿½ï¿½ï¿½
+	private String icon;//Í·ï¿½ï¿½
+	private String signature;//ï¿½ï¿½ï¿½ï¿½Ç©ï¿½ï¿½
+	private String sex;//ï¿½Ô±ï¿½
+	private Date birthday;//ï¿½ï¿½ï¿½ï¿½
+	private String hobby;//ï¿½ï¿½ï¿½ï¿½
+	private Date registtime;//×¢ï¿½ï¿½Ê±ï¿½ï¿½
+	//Ò»ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ğ¶ï¿½Ô¹ï¿½ï¿½ÔµÄ¸ï¿½ï¿½ï¿½ï¿½ï¿½
+	private List<StrategyComment> stc;//ï¿½Ô¹ï¿½ï¿½Ôµï¿½ï¿½ï¿½ï¿½ï¿½
+	//Ò»ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ğ¶ï¿½ï¿½ï¿½Ô¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	private List<Scenecomment> scc;//ï¿½Ô¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	//Ò»ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½Ô·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	private List<Strategy> st;//ï¿½ï¿½ï¿½ï¿½
+	//Ò»ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½Ô´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ğ³ï¿½
+	private List<Journey> journeys;//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ğ³ï¿½
 	@Id
 	@GeneratedValue(generator="assigned")
 	@GenericGenerator(name="assigned",strategy="assigned")

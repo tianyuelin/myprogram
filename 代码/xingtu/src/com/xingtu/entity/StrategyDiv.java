@@ -1,15 +1,11 @@
 package com.xingtu.entity;
 
-import java.util.List;
-
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -18,8 +14,8 @@ public class StrategyDiv {
 	private int id;
 	private String title;
 	private String context;
+	private String address;
 	private Strategy strategy;
-	private List<StrategyImg> imgs;
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	public int getId() {
@@ -48,13 +44,11 @@ public class StrategyDiv {
 	public void setStrategy(Strategy strategy) {
 		this.strategy = strategy;
 	}
-	@OneToMany(mappedBy="sd",targetEntity=StrategyImg.class,
-			cascade= {CascadeType.ALL})
-	public List<StrategyImg> getImgs() {
-		return imgs;
+	public String getAddress() {
+		return address;
 	}
-	public void setImgs(List<StrategyImg> imgs) {
-		this.imgs = imgs;
+	public void setAddress(String address) {
+		this.address = address;
 	}
 	
 }

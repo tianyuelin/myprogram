@@ -29,6 +29,7 @@ public class Followed {
 	public void setUseremail(String useremail) {
 		this.useremail = useremail;
 	}
+	
 	public String getFollwed_user() {
 		return follwed_user;
 	}

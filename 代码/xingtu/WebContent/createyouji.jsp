@@ -87,11 +87,10 @@ String htmlData = request.getParameter("content1") != null ? request.getParamete
 							<img src="img/bai.png">说说这次旅行
 						</div>
 						<!--%=htmlData%-->
-						<form name="example" method="post" action="kindController">
 							<textarea name="content1" cols="100" rows="8"
 								style="width: 700px; height: 200px; visibility: hidden;"><%=htmlspecialchars(htmlData)%></textarea>
-							<br /> <input type="submit" name="button" value="提交内容" />
-						</form>
+						
+						
 						<%!private String htmlspecialchars(String str) {
 		str = str.replaceAll("&", "&amp;");
 		str = str.replaceAll("<", "&lt;");

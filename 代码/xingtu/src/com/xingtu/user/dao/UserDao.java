@@ -49,8 +49,21 @@ public class UserDao{
 			return false;
 		}		
 	}
-	
-	
-	
-	
+	//根据ID查找用户
+	public Users findUserByEmail(String email) {
+		Session session = this.sessionFactory.getCurrentSession();
+		Users u = (Users)session.createQuery("from Users where email='"+email+"'").uniqueResult();
+		return u;
+	}
+	//查找该用户的粉丝数
+	public Long funsCount(String email) {
+		Session session = this.sessionFactory.getCurrentSession();
+		Long count = (Long)session.createQuery("select count(*) from Funs where follower_user='"+email+"'").uniqueResult();
+		return count;
+	}
+	public Long followedConut(String email) {
+		Session session = this.sessionFactory.getCurrentSession();
+		Long count = (Long)session.createQuery("select count(*) from Followed where follwed_user='"+email+"'").uniqueResult();
+		return count;
+	}
 }
