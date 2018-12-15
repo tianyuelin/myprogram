@@ -23,9 +23,20 @@ public class JourneyDao {
 	private SessionFactory sf;
 	public List<Scene> getCityList(){
 		Session session = sf.getCurrentSession();
-		Query q = session.createQuery("from Scene where img is not null");
+		Query q = session.createQuery("from Rmcity");
 		q.setFirstResult(0);
-		q.setMaxResults(3);
+		q.setMaxResults(9);
+		return q.list();
+	}
+	/**
+	 * 查询该城市的热门景点
+	 * 
+	 */
+	public List<Scene> getJourneyList(int pageNum,int pageSize){
+		Session session = sf.getCurrentSession();
+		Query q = session.createQuery("from Scene s where s.img is not null");
+		q.setFirstResult((pageNum-1)*pageSize);
+		q.setMaxResults(pageSize);
 		return q.list();
 	}
 	//向数据库插数据
