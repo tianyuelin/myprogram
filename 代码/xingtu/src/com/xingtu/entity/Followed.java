@@ -9,10 +9,10 @@ import javax.persistence.Table;
 @Entity
 @Table(name="follow")
 public class Followed {
-	private int id;//ÐòºÅ
-	private String useremail;//ÓÃ»§µÄEmail
-	private String follwed_user;//¹Ø×¢µÄÈËEmail
-	private int status;//×´Ì¬£ºÈ¡Ïû¹Ø×¢/¹Ø×¢
+	private int id;//ï¿½ï¿½ï¿½
+	private String useremail;//ï¿½Ã»ï¿½ï¿½ï¿½Email
+	private String follwed_user;//ï¿½ï¿½×¢ï¿½ï¿½ï¿½ï¿½Email
+	private int status;//×´Ì¬ï¿½ï¿½È¡ï¿½ï¿½ï¿½ï¿½×¢/ï¿½ï¿½×¢
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	public int getId() {
@@ -29,6 +29,7 @@ public class Followed {
 	public void setUseremail(String useremail) {
 		this.useremail = useremail;
 	}
+	
 	public String getFollwed_user() {
 		return follwed_user;
 	}
