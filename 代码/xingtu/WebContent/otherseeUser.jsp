@@ -1,7 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 	<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-     <c:set var="ctx" value="${pageContext.request.contextPath}"/>
+	<c:set var="ctx" value="${pageContext.request.contextPath }"></c:set>
+     
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -20,57 +21,48 @@
 <jsp:include page="header.jsp" flush="true"></jsp:include>
 	<div class="qn-header"  style="margin-top:5%">
 		<div class="main-zt">
+		
 			<div class="user-info">
 				<dt class="flpic">
-					<img
-						src="img/tou2.jpg" />
+					<img src="img/tou2.jpg" />
+					<div style="float:left;" class="gz"> <a href="${ctx }/guanzhuController?bepersonemail=1098484059@qq.com"> +&nbsp;关注  </a> </div>  <!-- 在此处传入了被关注人的邮箱 -->
 				</dt><!-- 个人头像 -->
+
 				<dd class="flintro">
+				
 					<h3 class="intro-title">
 						<span class="name" title="QTL">QTL</span><span class="score"><a
 							target="_blank"
 							href="#">100积分</a></span>
 					</h3>
+					
 					<div class="intro-body">
 						<form action="">
 						    <input type="text" placeholder="编辑个人签名" style="width:400px;">
 						</form>
 					</div>
+					
 				</dd>
 			</div>
+			
+		
 			<div class="fruser-fans">
 				<div class="fz">
 					<div class="shu">0</div>
-					<div class="guzh"><a href="guanzhuUser">关注</a></div>
+					<div class="guzh">关注</div>  <!-- 从这里跳到控制器，然后再跳转到关注页面 -->
 				</div>
 				<div class="hz">|</div>
 				<div class="fy">
 					<div>0</div>
-					<div><a href="fans.jsp">粉丝</a></div>
-				</div>
+					<div>粉丝</div>
+				</div>			
 			</div>
+			
+			
 		</div>
-		<div class="mynav">
-			<ul id="mydao">
-				<li class="item item-hover item-active" data-beacon="myhomepage"><a
-					href="user.jsp">首页</a></li>
-				<li class="item"><a
-					href="photo.jsp"
-					data-beacon="photos">相册</a></li>
-				<li class="item"><a
-					href="sixin.jsp"
-					data-beacon="letter">消息</a></li>
-				<li class="item"><a
-					href="person.jsp"
-					data-beacon="letter">个人信息</a></li>
-				<li class="item"><a
-					href="${ctx }/journey/citylist"
-					data-beacon="letter">创建行程</a></li>
-				<li class="item"><a
-					href="createyouji.jsp"
-					data-beacon="letter">创建攻略</a></li>
-			</ul>
-		</div>
+		
+		
+
 	</div>
 	<div class="qn-skin">
 		<div class="qn-page">

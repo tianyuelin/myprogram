@@ -40,6 +40,7 @@ public class UserController {
 	@RequestMapping(value="/loginController",method=RequestMethod.POST)
 	public String getLoginPerson(Users users,HttpSession session,HttpServletRequest request) {
 		if(this.userService.getLoginPerson1(users)==true) {
+			request.getSession().setAttribute("currentUser", users);//将当前使用用户存入session中
 			return "index";
 		}
 		else {
@@ -47,7 +48,7 @@ public class UserController {
 			return "sign";
 		}
 		
-	    //验证数据库中是否存在这个邮箱，如果存在验证密码是否正确
+	  
 		
 	
 		
