@@ -106,7 +106,8 @@
 	<!-- 在此处写我的关注的页面 -->
 	<div class="topdiv">
 	    <div style="padding-top:50px;margin-bottom:20px;">
-	           <span style="margin-left:150px;margin-right:20px;"><a href="fellow.jsp">我的关注</a></span>     <span><a href="fans.jsp" style="color:black">我的粉丝</a></span>
+	           <span style="margin-left:150px;margin-right:20px;"><a href="${ctx }/guanzhuUser">我的关注(${FGCount })</a></span>   
+	             <span><a href="${ctx }/fansUser" style="color:black">我的粉丝(${fansCount })</a></span>
 	    </div>
 	    
 	    

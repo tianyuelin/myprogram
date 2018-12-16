@@ -21,13 +21,23 @@ public class GuanzhuDao {
 	@Resource
 	private SessionFactory sessionFactory;
 	
+	//判断是否已关注
+	public Boolean IfGuanZhu(Followed follow) {
+		Session session =this.sessionFactory.getCurrentSession();
+		
+		
+		follow.getUseremail();//登录用户的email
+		follow.getFollwed_user();//将要关注用户的email
+		
+	}
+	
+	
+	
 	//点击关注，将关注名单插入关注表
 	public void InsertGuanzhu(Followed follow) { //这里是被关注人的邮箱
 		Session session=this.sessionFactory.getCurrentSession();
 		session.save(follow);		
 	}
-	
-	
 	
 	//从关注表中取出本人关注者都有谁，有几个
 	@SuppressWarnings("null")

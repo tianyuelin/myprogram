@@ -25,12 +25,15 @@ public class GuanzhuController {
 	public String guanzhuperson(Followed followed,@RequestParam("bepersonemail") String bepersonemail,HttpServletRequest request) {
 		
 		//将被关注者的email放入
-		followed.setFollwed_user(bepersonemail);
-		
-		//将关注者放入
+		followed.setFollwed_user(bepersonemail);		
+		//将关注者（登录用户）放入
 		Users user= (Users) request.getSession().getAttribute("user");
 		String myemail=user.getEmail();
 		followed.setUseremail(myemail);
+		//判断曾经是否已插入，若无，则插入，若有则返回已关注
+		
+		
+		
 		this.guanzhuService.InsertGuanzhu1(followed);
 		return "otherseeUser";
 	}

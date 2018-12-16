@@ -16,6 +16,7 @@ public class GuanzhuService {
 	@Resource
     private GuanzhuDao guanzhuDao;
 	
+	//将粉丝与被关注者插入关注表中
 	public void InsertGuanzhu1(Followed follow) {
 		this.guanzhuDao.InsertGuanzhu(follow);	
 	}
