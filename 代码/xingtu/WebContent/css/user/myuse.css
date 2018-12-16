@@ -82,20 +82,22 @@
 }
 #mygl{
 	width:85%;
-	height:700px;
+	height:auto;
 	margin-top:2%;
 	margin-left:40px;
 }
+.tpic1 img{
+	width: 100%;
+	height: 200px;
+}
 .zdgl{
 	width:80%;
-	height:40px;
 	font-size:30px;
 	color:#880000;
 }
 .gol1,.gol2{
 	border:2px solid #e4e4e4;
 	width:68%;
-	height:300px;
 	margin-top:20px;
 	margin-left:100px;
 }
@@ -110,7 +112,10 @@
 	margin-top:10px;
 	margin-left:40px;
 	font-size:22px;
-	width:200px;
+}
+.gol1{
+	height: auto;
+	padding: 10px;
 }
 .tpic1,.tpic2{
 	width:90%;

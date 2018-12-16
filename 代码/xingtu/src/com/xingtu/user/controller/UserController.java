@@ -1,5 +1,7 @@
 package com.xingtu.user.controller;
 
+import java.util.List;
+
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -10,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.xingtu.entity.Md5Encode;
+import com.xingtu.entity.Strategy;
 import com.xingtu.entity.Users;
 import com.xingtu.user.service.UserService;
 
@@ -65,6 +68,8 @@ public class UserController {
 			Users user =(Users)obj;
 			Long funscount = this.userService.getFunsCount(user.getEmail());
 			Long followedcount = this.userService.getFollowedCount(user.getEmail());
+			List<Strategy> strategys = this.userService.findStrategyByEmail(user.getEmail());
+			session.setAttribute("strategys", strategys);
 			session.setAttribute("funscount", funscount);
 			session.setAttribute("followedcount", followedcount);
 			return "user";

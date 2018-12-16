@@ -1,6 +1,7 @@
 package com.xingtu.user.service;
 
 import java.util.Date;
+import java.util.List;
 
 import javax.annotation.Resource;
 
@@ -8,6 +9,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.xingtu.entity.Md5Encode;
+import com.xingtu.entity.Strategy;
 import com.xingtu.entity.Users;
 import com.xingtu.user.dao.UserDao;
 
@@ -68,5 +70,9 @@ public class UserService {
 	public Long getFollowedCount(String email) {
 		return this.userDao.followedConut(email);
 	}
-
+	@Transactional(readOnly=false)
+	//查询攻略 
+	public List<Strategy> findStrategyByEmail(String email){
+		return this.userDao.findStrategyByEmail(email);
+	}
 }

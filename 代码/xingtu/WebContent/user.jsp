@@ -23,7 +23,7 @@
 			<div class="user-info">
 				<dt class="flpic">
 					<img
-						src="${ctx }/img/tou2.jpg" />
+						src="${ctx }/${user.icon}" />
 				</dt><!-- 个人头像 -->
 				<dd class="flintro">
 					<h3 class="intro-title">
@@ -101,16 +101,17 @@
 				    </div>
 				    <div id="mygl">
 				          <div class="zdgl">我的攻略</div>
-				          <div class="gol1">  
-				              <div class="wgl1">我正在写攻略</div>
-				              <div class="glbt1">石家庄一日游</div>
-				              <div class="tpic1"><img src="${ctx }/img/bjgl2.png"></img></div>
+				          <c:if test="${strategys!=null }">
+				          <c:forEach items="${strategys }" var="strategy">
+				          <div class="gol1">
+				              <div class="glbt1">${strategy.title }</div>
+				              <div class="tpic1"><img src="${ctx }/${strategy.img}"></img></div>
 				          </div>
-				          <div class="gol2">  
-				              <div class="wgl2">我创建了行程计划</div>
-				              <div class="glbt2">石家庄两日游</div>
-				              <div class="tpic2"><img src="${ctx }/img/bjgl2.png"></img></div>
-				          </div>
+				          </c:forEach>
+				          </c:if>
+				          <c:if test="${strategys==null }">
+				          <div class="nostrategy">您还没有创建攻略！</div>
+				          </c:if>
 				    </div>
 					<div id="mysc">
 						<div class="zdsc">我的收藏</div>
