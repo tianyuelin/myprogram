@@ -16,8 +16,13 @@
                     </li>
                         <li class="col-md-nav"><a href="${ctx }/index/scelist">首页</a></li>
                         <li class="col-md-nav"><a href="${ctx }/sence/allsence">景点</a></li>
-                        <li class="col-md-nav"><a href="${ctx }/list.jsp">他人攻略</a></li>
-                        <li class="col-md-nav"><a href="${ctx }/user.jsp"> 个性定制</a>
+                        <li class="col-md-nav"><a href="${ctx }/strategy/allStrategy">他人攻略</a></li>
+                        <c:if test="${isSigned==false or isSigned==null }">
+                        <li class="col-md-nav"><a href="${ctx }/sign.jsp"> 个性定制</a>
+                        </c:if>
+                        <c:if test="${isSigned==true}">
+                        <li class="col-md-nav"><a href="${ctx }/user/usercenter"> 个性定制</a>
+                        </c:if>
                         <li class="col-md-nav dropdown">
                             <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
                                aria-expanded="false">
@@ -37,7 +42,7 @@
                 <div style="width: 20%;display: inline-block;position: relative;margin: auto;float: right;text-align: right;">
                     <div style="width: 50%;height: 1.25%;position:relative;display: inline-block;">
                  	<img src="${ctx }/img/addpeople.png" style="width: 30%">
-                    <c:if test="${isSigned==flase or isSigned==null }">
+                    <c:if test="${isSigned==false or isSigned==null }">
                     <span style="font-size: 1em;"><a href="${ctx }/sign.jsp">登录/注册</a></span>
                     </c:if>
                     <c:if test="${isSigned==true }">

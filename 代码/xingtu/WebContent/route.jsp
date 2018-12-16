@@ -1,10 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
+     <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+ <link rel="stylesheet" href="css/login/base.css"/>
+   
+ <link rel="stylesheet" href="css/home/header.css">
+<link rel="stylesheet" href="css/home/bootstrap.min.css">
+<link rel="stylesheet" href="css/home/swiper.min.css">
 <link rel="stylesheet" href="css/routecss/route.css">
 
 <script type="text/javascript" src="js/routejs/star.js"></script>	
@@ -12,7 +18,8 @@
 
 </head>
 <body>
-	
+	<jsp:include page="header.jsp" flush="true"></jsp:include>
+	<div class="a"></div>
 	<div class="all">
 		<div class="context">
 			<div class="article-header-box">
@@ -26,11 +33,8 @@
 							<span class="time">2014年04月05日 17:32:02</span> 
 							<a class="follow-nickName" href="https://me.csdn.net/songfanxuguirong" 
 							target="_blank">站在山顶看世界</a>
-							<span class="read-count">阅读数：5479</span> 
-							<span class="article_info_click"><a href="#">更多</a></span></span>
-							
+							<span class="read-count">地点</span> 
 						</div>
-						<div class="operating"></div>
 					</div>
 				</div>
 			</div>
@@ -42,9 +46,7 @@
 					<div class="border_title_top">
 						<h3>参考行程</h3>
 					</div>
-					<div class="trip_img">
-						<img alt="" src="images/cankaoxingchengpic1.png">
-					</div>
+					
 					<div class="trip_deteil">
 						<div class="trip_deteil_top">
 							<img src="images/diyitian.png" alt="">
@@ -71,6 +73,8 @@
 
 					</div>
 
+					<div></div>
+					<div></div>
 					<div></div>
 				</div>
 				
@@ -313,7 +317,7 @@
 					<div class="border_title_top">
 						<h3>相关路线</h3>
 						<div class="border_title_top_right">
-							<span><a href="#">石家庄到北京旅游</a></span> <span><a href="#">更多石家庄国内三日旅游路线</a></span>
+							<span><a href="#">石家庄到北京旅游</a></span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> <span><a href="#">更多石家庄国内三日旅游路线</a></span>
 						</div>
 					</div>
 					<div class="line">
@@ -364,6 +368,7 @@
 					</div>
 				</div>
 			</div>
+			
 		</div>
 
 
@@ -382,12 +387,18 @@
 								<a href="#" target="_blank" class="" id="uid">站在山顶看世界</a>
 							</p>
 						</div>
+						<div class="opt-box">
+							<a>关注</a>
+						</div>
+						
+						<!-- 
 						<div class="opt-box d-flex justify-content-center flex-column">
 							<span class="csdn-tracking-statistics tracking-click" data-mod="popu_379"> 
 									<a class="btn btn-sm btn-red-hollow attention" id="btnAttent"
 										target="_blank">关注</a>
 							</span>
 						</div>
+						 -->
 					</div>
 					<div class="data-info d-flex item-tiling">
 						<dl class="text-center" title="6">
@@ -418,7 +429,7 @@
 							</dd>
 						</dl>
 					</div>
-					
+			</div>		
 				<div id="asideNewArticle" class="aside-box">
 					<h3 class="aside-title">最新攻略</h3>
 					<div class="aside-content">
@@ -580,5 +591,6 @@
 
 		</div>
 	</div>
+		<jsp:include page="footer.jsp" flush="true"></jsp:include>
 </body>
 </html>

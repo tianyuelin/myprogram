@@ -1,6 +1,7 @@
 package com.xingtu.user.service;
 
 import java.util.Date;
+import java.util.List;
 
 import javax.annotation.Resource;
 
@@ -8,6 +9,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.xingtu.entity.Md5Encode;
+import com.xingtu.entity.Strategy;
 import com.xingtu.entity.Users;
 import com.xingtu.user.dao.UserDao;
 
@@ -22,6 +24,8 @@ public class UserService {
 	@Transactional(readOnly=false)
 	public String getRegistPerson1(Users users) {
 		try {	
+			//获取默认头像
+			users.setIcon("img/icon11.png");
 			//获取注册时间
 			users.setRegisttime(new Date());
 			//将密码加密
@@ -60,13 +64,17 @@ public class UserService {
 	public Users UserCenter(String email) {
 		return this.userDao.findUserByEmail(email);
 	}
-	@Transactional(readOnly=true)
-	public Long getFunsCount(String email) {
-		return this.userDao.funsCount(email);
+	//查找我关注的人数量
+	public Long findFGCount1(String email) {
+		return this.userDao.findFGCount(email);
 	}
-	@Transactional(readOnly=true)
-	public Long getFollowedCount(String email) {
-		return this.userDao.followedConut(email);
+	//查找我的粉丝的数量
+	public Long findfansCount1(String email) {
+		return this.userDao.findfansCount(email);
 	}
-
+	@Transactional(readOnly=false)
+	//查询攻略 
+	public List<Strategy> findStrategyByEmail(String email){
+		return this.userDao.findStrategyByEmail(email);
+	}
 }

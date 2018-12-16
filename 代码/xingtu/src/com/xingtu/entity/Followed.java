@@ -9,10 +9,10 @@ import javax.persistence.Table;
 @Entity
 @Table(name="follow")
 public class Followed {
-	private int id;//���
-	private String useremail;//�û���Email
-	private String follwed_user;//��ע����Email
-	private int status;//״̬��ȡ����ע/��ע
+	private int id;
+	private String useremail;//粉丝的邮箱
+	private String follwed_user;//被关注人邮箱
+	private int status;//状态
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	public int getId() {

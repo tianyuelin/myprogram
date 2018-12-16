@@ -1,5 +1,7 @@
 package com.xingtu.user.controller;
 
+import java.util.List;
+
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -10,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.xingtu.entity.Md5Encode;
+import com.xingtu.entity.Strategy;
 import com.xingtu.entity.Users;
 import com.xingtu.user.service.UserService;
 
@@ -57,18 +60,32 @@ public class UserController {
 			return "sign";
 		}
 	}
+	
 	//跳转到个人中心页
 	@RequestMapping(value="/usercenter",method=RequestMethod.GET)
-	public String userCenter(HttpSession session) {
+	public String userCenter(HttpSession session,HttpServletRequest request) {
 		Object obj = session.getAttribute("user");
 		if(obj!=null) {
 			Users user =(Users)obj;
-			Long funscount = this.userService.getFunsCount(user.getEmail());
-			Long followedcount = this.userService.getFollowedCount(user.getEmail());
-			session.setAttribute("funscount", funscount);
-			session.setAttribute("followedcount", followedcount);
+			String myemail=user.getEmail();
+			//获取我关注的人数并存入Session
+			Long FGCount=this.userService.findFGCount1(myemail);
+			session.setAttribute("FGCount", FGCount);
+			//获取我粉丝的人数
+			Long fansCount = this.userService.findfansCount1(myemail);
+			session.setAttribute("fansCount",fansCount);		
+			//获取攻略
+			List<Strategy> strategys = this.userService.findStrategyByEmail(myemail);
+			request.setAttribute("strategys", strategys);
 			return "user";
 		}
 		return "";
+		}
+	//进入别人的个人中心页
+	@RequestMapping(value="/otherUserCenter",method=RequestMethod.GET)
+	public String otherUserCenter(HttpServletRequest request,@RequestParam(value="useremail")String useremali) {
+		Users u = this.userService.UserCenter(useremali);
+		request.setAttribute("CenterOwn", u);
+		return "otherseeUser";
 	}
 }
