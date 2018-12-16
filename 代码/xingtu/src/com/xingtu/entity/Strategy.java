@@ -19,7 +19,6 @@ import javax.persistence.Table;
 @Entity
 @Table(name="strategy")
 public class Strategy {
-	public static int looktimes=0;
 	private int sId;
 	//һ�����Զ�Ӧһ���û�����Ӧ�����useremail
 	private Users user;
@@ -27,6 +26,7 @@ public class Strategy {
 	private String title;//���Ա���
 	private String tag;//��ǩ
 	private String img;//ͼƬ
+	private int looktimes;
 	private List<StrategyDiv> sd;
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
@@ -67,6 +67,13 @@ public class Strategy {
 	}
 	public void setImg(String img) {
 		this.img = img;
+	}
+	
+	public int getLooktimes() {
+		return looktimes;
+	}
+	public void setLooktimes(int looktimes) {
+		this.looktimes = looktimes;
 	}
 	@OneToMany(mappedBy="strategy",targetEntity=StrategyDiv.class,
 			cascade= {CascadeType.ALL})

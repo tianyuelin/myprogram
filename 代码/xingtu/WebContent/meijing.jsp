@@ -103,7 +103,7 @@
 
                     <!-- Nav tabs -->
                     <ul class="nav nav-tabs" role="tablist">
-                      <li class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">一周内攻略</a></li>
+                      <li class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">热门景点</a></li>
                       
                     </ul>
 
@@ -112,29 +112,15 @@
                       <div role="tabpanel" class="tab-pane active" id="home">
                         <div class="widget-blogpost">
                           <ul>
+                          <c:forEach items="${hotscene }" var="hots">
                             <li>
-                              <figure><a href="#"><img alt="" src="img/widget1.jpg"></a></figure>
+                              <figure><a href="${ctx }/sence/singlesence?id=${hots.sceneId}"><img alt="" src="${hots.img}"/></a></figure>
                               <div class="kd-post-info">
-                                <h6><a href="#">发帖人题目</a></h6>
-                                <time datetime="2008-02-14 20:00">January 15, 2015</time>
+                                <h6><a href="${ctx }/sence/singlesence?id=${hots.sceneId}">${hots.sname }</a></h6>
+                                
                               </div>
                             </li>
-                            <li>
-                              <figure><a href="#"><img alt="" src="img/widget1.jpg"></a></figure>
-                              <div class="kd-post-info">
-                                <h6><a href="#">发帖人题目</a></h6>
-                                <time datetime="2008-02-14 20:00">January 15, 2015</time>
-                              </div>
-                            </li>
-                            <li>
-                              <figure><a href="#"><img alt="" src="img/widget1.jpg"></a></figure>
-                              <div class="kd-post-info">
-                                <h6><a href="#">发帖人题目</a></h6>
-                                <time datetime="2008-02-14 20:00">January 15, 2015</time>
-                              </div>
-                            </li>
-                           
-                             
+                            </c:forEach>
                           </ul>
                         </div>
                       </div>

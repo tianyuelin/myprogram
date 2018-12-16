@@ -26,4 +26,13 @@ public class StrategyService {
 	public List<Strategy> findAllStrategy(int pageNum,int pageSize){
 		return sd.findAllStrategy(pageNum,pageSize);
 	}
+	public List<Strategy> findNewStrategy(){
+		return sd.findTheNewStrategy();
+	}
+	public List<Strategy> findHotStrategy(){
+		return sd.findTheHotStrategy();
+	}
+	public List<Strategy> findByTag(int pageNum,int pageSize,String tag){
+		return sd.findStrategyByTag(pageNum,pageSize,tag);
+	}
 }

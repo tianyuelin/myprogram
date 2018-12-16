@@ -95,9 +95,25 @@ public class StrategyDao {
 	//查询出最新攻略的三个
 	public List<Strategy> findTheNewStrategy(){
 		Session session = this.sf.getCurrentSession();
-		Query q = session.createQuery("from Strategy");
+		Query q = session.createQuery("from Strategy order by stime desc");
 		q.setFirstResult(0);
 		q.setMaxResults(3);
+		return q.list();
+	}
+	//查出最火的三个攻略
+	public List<Strategy> findTheHotStrategy(){
+		Session session = this.sf.getCurrentSession();
+		Query q = session.createQuery("from Strategy order by looktimes desc");
+		q.setFirstResult(0);
+		q.setMaxResults(3);
+		return q.list();
+	}
+	//根据标签查询
+	public List<Strategy> findStrategyByTag(int pageNum,int pageSize,String tag){
+		Session session = this.sf.getCurrentSession();
+		Query q = session.createQuery("from Strategy where tag like '%"+tag+"'%");
+		q.setFirstResult((pageNum-1)*pageSize);
+		q.setMaxResults(pageSize);
 		return q.list();
 	}
 }
