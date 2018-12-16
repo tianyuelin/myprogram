@@ -165,20 +165,14 @@
                         </section>
                       </div>
                     </article>
-                   
-                   
                   </div>
                 </div>
                 <div class="pagination-wrap">
                   <div class="pagination">
-                    <a href="#"><i class="fa fa-angle-double-left"></i></a>
-                    <a href="#">1</a>
-                    <a href="#">2</a>
-                    <span>3</span>
-                    <a href="#">4</a>
-                    <a href="#">5</a>
-                    <a href="#">6</a>
-                    <a href="#"><i class="fa fa-angle-double-right"></i></a>
+                    <a href="${ctx }/strategy/allStrategy?pageNum=1">首页</a>
+                    <a href="${ctx }/strategy/allStrategy?pageNum=${page.prePageNum }">上一页</a>
+                    <a href="${ctx }/strategy/allStrategy?pageNum=${page.nextPageNum }">下一页</a>
+                    <a href="${ctx }/strategy/allStrategy?pageNum=${page.totalPageNum }">末页</a>
                   </div>
                 </div>
               </div>
@@ -201,7 +195,7 @@
 
                     <!-- Nav tabs -->
                     <ul class="nav nav-tabs" role="tablist">
-                      <li class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">一周内攻略</a></li>
+                      <li class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">最热攻略</a></li>
                       <li><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab" class="new_gonglv">最新攻略</a></li>
                     </ul>
 
@@ -231,14 +225,6 @@
                                 <time datetime="2008-02-14 20:00">January 15, 2015</time>
                               </div>
                             </li>
-                            <li>
-                                <figure><a href="#"><img alt="" src="img/widget1.jpg"></a></figure>
-                                <div class="kd-post-info">
-                                  <h6><a href="#">发帖人题目</a></h6>
-                                  <time datetime="2008-02-14 20:00">January 15, 2015</time>
-                                </div>
-                              </li>
-                             
                           </ul>
                         </div>
                       </div>
@@ -259,7 +245,13 @@
                                 <time datetime="2008-02-14 20:00">January 15, 2015</time>
                               </div>
                             </li>
-                            
+                            <li>
+                              <figure><a href="#"><img alt="" src="img/widget1.jpg"></a></figure>
+                              <div class="kd-post-info">
+                                <h6><a href="#">发帖人题目</a></h6>
+                                <time datetime="2008-02-14 20:00">January 15, 2015</time>
+                              </div>
+                            </li>
                           </ul>
                         </div>
                       </div>

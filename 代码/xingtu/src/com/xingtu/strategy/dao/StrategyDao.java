@@ -11,6 +11,7 @@ import javax.annotation.Resource;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.query.Query;
 import org.springframework.stereotype.Repository;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -26,13 +27,13 @@ public class StrategyDao {
 		List<StrategyDiv> sds=new ArrayList<StrategyDiv>();
 		Strategy s = new Strategy();
 		Session session=this.sf.getCurrentSession();
-		//Í·Í¼µÄÉÏ´«
-		if(!file.isEmpty()){//ÅÐ¶ÏÎÄ¼þÊÇ·ñÎª¿Õ
+		//Í·Í¼ï¿½ï¿½ï¿½Ï´ï¿½
+		if(!file.isEmpty()){//ï¿½Ð¶ï¿½ï¿½Ä¼ï¿½ï¿½Ç·ï¿½Îªï¿½ï¿½
 			try {
-				InputStream is=file.getInputStream();//ÄÃµ½Õâ¸öÊäÈëÁ÷
+				InputStream is=file.getInputStream();//ï¿½Ãµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 				FileOutputStream fos=new FileOutputStream(
 						path+"\\img\\strategy\\"
-						+file.getOriginalFilename());//½«Õâ¸öÎÄ¼þ·Åµ½ÎÒµÄÏîÄ¿ÕæÊµÂ·¾¶ÏÂµÄÒ»¸öuploadÏÂ
+						+file.getOriginalFilename());//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½Åµï¿½ï¿½Òµï¿½ï¿½ï¿½Ä¿ï¿½ï¿½ÊµÂ·ï¿½ï¿½ï¿½Âµï¿½Ò»ï¿½ï¿½uploadï¿½ï¿½
 				s.setImg("img//strategy//"
 						+file.getOriginalFilename());
 				int i=0;
@@ -65,7 +66,7 @@ public class StrategyDao {
 			s.setStime(new Date());
 			s.setTitle(title);
 			session.save(s);
-			System.out.println("´æÈëÊý¾Ý¿â");
+			System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ý¿ï¿½");
 			for(int i=0;i<sds.size();i++) {
 				sds.get(i).setStrategy(s);
 				session.save(sds.get(i));
@@ -77,5 +78,26 @@ public class StrategyDao {
 		}
 		
 	}
-
+	//æŸ¥æ‰¾æ‰€æœ‰çš„æ”»ç•¥
+	public List<Strategy> findAllStrategy(int pageNum,int pageSize){
+		Session session = this.sf.getCurrentSession();
+		Query q = session.createQuery("from Strategy");
+		q.setFirstResult((pageNum-1)*pageSize);
+		q.setMaxResults(pageSize);
+		return q.list();
+	}
+	//é€šè¿‡idæŸ¥æ‰¾æ”»ç•¥
+	public Strategy findStrategyById(int id) {
+		Session session = this.sf.getCurrentSession();
+		Strategy s =(Strategy)session.createQuery("from Strategy where sId="+id).uniqueResult();
+		return s;
+	}
+	//æŸ¥è¯¢å‡ºæœ€æ–°æ”»ç•¥çš„ä¸‰ä¸ª
+	public List<Strategy> findTheNewStrategy(){
+		Session session = this.sf.getCurrentSession();
+		Query q = session.createQuery("from Strategy");
+		q.setFirstResult(0);
+		q.setMaxResults(3);
+		return q.list();
+	}
 }

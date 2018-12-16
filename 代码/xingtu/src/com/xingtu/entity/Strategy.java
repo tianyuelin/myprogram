@@ -14,17 +14,18 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 /**
- * 攻略的实体bean
+ * 锟斤拷锟皆碉拷实锟斤拷bean
  * */
 @Entity
 @Table(name="strategy")
 public class Strategy {
+	public static int looktimes=0;
 	private int sId;
-	//一个攻略对应一个用户，对应外键：useremail
+	//一锟斤拷锟斤拷锟皆讹拷应一锟斤拷锟矫伙拷锟斤拷锟斤拷应锟斤拷锟斤拷锟絬seremail
 	private Users user;
-	private Date stime;//用户设定的出行时间
-	private String title;//攻略标题
-	private String tag;//标签
+	private Date stime;//锟矫伙拷锟借定锟侥筹拷锟斤拷时锟斤拷
+	private String title;//锟斤拷锟皆憋拷锟斤拷
+	private String tag;//锟斤拷签
 	private String img;//图片
 	private List<StrategyDiv> sd;
 	@Id
