@@ -4,14 +4,18 @@ import java.util.List;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 
+import com.xingtu.entity.Journey;
 import com.xingtu.entity.Page;
 import com.xingtu.entity.Scene;
+import com.xingtu.entity.Users;
 import com.xingtu.journey.service.JourneyService;
 
 @Controller
@@ -39,5 +43,15 @@ public class JourneyController {
 		p.setList(scens);
 		request.setAttribute("page", p);
 		return "createer";
+	}
+	//创建行程
+	@RequestMapping(value="/createxc",method=RequestMethod.POST)
+	public String createxc(@RequestParam(value="diname",required=false)String []journames,@RequestParam(value="jtime",required=false)String jtime,@RequestParam(value="jtitle",required=false)String jtitle,HttpSession session,HttpServletRequest request){
+		Users u= (Users)session.getAttribute("user");
+		Journey journey=js.createJourney(journames, u, jtime, jtitle);
+		List<Scene> jou1=js.findJour(journames[0]);
+		request.setAttribute("journey", journey);
+		request.setAttribute("jou", jou1);
+		return "showxc";
 	}
 }
