@@ -104,15 +104,15 @@
 				    </div>
 				    <div id="mygl">
 				          <div class="zdgl">我的攻略</div>
-				          <c:if test="${strategys!=null }">
-				          <c:forEach items="${strategys }" var="strategy">
+				          <c:if test="${user.st!=null }">
+				          <c:forEach items="${user.st }" var="strategy">
 				          <div class="gol1">
 				              <div class="glbt1"><a href="${ctx }/strategy/singleStrategy?StrategyId=${strategy.sId}">${strategy.title }</a></div>
 				              <div class="tpic1"><img src="${ctx }/${strategy.img}"></img></div>
 				          </div>
 				          </c:forEach>
 				          </c:if>
-				          <c:if test="${strategys == null }">
+				          <c:if test="${user.st == null }">
 				          <div class="nostrategy">您的攻略空空如也~</div>
 				          </c:if>
 				    </div>

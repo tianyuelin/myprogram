@@ -54,7 +54,7 @@
                         <section class="kd-bloginfo">
                           <h2 class="tiezi_text"><a href="${ctx }/strategy/singleStrategy?StrategyId=${strategy.sId}">${strategy.title }</a></h2>
                           <ul class="kd-postoption">
-                            <li><a href="#" class="thcolorhover">${strategy.user.username }</a></li>
+                            <li><a href="${ctx }/user/otherUserCenter?useremail=${strategy.user.email}" class="thcolorhover">${strategy.user.username }</a></li>
                             <li><time datetime="2008-02-14 20:00">|${strategy.stime }</time></li>
                           </ul>
                           <p>${strategy.tag }</p>

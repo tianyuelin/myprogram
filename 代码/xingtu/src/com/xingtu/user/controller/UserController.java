@@ -81,4 +81,11 @@ public class UserController {
 		}
 		return "";
 		}
+	//进入别人的个人中心页
+	@RequestMapping(value="/otherUserCenter",method=RequestMethod.GET)
+	public String otherUserCenter(HttpServletRequest request,@RequestParam(value="useremail")String useremali) {
+		Users u = this.userService.UserCenter(useremali);
+		request.setAttribute("CenterOwn", u);
+		return "otherseeUser";
+	}
 }
