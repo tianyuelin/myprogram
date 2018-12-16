@@ -20,6 +20,9 @@ public class StrategyService {
 	public Strategy createStrategy(String []tags,String []titles,String []texts,String []addresses,String title,Users user,MultipartFile file,String path) {
 		return sd.saveStrategy(tags,titles, texts, addresses, title, user,file,path);
 	}
+	public Strategy findSingleStrategy(int id) {
+		return sd.findStrategyById(id);
+	}
 	public List<Strategy> findAllStrategy(int pageNum,int pageSize){
 		return sd.findAllStrategy(pageNum,pageSize);
 	}

@@ -50,4 +50,10 @@ public class StrategyController {
 		request.setAttribute("allstrategy", allstrategy);
 		return "list";
 	}
+	@RequestMapping(value="/singleStrategy",method=RequestMethod.GET)
+	public String findSingleStrategy(HttpServletRequest request,@RequestParam(value="StrategyId")int id) {
+		Strategy s = ss.findSingleStrategy(id);
+		request.setAttribute("strategy", s);
+		return "YouJishow";
+	}
 }
