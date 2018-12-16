@@ -41,13 +41,14 @@ public class StrategyController {
 	}
 	@RequestMapping(value="/allStrategy",method=RequestMethod.GET)
 	public String findAllStrategy(HttpServletRequest request,@RequestParam(value="pageNum",defaultValue="1")int pageNum) {
-		Page<Scene> p = new Page<Scene>();
+		Page<Strategy> p = new Page<Strategy>();
 		p.setCurrentPageNum(pageNum);
 		p.setPageSize(4);
 		p.setNextPageNum(pageNum+1);
 		p.setPrePageNum(pageNum-1);
 		List<Strategy> allstrategy= ss.findAllStrategy(p.getCurrentPageNum(),p.getPageSize());
-		request.setAttribute("allstrategy", allstrategy);
+		p.setList(allstrategy);
+		request.setAttribute("allstrategy", p);
 		return "list";
 	}
 	@RequestMapping(value="/singleStrategy",method=RequestMethod.GET)

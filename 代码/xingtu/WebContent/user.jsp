@@ -6,7 +6,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>QTL的空间</title>
+<title>${user.username }的空间</title>
 <link href="${ctx }/css/user/myuse.css" rel="stylesheet">
 <link href="${ctx }/css/user/myhead.css" rel="stylesheet">
 <link href="${ctx }/css/home/header.css" rel="stylesheet">
@@ -331,6 +331,7 @@
             var replaceSrc = evt.target.result;
             //更换cropper的图片
             $('#tailoringImg').cropper('replace', replaceSrc,false);//默认false，适应高度，不失真
+            
         }
         reader.readAsDataURL(file.files[0]);
     }
