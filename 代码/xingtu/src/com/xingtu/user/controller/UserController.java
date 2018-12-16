@@ -57,18 +57,22 @@ public class UserController {
 			return "sign";
 		}
 	}
+	
 	//跳转到个人中心页
 	@RequestMapping(value="/usercenter",method=RequestMethod.GET)
 	public String userCenter(HttpSession session) {
 		Object obj = session.getAttribute("user");
 		if(obj!=null) {
 			Users user =(Users)obj;
-			Long funscount = this.userService.getFunsCount(user.getEmail());
-			Long followedcount = this.userService.getFollowedCount(user.getEmail());
-			session.setAttribute("funscount", funscount);
-			session.setAttribute("followedcount", followedcount);
+			String myemail=user.getEmail();
+			//获取我关注的人数并存入Session
+			Long FGCount=this.userService.findFGCount1(myemail);
+			session.setAttribute("FGCount", FGCount);
+			//获取我粉丝的人数
+			Long fansCount = this.userService.findfansCount1(myemail);
+			session.setAttribute("fansCount",fansCount);		
 			return "user";
 		}
 		return "";
-	}
+		}
 }

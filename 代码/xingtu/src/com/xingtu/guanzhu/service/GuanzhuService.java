@@ -20,10 +20,14 @@ public class GuanzhuService {
 		this.guanzhuDao.InsertGuanzhu(follow);	
 	}
 	
+	//获得我的关注用户
 	public List<Users> findFollows1(String myemail) {
 		return this.guanzhuDao.findFollows(myemail);
 	}
-
-		
+    
+	//获得我的粉丝用户集
+	public List<Users> findFans1(String myemail){
+		return this.guanzhuDao.findFans(myemail);
+	}	
 	
 }

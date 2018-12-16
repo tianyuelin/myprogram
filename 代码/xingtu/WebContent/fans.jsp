@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+	<c:set var="ctx" value="${pageContext.request.contextPath }"></c:set>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -66,13 +68,13 @@
 			</div>
 			<div class="fruser-fans">
 				<div class="fz">
-					<div class="shu">0</div>
-					<div class="guzh">关注</div>
+					<div class="shu">${FGCount }</div>
+					<div class="guzh"><a href="${ctx }/guanzhuUser">关注</a></div>
 				</div>
 				<div class="hz">|</div>
 				<div class="fy">
-					<div>0</div>
-					<div>粉丝</div>
+					<div>${fansCount }</div>
+					<div><a href="#">粉丝</a></div>
 				</div>
 			</div>
 		</div>
@@ -107,6 +109,9 @@
 	           <span style="margin-left:150px;margin-right:20px;"><a href="fellow.jsp">我的关注</a></span>     <span><a href="fans.jsp" style="color:black">我的粉丝</a></span>
 	    </div>
 	    
+	    
+	    
+	    <c:forEach items="${fansPerson }" var="fpn">
 	    <!-- 粉丝1 -->
 	    <div class="seconddiv">
 	        <div style="float:left;width:480px;">
@@ -114,7 +119,7 @@
 	            <img src="img/icon11.png"/>  
 	          </div>
 	          <div style="float:left;margin-left:20px;">
-	            <div style="margin-top:25px;">zkhu9746</div>
+	            <div style="margin-top:25px;">${fpn.username }</div>
 	            <div style="color:gray;margin-top:10px;">游记&nbsp;3  &nbsp;&nbsp;&nbsp;  行程&nbsp;2  &nbsp;&nbsp;&nbsp; 评论&nbsp;2 &nbsp;&nbsp;&nbsp;  关注&nbsp;2   &nbsp;&nbsp;&nbsp; 粉丝&nbsp;2</div>
 	          </div>
 	        </div>      
@@ -123,64 +128,10 @@
 	            <input style="opacity: 0.9;background-color:white;border:1px solid gray;width:60px;height:30px;" type="button" value="私信"/>
 	        </div>   
 	    </div>
+	    </c:forEach>
 	    
-	    <!-- 粉丝2 -->
-	    <div class="seconddiv">
-	        <div style="float:left;width:480px;">
-	          <div style="float:left;margin-left:20px;margin-top:25px;">
-	            <img src="img/icon11.png"/>  
-	          </div>
-	          <div style="float:left;margin-left:20px;">
-	            <div style="margin-top:25px;">zkhu9746</div>
-	            <div style="color:gray;margin-top:10px;">游记&nbsp;3  &nbsp;&nbsp;&nbsp;  行程&nbsp;2  &nbsp;&nbsp;&nbsp; 评论&nbsp;2 &nbsp;&nbsp;&nbsp;  关注&nbsp;2   &nbsp;&nbsp;&nbsp; 粉丝&nbsp;2</div>
-	          </div>
-	        </div>
-	        
-	        <br/>
-	        <div style="float:left;margin-left:200px;margin-top:17px;">
-	            <input style="opacity: 0.9;background-color:white;border:1px solid gray;width:60px;height:30px;" type="button" value="私信"/>
-	        </div>   
-	    </div>
 	    
-	    <!-- 粉丝3 -->
-	    <div class="seconddiv">
-	        <div style="float:left;width:480px;">
-	          <div style="float:left;margin-left:20px;margin-top:25px;">
-	            <img src="img/icon11.png"/>  
-	          </div>
-	          <div style="float:left;margin-left:20px;">
-	            <div style="margin-top:25px;">zkhu9746</div>
-	            <div style="color:gray;margin-top:10px;">游记&nbsp;3  &nbsp;&nbsp;&nbsp;  行程&nbsp;2  &nbsp;&nbsp;&nbsp; 评论&nbsp;2 &nbsp;&nbsp;&nbsp;  关注&nbsp;2   &nbsp;&nbsp;&nbsp; 粉丝&nbsp;2</div>
-	          </div>
-	        </div>
-	        
-	        <br/>
-	        <div style="float:left;margin-left:200px;margin-top:17px;">
-	            <input style="opacity: 0.9;background-color:white;border:1px solid gray;width:60px;height:30px;" type="button" value="私信"/>
-	        </div>   
-	    </div>
-	
-	
-	
-	 <!-- 粉丝4 -->
-	    <div class="seconddiv">
-	        <div style="float:left;width:480px;">
-	          <div style="float:left;margin-left:20px;margin-top:25px;">
-	            <img src="img/icon11.png"/>  
-	          </div>
-	          <div style="float:left;margin-left:20px;">
-	            <div style="margin-top:25px;">zkhu9746</div>
-	            <div style="color:gray;margin-top:10px;">游记&nbsp;3  &nbsp;&nbsp;&nbsp;  行程&nbsp;2  &nbsp;&nbsp;&nbsp; 评论&nbsp;2 &nbsp;&nbsp;&nbsp;  关注&nbsp;2   &nbsp;&nbsp;&nbsp; 粉丝&nbsp;2</div>
-	          </div>
-	        </div>
-	        
-	        <br/>
-	        <div style="float:left;margin-left:200px;margin-top:17px;">
-	            <input style="opacity: 0.9;background-color:white;border:1px solid gray;width:60px;height:30px;" type="button" value="私信"/>
-	        </div>   
-	    </div>
-	</div>
-	
+	   
 	
 	<div style="float:left;text-align:center;font-family:'microsoft yahei'; font-size:14px;margin-left:46%;margin-top:5%;margin-bottom:5%">
 	    <a href="#">首页</a> 

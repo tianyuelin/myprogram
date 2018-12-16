@@ -38,23 +38,13 @@
 			</div>
 			<div class="fruser-fans">
 				<div class="fz">
-<<<<<<< HEAD
-					<div class="shu">0</div>
-					<div class="guzh"><a href="guanzhuUser">关注</a></div>
-=======
-					<div class="shu">${followedcount }</div>
-					<div class="guzh">关注</div>
->>>>>>> branch 'master' of https://github.com/baocaiqian/QTL-JAVA
+					<div class="shu">${FGCount }</div>
+					<div class="guzh"><a href="${ctx }/guanzhuUser">关注</a></div>
 				</div>
 				<div class="hz">|</div>
 				<div class="fy">
-<<<<<<< HEAD
-					<div>0</div>
-					<div><a href="fans.jsp">粉丝</a></div>
-=======
-					<div>${funscount }</div>
-					<div>粉丝</div>
->>>>>>> branch 'master' of https://github.com/baocaiqian/QTL-JAVA
+					<div>${fansCount }</div>
+					<div><a href="${ctx }/fansUser">粉丝</a></div>
 				</div>
 			</div>
 		</div>

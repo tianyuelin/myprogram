@@ -10,7 +10,7 @@ import javax.persistence.Table;
 @Table(name="follow")
 public class Followed {
 	private int id;
-	private String useremail;//关注人邮箱
+	private String useremail;//粉丝的邮箱
 	private String follwed_user;//被关注人邮箱
 	private int status;//状态
 	@Id

@@ -72,13 +72,13 @@
 			</div>
 			<div class="fruser-fans">
 				<div class="fz">
-					<div class="shu">0</div>
-					<div class="guzh">关注</div>
+					<div class="shu">${FGCount }</div>
+					<div class="guzh"><a href="#">关注</a></div>
 				</div>
 				<div class="hz">|</div>
 				<div class="fy">
-					<div>0</div>
-					<div>粉丝</div>
+					<div>${fansCount }</div>
+					<div><a href="${ctx }/fansUser">粉丝</a></div>
 				</div>
 			</div>
 		</div>
@@ -121,13 +121,13 @@
 	            <img src="img/icon11.png"/>   <!-- 等插入头像之后添加 -->
 	          </div>
 	          <div style="float:left;margin-left:20px;">
-	            <div style="margin-top:25px;">fp.email</div>
+	            <div style="margin-top:25px;">${fp.username }</div>
 	            <div style="color:gray;margin-top:10px;">游记&nbsp;3  &nbsp;&nbsp;&nbsp;  行程&nbsp;2  &nbsp;&nbsp;&nbsp; 评论&nbsp;2 &nbsp;&nbsp;&nbsp;  关注&nbsp;2   &nbsp;&nbsp;&nbsp; 粉丝&nbsp;2</div>
 	          </div>
 	        </div>      
 	        <br/>
 	        <div style="float:left;margin-left:200px;margin-top:17px;">
-	            <a href="sixin.jsp?email=${fp.email }"><input style="opacity: 0.9;background-color:white;border:1px solid gray;width:60px;height:30px;" type="button" value="私信"/></a>
+	            <a href="${ctx }/sixin?email=${fp.username }"><input style="opacity: 0.9;background-color:white;border:1px solid gray;width:60px;height:30px;" type="button" value="私信"/></a>
 	        </div>   
 	    </div>
 	    

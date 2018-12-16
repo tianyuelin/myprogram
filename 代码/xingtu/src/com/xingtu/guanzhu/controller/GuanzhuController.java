@@ -28,8 +28,8 @@ public class GuanzhuController {
 		followed.setFollwed_user(bepersonemail);
 		
 		//将关注者放入
-		Users currentUser= (Users) request.getSession().getAttribute("currentUser");
-		String myemail=currentUser.getEmail();
+		Users user= (Users) request.getSession().getAttribute("user");
+		String myemail=user.getEmail();
 		followed.setUseremail(myemail);
 		this.guanzhuService.InsertGuanzhu1(followed);
 		return "otherseeUser";
@@ -41,8 +41,8 @@ public class GuanzhuController {
 	public String guanzhuUser(HttpServletRequest request) {
 		
 		
-		Users currentUser= (Users) request.getSession().getAttribute("currentUser");
-		String myemail=currentUser.getEmail();
+		Users user= (Users) request.getSession().getAttribute("user");
+		String myemail=user.getEmail();
 		
 		List<Users> felloPerson=this.guanzhuService.findFollows1(myemail);
 		
@@ -51,6 +51,16 @@ public class GuanzhuController {
 		return "fellow";
 	}
 	
+	//获得粉丝都有谁的函数
+	@RequestMapping(value="/fansUser")
+	public String fansUser(HttpServletRequest request) {
+		//获取目前登录用户的邮箱
+		Users user=(Users) request.getSession().getAttribute("user");
+		String myemail=user.getEmail();
+		List<Users> fansPerson=this.guanzhuService.findFans1(myemail);
+		request.setAttribute("fansPerson", fansPerson);
+		return "fans";
+	}
 	
 	
 }
