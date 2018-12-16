@@ -1,0 +1,9 @@
+INSERT INTO `jourdiv` VALUES (1, '故宫', 7);
+INSERT INTO `jourdiv` VALUES (2, '颐和园', 7);
+INSERT INTO `jourdiv` VALUES (3, '天安门广场', 8);
+INSERT INTO `jourdiv` VALUES (4, '南锣鼓巷', 8);
+INSERT INTO `jourdiv` VALUES (5, '798艺术区', 8);
+INSERT INTO `jourdiv` VALUES (6, '798艺术区', 9);
+INSERT INTO `jourdiv` VALUES (7, '南锣鼓巷', 9);
+INSERT INTO `jourdiv` VALUES (8, '798艺术区', 10);
+INSERT INTO `jourdiv` VALUES (9, '南锣鼓巷', 10);
