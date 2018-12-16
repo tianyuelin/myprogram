@@ -10,31 +10,32 @@
 <link rel="stylesheet" href="${ctx }/css/user/youer.css">
 <link href="${ctx }/css/home/header.css" rel="stylesheet">
 <link href="${ctx }/css/home/bootstrap.min.css" rel="stylesheet">
-<script src="${ctx }/js/home/jquery-1.11.3.min.js"></script>
-<script src="${ctx }/js/home/bootstrap.min.js"></script>
-<script src="${ctx }/js/home/swiper.min.js"></script>
-<script src="${ctx }/js/home/main.js"></script>
+
 </head>
 <body>
 <jsp:include page="header.jsp" flush="true"></jsp:include>
 <div class="erall">
    <div class="tou">
-         <div class="sjz">石家庄一游</div>
+         <div class="biaot"><input class="tit" type="text" placeholder='北京一日游'></div>
+         <div class="cf">出发时间<input type="text"></div>
          <div class="wc"><input type="submit" style="width:80px;height:30px" value="完成" ></div>
    </div>
-   <div class="zuo">
+   <div id="zuo">
         <div class="xc">我的行程</div>
+        <!-- <div class="di">天安门广场</div>
+        <div class="xia">相距220km</div> -->
    </div>
-   <div class="zhong">
+   <div id="zhong">
         <div class="bj">编辑</div>
-        <div class="sj">石家庄</div>
+        <div class="sj">北京</div>
         <div class="tj">添加城市</div>
-        <div class="xian1"><img src="${ctx }/img/di1.jpg">
-             <div class="di1">01&nbsp;&nbsp;&nbsp;&nbsp;空中花园</div>
-             <p class="pj1">地址：石家庄桥东区石市翟营南大街</p>
-             <a href="#" class="ck">查看周边</a>
-             <div class="bz">添加备注</div>
-        </div>
+        <%-- <div id="xian1">
+             <img src="${ctx }/img/di1.jpg">
+             <div id="di1">01&nbsp;&nbsp;&nbsp;&nbsp;空中花园</div>
+             <p id="pj1">地址：石家庄桥东区石市翟营南大街</p>
+             <a href="#" id="ck1">查看周边</a>
+        </div> --%>
+        <!-- <div class="bz">添加备注</div> -->
    </div>
    <div class="you">
         <div class="re"><a href="#">热门推荐</a>
@@ -50,14 +51,17 @@
                         <input type="submit" style="width:50px;height:25px" value="搜索" >
                    </form>
                </div>
-               <div class="jing1">
-                   <div class="jd1"><img src="${ctx }/img/c9.jpg"></div>
-                   <div class="jie1">空中花园</div>
-                   <div class="biao1">标签：景观台</div>
+               <c:forEach var="journeylist" items="${page.list }">
+               <div class="jing1" id="jing${journeylist.sceneId}" onclick="addxq(this)">
+                   <div class="jd1"><img id="im${journeylist.sceneId}" src="${journeylist.img}"></div>
+                   <div class="jie1" id="ji${journeylist.sceneId}">${journeylist.sname}</div>
+                   <div class="biao1">标签：美景</div>
                    <div class="ping1">评论（300+）</div>
-                   <div class="jia1" onclick="add()">加入编辑</div>
+                   <div class="dizh1">${journeylist.address}</div>
+                   <div class="jia1" id="jrbj${journeylist.sceneId}" >加入编辑</div>
                </div>
-               <div class="jing2">
+               </c:forEach>
+               <%-- <div class="jing2">
                    <div class="jd2"><img src="${ctx }/img/c2.jpg"></div>
                    <div class="jie2">正定古城墙</div>
                    <div class="biao2">标签：遗址</div>
@@ -70,7 +74,15 @@
                    <div class="biao3">标签：山峦</div>
                    <div class="ping3">评论（280+）</div>
                    <div class="jia3" onclick="add()">加入编辑</div>
-               </div>
+               </div> --%>
+               <div class="pagination-wrap">
+                  <div class="pagination">
+                    <a href="${ctx }/journey/journeylist?pageNum=1">首页</a>
+                    <a href="${ctx }/journey/journeylist?pageNum=${page.prePageNum }">上一页</a>
+                    <a href="${ctx }/journey/journeylist?pageNum=${page.nextPageNum }">下一页</a>
+                    <a href="${ctx }/journey/journeylist?pageNum=${page.totalPageNum }">末页</a>
+                  </div>
+                </div>
         </div>
         
    </div>
@@ -78,3 +90,10 @@
 <jsp:include page="footer.jsp" flush="true"></jsp:include>
 </body>
 </html>
+<script src="${ctx }/js/home/jquery-1.11.3.min.js"></script>
+<script src="${ctx }/js/user/jquery.min.js"></script>
+<script src="${ctx }/js/user/ajaxfileupload.js"></script>
+<script src="${ctx }/js/home/bootstrap.min.js"></script>
+<script src="${ctx }/js/home/swiper.min.js"></script>
+<script src="${ctx }/js/home/main.js"></script>
+<script src="${ctx }/js/user/createer.js"></script>
