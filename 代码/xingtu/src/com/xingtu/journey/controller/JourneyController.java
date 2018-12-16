@@ -8,7 +8,9 @@ import javax.servlet.http.HttpServletRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
+import com.xingtu.entity.Page;
 import com.xingtu.entity.Scene;
 import com.xingtu.journey.service.JourneyService;
 
@@ -25,10 +27,17 @@ public class JourneyController {
 		return "createxingcheng";
 	}
 	@RequestMapping(value="/journeylist",method=RequestMethod.GET)
-	public String createJour(HttpServletRequest request) {
+	public String createJour(HttpServletRequest request,@RequestParam(value="pageNum",defaultValue="1")int pageNum) {
 		/* 获取热门城市 */
-		List<Scene> list1=js.getCityList();
-		request.setAttribute("journeylist", list1);
+		Page<Scene> p = new Page<Scene>();
+		p.setCurrentPageNum(pageNum);
+		p.setPageSize(3);
+		p.setNextPageNum(pageNum+1);
+		p.setPrePageNum(pageNum-1);
+		System.out.println(pageNum);
+		List<Scene> scens = js.getJourneyList(p.getCurrentPageNum(),p.getPageSize());
+		p.setList(scens);
+		request.setAttribute("page", p);
 		return "createer";
 	}
 }

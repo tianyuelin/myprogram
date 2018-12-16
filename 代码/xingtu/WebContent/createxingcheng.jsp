@@ -13,18 +13,27 @@
 <link href="${ctx }/css/user/createxc.css" rel="stylesheet">
 <link href="${ctx }/css/home/header.css" rel="stylesheet">
 <link href="${ctx }/css/home/bootstrap.min.css" rel="stylesheet">
-<script src="${ctx }/js/home/jquery-1.11.3.min.js"></script>
-<script src="${ctx }/js/home/bootstrap.min.js"></script>
-<script src="${ctx }/js/home/swiper.min.js"></script>
-<script src="${ctx }/js/home/main.js"></script>
 </head>
 <body>
 <jsp:include page="header.jsp" flush="true"></jsp:include>
 	<div class="all">
 		<div class="left" style="margin-top: 5%;back">
 			<div class="tit">已选目的地</div>
-			<div class="titna" >从右侧添加想去的地点</div>
-			<div class="tianjia"><input type="text" value="+手动添加行程"></div>
+			<div id="titna">
+			    <div id="did0" >
+			         <div id="xu">从右侧添加想去的地方</div>
+			    </div>
+				<%-- <div id="myci1">
+					<div id="did1">
+						<span>北京</span> 
+						<img src="${ctx }/img/left-square.png" id="lef1"> 
+						<span class="cou1">1</span> 
+						<img src="${ctx }/img/right-square.png" id="rig1">
+						<img src="${ctx }/img/clo.png" onmouseover="deleteed()" id="del1">
+					</div>
+				</div> --%>
+			</div>
+			<div id="tianjia"><input type="text"  id="diz" placeholder="+手动添加行程" onchange="changecity()"></div>
 			<div class="bian">
 				<div class="bj">
 					<a href="${ctx }/journey/journeylist">开始编辑</a>
@@ -41,21 +50,23 @@
 					</form>
 				</div>
 			</div>
-			<div class="jd9">
+			<div id="jd9">
 			<c:forEach var="citylist" items="${citylist }">
-				<div class="dian1">
-					<img src="${citylist.img }" onclick="add()">
-					<div class="ming1">${citylist.city }</div>
+				<div class="dian1" id="dd${citylist.ctid }">
+					<img src="${citylist.ctimg }">
+					<div class="ming1" id="cna${citylist.ctid }" onclick="addcity(this)">${citylist.ctname }</div>
 				</div>
 			</c:forEach>
 			</div>
 		</div>
 	</div>
 	<jsp:include page="footer.jsp" flush="true"></jsp:include>
-	<script type="text/javascript">
-		function add() {
-			
-		}
-	</script>
 </body>
 </html>
+<script src="${ctx }/js/home/jquery-1.11.3.min.js"></script>
+<script src="${ctx }/js/user/jquery.min.js"></script>
+<script src="${ctx }/js/user/ajaxfileupload.js"></script>
+<script src="${ctx }/js/home/bootstrap.min.js"></script>
+<script src="${ctx }/js/home/swiper.min.js"></script>
+<script src="${ctx }/js/home/main.js"></script>
+<script src="${ctx }/js/user/createxc.js"></script>
