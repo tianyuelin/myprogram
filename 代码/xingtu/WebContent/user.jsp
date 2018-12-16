@@ -41,13 +41,13 @@
 			</div>
 			<div class="fruser-fans">
 				<div class="fz">
-					<div class="shu">${followedcount }</div>
-					<div class="guzh">关注</div>
+					<div class="shu">${FGCount }</div>
+					<div class="guzh"><a href="${ctx }/guanzhuUser">关注</a></div>
 				</div>
 				<div class="hz">|</div>
 				<div class="fy">
-					<div>${funscount }</div>
-					<div>粉丝</div>
+					<div>${fansCount }</div>
+					<div><a href="${ctx }/fansUser">粉丝</a></div>
 				</div>
 			</div>
 		</div>
@@ -76,16 +76,16 @@
 	<div class="qn-skin">
 		<div class="qn-page">
 		    <div class="flmainbox-left">
-		          <div class="xxz1"><a href="#myxc">行程</a></div>
-		          <div class="xxz2"><a href="#mygl">攻略</a></div>
-		          <div class="xxz3"><a href="#mysc">收藏</a></div>
-		          <div class="xxz4"><a href="#mygz">关注</a></div>
+		          <div class="xxz1"><a href="#myxc">我的行程</a></div>
+		          <div class="xxz2"><a href="#mygl">我的攻略</a></div>
+		          <div class="xxz3"><a href="#mysc">攻略收藏</a></div>
+		          <div class="xxz4"><a href="#mygz">心愿清单</a></div>
 		    </div>
 			<div class="flmainbox-right">
 				<div class="b-home-detail">
 				    <div id="myxc">
 				          <div class="zjxc">最近行程</div>
-				          <div class="xich1">  
+				          <div class="xich1">
 				              <div class="wcj1">我创建了行程计划</div>
 				              <div class="rq1">
 				                    <div class="ts1">共1天</div>
@@ -117,7 +117,7 @@
 				          </c:if>
 				    </div>
 					<div id="mysc">
-						<div class="zdsc">我的收藏</div>
+						<div class="zdsc">攻略收藏</div>
 						<div class="sphoto1">
 							<div class="sc1">
 								<img src="${ctx }/img/sc1.jpg">
@@ -158,107 +158,10 @@
 						</div>
 					</div>
 					<div id="mygz">
-					    <div class="zdgz">我的关注</div>
+					    <div class="zdgz">心愿清单</div>
 						<ul class="fans-listclrfix">
-							<li class="myitem"><dl class="fans-info clrfix">
-									<dt class="pic fl">
-										<a href="//travel.qunar.com/space/1837996@qunar"
-											target="_blank"><img src="${ctx }/img/tou5.jpg" /></a>
-									</dt>
-									<dd class="intro fr">
-										<h3 class="name">
-											<a href="//travel.qunar.com/space/1837996@qunar"
-												target="_blank">任紫玉</a>
-										</h3>
-										<div class="info">
-											<a href="//travel.qunar.com/space/notes/1837996@qunar"
-												target="_blank">游记<span class="notes">30</span></a><a
-												href="//travel.qunar.com/space/books/1837996@qunar"
-												target="_blank">行程<span class="plan">1</span></a><a
-												href="//travel.qunar.com/space/comments?userId=1837996@qunar"
-												target="_blank">评论<span class="comment">33</span></a>
-										</div>
-										<p class="introduce">旅行摄影自由撰稿人，旅行达人。新...</p>
-									</dd>
-								</dl> <a data-uid="1837996@qunar" href="#" class="js-follow care-btn"></a><a
-								href="#" class="private-btn" data-ui="privateMsg"
-								data-uid="1837996" data-username="任紫玉"></a></li>
-							<li class="myitem"><dl class="fans-info clrfix">
-									<dt class="pic fl">
-										<a href="//travel.qunar.com/space/298229@qunar"
-											target="_blank"><img src="${ctx }/img/tou6.jpg" /></a>
-									</dt>
-									<dd class="intro fr">
-										<h3 class="name">
-											<a href="//travel.qunar.com/space/298229@qunar"
-												target="_blank">不旅不婷</a>
-										</h3>
-										<div class="info">
-											<a href="//travel.qunar.com/space/notes/298229@qunar"
-												target="_blank">游记<span class="notes">11</span></a><a
-												href="//travel.qunar.com/space/books/298229@qunar"
-												target="_blank">行程<span class="plan">2</span></a><a
-												href="//travel.qunar.com/space/comments?userId=298229@qunar"
-												target="_blank">评论<span class="comment">52</span></a>
-										</div>
-										<p class="introduce">微信：abby4528 ,新浪微博：@Abby45</p>
-									</dd>
-								</dl> <a data-uid="298229@qunar" href="#" class="js-follow care-btn"></a><a
-								href="#" class="private-btn" data-ui="privateMsg"
-								data-uid="298229" data-username="不旅不婷"></a>
-								</li>
-							<li class="myitem"><dl class="fans-info clrfix">
-									<dt class="pic fl">
-										<a href="//travel.qunar.com/space/152966678@qunar"
-											target="_blank"><img src="${ctx }/img/tou8.jpg" /></a>
-									</dt>
-									<dd class="intro fr">
-										<h3 class="name">
-											<a href="//travel.qunar.com/space/152966678@qunar"
-												target="_blank">dszf4127</a>
-										</h3>
-										<div class="info">
-											<a href="//travel.qunar.com/space/notes/152966678@qunar"
-												target="_blank">游记<span class="notes">17</span></a><a
-												href="//travel.qunar.com/space/books/152966678@qunar"
-												target="_blank">行程<span class="plan">1</span></a><a
-												href="//travel.qunar.com/space/comments?userId=152966678@qunar"
-												target="_blank">评论<span class="comment">69</span></a>
-										</div>
-										<p class="introduce">陌生花开，可缓缓归矣...</p>
-									</dd>
-								</dl> <a data-uid="152966678@qunar" href="#"
-								class="js-follow care-btn"></a><a href="#" class="private-btn"
-								data-ui="privateMsg" data-uid="152966678"
-								data-username="dszf4127"></a>
-								</li>
-							<li class="myitem"><dl class="fans-info clrfix">
-									<dt class="pic fl">
-										<a href="//travel.qunar.com/space/123265252@qunar"
-											target="_blank"><img src="${ctx }/img/tou7.jpg" /></a>
-									</dt>
-									<dd class="intro fr">
-										<h3 class="name">
-											<a href="//travel.qunar.com/space/123265252@qunar"
-												target="_blank">手边巴黎urruolan</a>
-										</h3>
-										<div class="info">
-											<a href="//travel.qunar.com/space/notes/123265252@qunar"
-												target="_blank">游记<span class="notes">56</span></a><a
-												href="//travel.qunar.com/space/books/123265252@qunar"
-												target="_blank">行程<span class="plan">3</span></a><a
-												href="//travel.qunar.com/space/comments?userId=123265252@qunar"
-												target="_blank">评论<span class="comment">6</span></a>
-										</div>
-										<p class="introduce">慢享6大洲34国 时尚旅行专栏作家 /...</p>
-									</dd>
-								</dl> <a data-uid="123265252@qunar" href="#"
-								class="js-follow care-btn"></a><a href="#" class="private-btn"
-								data-ui="privateMsg" data-uid="123265252"
-								data-username="手边巴黎urruolan"></a>
-								</li>
+							
 						</ul>
-						<a href="#" class="btn-huan"> 更换一批</a>
 					</div>
 				</div>
 			</div>

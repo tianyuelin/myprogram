@@ -52,22 +52,24 @@ public class UserDao{
 			return false;
 		}		
 	}
-	//鏍规嵁ID鏌ユ壘鐢ㄦ埛
+
+	//根据ID查找用户
 	public Users findUserByEmail(String email) {
 		Session session = this.sessionFactory.getCurrentSession();
 		Users u = (Users)session.createQuery("from Users where email='"+email+"'").uniqueResult();
 		return u;
 	}
-	//鏌ユ壘璇ョ敤鎴风殑绮変笣鏁�
-	public Long funsCount(String email) {
-		Session session = this.sessionFactory.getCurrentSession();
-		Long count = (Long)session.createQuery("select count(*) from Funs where follower_user='"+email+"'").uniqueResult();
-		return count;
+	//查找我关注的人的数量guanzhuCount
+	public Long findFGCount(String email) { //email是当前用户的邮箱
+		Session session =this.sessionFactory.getCurrentSession();
+		Long guanzhuCount=(Long)session.createQuery("select count(*) from Followed where useremail='"+email+"'").uniqueResult();
+		return guanzhuCount;
 	}
-	public Long followedConut(String email) {
-		Session session = this.sessionFactory.getCurrentSession();
-		Long count = (Long)session.createQuery("select count(*) from Followed where follwed_user='"+email+"'").uniqueResult();
-		return count;
+	//查找我的粉丝的数量fansCount
+	public Long findfansCount(String email) {
+		Session session=this.sessionFactory.getCurrentSession();
+		Long fansCount=(Long)session.createQuery("select count(*) from Followed where follwed_user='"+email+"'").uniqueResult();
+		return fansCount;
 	}
 	//查询攻略
 	public List<Strategy> findStrategyByEmail(String email){

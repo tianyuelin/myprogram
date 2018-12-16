@@ -202,9 +202,8 @@
 							<i><img style="height:22px;" id="zcodeImg" alt="点击更换" title="点击更换" src="" /></i>
 						</div-->
 						<span class="pull-right" style="width:55px;height:30.1px;background-color: green;color:white;border-color:green"><a href="javascript:changepage(2);" class="btn btn-success">取消</a></span>
-						<!--  span class="pull-right"><a  class="flip-link btn btn-info" id="to-recover">提交</a></span-->
-						<span class="pull-right"><input style="width:55px;height:30.1px;background-color: green;color:white;opacity: 0.65;border-color:green" onclick="return rcheck()" type="submit" value="注册">   </span>
-												
+						
+						<span class="pull-right"><input style="width:55px;height:30.1px;background-color: green;color:white;opacity: 0.65;border-color:green" onclick="return rcheck()" type="submit" value="注册">   </span>					
 					</div>
 				</div>
 			</form>

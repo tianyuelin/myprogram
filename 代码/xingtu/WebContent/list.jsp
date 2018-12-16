@@ -57,7 +57,7 @@
                             <li><a href="#" class="thcolorhover">${strategy.user.username }</a></li>
                             <li><time datetime="2008-02-14 20:00">|${strategy.stime }</time></li>
                           </ul>
-                          <p>旅游路线</p>
+                          <p>${strategy.tag }</p>
                           <div class="kd-usernetwork">
                             <ul class="kd-blogcomment">
                                 <li><a href="#" class="thcolorhover"><i class="fa fa-eye"></i>565</a></li>
