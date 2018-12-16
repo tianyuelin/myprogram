@@ -49,9 +49,11 @@ public class JourneyController {
 	public String createxc(@RequestParam(value="diname",required=false)String []journames,@RequestParam(value="jtime",required=false)String jtime,@RequestParam(value="jtitle",required=false)String jtitle,HttpSession session,HttpServletRequest request){
 		Users u= (Users)session.getAttribute("user");
 		Journey journey=js.createJourney(journames, u, jtime, jtitle);
-		List<Scene> jou1=js.findJour(journames[0]);
+		for(int i=0;i<journames.length;i++) {
+			List<Scene> jou=(List<Scene>) js.findJour(journames[i]);
+			request.setAttribute("jou", jou);
+		}
 		request.setAttribute("journey", journey);
-		request.setAttribute("jou", jou1);
 		return "showxc";
 	}
 }
