@@ -7,15 +7,15 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>QTL的空间</title>
-<link href="css/user/myuse.css" rel="stylesheet">
-<link href="css/user/myhead.css" rel="stylesheet">
-<link href="css/home/header.css" rel="stylesheet">
-<link href="css/home/bootstrap.min.css" rel="stylesheet">
-<script src="js/home/jquery-1.11.3.min.js"></script>
-<script src="js/home/bootstrap.min.js"></script>
-<script src="js/home/swiper.min.js"></script>
-<script src="js/home/main.js"></script>
+<title>${CenterOwn }的空间</title>
+<link href="${ctx }/css/user/myuse.css" rel="stylesheet">
+<link href="${ctx }/css/user/myhead.css" rel="stylesheet">
+<link href="${ctx }/css/home/header.css" rel="stylesheet">
+<link href="${ctx }/css/home/bootstrap.min.css" rel="stylesheet">
+<script src="${ctx }/js/home/jquery-1.11.3.min.js"></script>
+<script src="${ctx }/js/home/bootstrap.min.js"></script>
+<script src="${ctx }/js/home/swiper.min.js"></script>
+<script src="${ctx }/js/home/main.js"></script>
 </head>
 <body>
 <jsp:include page="header.jsp" flush="true"></jsp:include>
@@ -24,16 +24,21 @@
 		
 			<div class="user-info">
 				<dt class="flpic">
-					<img src="img/tou2.jpg" />
-					<div style="float:left;" class="gz"> <a href="${ctx }/guanzhuController?bepersonemail=1098484059@qq.com"> +&nbsp;关注  </a> </div>  <!-- 在此处传入了被关注人的邮箱 -->
+					<img src="${ctx }/${CenterOwn.icon }" />
+					<div style="float:left;" class="gz"> 
+					<c:if test="${isSigned==true }">
+					<a href="${ctx }/guanzhuController?bepersonemail=${CenterOwn.email}"> +&nbsp;关注  </a>
+					</c:if> 
+					<c:if test="${isSigned==false or isSigned==null }">
+					<a href="${ctx }/sign.jsp"> +&nbsp;关注  </a>
+					</c:if>
+					</div>  <!-- 在此处传入了被关注人的邮箱 -->
 				</dt><!-- 个人头像 -->
 
 				<dd class="flintro">
 				
 					<h3 class="intro-title">
-						<span class="name" title="QTL">QTL</span><span class="score"><a
-							target="_blank"
-							href="#">100积分</a></span>
+						<span class="name" title="QTL">${CenterOwn.username }</span>
 					</h3>
 					
 					<div class="intro-body">
@@ -66,17 +71,17 @@
 	</div>
 	<div class="qn-skin">
 		<div class="qn-page">
-		    <div class="flmainbox-left">
-		          <div class="xxz1"><a href="#myxc">行程</a></div>
-		          <div class="xxz2"><a href="#mygl">攻略</a></div>
-		          <div class="xxz3"><a href="#mysc">收藏</a></div>
-		          <div class="xxz4"><a href="#mygz">关注</a></div>
+		     <div class="flmainbox-left">
+		          <div class="xxz1"><a href="#myxc">我的行程</a></div>
+		          <div class="xxz2"><a href="#mygl">我的攻略</a></div>
+		          <div class="xxz3"><a href="#mysc">攻略收藏</a></div>
+		          <div class="xxz4"><a href="#mygz">心愿清单</a></div>
 		    </div>
 			<div class="flmainbox-right">
 				<div class="b-home-detail">
 				    <div id="myxc">
 				          <div class="zjxc">最近行程</div>
-				          <div class="xich1">  
+				          <div class="xich1">
 				              <div class="wcj1">我创建了行程计划</div>
 				              <div class="rq1">
 				                    <div class="ts1">共1天</div>
@@ -95,25 +100,26 @@
 				    </div>
 				    <div id="mygl">
 				          <div class="zdgl">我的攻略</div>
-				          <div class="gol1">  
-				              <div class="wgl1">我正在写攻略</div>
-				              <div class="glbt1">石家庄一日游</div>
-				              <div class="tpic1"><img src="img/bjgl2.png"></img></div>
+				          <c:if test="${CenterOwn.st!=null }">
+				          <c:forEach items="${CenterOwn.st }" var="strategy">
+				          <div class="gol1">
+				              <div class="glbt1"><a href="${ctx }/strategy/singleStrategy?StrategyId=${strategy.sId}">${strategy.title }</a></div>
+				              <div class="tpic1"><img src="${ctx }/${strategy.img}"></img></div>
 				          </div>
-				          <div class="gol2">  
-				              <div class="wgl2">我创建了行程计划</div>
-				              <div class="glbt2">石家庄两日游</div>
-				              <div class="tpic2"><img src="img/bjgl2.png"></img></div>
-				          </div>
+				          </c:forEach>
+				          </c:if>
+				          <c:if test="${CenterOwn.st == null }">
+				          <div class="nostrategy">攻略空空如也~</div>
+				          </c:if>
 				    </div>
 					<div id="mysc">
-						<div class="zdsc">我的收藏</div>
+						<div class="zdsc">攻略收藏</div>
 						<div class="sphoto1">
 							<div class="sc1">
-								<img src="img/sc1.jpg">
+								<img src="${ctx }/img/sc1.jpg">
 							</div>
 							<div class="sz1">
-								<img src="img/tou5.jpg">
+								<img src="${ctx }/img/tou5.jpg">
 									<div>
 										<a href="#">快过年了，旅行不可以放下，南极的风景。。。</a>
 									</div>
@@ -123,10 +129,10 @@
 						</div>
 						<div class="sphoto2">
 							<div class="sc2">
-								<img src="img/sc2.jpg">
+								<img src="${ctx }/img/sc2.jpg">
 							</div>
 							<div class="sz2">
-								<img src="img/tou8.jpg">
+								<img src="${ctx }/img/tou8.jpg">
 									<div>
 										<a href="#">最浪漫的三亚旅游攻略</a>
 									</div>
@@ -136,10 +142,10 @@
 						</div>
 						<div class="sphoto3">
 							<div class="sc3">
-								<img src="img/sc3.jpg">
+								<img src="${ctx }/img/sc3.jpg">
 							</div>
 							<div class="sz3">
-								<img src="img/tou7.jpg">
+								<img src="${ctx }/img/tou7.jpg">
 									<div>
 										<a href="#">严冬里北京最火爆的烤肉</a>
 									</div>
@@ -148,107 +154,10 @@
 						</div>
 					</div>
 					<div id="mygz">
-					    <div class="zdgz">我的关注</div>
+					    <div class="zdgz">心愿清单</div>
 						<ul class="fans-listclrfix">
-							<li class="myitem"><dl class="fans-info clrfix">
-									<dt class="pic fl">
-										<a href="//travel.qunar.com/space/1837996@qunar"
-											target="_blank"><img src="img/tou5.jpg" /></a>
-									</dt>
-									<dd class="intro fr">
-										<h3 class="name">
-											<a href="//travel.qunar.com/space/1837996@qunar"
-												target="_blank">任紫玉</a>
-										</h3>
-										<div class="info">
-											<a href="//travel.qunar.com/space/notes/1837996@qunar"
-												target="_blank">游记<span class="notes">30</span></a><a
-												href="//travel.qunar.com/space/books/1837996@qunar"
-												target="_blank">行程<span class="plan">1</span></a><a
-												href="//travel.qunar.com/space/comments?userId=1837996@qunar"
-												target="_blank">评论<span class="comment">33</span></a>
-										</div>
-										<p class="introduce">旅行摄影自由撰稿人，旅行达人。新...</p>
-									</dd>
-								</dl> <a data-uid="1837996@qunar" href="#" class="js-follow care-btn"></a><a
-								href="#" class="private-btn" data-ui="privateMsg"
-								data-uid="1837996" data-username="任紫玉"></a></li>
-							<li class="myitem"><dl class="fans-info clrfix">
-									<dt class="pic fl">
-										<a href="//travel.qunar.com/space/298229@qunar"
-											target="_blank"><img src="img/tou6.jpg" /></a>
-									</dt>
-									<dd class="intro fr">
-										<h3 class="name">
-											<a href="//travel.qunar.com/space/298229@qunar"
-												target="_blank">不旅不婷</a>
-										</h3>
-										<div class="info">
-											<a href="//travel.qunar.com/space/notes/298229@qunar"
-												target="_blank">游记<span class="notes">11</span></a><a
-												href="//travel.qunar.com/space/books/298229@qunar"
-												target="_blank">行程<span class="plan">2</span></a><a
-												href="//travel.qunar.com/space/comments?userId=298229@qunar"
-												target="_blank">评论<span class="comment">52</span></a>
-										</div>
-										<p class="introduce">微信：abby4528 ,新浪微博：@Abby45</p>
-									</dd>
-								</dl> <a data-uid="298229@qunar" href="#" class="js-follow care-btn"></a><a
-								href="#" class="private-btn" data-ui="privateMsg"
-								data-uid="298229" data-username="不旅不婷"></a>
-								</li>
-							<li class="myitem"><dl class="fans-info clrfix">
-									<dt class="pic fl">
-										<a href="//travel.qunar.com/space/152966678@qunar"
-											target="_blank"><img src="img/tou8.jpg" /></a>
-									</dt>
-									<dd class="intro fr">
-										<h3 class="name">
-											<a href="//travel.qunar.com/space/152966678@qunar"
-												target="_blank">dszf4127</a>
-										</h3>
-										<div class="info">
-											<a href="//travel.qunar.com/space/notes/152966678@qunar"
-												target="_blank">游记<span class="notes">17</span></a><a
-												href="//travel.qunar.com/space/books/152966678@qunar"
-												target="_blank">行程<span class="plan">1</span></a><a
-												href="//travel.qunar.com/space/comments?userId=152966678@qunar"
-												target="_blank">评论<span class="comment">69</span></a>
-										</div>
-										<p class="introduce">陌生花开，可缓缓归矣...</p>
-									</dd>
-								</dl> <a data-uid="152966678@qunar" href="#"
-								class="js-follow care-btn"></a><a href="#" class="private-btn"
-								data-ui="privateMsg" data-uid="152966678"
-								data-username="dszf4127"></a>
-								</li>
-							<li class="myitem"><dl class="fans-info clrfix">
-									<dt class="pic fl">
-										<a href="//travel.qunar.com/space/123265252@qunar"
-											target="_blank"><img src="img/tou7.jpg" /></a>
-									</dt>
-									<dd class="intro fr">
-										<h3 class="name">
-											<a href="//travel.qunar.com/space/123265252@qunar"
-												target="_blank">手边巴黎urruolan</a>
-										</h3>
-										<div class="info">
-											<a href="//travel.qunar.com/space/notes/123265252@qunar"
-												target="_blank">游记<span class="notes">56</span></a><a
-												href="//travel.qunar.com/space/books/123265252@qunar"
-												target="_blank">行程<span class="plan">3</span></a><a
-												href="//travel.qunar.com/space/comments?userId=123265252@qunar"
-												target="_blank">评论<span class="comment">6</span></a>
-										</div>
-										<p class="introduce">慢享6大洲34国 时尚旅行专栏作家 /...</p>
-									</dd>
-								</dl> <a data-uid="123265252@qunar" href="#"
-								class="js-follow care-btn"></a><a href="#" class="private-btn"
-								data-ui="privateMsg" data-uid="123265252"
-								data-username="手边巴黎urruolan"></a>
-								</li>
+							
 						</ul>
-						<a href="#" class="btn-huan"> 更换一批</a>
 					</div>
 				</div>
 			</div>

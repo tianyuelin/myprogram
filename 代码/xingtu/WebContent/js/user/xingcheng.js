@@ -152,8 +152,7 @@ $(document).on('click', '#di',function(){
 //添加图片
 //获取到上传的图片的地址
 $(document).on('change', '#cimg', function () { //PictureUrl为input file 的id
-	//console.log(this.files[0]); 
-    alert(1);
+	//console.log(this.files[0]);
 	function getObjectURL(file) { 
         var url = null; 
         if (window.createObjcectURL != undefined) { 
@@ -177,9 +176,7 @@ function changetitle(){
 }
 function changeaddress(){
 	var span =document.getElementById('dizhi'+titlecount);
-	alert('didian'+titlecount);
 	var inputtitle = document.getElementById('didian'+titlecount).value;
-	alert(inputtitle);
 	span.innerHTML=inputtitle;
 }
 /*
