@@ -15,8 +15,8 @@
 <script src="${ctx }/js/home/bootstrap.min.js"></script>
 <script src="${ctx }/js/home/swiper.min.js"></script>
 <script src="${ctx }/js/home/main.js"></script>
-<link rel="stylesheet" href="css/touxiang/cropper.min.css">
-<link rel="stylesheet" href="css/touxiang/ImgCropping.css">
+<link rel="stylesheet" href="${ctx }/css/touxiang/cropper.min.css">
+<link rel="stylesheet" href="${ctx }/css/touxiang/ImgCropping.css">
 </head>
 <body>
 <jsp:include page="header.jsp" flush="true"></jsp:include>
@@ -107,13 +107,13 @@
 				          <c:if test="${strategys!=null }">
 				          <c:forEach items="${strategys }" var="strategy">
 				          <div class="gol1">
-				              <div class="glbt1"><a href="${ctx }/strategy/singleStrategy?id=${strategy.sId}">${strategy.title }</a></div>
+				              <div class="glbt1"><a href="${ctx }/strategy/singleStrategy?StrategyId=${strategy.sId}">${strategy.title }</a></div>
 				              <div class="tpic1"><img src="${ctx }/${strategy.img}"></img></div>
 				          </div>
 				          </c:forEach>
 				          </c:if>
-				          <c:if test="${strategys==null }">
-				          <div class="nostrategy">您还没有创建攻略！</div>
+				          <c:if test="${strategys == null }">
+				          <div class="nostrategy">您的攻略空空如也~</div>
 				          </c:if>
 				    </div>
 					<div id="mysc">
@@ -297,8 +297,8 @@
         </div>
 </div>
 <!--图片裁剪框 end-->
-<script type="text/javascript" src="js/touxiang/jquery.min.js"></script>
-<script type="text/javascript" src="js/touxiang/cropper.min.js"></script>
+<script type="text/javascript" src="${ctx }/js/touxiang/jquery.min.js"></script>
+<script type="text/javascript" src="${ctx }/js/touxiang/cropper.min.js"></script>
 <script type="text/javascript">
     //弹出框水平垂直居中
     (window.onresize = function () {
