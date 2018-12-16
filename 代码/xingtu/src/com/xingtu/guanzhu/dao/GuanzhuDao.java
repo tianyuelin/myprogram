@@ -23,11 +23,10 @@ public class GuanzhuDao {
 	
 	//判断是否已关注
 	public Boolean IfGuanZhu(Followed follow) {
-		Session session =this.sessionFactory.getCurrentSession();
-		
-		
+		Session session =this.sessionFactory.getCurrentSession();		
 		follow.getUseremail();//登录用户的email
 		follow.getFollwed_user();//将要关注用户的email
+		Query q=session.createQuery("from Followed where ")
 		
 	}
 	
