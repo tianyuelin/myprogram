@@ -61,7 +61,6 @@
                           <ul class="kd-postoption">
                             <li><a href="#" class="thcolorhover"></a>建议游玩时长：${scene.playtime }</li>
                           </ul>
-                          <p>徒步游览  观光游览 </p>
                           <div class="kd-usernetwork">
                             <ul class="kd-blogcomment">
                                 <li><a href="#" class="thcolorhover"><i class="fa fa-eye"></i>565</a></li>
@@ -124,28 +123,6 @@
                           </ul>
                         </div>
                       </div>
-                      <div role="tabpanel" class="tab-pane" id="profile">
-                        <div class="widget-blogpost">
-                          <ul>
-                            <li>
-                              <figure><a href="#"><img alt="" src="${ctx }/img/widget1.jpg"></a></figure>
-                              <div class="kd-post-info">
-                                <h6><a href="#">发帖人题目</a></h6>
-                                <time datetime="2008-02-14 20:00">January 15, 2015</time>
-                              </div>
-                            </li>
-                            <li>
-                              <figure><a href="#"><img alt="" src="${ctx }/img/widget1.jpg"></a></figure>
-                              <div class="kd-post-info">
-                                <h6><a href="#">发帖人题目</a></h6>
-                                <time datetime="2008-02-14 20:00">January 15, 2015</time>
-                              </div>
-                            </li>
-                            
-                          </ul>
-                        </div>
-                      </div>
-                      
                     </div>
 
                   </div>

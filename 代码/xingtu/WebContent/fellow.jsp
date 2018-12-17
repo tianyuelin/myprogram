@@ -7,20 +7,20 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
-<link rel="stylesheet" href="css/user/demo.css">
-<link rel="stylesheet" href="css/user/cropper.min.css">
+<link rel="stylesheet" href="${ctx }/css/user/demo.css">
+<link rel="stylesheet" href="${ctx }/css/user/cropper.min.css">
 <title>QTL的空间</title>
-<link href="css/user/myhead.css" rel="stylesheet">
-<link href="css/user/pho.css" rel="stylesheet">
-<link href="css/home/header.css" rel="stylesheet">
-<link href="css/home/bootstrap.min.css" rel="stylesheet">
-<link rel="stylesheet" type="text/css" href="css/user/home.css">
-<script src="js/home/jquery-1.11.3.min.js"></script>
-<script src="js/home/bootstrap.min.js"></script>
-<script src="js/home/swiper.min.js"></script>
-<script src="js/home/main.js"></script>
-<script type="text/javascript" src="js/user/jquery.min.js"></script>
-<script type="text/javascript" src="js/user/up.js"></script>
+<link href="${ctx }/css/user/myhead.css" rel="stylesheet">
+<link href="${ctx }/css/user/pho.css" rel="stylesheet">
+<link href="${ctx }/css/home/header.css" rel="stylesheet">
+<link href="${ctx }/css/home/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="${ctx }/css/user/home.css">
+<script src="${ctx }/js/home/jquery-1.11.3.min.js"></script>
+<script src="${ctx }/js/home/bootstrap.min.js"></script>
+<script src="${ctx }/js/home/swiper.min.js"></script>
+<script src="${ctx }/js/home/main.js"></script>
+<script type="text/javascript" src="${ctx }/js/user/jquery.min.js"></script>
+<script type="text/javascript" src="${ctx }/js/user/up.js"></script>
 
 <style type="text/css">
     .topdiv{
@@ -40,14 +40,7 @@
        
   
     }
-   
 </style>
-
-
-
-
-
-
 </head>
 <body>
 <jsp:include page="header.jsp" flush="true"></jsp:include>
@@ -55,13 +48,11 @@
 		<div class="main-zt">
 			<div class="user-info">
 				<dt class="flpic">
-					<img src="img/tou2.jpg" />
+					<img src="${ctx }/${user.icon}" />
 				</dt><!-- 个人头像 -->
 				<dd class="flintro">
 					<h3 class="intro-title">
-						<span class="name" title="QTL">QTL</span><span class="score"><a
-							target="_blank"
-							href="#">100积分</a></span>
+						<span class="name" title="QTL">${user.username }</span>
 					</h3>
 					<div class="intro-body">
 						<form action="">
@@ -104,13 +95,10 @@
 			</ul>
 		</div>
 	</div>
-	
-	
-	
 	<!-- 在此处写我的关注的页面 -->
 	<div class="topdiv">
 	    <div style="padding-top:50px;margin-bottom:20px;">
-	           <span style="margin-left:150px;margin-right:20px;"><a href="fellow.jsp" style="color:black">我的关注</a></span>     <span><a href="fans.jsp">我的粉丝</a></span>
+	           <span style="margin-left:150px;margin-right:20px;"><a href="${ctx }/guanzhuUser" style="color:black">我的关注</a></span>     <span><a href="${ctx }/fansUser">我的粉丝</a></span>
 	    </div>
 	    
 	    <c:forEach items="${felloPerson }" var="fp">

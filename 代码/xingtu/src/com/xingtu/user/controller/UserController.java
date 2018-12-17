@@ -85,6 +85,11 @@ public class UserController {
 	@RequestMapping(value="/otherUserCenter",method=RequestMethod.GET)
 	public String otherUserCenter(HttpServletRequest request,@RequestParam(value="useremail")String useremali) {
 		Users u = this.userService.UserCenter(useremali);
+		Long FGCount=this.userService.findFGCount1(useremali);
+		request.setAttribute("FGCount", FGCount);
+		//获取我粉丝的人数
+		Long fansCount = this.userService.findfansCount1(useremali);
+		request.setAttribute("fansCount",fansCount);
 		request.setAttribute("CenterOwn", u);
 		return "otherseeUser";
 	}

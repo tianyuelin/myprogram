@@ -14,11 +14,9 @@
 <link rel="stylesheet" href="${ctx }/css/sign/font-awesome.css" />
 <script type="text/javascript" src="${ctx }/static/login/js/jquery-1.5.1.min.js"></script>
 
-
-
  <style type="text/css">
    body{
-   		background-image: url("${ctx }/img/xingtu.jpg");
+   		background-image: url("${ctx }/img/1.jpg");
     }
       .cavs{
     	z-index:1;
