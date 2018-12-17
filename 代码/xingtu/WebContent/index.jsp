@@ -30,7 +30,12 @@
                     <p class="banner_text">这里有各地的景色的介绍，有各个旅游者发布的攻略和行程日志</p>
                     <p class="banner_text">拒绝漫无目的的无聊行程！</p>
                     <p class="banner_text">你可以参考他们的行程和攻略，自行定制属于自己的出行计划，让您的每一次出行，都能够妥当安排</p>
-                    <a href="user.jsp"><button class="bubbly-button">定制行程</button></a>
+                    <c:if test="${isSigned==false or isSigned==null }">
+                    <a href="${ctx }/sign.jsp"><button class="bubbly-button">定制行程</button></a>
+                    </c:if>
+                    <c:if test="${isSigned==true}">
+                    <a href="${ctx }/journey/citylist"><button class="bubbly-button">定制行程</button></a>
+                    </c:if>
                 </div>
             </div>
             <div class="item">
@@ -40,7 +45,12 @@
                     <p class="banner_text">这里有各地的景色的介绍，有各个旅游者发布的攻略和行程日志</p>
                     <p class="banner_text">拒绝漫无目的的无聊行程！</p>
                     <p class="banner_text">你可以参考他们的行程和攻略，自行定制属于自己的出行计划，让您的每一次出行，都能够妥当安排</p>
-                    <a href="user.jsp"><button class="bubbly-button">定制行程</button></a>
+                     <c:if test="${isSigned==false or isSigned==null }">
+                    <a href="${ctx }/sign.jsp"><button class="bubbly-button">定制行程</button></a>
+                    </c:if>
+                    <c:if test="${isSigned==true}">
+                    <a href="${ctx }/journey/citylist"><button class="bubbly-button">定制行程</button></a>
+                    </c:if>
                 </div>
             </div>
             <div class="item">
@@ -50,7 +60,12 @@
                     <p class="banner_text">这里有各地的景色的介绍，有各个旅游者发布的攻略和行程日志</p>
                     <p class="banner_text">拒绝漫无目的的无聊行程！</p>
                     <p class="banner_text">你可以参考他们的行程和攻略，自行定制属于自己的出行计划，让您的每一次出行，都能够妥当安排</p>
-                    <a href="user.jsp"><button class="bubbly-button">定制行程</button></a>
+                    <c:if test="${isSigned==false or isSigned==null }">
+                    <a href="${ctx }/sign.jsp"><button class="bubbly-button">定制行程</button></a>
+                    </c:if>
+                    <c:if test="${isSigned==true}">
+                    <a href="${ctx }/journey/citylist"><button class="bubbly-button">定制行程</button></a>
+                    </c:if>
                 </div>
             </div>
         </div>

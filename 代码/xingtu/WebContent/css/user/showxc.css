@@ -109,6 +109,11 @@
 	margin-top:20px;
 	margin-left:20px;
 }
+#fspan1{
+	border:1px solid #000000;
+	width:60px;
+	height:30px;
+}
 .di1{
 	font-size:25px;
 	padding-left:15px;
