@@ -23,7 +23,7 @@ public class JourDiv {
 		this.myid = myid;
 	}
 	@ManyToOne
-	@JoinColumn(name="sname")
+	@JoinColumn(name="sceneId")
 	public Scene getScene() {
 		return scene;
 	}

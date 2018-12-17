@@ -48,40 +48,40 @@ public class JourneyDao {
 	 * 向数据库中插入数据
 	 * @param 
 	 */
-	public Journey saveJourney(Scene scenes[],Users user,String jtime,String jtitle) {
+	public Journey saveJourney(String sceneid[],Users user,String jtime,String jtitle) {
+		Session session = sf.getCurrentSession();
 		List <JourDiv> jds=new ArrayList<JourDiv>();
 		Journey j=new Journey();
-		Session session=this.sf.getCurrentSession();
-		if(true) {
-			for(Scene diname : scenes) {
+		List<Scene> scenes = new ArrayList<Scene>();
+		for(String id : sceneid) {
+			Scene s =(Scene)session.createQuery("from Scene where sceneId="+id).uniqueResult();
+			scenes.add(s);
+		}
+	
+			for(Scene diid : scenes) {
 				JourDiv jd=new JourDiv();
-				jd.setScene(diname);
-				jd.setJourney(j);
-				j.getJd().add(jd);
+				jd.setScene(diid);
+				jds.add(jd);
 			}
 			j.setUser(user);
 			j.setCreatetime(new Date());
 			j.setJtitle(jtitle);
 			j.setJtime(jtime);
 			session.save(j);
-			System.out.println("ch");
 			for(int i=0;i<jds.size();i++) {
 				jds.get(i).setJourney(j);
 				session.save(jds.get(i));
 			}
 			j.setJd(jds);
 			return j;
-		}else {
-			return null;
-		}
 	}
 	/**
 	 * 根据景点查询scene的img和address
 	 */
-	public List<Scene> findJour(String journames){
+	/*public List<Scene> findJour(String journames){
 		Session session=sf.getCurrentSession();
 		Query q=session.createQuery("from Scene s where s.sname=?0");
 		q.getParameter(journames);
 		return q.list();		
-	}
+	}*/
 }
