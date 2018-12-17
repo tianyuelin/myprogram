@@ -25,12 +25,22 @@
 				<dt class="flpic">
 					<img src="${ctx }/${CenterOwn.icon }" />
 					<div style="float:left;" class="gz"> 
-					<c:if test="${isSigned==true }">
-					<a href="${ctx }/guanzhuController?bepersonemail=${CenterOwn.email}"> +&nbsp;关注  </a>
-					</c:if> 
-					<c:if test="${isSigned==false or isSigned==null }">
-					<a href="${ctx }/sign.jsp"> +&nbsp;关注  </a>
+					
+					<!-- 如果未关注 -->
+					<c:if test="${ifGuanzhu==false }">
+					    <c:if test="${isSigned==true }">
+					    <a href="${ctx }/guanzhuController?bepersonemail=${CenterOwn.email}"> +&nbsp;关注  </a>
+					    </c:if> 
+					    <c:if test="${isSigned==false or isSigned==null }">
+					    <a href="${ctx }/sign.jsp"> +&nbsp;关注  </a>
+					    </c:if>
 					</c:if>
+					<!-- 如果已关注 -->
+					<c:if test="${ifGuanzhu==true }">
+					    <!-- a href="${ctx }/tonoGuanzhu?bepersonemail=${CenterOwn.email}"--> 已关注<!-- /a-->
+					</c:if>
+					
+					
 					</div>  <!-- 在此处传入了被关注人的邮箱 -->
 				</dt><!-- 个人头像 -->
 

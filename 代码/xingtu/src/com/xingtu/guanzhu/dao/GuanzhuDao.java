@@ -21,13 +21,37 @@ public class GuanzhuDao {
 	@Resource
 	private SessionFactory sessionFactory;
 	
+	//判断是否已关注
+	public Boolean IfGuanZhu(Followed follow) {//如果已关注返回true，未关注返回false
+		Session session =this.sessionFactory.getCurrentSession();		
+		String myemail=follow.getUseremail();//登录用户的email
+		String beemail=follow.getFollwed_user();//将要关注用户的email
+		Query q=session.createQuery("from Followed where useremail=?0 and follwed_user=?1");
+		q.setParameter(0,myemail);
+		q.setParameter(1, beemail);
+		if(q.list().size()!=0) {//说明存在这样一条数据，已关注
+			return true;
+		}else {
+			return false;
+		}
+	}
+	
+	//将关注者删除
+	public void delectFollow(Followed follow1) {
+		Session session = this.sessionFactory.getCurrentSession();
+		String myemail=follow1.getUseremail();//登录用户的email
+		String beemail=follow1.getFollwed_user();//将要关注的email
+		//session.update("delete from Followed where useremail='"+myemail+"' and follwed_user='"+beemail+"'"); 
+	
+	}
+	
+	
+	
 	//点击关注，将关注名单插入关注表
 	public void InsertGuanzhu(Followed follow) { //这里是被关注人的邮箱
 		Session session=this.sessionFactory.getCurrentSession();
 		session.save(follow);		
 	}
-	
-	
 	
 	//从关注表中取出本人关注者都有谁，有几个
 	@SuppressWarnings("null")
