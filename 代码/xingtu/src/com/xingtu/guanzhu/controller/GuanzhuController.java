@@ -39,6 +39,8 @@ public class GuanzhuController {
 		//此时未关注
 		this.guanzhuService.InsertGuanzhu1(followed2);//关注
 		request.setAttribute("ifGuanzhu", true);//显示已关注
+		
+		//获得对方关注的人的人数
 		Long FGCount=this.userService.findFGCount1(bepersonemail);
 		request.setAttribute("FGCount", FGCount);	
 		//获取粉丝的人数
@@ -68,6 +70,17 @@ public class GuanzhuController {
 		this.guanzhuService.delectFollow1(followed2);
 		//将链接设为未关注
 		request.setAttribute("ifGuanzhu", false);//显示未关注
+		
+		//获得对方关注的人的人数
+				Long FGCount=this.userService.findFGCount1(bepersonemail);
+				request.setAttribute("FGCount", FGCount);	
+				//获取粉丝的人数
+				Long fansCount = this.userService.findfansCount1(bepersonemail);
+				request.setAttribute("fansCount",fansCount);
+		
+		
+		
+		
 		//得到将关注的这个人的内容，并输出到页面
 		Users u = this.userService.UserCenter(bepersonemail);
 		request.setAttribute("CenterOwn", u);
