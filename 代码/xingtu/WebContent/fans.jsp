@@ -10,18 +10,17 @@
 <link rel="stylesheet" href="css/user/demo.css">
 <link rel="stylesheet" href="css/user/cropper.min.css">
 <title>QTL的空间</title>
-<link href="css/user/myhead.css" rel="stylesheet">
-<link href="css/user/pho.css" rel="stylesheet">
-<link href="css/home/header.css" rel="stylesheet">
-<link href="css/home/bootstrap.min.css" rel="stylesheet">
-<link rel="stylesheet" type="text/css" href="css/user/home.css">
-<script src="js/home/jquery-1.11.3.min.js"></script>
-<script src="js/home/bootstrap.min.js"></script>
-<script src="js/home/swiper.min.js"></script>
-<script src="js/home/main.js"></script>
-<script type="text/javascript" src="js/user/jquery.min.js"></script>
-<script type="text/javascript" src="js/user/up.js"></script>
-
+<link href="${ctx }/css/user/myhead.css" rel="stylesheet">
+<link href="${ctx }/css/user/pho.css" rel="stylesheet">
+<link href="${ctx }/css/home/header.css" rel="stylesheet">
+<link href="${ctx }/css/home/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="${ctx }/css/user/home.css">
+<script src="${ctx }/js/home/jquery-1.11.3.min.js"></script>
+<script src="${ctx }/js/home/bootstrap.min.js"></script>
+<script src="${ctx }/js/home/swiper.min.js"></script>
+<script src="${ctx }/js/home/main.js"></script>
+<script type="text/javascript" src="${ctx }/js/user/jquery.min.js"></script>
+<script type="text/javascript" src="${ctx }/js/user/up.js"></script>
 <style type="text/css">
     .topdiv{
         width:100%;
@@ -37,13 +36,8 @@
         margin-top:20px;
         float:left;
         border:1px solid #f7f7f7;
-       
-  
     }
-   
 </style>
-
-
 </head>
 <body>
 <jsp:include page="header.jsp" flush="true"></jsp:include>
@@ -51,13 +45,11 @@
 		<div class="main-zt">
 			<div class="user-info">
 				<dt class="flpic">
-					<img src="img/tou2.jpg" />
+					<img src="${ctx }/${user.icon}" />
 				</dt><!-- 个人头像 -->
 				<dd class="flintro">
 					<h3 class="intro-title">
-						<span class="name" title="QTL">QTL</span><span class="score"><a
-							target="_blank"
-							href="#">100积分</a></span>
+						<span class="name" title="QTL">${user.username }</span>
 					</h3>
 					<div class="intro-body">
 						<form action="">
@@ -106,12 +98,13 @@
 	<!-- 在此处写我的关注的页面 -->
 	<div class="topdiv">
 	    <div style="padding-top:50px;margin-bottom:20px;">
+<<<<<<< HEAD
 	           <span style="margin-left:150px;margin-right:20px;"><a href="${ctx }/guanzhuUser">我的关注(${FGCount })</a></span>   
 	             <span><a href="${ctx }/fansUser" style="color:black">我的粉丝(${fansCount })</a></span>
+=======
+	           <span style="margin-left:150px;margin-right:20px;"><a href="${ctx }/guanzhuUser">我的关注</a></span>     <span><a href="${ctx }/fansUser" style="color:black">我的粉丝</a></span>
+>>>>>>> branch 'master' of https://github.com/baocaiqian/QTL-JAVA
 	    </div>
-	    
-	    
-	    
 	    <c:forEach items="${fansPerson }" var="fpn">
 	    <!-- 粉丝1 -->
 	    <div class="seconddiv">
@@ -130,22 +123,15 @@
 	        </div>   
 	    </div>
 	    </c:forEach>
-	    
-	    
-	   
-	
 	<div style="float:left;text-align:center;font-family:'microsoft yahei'; font-size:14px;margin-left:46%;margin-top:5%;margin-bottom:5%">
 	    <a href="#">首页</a> 
 	    <a href="#">上一页</a>
 	    <a href="#">下一页 </a>
 	    <a href="#">末页 </a>
 	</div>
-	
-
-	
 	<jsp:include page="footer.jsp" flush="true"></jsp:include>
-		<script src="js/user/jquery.min.js"></script>
-		<script src="js/user/upload.js"></script>
-		<script src="js/user/demo.js"></script>
+		<script src="${ctx }/js/user/jquery.min.js"></script>
+		<script src="${ctx }/js/user/upload.js"></script>
+		<script src="${ctx }/js/user/demo.js"></script>
 	</body>
 </html>

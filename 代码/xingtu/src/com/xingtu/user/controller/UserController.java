@@ -12,14 +12,17 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.xingtu.entity.Md5Encode;
+import com.xingtu.entity.Scene;
 import com.xingtu.entity.Strategy;
 import com.xingtu.entity.Users;
+import com.xingtu.scene.service.SceneService;
 import com.xingtu.user.service.UserService;
 
 @Controller
 @RequestMapping("/user")
 public class UserController {
-    
+	@Resource
+	private SceneService ss;
 	@Resource
 	private UserService userService;
 	private Boolean issigned=false;
@@ -32,6 +35,8 @@ public class UserController {
 			issigned=true;
 			session.setAttribute("isSigned",issigned);//定义一个是否已登录的接口
 			session.setAttribute("user", users);
+			List<Scene> list1=ss.getSceList();
+			request.setAttribute("scelist", list1);
 			return "index";
 		}else {
 			request.setAttribute("errormessage",mymes);
@@ -51,6 +56,8 @@ public class UserController {
 			Users user = this.userService.UserCenter(users.getEmail());
 			session.setAttribute("isSigned",issigned);//定义一个是否已登录的接口
 			session.setAttribute("user", user);
+			List<Scene> list1=ss.getSceList();
+			request.setAttribute("scelist", list1);
 			return "index";
 		}
 		else {
@@ -85,6 +92,11 @@ public class UserController {
 	@RequestMapping(value="/otherUserCenter",method=RequestMethod.GET)
 	public String otherUserCenter(HttpServletRequest request,@RequestParam(value="useremail")String useremali) {
 		Users u = this.userService.UserCenter(useremali);
+		Long FGCount=this.userService.findFGCount1(useremali);
+		request.setAttribute("FGCount", FGCount);
+		//获取我粉丝的人数
+		Long fansCount = this.userService.findfansCount1(useremali);
+		request.setAttribute("fansCount",fansCount);
 		request.setAttribute("CenterOwn", u);
 		return "otherseeUser";
 	}

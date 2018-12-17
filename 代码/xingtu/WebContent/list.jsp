@@ -118,54 +118,30 @@
                       <div role="tabpanel" class="tab-pane active" id="home">
                         <div class="widget-blogpost">
                           <ul>
+                            <c:forEach items="${hotstrategy }" var="hots">
                             <li>
-                              <figure><a href="#"><img alt="" src="img/widget1.jpg"></a></figure>
+                              <figure><a href="${ctx }/strategy/singleStrategy?StrategyId=${hots.sId}"><img alt="" src="${ctx }/${hots.img}" style="width: 50px;height: 50px;"></a></figure>
                               <div class="kd-post-info">
-                                <h6><a href="#">发帖人题目</a></h6>
-                                <time datetime="2008-02-14 20:00">January 15, 2015</time>
+                                <h6><a href="${ctx }/strategy/singleStrategy?StrategyId=${hots.sId}">${hots.title }</a></h6>
+                                <time datetime="2008-02-14 20:00">${hots.stime }</time>
                               </div>
                             </li>
-                            <li>
-                              <figure><a href="#"><img alt="" src="img/widget1.jpg"></a></figure>
-                              <div class="kd-post-info">
-                                <h6><a href="#">发帖人题目</a></h6>
-                                <time datetime="2008-02-14 20:00">January 15, 2015</time>
-                              </div>
-                            </li>
-                            <li>
-                              <figure><a href="#"><img alt="" src="img/widget1.jpg"></a></figure>
-                              <div class="kd-post-info">
-                                <h6><a href="#">发帖人题目</a></h6>
-                                <time datetime="2008-02-14 20:00">January 15, 2015</time>
-                              </div>
-                            </li>
+                            </c:forEach>
                           </ul>
                         </div>
                       </div>
                       <div role="tabpanel" class="tab-pane" id="profile">
                         <div class="widget-blogpost">
                           <ul>
+                          <c:forEach items="${newstrategy }" var="news">
                             <li>
-                              <figure><a href="#"><img alt="" src="img/widget1.jpg"></a></figure>
+                              <figure><a href="${ctx }/strategy/singleStrategy?StrategyId=${news.sId}"><img alt="" src="${ctx }/${news.img}" style="width: 50px;height: 50px;"></a></figure>
                               <div class="kd-post-info">
-                                <h6><a href="#">发帖人题目</a></h6>
-                                <time datetime="2008-02-14 20:00">January 15, 2015</time>
+                                <h6><a href="${ctx }/strategy/singleStrategy?StrategyId=${news.sId}">${news.title }</a></h6>
+                                <time datetime="2008-02-14 20:00">${news.stime }</time>
                               </div>
                             </li>
-                            <li>
-                              <figure><a href="#"><img alt="" src="img/widget1.jpg"></a></figure>
-                              <div class="kd-post-info">
-                                <h6><a href="#">发帖人题目</a></h6>
-                                <time datetime="2008-02-14 20:00">January 15, 2015</time>
-                              </div>
-                            </li>
-                            <li>
-                              <figure><a href="#"><img alt="" src="img/widget1.jpg"></a></figure>
-                              <div class="kd-post-info">
-                                <h6><a href="#">发帖人题目</a></h6>
-                                <time datetime="2008-02-14 20:00">January 15, 2015</time>
-                              </div>
-                            </li>
+                            </c:forEach>
                           </ul>
                         </div>
                       </div>
@@ -183,15 +159,12 @@
                     <a href="#"><h6>闺蜜</h6></a>
                     <a href="#"><h6>情侣</h6></a>
                     <a href="#"><h6>学生</h6></a>
-                    <a href="#"><h6>一人游</h6></a>
-                    <a href="#"><h6>三人以上</h6></a>
+                    <a href="#"><h6>徒步</h6></a>
+                    <a href="#"><h6>三五好友</h6></a>
                   </div>
                 </div>
-                
               </aside>
-
             </div>
-
           </div>
         </div>
       </section>

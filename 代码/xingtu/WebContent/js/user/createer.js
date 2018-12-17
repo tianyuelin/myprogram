@@ -12,20 +12,24 @@ function addxq(obj){
 	
 	var zuofid= document.getElementById('zuo');
 	var zuoxian=document.createElement("div");
-	var zuoname= document.createElement("div");
+	var zuoname= document.createElement("input");
 	newdi.id='xian'+count;
 	myname.id='di'+count;
 	myadd.id='pj'+count;
 	mya.id='ck'+count;
 	zuoxian.id='xia'+count;
 	zuoname.id='dim'+count;
+	zuoname.type="text";
+	zuoname.setAttribute("name","diname");
+	zuoname.className="dz";
+	zuoname.style.width="150px";
 	myimg.src=oldimg.src;
 	myname.innerText=oldname.innerText;
 	myadd.innerText=oldadd.innerText;
 	mya.href='#';
 	mya.innerText="查看周边";
 	zuoxian.innerText="相距220km";
-	zuoname.innerText=oldname.innerText;
+	zuoname.value=oldname.innerText;
 	newdi.appendChild(myimg);
 	newdi.appendChild(myname);
 	newdi.appendChild(myadd);

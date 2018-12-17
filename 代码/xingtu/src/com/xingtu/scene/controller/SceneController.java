@@ -39,6 +39,8 @@ public class SceneController {
 		System.out.println(pageNum);
 		List<Scene> scenes = ss.findAllScene(p.getCurrentPageNum(),p.getPageSize());
 		p.setList(scenes);
+		List<Scene> hotscene = ss.getHotScene();
+		request.setAttribute("hotscene", hotscene);
 		request.setAttribute("page", p);
 		return "meijing";
 	}

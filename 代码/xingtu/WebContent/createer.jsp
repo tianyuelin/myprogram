@@ -14,10 +14,11 @@
 </head>
 <body>
 <jsp:include page="header.jsp" flush="true"></jsp:include>
+<form action="${ctx }/journey/createxc" method="post" >
 <div class="erall">
    <div class="tou">
-         <div class="biaot"><input class="tit" type="text" placeholder='北京一日游'></div>
-         <div class="cf">出发时间<input type="text"></div>
+         <div class="biaot"><input class="tit" type="text" placeholder='北京一日游' name="jtitle"></div>
+         <div class="cf">出发时间<input type="text" name="jtime"></div>
          <div class="wc"><input type="submit" style="width:80px;height:30px" value="完成" ></div>
    </div>
    <div id="zuo">
@@ -87,6 +88,7 @@
         
    </div>
 </div>
+</form>
 <jsp:include page="footer.jsp" flush="true"></jsp:include>
 </body>
 </html>

@@ -21,7 +21,6 @@
 <jsp:include page="header.jsp" flush="true"></jsp:include>
 	<div class="qn-header"  style="margin-top:5%">
 		<div class="main-zt">
-		
 			<div class="user-info">
 				<dt class="flpic">
 					<img src="${ctx }/${CenterOwn.icon }" />
@@ -49,24 +48,18 @@
 						<span class="name" title="QTL">${CenterOwn.username }</span>
 					</h3>
 					
-					<div class="intro-body">
-						<form action="">
-						    <input type="text" placeholder="编辑个人签名" style="width:400px;">
-						</form>
-					</div>
-					
 				</dd>
 			</div>
 			
 		
 			<div class="fruser-fans">
 				<div class="fz">
-					<div class="shu">0</div>
+					<div class="shu">${FGCount }</div>
 					<div class="guzh">关注</div>  <!-- 从这里跳到控制器，然后再跳转到关注页面 -->
 				</div>
 				<div class="hz">|</div>
 				<div class="fy">
-					<div>0</div>
+					<div>${fansCount }</div>
 					<div>粉丝</div>
 				</div>			
 			</div>
