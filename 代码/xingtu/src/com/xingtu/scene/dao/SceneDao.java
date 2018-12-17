@@ -12,6 +12,7 @@ import org.springframework.stereotype.Repository;
 
 import com.xingtu.entity.Scene;
 import com.xingtu.entity.SceneImgs;
+import com.xingtu.entity.Users;
 @Repository
 public class SceneDao{
 	@Resource
@@ -62,5 +63,10 @@ public class SceneDao{
 		q.setFirstResult(3);
 		q.setMaxResults(3);
 		return q.list();
+	}
+	public void addshoucang(int id,Users u) {
+		Session session = sf.getCurrentSession();
+		Scene scene = (Scene)session.createQuery("from Scene where sceneId="+id).uniqueResult();
+		
 	}
 }

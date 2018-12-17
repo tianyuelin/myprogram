@@ -29,6 +29,7 @@ public class Scene {
 	private String img;//����ͼƬ
 	private List<Scenecomment> sc;
 	private List<JourDiv> dj;
+	private List<Sceneshoucang> shoucang;
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	public int getSceneId() {
@@ -115,6 +116,12 @@ public class Scene {
 	public void setDj(List<JourDiv> dj) {
 		this.dj = dj;
 	}
-	
-	
+	@OneToMany(mappedBy="scene",targetEntity=Sceneshoucang.class,
+			cascade= {CascadeType.ALL})
+	public List<Sceneshoucang> getShoucang() {
+		return shoucang;
+	}
+	public void setShoucang(List<Sceneshoucang> shoucang) {
+		this.shoucang = shoucang;
+	}
 }

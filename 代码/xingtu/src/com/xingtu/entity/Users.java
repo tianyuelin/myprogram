@@ -35,6 +35,7 @@ public class Users {
 	private List<Strategy> st;//����
 	//һ���û����Դ�������г�
 	private List<Journey> journeys;//�������г�
+	private List<Sceneshoucang> sceneshoucang;
 	@Id
 	@GeneratedValue(generator="assigned")
 	@GenericGenerator(name="assigned",strategy="assigned")
@@ -92,7 +93,14 @@ public class Users {
 	public void setRegisttime(Date registtime) {
 		this.registtime = registtime;
 	}
-	
+	@OneToMany(mappedBy="u",targetEntity=Sceneshoucang.class,
+			cascade= {CascadeType.ALL})
+	public List<Sceneshoucang> getSceneshoucang() {
+		return sceneshoucang;
+	}
+	public void setSceneshoucang(List<Sceneshoucang> sceneshoucang) {
+		this.sceneshoucang = sceneshoucang;
+	}
 	@OneToMany(mappedBy="user",targetEntity=StrategyComment.class,
 			cascade= {CascadeType.ALL})
 	public List<StrategyComment> getStc() {
