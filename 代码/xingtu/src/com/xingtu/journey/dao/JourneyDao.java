@@ -48,14 +48,14 @@ public class JourneyDao {
 	 * 向数据库中插入数据
 	 * @param 
 	 */
-	public Journey saveJourney(String []journames,Users user,String jtime,String jtitle) {
+	public Journey saveJourney(Scene scenes[],Users user,String jtime,String jtitle) {
 		List <JourDiv> jds=new ArrayList<JourDiv>();
 		Journey j=new Journey();
 		Session session=this.sf.getCurrentSession();
 		if(true) {
-			for(String diname : journames) {
+			for(Scene diname : scenes) {
 				JourDiv jd=new JourDiv();
-				jd.setJourname(diname);
+				jd.setScene(diname);
 				jds.add(jd);
 			}
 			j.setUser(user);
