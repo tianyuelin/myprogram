@@ -27,6 +27,13 @@ public class GuanzhuService {
 		this.guanzhuDao.InsertGuanzhu(follow);	
 	}
 	
+	
+	//删除关注表中的项
+	public void delectFollow1(Followed follow) {
+		this.guanzhuDao.delectFollow(follow);
+	}
+	
+	
 	//获得我的关注用户
 	public List<Users> findFollows1(String myemail) {
 		return this.guanzhuDao.findFollows(myemail);

@@ -11,10 +11,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.xingtu.entity.Followed;
 import com.xingtu.entity.Md5Encode;
 import com.xingtu.entity.Scene;
 import com.xingtu.entity.Strategy;
 import com.xingtu.entity.Users;
+import com.xingtu.guanzhu.service.GuanzhuService;
 import com.xingtu.scene.service.SceneService;
 import com.xingtu.user.service.UserService;
 
@@ -25,6 +27,10 @@ public class UserController {
 	private SceneService ss;
 	@Resource
 	private UserService userService;
+	@Resource
+	private GuanzhuService guanzhuService;
+	
+	
 	private Boolean issigned=false;
 	//注册控制器
 	@RequestMapping(value="/registController",method=RequestMethod.POST)
@@ -88,14 +94,43 @@ public class UserController {
 		}
 	//进入别人的个人中心页
 	@RequestMapping(value="/otherUserCenter",method=RequestMethod.GET)
-	public String otherUserCenter(HttpServletRequest request,@RequestParam(value="useremail")String useremali) {
-		Users u = this.userService.UserCenter(useremali);
-		Long FGCount=this.userService.findFGCount1(useremali);
+	public String otherUserCenter(HttpServletRequest request,@RequestParam(value="useremail")String useremali) {//获得otherseeUser的用户
+		Users u = this.userService.UserCenter(useremali); //得到这个用户的全部信息
+		Long FGCount=this.userService.findFGCount1(useremali);//得到这个用户可能要关注的人
+		//获得对方关注的人数
 		request.setAttribute("FGCount", FGCount);
-		//获取我粉丝的人数
+		//获取对方粉丝的人数
 		Long fansCount = this.userService.findfansCount1(useremali);
 		request.setAttribute("fansCount",fansCount);
 		request.setAttribute("CenterOwn", u);
+		
+		
+		//判断我是否已经关注过他
+		Followed followed1=new Followed();
+		//将可能被关注的人放入
+		followed1.setFollwed_user(useremali);		
+		//将关注者（登录用户）放入
+		Object obj = request.getSession().getAttribute("user");
+		if(obj==null) {
+			request.setAttribute("ifGuanzhu",false);
+		}else {
+			Users user=(Users)obj;
+			String myemail=user.getEmail();
+			followed1.setUseremail(myemail);
+					
+		//判断曾经是否已插入，若无，则插入，若有则返回已关注
+			Boolean b=this.guanzhuService.IfGuanZhu1(followed1);
+			if(b) {//已关注
+			    request.setAttribute("ifGuanzhu", true); //如果已关注，存入true,使页面显示已关注
+				System.out.println(request.getAttribute("ifGuanzhu"));
+			}
+			else {//未关注
+				request.setAttribute("ifGuanzhu",false);
+				System.out.println("未关注");
+			}
+					
+		}
+
 		return "otherseeUser";
 	}
 }

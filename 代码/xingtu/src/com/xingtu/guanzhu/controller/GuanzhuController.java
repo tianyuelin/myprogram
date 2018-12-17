@@ -23,52 +23,65 @@ public class GuanzhuController {
 	private GuanzhuService guanzhuService;
 	@Resource
 	private UserService userService;
+	
+	
+	//点击关注
 	@RequestMapping(value="/guanzhuController")
-	public String guanzhuperson(Followed followed,@RequestParam("bepersonemail") String bepersonemail,HttpServletRequest request) {
-		
+	public String guanzhuperson(@RequestParam("bepersonemail") String bepersonemail,HttpServletRequest request) {
+		Followed followed2=new Followed();	
 		//将被关注者的email放入
-
-		followed.setFollwed_user(bepersonemail);		
+		followed2.setFollwed_user(bepersonemail);		
 		//将关注者（登录用户）放入
-
 		Users user= (Users) request.getSession().getAttribute("user");
 		String myemail=user.getEmail();
-		followed.setUseremail(myemail);
-		//判断曾经是否已插入，若无，则插入，若有则返回已关注
-		Boolean b=this.guanzhuService.IfGuanZhu1(followed);
-		if(b) {//已关注
-			request.setAttribute("ifGuanzhu", true); //如果已关注，存入true
-			System.out.println("已关注");
-		}
-		else {//未关注
-			this.guanzhuService.InsertGuanzhu1(followed);
-			request.setAttribute("ifGuanzhu", false);
-			System.out.println("未关注");
-		}
+		followed2.setUseremail(myemail);
+		//跳过来时在UserController已经判断过是否关注，既然显示未关注，则肯定是没有关注
+		//此时未关注
+		this.guanzhuService.InsertGuanzhu1(followed2);//关注
+		request.setAttribute("ifGuanzhu", true);//显示已关注
 		Long FGCount=this.userService.findFGCount1(bepersonemail);
-		request.setAttribute("FGCount", FGCount);
+		request.setAttribute("FGCount", FGCount);	
 		//获取粉丝的人数
 		Long fansCount = this.userService.findfansCount1(bepersonemail);
 		request.setAttribute("fansCount",fansCount);
 		Users u = this.userService.UserCenter(bepersonemail);
 		request.setAttribute("CenterOwn", u);
-		this.guanzhuService.InsertGuanzhu1(followed);
 		return "otherseeUser";
 	}
+	
+	
+	
+	//点击已关注，变为未关注状态
+	@RequestMapping(value="/tonoGuanzhu")
+	public String tonoGuanzhu(@RequestParam("bepersonemail") String bepersonemail,HttpServletRequest request) {
+		//已经判断出了已关注
+		Followed followed2=new Followed();	
+		//将被关注者的email放入
+		followed2.setFollwed_user(bepersonemail);		
+		//将关注者（登录用户）放入
+		Users user= (Users) request.getSession().getAttribute("user");
+		String myemail=user.getEmail();
+		followed2.setUseremail(myemail);
+		//此时已关注，要取消关注，将数据删除
+		this.guanzhuService.delectFollow1(followed2);
+		//将链接设为未关注
+		request.setAttribute("ifGuanzhu", false);//显示未关注
+	
+		return "otherseeUser";
+	}
+	
+	
+	
 	
 	
 	//获得关注人都有谁的函数
 	@RequestMapping(value="/guanzhuUser")
 	public String guanzhuUser(HttpServletRequest request) {
-		
-		
+	
 		Users user= (Users) request.getSession().getAttribute("user");
-		String myemail=user.getEmail();
-		
-		List<Users> felloPerson=this.guanzhuService.findFollows1(myemail);
-		
-		request.setAttribute("felloPerson", felloPerson);
-		
+		String myemail=user.getEmail();		
+		List<Users> felloPerson=this.guanzhuService.findFollows1(myemail);		
+		request.setAttribute("felloPerson", felloPerson);		
 		return "fellow";
 	}
 	

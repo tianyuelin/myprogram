@@ -98,12 +98,10 @@
 	<!-- 在此处写我的关注的页面 -->
 	<div class="topdiv">
 	    <div style="padding-top:50px;margin-bottom:20px;">
-<<<<<<< HEAD
+
 	           <span style="margin-left:150px;margin-right:20px;"><a href="${ctx }/guanzhuUser">我的关注(${FGCount })</a></span>   
 	             <span><a href="${ctx }/fansUser" style="color:black">我的粉丝(${fansCount })</a></span>
-=======
-	           <span style="margin-left:150px;margin-right:20px;"><a href="${ctx }/guanzhuUser">我的关注</a></span>     <span><a href="${ctx }/fansUser" style="color:black">我的粉丝</a></span>
->>>>>>> branch 'master' of https://github.com/baocaiqian/QTL-JAVA
+
 	    </div>
 	    <c:forEach items="${fansPerson }" var="fpn">
 	    <!-- 粉丝1 -->
@@ -123,12 +121,12 @@
 	        </div>   
 	    </div>
 	    </c:forEach>
-	<div style="float:left;text-align:center;font-family:'microsoft yahei'; font-size:14px;margin-left:46%;margin-top:5%;margin-bottom:5%">
+	<!-- div style="float:left;text-align:center;font-family:'microsoft yahei'; font-size:14px;margin-left:46%;margin-top:5%;margin-bottom:5%">
 	    <a href="#">首页</a> 
 	    <a href="#">上一页</a>
 	    <a href="#">下一页 </a>
 	    <a href="#">末页 </a>
-	</div>
+	</div-->
 	<jsp:include page="footer.jsp" flush="true"></jsp:include>
 		<script src="${ctx }/js/user/jquery.min.js"></script>
 		<script src="${ctx }/js/user/upload.js"></script>
