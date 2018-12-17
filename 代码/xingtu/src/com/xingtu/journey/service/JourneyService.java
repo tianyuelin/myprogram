@@ -23,10 +23,10 @@ public class JourneyService {
 	public List<Scene> getJourneyList(int pageNum,int pageSize){
 		return jd.getJourneyList(pageNum,pageSize);
 	}
-	public Journey createJourney(Scene scenes[],Users user,String jtime,String jtitle) {
+	public Journey createJourney(String scenes[],Users user,String jtime,String jtitle) {
 		return jd.saveJourney(scenes, user, jtime, jtitle);
 	}
-	public List<Scene> findJour(String journames){
+	/*public List<Scene> findJour(String journames){
 		return jd.findJour(journames);
-	}
+	}*/
 }

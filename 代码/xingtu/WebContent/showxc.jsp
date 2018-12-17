@@ -30,18 +30,18 @@
                  <div class="shz">行程概述</div>
                  <div class="shdt">查看地图</div>
              </div>
-             <div class="shzy">
+             <%-- <div class="shzy">
                   <div class="shimg1"><img src="${ctx }/img/shtb.jpg"></div>
                   <div class="shdd">石家庄市区——>正定——>平山</div>
                   <div class="shcn">空中花园——>正定古城墙——>抱犊寨</div>
-             </div>
+             </div> --%>
 		</div>
 		<div class="shxj">
 			<div class="shxq">行程详情</div>
 			<c:forEach items="${journey.jd}" var="myjour">
 			<div class="xian1">
 				<img src="${myjour.scene.img}">
-					<div class="di1">${myjour.journame }</div>
+					<div class="di1">${myjour.scene.sname}</div>
 					<p class="pj1">地址：${myjour.scene.address}</p> <a href="#" class="ck">查看周边</a>
 			</div>
 			</c:forEach>
