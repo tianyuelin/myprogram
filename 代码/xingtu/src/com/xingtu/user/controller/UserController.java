@@ -46,8 +46,6 @@ public class UserController {
 		}
 		
 	}
-	
-	
 	//登录控制器
 	@RequestMapping(value="/loginController",method=RequestMethod.POST)
 	public String getLoginPerson(Users users,HttpSession session,HttpServletRequest request) {
