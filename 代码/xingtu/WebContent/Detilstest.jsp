@@ -31,8 +31,14 @@
 		<div class="title">
 			<div class="name"><span id="scenename">${singlescene.sname }</span></div>
 			<div class="icon">
-			<a href="#" onmouseover="gone()" onmouseout="gone1()"><img alt="" src="${ctx }/img/icon/go.png" id="go" >&nbsp<span style="font-size: 16px;">去过&nbsp&nbsp&nbsp&nbsp</span></a>
-			<a href="#" onmouseover="shoucang()" onmouseout="shoucang1()"><img alt="" src="${ctx }/img/icon/shoucang.png" id="shoucang" >&nbsp&nbsp<span style="font-size: 16px;">收藏</span></a>
+			<c:if test="${isSigned==false or isSigned==null }">
+			<a href="${ctx }/sign.jsp" onmouseover="gone()" onmouseout="gone1()" onclick="gone()"><img alt="" src="${ctx }/img/icon/go.png" id="go" >&nbsp<span style="font-size: 16px;">去过&nbsp&nbsp&nbsp&nbsp</span></a>
+			<a href="${ctx }/sign.jsp" onmouseover="shoucang()" onmouseout="shoucang1()" onclick="shoucang()"><img alt="" src="${ctx }/img/icon/shoucang.png" id="shoucang" >&nbsp&nbsp<span style="font-size: 16px;">收藏</span></a>
+			</c:if>
+			<c:if test="${isSigned==true}">
+			<a href="#" onmouseover="gone()" onmouseout="gone1()" onclick="gone()"><img alt="" src="${ctx }/img/icon/go.png" id="go" >&nbsp<span style="font-size: 16px;">去过&nbsp&nbsp&nbsp&nbsp</span></a>
+			<a href="${ctx }/sence/addshoucang?sceneid=${singlescene.sceneId}" onmouseover="shoucang()" onmouseout="shoucang1()" onclick="shoucang()"><img alt="" src="${ctx }/img/icon/shoucang.png" id="shoucang" >&nbsp&nbsp<span style="font-size: 16px;">收藏</span></a>
+			</c:if>
 			</div>
 			<div><span style="font-size: 14px;color: #bcbcbc">${singlescene.address }</span></div>
 		</div>
