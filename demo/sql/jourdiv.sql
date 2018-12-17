@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50506
 File Encoding         : 65001
 
-Date: 2018-12-17 08:44:57
+Date: 2018-12-17 14:40:15
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -21,20 +21,14 @@ SET FOREIGN_KEY_CHECKS=0;
 DROP TABLE IF EXISTS `jourdiv`;
 CREATE TABLE `jourdiv` (
   `myid` int(11) NOT NULL AUTO_INCREMENT,
-  `sname` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
+  `sceneId` int(11) DEFAULT NULL,
   `jid` int(11) DEFAULT NULL,
   PRIMARY KEY (`myid`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of jourdiv
 -- ----------------------------
-INSERT INTO `jourdiv` VALUES ('1', '故宫', '7');
-INSERT INTO `jourdiv` VALUES ('2', '颐和园', '7');
-INSERT INTO `jourdiv` VALUES ('3', '天安门广场', '8');
-INSERT INTO `jourdiv` VALUES ('4', '南锣鼓巷', '8');
-INSERT INTO `jourdiv` VALUES ('5', '798艺术区', '8');
-INSERT INTO `jourdiv` VALUES ('6', '798艺术区', '9');
-INSERT INTO `jourdiv` VALUES ('7', '南锣鼓巷', '9');
-INSERT INTO `jourdiv` VALUES ('8', '798艺术区', '10');
-INSERT INTO `jourdiv` VALUES ('9', '南锣鼓巷', '10');
+INSERT INTO `jourdiv` VALUES ('1', '1', '1');
+INSERT INTO `jourdiv` VALUES ('2', '2', '1');
+INSERT INTO `jourdiv` VALUES ('3', '3', '1');
