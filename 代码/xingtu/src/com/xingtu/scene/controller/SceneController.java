@@ -44,5 +44,9 @@ public class SceneController {
 		request.setAttribute("page", p);
 		return "meijing";
 	}
-	
+	@RequestMapping(value="/addshoucang",method=RequestMethod.GET)
+	public String addshoucang(HttpServletRequest request,@RequestParam(value="sceneid")String sceneid) {
+		
+		return "Detilstest";
+	}
 }
