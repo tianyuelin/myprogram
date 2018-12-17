@@ -56,7 +56,8 @@ public class JourneyDao {
 			for(Scene diname : scenes) {
 				JourDiv jd=new JourDiv();
 				jd.setScene(diname);
-				jds.add(jd);
+				jd.setJourney(j);
+				j.getJd().add(jd);
 			}
 			j.setUser(user);
 			j.setCreatetime(new Date());
