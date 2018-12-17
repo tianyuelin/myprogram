@@ -44,6 +44,7 @@ public class GuanzhuController {
 		//获取粉丝的人数
 		Long fansCount = this.userService.findfansCount1(bepersonemail);
 		request.setAttribute("fansCount",fansCount);
+		//得到将关注的这个人的内容
 		Users u = this.userService.UserCenter(bepersonemail);
 		request.setAttribute("CenterOwn", u);
 		return "otherseeUser";
@@ -55,18 +56,21 @@ public class GuanzhuController {
 	@RequestMapping(value="/tonoGuanzhu")
 	public String tonoGuanzhu(@RequestParam("bepersonemail") String bepersonemail,HttpServletRequest request) {
 		//已经判断出了已关注
-		Followed followed2=new Followed();	
+		Followed followed2=new Followed();
+		System.out.println(bepersonemail);
 		//将被关注者的email放入
 		followed2.setFollwed_user(bepersonemail);		
 		//将关注者（登录用户）放入
-		Users user= (Users) request.getSession().getAttribute("user");
+		Users user=(Users)request.getSession().getAttribute("user");
 		String myemail=user.getEmail();
 		followed2.setUseremail(myemail);
 		//此时已关注，要取消关注，将数据删除
 		this.guanzhuService.delectFollow1(followed2);
 		//将链接设为未关注
 		request.setAttribute("ifGuanzhu", false);//显示未关注
-	
+		//得到将关注的这个人的内容，并输出到页面
+		Users u = this.userService.UserCenter(bepersonemail);
+		request.setAttribute("CenterOwn", u);
 		return "otherseeUser";
 	}
 	

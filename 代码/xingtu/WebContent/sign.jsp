@@ -16,7 +16,7 @@
 
  <style type="text/css">
    body{
-   		background-image: url("${ctx }/img/1.jpg");
+   		background-image: url("${ctx }/img/4.jpg");
     }
       .cavs{
     	z-index:1;

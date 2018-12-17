@@ -1,17 +1,12 @@
 package com.xingtu.guanzhu.dao;
-
 import java.util.ArrayList;
 import java.util.List;
-
 import javax.annotation.Resource;
-
 import javax.servlet.http.HttpServletRequest;
-
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.stereotype.Repository;
-
 import com.xingtu.entity.Followed;
 import com.xingtu.entity.Users;
 
@@ -37,12 +32,13 @@ public class GuanzhuDao {
 	}
 	
 	//将关注者删除
-	public void delectFollow(Followed follow1) {
+	public int delectFollow(Followed follow1) {
 		Session session = this.sessionFactory.getCurrentSession();
 		String myemail=follow1.getUseremail();//登录用户的email
 		String beemail=follow1.getFollwed_user();//将要关注的email
-		//session.update("delete from Followed where useremail='"+myemail+"' and follwed_user='"+beemail+"'"); 
-	
+		Query q=session.createQuery("delete from Followed f where f.useremail='"+myemail+"' and f.follwed_user='"+beemail+"'");
+		int x=q.executeUpdate();
+		return x;//返回受影响的条数
 	}
 	
 	
