@@ -12,7 +12,7 @@ import javax.persistence.Table;
 @Table(name="jourdiv")
 public class JourDiv {
 	private int myid;
-	private String journame;
+	private Scene scene;
 	private Journey journey;
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
@@ -22,11 +22,13 @@ public class JourDiv {
 	public void setMyid(int myid) {
 		this.myid = myid;
 	}
-	public String getJourname() {
-		return journame;
+	@ManyToOne
+	@JoinColumn(name="sname")
+	public Scene getScene() {
+		return scene;
 	}
-	public void setJourname(String journame) {
-		this.journame = journame;
+	public void setScene(Scene scene) {
+		this.scene = scene;
 	}
 	@ManyToOne
 	@JoinColumn(name="jid")
