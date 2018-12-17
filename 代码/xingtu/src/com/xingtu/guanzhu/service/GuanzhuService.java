@@ -15,6 +15,12 @@ public class GuanzhuService {
 	
 	@Resource
     private GuanzhuDao guanzhuDao;
+	//判断是否已关注
+	public Boolean IfGuanZhu1(Followed follow) {
+		return this.guanzhuDao.IfGuanZhu(follow);
+	}
+	
+	
 	
 	//将粉丝与被关注者插入关注表中
 	public void InsertGuanzhu1(Followed follow) {

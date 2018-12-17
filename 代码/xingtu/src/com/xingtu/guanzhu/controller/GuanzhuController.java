@@ -31,10 +31,17 @@ public class GuanzhuController {
 		String myemail=user.getEmail();
 		followed.setUseremail(myemail);
 		//判断曾经是否已插入，若无，则插入，若有则返回已关注
-		
-		
-		
-		this.guanzhuService.InsertGuanzhu1(followed);
+		Boolean b=this.guanzhuService.IfGuanZhu1(followed);
+		if(b) {//已关注
+			request.setAttribute("ifGuanzhu", true); //如果已关注，存入true
+			System.out.println("已关注");
+		}
+		else {//未关注
+			this.guanzhuService.InsertGuanzhu1(followed);
+			request.setAttribute("ifGuanzhu", false);
+			System.out.println("未关注");
+		}
+	
 		return "otherseeUser";
 	}
 	

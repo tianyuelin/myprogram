@@ -123,9 +123,10 @@
 						<div style="float: left;">
 							<i><img style="height:22px;" id="codeImg" alt="点击更换" title="点击更换" src="" /></i>
 						</div-->
+						
 						<span class="pull-right" style="width:55px;height:30.1px;background-color: green;color:white;border-color:green"><a href="javascript:changepage(1);" class="btn btn-success">注册</a></span>
 						
-						<span class="pull-right"><a onclick="severCheck();"  id="to-recover"><input style="width:55px;height:30.1px;background-color: green;color:white;opacity: 0.65;border-color:green" type="submit" value="登录"></a></span>
+						<span class="pull-right"><a onclick="severCheck();"  id="to-recover"><input style="width:55px;height:30.1px;background-color: green;color:white;opacity: 0.65;border-color:green;" type="submit" value="登录"></a></span>
 					</div>
 				</div>
 			</form>
@@ -201,9 +202,9 @@
 						<div style="float: left;">
 							<i><img style="height:22px;" id="zcodeImg" alt="点击更换" title="点击更换" src="" /></i>
 						</div-->
-						<span class="pull-right" style="width:55px;height:30.1px;background-color: green;color:white;border-color:green"><a href="javascript:changepage(2);" class="btn btn-success">取消</a></span>
+						<span class="pull-right" style="width:55px;height:30.1;background-color: green;color:white;border-color:green"><a href="javascript:changepage(2);" class="btn btn-success">取消</a></span>
 						
-						<span class="pull-right"><input style="width:55px;height:30.1px;background-color: green;color:white;opacity: 0.65;border-color:green" onclick="return rcheck()" type="submit" value="注册">   </span>					
+						<span class="pull-right"><input style="width:55px;height:30.1px;background-color: green;color:white;opacity: 0.65;border-color:green" onclick="return rcheck()" type="submit" value="注册"> </span>					
 					</div>
 				</div>
 			</form>

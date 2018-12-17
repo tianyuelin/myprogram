@@ -22,11 +22,19 @@ public class GuanzhuDao {
 	private SessionFactory sessionFactory;
 	
 	//判断是否已关注
-	public Boolean IfGuanZhu(Followed follow) {
+	public Boolean IfGuanZhu(Followed follow) {//如果已关注返回true，未关注返回false
 		Session session =this.sessionFactory.getCurrentSession();		
-		follow.getUseremail();//登录用户的email
-		follow.getFollwed_user();//将要关注用户的email
-		Query q=session.createQuery("from Followed where ")
+		String myemail=follow.getUseremail();//登录用户的email
+		String beemail=follow.getFollwed_user();//将要关注用户的email
+		Query q=session.createQuery("from Followed where useremail=?0 and follwed_user=?1");
+		q.setParameter(0,myemail);
+		q.setParameter(1, beemail);
+		if(q.list()==null) {
+			return false;
+		}else {
+			return true;
+		}
+		
 		
 	}
 	
