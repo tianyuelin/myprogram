@@ -46,13 +46,9 @@ public class JourneyController {
 	}
 	//创建行程
 	@RequestMapping(value="/createxc",method=RequestMethod.POST)
-	public String createxc(@RequestParam(value="diname",required=false)String []journames,@RequestParam(value="jtime",required=false)String jtime,@RequestParam(value="jtitle",required=false)String jtitle,HttpSession session,HttpServletRequest request){
+	public String createxc(@RequestParam(value="diname",required=false)Scene []scenes,@RequestParam(value="jtime",required=false)String jtime,@RequestParam(value="jtitle",required=false)String jtitle,HttpSession session,HttpServletRequest request){
 		Users u= (Users)session.getAttribute("user");
-		Journey journey=js.createJourney(journames, u, jtime, jtitle);
-		for(int i=0;i<journames.length;i++) {
-			List<Scene> jou=(List<Scene>) js.findJour(journames[i]);
-			request.setAttribute("jou", jou);
-		}
+		Journey journey=js.createJourney(scenes, u, jtime, jtitle);
 		request.setAttribute("journey", journey);
 		return "showxc";
 	}
