@@ -19,9 +19,9 @@
 <jsp:include page="header.jsp" flush="true"></jsp:include>
     <div class="shxcall" style="margin-top:5%">
         <div class="shhead">
-             <div class="shimg"><img src="${ctx }/img/tou2.jpg"></div>
-             <div class="shtit">石家庄一日游<br />
-                 <div class="shxij">QTL&nbsp;&nbsp;&nbsp;|2018-11-11出发&nbsp;&nbsp;&nbsp;&nbsp;|共一天</div>
+             <div class="shimg"><img src="${ctx }/${user.icon}"></div>
+             <div class="shtit">${journey.jtitle }<br />
+                 <div class="shxij">${user.username }&nbsp;&nbsp;&nbsp;|${journey.jtime }出发&nbsp;&nbsp;&nbsp;&nbsp;|共一天</div>
              </div>
              <div class="shbj">编辑</div>
         </div>
@@ -32,8 +32,10 @@
              </div>
              <div class="shzy">
                   <div class="shimg1"><img src="${ctx }/img/shtb.jpg"></div>
-                  <div class="shdd">石家庄市区——>正定——>平山</div>
-                  <div class="shcn">空中花园——>正定古城墙——>抱犊寨</div>
+                  <c:forEach items="${journey.jd}" var="myjour">
+                  <span style="font-size: 30px;">${myjour.scene.sname}-></span>
+                  </c:forEach>
+                  <span style="font-size: 30px;">终</span>
              </div>
 		</div>
 		<div class="shxj">
@@ -41,7 +43,7 @@
 			<c:forEach items="${journey.jd}" var="myjour">
 			<div class="xian1">
 				<img src="${myjour.scene.img}">
-					<div class="di1">${myjour.journame }</div>
+					<div class="di1">${myjour.scene.sname}</div>
 					<p class="pj1">地址：${myjour.scene.address}</p> <a href="#" class="ck">查看周边</a>
 			</div>
 			</c:forEach>

@@ -11,6 +11,7 @@
 <link href="${ctx }/css/home/header.css" rel="stylesheet">
 <link href="${ctx }/css/home/bootstrap.min.css" rel="stylesheet">
 <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=no84ceXVi8gDw2sbzALgBU2HxUkcwEpM"></script>
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=no84ceXVi8gDw2sbzALgBU2HxUkcwEpM"></script>
 </head>
 <body>
 <jsp:include page="header.jsp" flush="true"></jsp:include>
@@ -55,6 +56,7 @@
                <c:forEach var="journeylist" items="${page.list }">
                <div class="jing1" id="jing${journeylist.sceneId}" onclick="addxq(this)">
                    <div class="jd1"><img id="im${journeylist.sceneId}" src="${journeylist.img}"></div>
+                   <div class="jx1" id="jx${journeylist.sceneId}">${journeylist.sceneId}</div>
                    <div class="jie1" id="ji${journeylist.sceneId}">${journeylist.sname}</div>
                    <div class="biao1">标签：美景</div>
                    <div class="ping1">评论（300+）</div>
