@@ -11,23 +11,24 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 /**
- * ¾°µãµÄÊµÌåbean
+ * ï¿½ï¿½ï¿½ï¿½ï¿½Êµï¿½ï¿½bean
  * */
 @Entity
 @Table(name="scene")
 public class Scene {
-	private int sceneId;///¾°µãÐòºÅ
-	private String sname;//Ãû³Æ
-	private String address;//µØÖ·
-	private String ticketPrice;//Æ±¼Û
-	private float score;//ÆÀ·Ö
-	private String describee;//ÃèÊö
-	private String route;//Â·Ïß
-	private String playtime;//½¨ÒéÓÎÍæ¶ùÊ±¼ä
-	private String opentime;//¿ª·ÅÊ±¼ä
-	private String city;//³ÇÊÐ
-	private String img;//´ú±íÍ¼Æ¬
+	private int sceneId;///ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	private String sname;//ï¿½ï¿½ï¿½ï¿½
+	private String address;//ï¿½ï¿½Ö·
+	private String ticketPrice;//Æ±ï¿½ï¿½
+	private float score;//ï¿½ï¿½ï¿½ï¿½
+	private String describee;//ï¿½ï¿½ï¿½ï¿½
+	private String route;//Â·ï¿½ï¿½
+	private String playtime;//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½
+	private String opentime;//ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½
+	private String city;//ï¿½ï¿½ï¿½ï¿½
+	private String img;//ï¿½ï¿½ï¿½ï¿½Í¼Æ¬
 	private List<Scenecomment> sc;
+	private List<JourDiv> dj;
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	public int getSceneId() {
@@ -106,5 +107,14 @@ public class Scene {
 	public void setImg(String img) {
 		this.img = img;
 	}
+	@OneToMany(mappedBy="scene",targetEntity=JourDiv.class,
+			cascade= {CascadeType.ALL})
+	public List<JourDiv> getDj() {
+		return dj;
+	}
+	public void setDj(List<JourDiv> dj) {
+		this.dj = dj;
+	}
+	
 	
 }

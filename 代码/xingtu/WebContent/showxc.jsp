@@ -39,13 +39,11 @@
 		<div class="shxj">
 			<div class="shxq">行程详情</div>
 			<c:forEach items="${journey.jd}" var="myjour">
-			<c:forEach items="${jou}" var="jou">
 			<div class="xian1">
-				<img src="${jou.img}">
+				<img src="${myjour.scene.img}">
 					<div class="di1">${myjour.journame }</div>
-					<p class="pj1">地址：${jou.address }</p> <a href="#" class="ck">查看周边</a>
+					<p class="pj1">地址：${myjour.scene.address}</p> <a href="#" class="ck">查看周边</a>
 			</div>
-			</c:forEach>
 			</c:forEach>
 			<%-- <div class="xian1">
 				<img src="${ctx }/img/c2.jpg">
