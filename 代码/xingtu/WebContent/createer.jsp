@@ -10,7 +10,7 @@
 <link rel="stylesheet" href="${ctx }/css/user/youer.css">
 <link href="${ctx }/css/home/header.css" rel="stylesheet">
 <link href="${ctx }/css/home/bootstrap.min.css" rel="stylesheet">
-
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=no84ceXVi8gDw2sbzALgBU2HxUkcwEpM"></script>
 </head>
 <body>
 <jsp:include page="header.jsp" flush="true"></jsp:include>
@@ -89,6 +89,7 @@
    </div>
 </div>
 </form>
+<div id="allmap"></div>
 <jsp:include page="footer.jsp" flush="true"></jsp:include>
 </body>
 </html>
