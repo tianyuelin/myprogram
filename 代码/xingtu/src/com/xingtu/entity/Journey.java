@@ -1,36 +1,41 @@
 package com.xingtu.entity;
 
 import java.util.Date;
+import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 @Entity
 @Table(name="journey")
 public class Journey {
-	private int id;//ÐòºÅ
-	private String route;//ÐÐ³ÌÂ·Ïß
-	private Date createtime;//´´½¨Ê±¼ä
-	private Date jtime;//³öÐÐÊ±¼ä
-	//Ò»¸öÐÐ³ÌÖ»ÄÜÊôÓÚÒ»¸öÓÃ»§
-	private Users user;//ÓÃ»§
+	private int jid;//ï¿½ï¿½ï¿½
+	private String jtitle;//ï¿½Ð³ï¿½Â·ï¿½ï¿½
+	private Date createtime;//ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½
+	private String jtime;//ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½
+	//Ò»ï¿½ï¿½ï¿½Ð³ï¿½Ö»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½Ã»ï¿½
+	private Users user;//ï¿½Ã»ï¿½
+	private List<JourDiv> jd;
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	public int getId() {
-		return id;
+	public int getJid() {
+		return jid;
 	}
-	public void setId(int id) {
-		this.id = id;
+	public void setJid(int jid) {
+		this.jid = jid;
 	}
-	public String getRoute() {
-		return route;
+	
+	public String getJtitle() {
+		return jtitle;
 	}
-	public void setRoute(String route) {
-		this.route = route;
+	public void setJtitle(String jtitle) {
+		this.jtitle = jtitle;
 	}
 	public Date getCreatetime() {
 		return createtime;
@@ -38,10 +43,10 @@ public class Journey {
 	public void setCreatetime(Date createtime) {
 		this.createtime = createtime;
 	}
-	public Date getJtime() {
+	public String getJtime() {
 		return jtime;
 	}
-	public void setJtime(Date jtime) {
+	public void setJtime(String jtime) {
 		this.jtime = jtime;
 	}
 	@ManyToOne
@@ -52,6 +57,15 @@ public class Journey {
 	public void setUser(Users user) {
 		this.user = user;
 	}
+	@OneToMany(mappedBy="journey",targetEntity=JourDiv.class,
+			cascade= {CascadeType.ALL})
+	public List<JourDiv> getJd() {
+		return jd;
+	}
+	public void setJd(List<JourDiv> jd) {
+		this.jd = jd;
+	}
+	
 	
 
 }
