@@ -29,4 +29,7 @@ public class SceneService {
 	public List<Scene> getSceList(){
 		return sd.getSceList();
 	}
+	public List<Scene> getHotScene(){
+		return sd.getHotScene();
+	}
 }

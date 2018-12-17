@@ -1,5 +1,6 @@
 package com.xingtu.strategy.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.annotation.Resource;
@@ -46,8 +47,18 @@ public class StrategyController {
 		p.setPageSize(4);
 		p.setNextPageNum(pageNum+1);
 		p.setPrePageNum(pageNum-1);
-		List<Strategy> allstrategy= ss.findAllStrategy(p.getCurrentPageNum(),p.getPageSize());
+		List<Strategy> allstrategy=new ArrayList<Strategy>();
+		//if(tag=="null") {
+			allstrategy= ss.findAllStrategy(p.getCurrentPageNum(),p.getPageSize());
+		//}else {
+			//allstrategy= ss.findByTag(p.getCurrentPageNum(),p.getPageSize(),tag);
+		//}
+		
 		p.setList(allstrategy);
+		List<Strategy> newstrategy = ss.findNewStrategy();
+		List<Strategy> hotstrategy = ss.findHotStrategy();
+		request.setAttribute("newstrategy", newstrategy);
+		request.setAttribute("hotstrategy", hotstrategy);
 		request.setAttribute("allstrategy", p);
 		return "list";
 	}

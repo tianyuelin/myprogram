@@ -18,7 +18,7 @@
 <div class="header">
 <img alt="" src="${ctx }/${strategy.img}" style="width: 100%;height: 450px;">
 <div class="title">
-	<img alt="" src="${ctx }/${strategy.user.icon}">
+	<a href="${ctx }/user/otherUserCenter?useremail=${strategy.user.email}"><img alt="" src="${ctx }/${strategy.user.icon}"></a>
 	<span>${strategy.title }</span>
 </div>
 </div>

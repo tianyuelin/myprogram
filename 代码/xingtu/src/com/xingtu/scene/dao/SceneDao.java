@@ -55,4 +55,12 @@ public class SceneDao{
 		q.setMaxResults(6);
 		return q.list();
 	}
+	//获取热门景点
+	public List<Scene>getHotScene(){
+		Session session = sf.getCurrentSession();
+		Query q = session.createQuery("from Scene where img is not null order by score");
+		q.setFirstResult(3);
+		q.setMaxResults(3);
+		return q.list();
+	}
 }
