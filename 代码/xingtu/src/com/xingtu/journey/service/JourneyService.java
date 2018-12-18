@@ -29,4 +29,7 @@ public class JourneyService {
 	/*public List<Scene> findJour(String journames){
 		return jd.findJour(journames);
 	}*/
+	public Journey findJourById(int id) {
+		return jd.findJourById(id);
+	}
 }

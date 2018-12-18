@@ -12,6 +12,7 @@ import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Repository;
 
 import com.sun.net.httpserver.HttpContext;
+import com.xingtu.entity.Journey;
 import com.xingtu.entity.Md5Encode;
 import com.xingtu.entity.Strategy;
 import com.xingtu.entity.Users;
@@ -75,6 +76,12 @@ public class UserDao{
 	public List<Strategy> findStrategyByEmail(String email){
 		Session session = this.sessionFactory.getCurrentSession();
 		Query q = session.createQuery("from Strategy where user.email='"+email+"'");
+		return q.list();
+	}
+	//查询行程
+	public List<Journey> findJourneyByEmail(String email){
+		Session session=this.sessionFactory.getCurrentSession();
+		Query q=session.createQuery("from Journey where user.email='"+email+"'");
 		return q.list();
 	}
 }

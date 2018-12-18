@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.xingtu.entity.Followed;
+import com.xingtu.entity.Journey;
 import com.xingtu.entity.Md5Encode;
 import com.xingtu.entity.Scene;
 import com.xingtu.entity.Strategy;
@@ -88,6 +89,9 @@ public class UserController {
 			//获取攻略
 			List<Strategy> strategys = this.userService.findStrategyByEmail(myemail);
 			request.setAttribute("strategys", strategys);
+			//获取行程
+			List<Journey> journeys=this.userService.findJourneyByEmail(myemail);
+			request.setAttribute("journeys", journeys);
 			return "user";
 		}
 		return "";
