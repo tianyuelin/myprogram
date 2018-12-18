@@ -5,12 +5,14 @@ import java.util.List;
 import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.xingtu.entity.Followed;
 import com.xingtu.entity.Users;
 import com.xingtu.guanzhu.dao.GuanzhuDao;
 
 @Service
+@Transactional(readOnly=false)
 public class GuanzhuService {
 	
 	@Resource
@@ -29,6 +31,7 @@ public class GuanzhuService {
 	
 	
 	//删除关注表中的项
+	@Transactional(readOnly=false)
 	public void delectFollow1(Followed follow) {
 		this.guanzhuDao.delectFollow(follow);
 	}
