@@ -83,22 +83,19 @@
 				<div class="b-home-detail">
 				    <div id="myxc">
 				          <div class="zjxc">最近行程</div>
+				          <c:if test="${CenterOwn.journeys!=null }">
+				          <c:forEach items="${CenterOwn.journeys }" var="journey">
 				          <div class="xich1">
 				              <div class="wcj1">我创建了行程计划</div>
 				              <div class="rq1">
 				                    <div class="ts1">共1天</div>
-				                    <div class="mycf1">2018-11-11出发</div>
+				                    <div class="mycf1">${journey.jtime }出发</div>
 				              </div>
-				              <div class="zbt1"><a href="showxc.jsp">石家庄一日游</a></div>
+				              <div class="zbt1"><a href="${ctx }/journey/singleJour?jid=${journey.jid}">${journey.jtitle}</a></div>
 				          </div>
-				          <div class="xich2">  
-				              <div class="wcj2">我创建了行程计划</div>
-				              <div class="rq2">
-				                    <div class="ts2">共2天</div>
-				                    <div class="mycf2">2018-11-22出发</div>
-				              </div>
-				              <div class="zbt2"><a href="showxc.jsp">石家庄两日游</a></div>
-				          </div>
+				          </c:forEach>
+				          </c:if>
+				          
 				    </div>
 				    <div id="mygl">
 				          <div class="zdgl">我的攻略</div>
