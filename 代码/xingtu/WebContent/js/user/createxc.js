@@ -1,13 +1,15 @@
 var count=1;
 function addcity(obj){
+	//使div的display为none
 	var dele1=document.getElementById('did0');
 	dele1.style.display="none";
+	//创建
 	var fid= document.getElementById('titna');//插入的父id
 	/*var cit= document.getElementById('cna${citylist.ctid }');*/
 	var newdi= document.createElement("div");
-	/*var didain=cit.innerHTML;*/
 	var didi=document.createElement("div");
-	didi.innerText=obj.innerText;
+	var oldadd=obj.getElementsByTagName("div")[0];
+	didi.innerText=oldadd.innerText;
 	var lefimg= document.createElement("img");
 	var num=document.createElement("div");
 	var shu=document.createTextNode("1");
@@ -28,9 +30,10 @@ function addcity(obj){
 	newdi.appendChild(num);
 	newdi.appendChild(rigimg);
 	newdi.appendChild(delimg);
-	/*newdi.innerHTML+="<div ><span>北京</span></div>";*/
 	fid.appendChild(newdi);
 	count++;
+	lefimg.attachEvent("onclick",delnum);
+	rigimg.attachEvent("onclick",addnum);
 }
 /*function changecity(){
 	var dele1=document.getElementById('did0');
@@ -58,13 +61,15 @@ function addcity(obj){
 	fid.appendChild(newdi);
 	count++;
 }*/
-document.getElementById("lef1").onclick=function(){
+document.getElementById('lef1').onclick=function(){
 	var jian=document.getElementById('ts1');
 	var shuzi=jian.innerText;
+	alert(zhuzi);
 	shuzi--;
+	alert(zhuzi);
 	jian.innerText=shuzi;
 }
-document.getElementById("rig1").onclick=function(){
+document.getElementById('rig1').onclick=function(){
 	var jia=document.getElementById('ts1');
 	var shuzi=jia.innerText;
 	shuzi++;

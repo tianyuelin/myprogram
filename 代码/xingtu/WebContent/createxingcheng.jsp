@@ -52,9 +52,9 @@
 			</div>
 			<div id="jd9">
 			<c:forEach var="citylist" items="${citylist }">
-				<div class="dian1" id="dd${citylist.ctid }">
+				<div class="dian1" id="dd${citylist.ctid }" onclick="addcity(this)">
 					<img src="${citylist.ctimg }">
-					<div class="ming1" id="cna${citylist.ctid }" onclick="addcity(this)">${citylist.ctname }</div>
+					<div class="ming1" id="cna${citylist.ctid }">${citylist.ctname }</div>
 				</div>
 			</c:forEach>
 			</div>
