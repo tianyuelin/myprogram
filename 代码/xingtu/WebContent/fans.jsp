@@ -45,7 +45,7 @@
 		<div class="main-zt">
 			<div class="user-info">
 				<dt class="flpic">
-					<img src="${ctx }/${user.icon}" />
+					<img src="${ctx }/${user.icon}" width="100% " style="border-radius:50%;"/>
 				</dt><!-- 个人头像 -->
 				<dd class="flintro">
 					<h3 class="intro-title">

@@ -5,14 +5,14 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 <title>${user.username }的空间</title>
-<link href="${ctx }/css/user/myuse.css" rel="stylesheet">
-<link href="${ctx }/css/user/myhead.css" rel="stylesheet">
-<link href="${ctx }/css/home/header.css" rel="stylesheet">
-<link href="${ctx }/css/home/bootstrap.min.css" rel="stylesheet">
-<link rel="stylesheet" href="${ctx }/css/touxiang/cropper.min.css">
-<link rel="stylesheet" href="${ctx }/css/touxiang/ImgCropping.css">
+<link href="${ctx }/css/user/myuse.css" rel="stylesheet"/>
+<link href="${ctx }/css/user/myhead.css" rel="stylesheet"/>
+<link href="${ctx }/css/home/header.css" rel="stylesheet"/>
+<link href="${ctx }/css/home/bootstrap.min.css" rel="stylesheet"/>
+<link rel="stylesheet" href="${ctx }/css/touxiang/cropper.min.css"/>
+<link rel="stylesheet" href="${ctx }/css/touxiang/ImgCropping.css"/>
 </head>
 <body>
 <jsp:include page="header.jsp" flush="true"></jsp:include>
@@ -52,7 +52,7 @@
 				<li class="item item-hover item-active" data-beacon="myhomepage"><a
 					href="user.jsp">首页</a></li>
 				<li class="item"><a
-					href="${ctx }/photo.jsp"
+					href="${ctx }/photo/findallphoto"
 					data-beacon="photos">相册</a></li>
 				<li class="item"><a
 					href="sixin.jsp"
