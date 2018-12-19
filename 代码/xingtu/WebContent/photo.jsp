@@ -82,8 +82,7 @@
 				<div class="aui-photo aui-up-img clear">
 					<section class="aui-file-up fl"> <img src="${ctx }/img/up.png"
 						class="add-img"> <input type="file" name="file" id="file"
-						class="file" value=""
-						accept="image/jpg,image/jpeg,image/png,image/bmp" multiple /></section>
+						class="file" value="" multiple /></section>
 				</div>
 			</div>
 		</div>

@@ -11,7 +11,6 @@
 <title>index</title>
 <link rel="stylesheet" href="css/index/reset.css" type="text/css" />
 <link rel="stylesheet" href="css/index/style.css" type="text/css" />
-
 <script src="js/index/modernizr.js"></script>
  -->
  <title>index</title>
@@ -30,14 +29,12 @@
 			    <a href="${ctx }/index/scelist" class="text-uppercase header-btn">Let's Go Now</a>
 			</div>
 		</li>
-			
 		<li>
 			<div>
 				<h1 class="text-1">新美食</h1><br>
 				<a href="${ctx }/index/scelist" class="text-uppercase header-btn">Let's Go Now</a>
 			</div>
 		</li>
-	
 		<li>
 			<div>
 				<h1 class="text-1">新乐趣</h1><br>

@@ -11,10 +11,6 @@
 <link href="${ctx }/css/user/myhead.css" rel="stylesheet">
 <link href="${ctx }/css/home/header.css" rel="stylesheet">
 <link href="${ctx }/css/home/bootstrap.min.css" rel="stylesheet">
-<script src="${ctx }/js/home/jquery-1.11.3.min.js"></script>
-<script src="${ctx }/js/home/bootstrap.min.js"></script>
-<script src="${ctx }/js/home/swiper.min.js"></script>
-<script src="${ctx }/js/home/main.js"></script>
 <link rel="stylesheet" href="${ctx }/css/touxiang/cropper.min.css">
 <link rel="stylesheet" href="${ctx }/css/touxiang/ImgCropping.css">
 </head>
