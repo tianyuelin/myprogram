@@ -22,4 +22,10 @@ public class SxService {
     	sx.setSxtime(new Date());
     	return this.sxDao.InsertLTContent(sx);
     }
+    
+    //得到一开始的数据库的内容
+    public List<Sx> getAllContent1(String myemail,String otheremail){
+    	return this.sxDao.getAllContent(myemail, otheremail);
+    }
+    
 }

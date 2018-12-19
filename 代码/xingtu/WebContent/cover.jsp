@@ -11,7 +11,6 @@
 <title>index</title>
 <link rel="stylesheet" href="css/index/reset.css" type="text/css" />
 <link rel="stylesheet" href="css/index/style.css" type="text/css" />
-
 <script src="js/index/modernizr.js"></script>
  -->
  <title>index</title>
@@ -19,6 +18,9 @@
   <link rel="stylesheet" href="css/covercss/style.css" type="text/css"/>
   
   <script type="text/javascript" src="js/coverjs/modernizr.js"></script>
+ 
+
+  
   
 </head>
 <body>
