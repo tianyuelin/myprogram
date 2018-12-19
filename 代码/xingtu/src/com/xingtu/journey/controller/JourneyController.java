@@ -15,6 +15,7 @@ import org.springframework.web.multipart.MultipartFile;
 import com.xingtu.entity.Journey;
 import com.xingtu.entity.Page;
 import com.xingtu.entity.Scene;
+import com.xingtu.entity.Strategy;
 import com.xingtu.entity.Users;
 import com.xingtu.journey.service.JourneyService;
 
@@ -50,6 +51,12 @@ public class JourneyController {
 		Users u= (Users)session.getAttribute("user");
 		Journey journey=js.createJourney(sceneid, u, jtime, jtitle);
 		request.setAttribute("journey", journey);
+		return "showxc";
+	}
+	@RequestMapping(value="/singleJour",method=RequestMethod.GET)
+	public String findSingleJour(HttpServletRequest request,@RequestParam(value="jid")int id) {
+		Journey j = js.findJourById(id);
+		request.setAttribute("journey", j);
 		return "showxc";
 	}
 }
