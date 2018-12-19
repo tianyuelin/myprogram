@@ -5,18 +5,14 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 <title>${user.username }的空间</title>
-<link href="${ctx }/css/user/myuse.css" rel="stylesheet">
-<link href="${ctx }/css/user/myhead.css" rel="stylesheet">
-<link href="${ctx }/css/home/header.css" rel="stylesheet">
-<link href="${ctx }/css/home/bootstrap.min.css" rel="stylesheet">
-<script src="${ctx }/js/home/jquery-1.11.3.min.js"></script>
-<script src="${ctx }/js/home/bootstrap.min.js"></script>
-<script src="${ctx }/js/home/swiper.min.js"></script>
-<script src="${ctx }/js/home/main.js"></script>
-<link rel="stylesheet" href="${ctx }/css/touxiang/cropper.min.css">
-<link rel="stylesheet" href="${ctx }/css/touxiang/ImgCropping.css">
+<link href="${ctx }/css/user/myuse.css" rel="stylesheet"/>
+<link href="${ctx }/css/user/myhead.css" rel="stylesheet"/>
+<link href="${ctx }/css/home/header.css" rel="stylesheet"/>
+<link href="${ctx }/css/home/bootstrap.min.css" rel="stylesheet"/>
+<link rel="stylesheet" href="${ctx }/css/touxiang/cropper.min.css"/>
+<link rel="stylesheet" href="${ctx }/css/touxiang/ImgCropping.css"/>
 </head>
 <body>
 <jsp:include page="header.jsp" flush="true"></jsp:include>
@@ -56,7 +52,7 @@
 				<li class="item item-hover item-active" data-beacon="myhomepage"><a
 					href="user.jsp">首页</a></li>
 				<li class="item"><a
-					href="${ctx }/photo.jsp"
+					href="${ctx }/photo/findallphoto"
 					data-beacon="photos">相册</a></li>
 				<li class="item"><a
 					href="sixin.jsp"
@@ -85,22 +81,26 @@
 				<div class="b-home-detail">
 				    <div id="myxc">
 				          <div class="zjxc">最近行程</div>
+				          <c:if test="${journeys!=null }">
+				          <c:forEach items="${journeys }" var="journey">
 				          <div class="xich1">
 				              <div class="wcj1">我创建了行程计划</div>
 				              <div class="rq1">
 				                    <div class="ts1">共1天</div>
-				                    <div class="mycf1">2018-11-11出发</div>
+				                    <div class="mycf1">${journey.jtime }出发</div>
 				              </div>
-				              <div class="zbt1"><a href="showxc.jsp">石家庄一日游</a></div>
+				              <div class="zbt1"><a href="${ctx }/journey/singleJour?jid=${journey.jid}">${journey.jtitle}</a></div>
 				          </div>
-				          <div class="xich2">  
+				          </c:forEach>
+				          </c:if>
+				          <!-- <div class="xich2">  
 				              <div class="wcj2">我创建了行程计划</div>
 				              <div class="rq2">
 				                    <div class="ts2">共2天</div>
 				                    <div class="mycf2">2018-11-22出发</div>
 				              </div>
 				              <div class="zbt2"><a href="showxc.jsp">石家庄两日游</a></div>
-				          </div>
+				          </div> -->
 				    </div>
 				    <div id="mygl">
 				          <div class="zdgl">我的攻略</div>

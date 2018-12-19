@@ -12,6 +12,10 @@
 <link href="${ctx }/css/home/bootstrap.min.css" rel="stylesheet">
 <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=no84ceXVi8gDw2sbzALgBU2HxUkcwEpM"></script>
 <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=no84ceXVi8gDw2sbzALgBU2HxUkcwEpM"></script>
+
+<script type="text/javascript" src="${ctx }/js/date/jquery.min.js"></script>
+<script type="text/javascript" src="${ctx }/js/date/angular.min.js"></script>
+<script type="text/javascript" src="${ctx }/js/date/wui-date.js" charset="utf-8"></script>
 </head>
 <body>
 <jsp:include page="header.jsp" flush="true"></jsp:include>
@@ -19,7 +23,8 @@
 <div class="erall">
    <div class="tou">
          <div class="biaot"><input class="tit" type="text" placeholder='北京一日游' name="jtitle"></div>
-         <div class="cf">出发时间<input type="text" name="jtime"></div>
+         <div class="cf">出发时间
+         <input type="text" name="jtime"></div>
          <div class="wc"><input type="submit" style="width:80px;height:30px" value="完成" ></div>
    </div>
    <div id="zuo">

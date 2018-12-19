@@ -76,12 +76,11 @@ public class JourneyDao {
 			return j;
 	}
 	/**
-	 * 根据景点查询scene的img和address
+	 * 根据id查找行程
 	 */
-	/*public List<Scene> findJour(String journames){
+	public Journey findJourById(int id){
 		Session session=sf.getCurrentSession();
-		Query q=session.createQuery("from Scene s where s.sname=?0");
-		q.getParameter(journames);
-		return q.list();		
-	}*/
+		Journey j=(Journey) session.createQuery("from Journey j where j.jid="+id).uniqueResult();
+		return j;		
+	}
 }

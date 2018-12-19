@@ -32,14 +32,12 @@
 			    <a href="${ctx }/index/scelist" class="text-uppercase header-btn">Let's Go Now</a>
 			</div>
 		</li>
-			
 		<li>
 			<div>
 				<h1 class="text-1">新美食</h1><br>
 				<a href="${ctx }/index/scelist" class="text-uppercase header-btn">Let's Go Now</a>
 			</div>
 		</li>
-	
 		<li>
 			<div>
 				<h1 class="text-1">新乐趣</h1><br>
@@ -69,12 +67,9 @@
 			<path id="cd-changing-path" d="M1402,800h-2V0.6c0-0.3,0-0.3,0-0.6h2v294V800z"/>
 		</svg>
 	</div> <!-- .cd-svg-cover -->
-
 </section> <!-- .cd-slider-wrapper -->
-
 <script src="js/coverjs/jquery-2.1.4.js"></script>
 <script src="js/coverjs/snap.svg-min.js"></script>
 <script src="js/coverjs/main.js"></script> <!-- Resource jQuery -->
-
 </body>
 </html>
