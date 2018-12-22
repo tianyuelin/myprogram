@@ -24,7 +24,7 @@ public class UserDao{
 	@Resource
 	private SessionFactory sessionFactory;
 	
-	//鎻掑叆娉ㄥ唽鐢ㄦ埛
+	//查询
 	public Boolean getRegistPerson(Users users) throws Exception{
 		String myemail=users.getEmail();
 		Session session=this.sessionFactory.getCurrentSession();
@@ -54,7 +54,7 @@ public class UserDao{
 		}		
 	}
 
-	//根据ID查找用户
+	//根据邮箱查找用户信息
 	public Users findUserByEmail(String email) {
 		Session session = this.sessionFactory.getCurrentSession();
 		Users u = (Users)session.createQuery("from Users where email='"+email+"'").uniqueResult();
