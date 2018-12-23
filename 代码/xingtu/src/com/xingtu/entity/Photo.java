@@ -17,7 +17,6 @@ public class Photo {
 	private Date phototime;
 	private Date uptime;
 	private String address;
-	private String describee;
 	private String src;
 	private Users email;
 	@Id
@@ -58,13 +57,6 @@ public class Photo {
 	}
 	public void setSrc(String src) {
 		this.src = src;
-	}
-	
-	public String getDescribee() {
-		return describee;
-	}
-	public void setDescribee(String describee) {
-		this.describee = describee;
 	}
 	@ManyToOne
 	@JoinColumn(name="useremail")

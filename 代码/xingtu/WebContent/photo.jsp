@@ -18,6 +18,42 @@
 <script src="${ctx }/js/home/swiper.min.js"></script>
 <script src="${ctx }/js/home/main.js"></script>
 <script src="${ctx }/js/photo/main.js"></script>
+<script type="text/javascript" src="${ctx }/js/jquery-1.11.2.min.js"></script>
+<link rel="stylesheet" type="text/css"  href="${ctx }/css/style.css"/>
+<script type="text/javascript">
+$(function () {
+    H_miaoshu = {};
+    H_miaoshu.openmiaoshu = function(){
+        $('.photo').click(function(){
+            $('.miaoshu').show();
+            $('.miaoshu-bg').show();
+            alert(this.id);
+            $("#photoid").attr("value",this.id);
+        });
+    };
+    H_miaoshu.closemiaoshu = function(){
+        $('.close-miaoshu').click(function(){
+            $('.miaoshu').hide();
+            $('.miaoshu-bg').hide();
+        });
+    };
+    H_miaoshu.run = function () {
+        this.closemiaoshu();
+        this.openmiaoshu();
+    };
+    H_miaoshu.run();
+});
+function showphoto(id){
+	alert(1);
+	alert(id);
+    $('#info'+id).show();
+    $('.miaoshushow-bg').show();
+}
+$(document).on('click','.close-miaoshushow',function(){
+	$('.miaoshushow').hide();
+    $('.miaoshushow-bg').hide();
+});
+</script>
 </head>
 <body>
 <jsp:include page="header.jsp" flush="true"></jsp:include>
@@ -73,12 +109,82 @@
 			</ul>
 		</div>
 	</div>
-	<div style="margin-bottom: 25px;margin-left: 15px;">
-		<a href="${ctx }/upphoto.jsp"><img src="${ctx }/img/up.png" width="250px" height="250px" style="margin: 10px;"/></a>
-		<c:forEach items="${photos }" var="photo">
-			<img src="${ctx }/${photo.src}" class="photo" alt="" width="250px" height="250px" style="margin: 10px;"/>
-		</c:forEach>
+	<div class="theleft" style="width: 20%;float: left;border-right: 1px solid #ededed; height: 600px;">
+		<form action="${ctx }/photo/findallphoto">
+		<h2 style="margin-left: 10px;" class="type">按照人物搜索:</h2>
+			<input type="submit" class="sousuo" value="查询"/><input type="text" placeholder="输入人物姓名" class="shurukuang" name="searchpeople"/>
+		<h2 style="margin-left: 10px;" class="type" >按照时间搜索:</h2>
+			<input type="submit" class="sousuo" value="查询"/><input type="text" placeholder="输入拍照时间" class="shurukuang" name="searchdate"/>
+		<h2 style="margin-left: 10px;" class="type">按照地点搜索:</h2>
+			<input type="submit" class="sousuo" value="查询"/><input type="text" placeholder="输入地点名称" class="shurukuang" name="searchaddress"/>
+		</form>
 	</div>
+	<div style="margin-bottom: 25px;width: 75%;margin: auto;margin-left: 20.5%; height: 600px;">
+		<a href="${ctx }/upphoto.jsp"><img src="${ctx }/img/up.png" width="150px" height="150px" style="margin: 10px;"/></a>
+		<c:forEach items="${photos.list}" var="photo">
+		<c:if test="${photo.address==null&&photo.people==null&&photo.phototime==null }">
+		<a href="javascript:void(0);">
+			<img src="${ctx }/${photo.src}"class="photo" alt="" width="150px" height="150px" style="margin: 10px;" id="${photo.id }"/>
+		</a>
+		</c:if>
+		<c:if test="${photo.address!=null||photo.people!=null||photo.phototime!=null }">
+		<a>
+			<img src="${ctx }/${photo.src}" alt="" width="150px" height="150px" style="margin: 10px;" id="${photo.id }" onclick="showphoto(this.id)"/>
+		</a>
+		</c:if>
+		<div class="miaoshushow" id="info${photo.id }">
+    		<div class="miaoshuimg">
+    		<img src="${ctx }/${photo.src}" />
+    		</div>
+    		<div class="miaoshuinfo">
+    		<div class="miaoshushow-title">照片描述信息<span><a href="javascript:void(0);" class="close-miaoshushow" onclick="close()">关闭</a></span></div>
+    		<div class="miaoshushow-input-content">
+        	<div class="miaoshushow-input">
+        		<label>地&nbsp;点&nbsp;：<span id="address">${photo.address }</span></label>
+        	</div>
+        	<div class="miaoshushow-input">
+            <label>出行人物：<span id="people">${photo.people }</span></label>
+        	</div>
+        <div class="miaoshushow-input">
+            <label>拍摄时间：<span id="time">${photo.phototime }</span></label>
+        </div>
+        </div>
+    </div>
+</div>
+<div class="miaoshushow-bg"></div>
+</c:forEach>
+	</div>
+	<div class="miaoshu">
+	<form action="${ctx }/photo/photoinfo" method="post">
+    <div class="miaoshu-title">照片描述信息<span><a href="javascript:void(0);" class="close-miaoshu">关闭</a></span></div>
+    <div class="miaoshu-input-content">
+        <div class="miaoshu-input">
+        	<input type="text" name="photoid" style="display: none" id="photoid" value=""/>
+            <label>地&nbsp;点&nbsp;：</label>
+            <input type="text" placeholder="为照片添加地点"  name="address" class="list-input"/>
+        </div>
+        <div class="miaoshu-input">
+            <label>出行人物：</label>
+            <input type="text" placeholder="记录一下同行的人" name="people" class="list-input"/>
+        </div>
+        <div class="miaoshu-input">
+            <label>拍摄时间：</label>
+            <input type="text" placeholder="2018-12-30"  name="phototime" class="list-input"/>
+        </div>
+    </div>
+    <input type="submit" value="提交" style="width: 100%;height: 50px; text-align: center;background-color: #c0f560"/>
+</form>
+</div>
+<div class="miaoshu-bg"></div>
+
+<div style="width: 40%;margin: auto; text-align: center;">
+         <div class="pagination">
+            <a href="${ctx }/photo/findallphoto?pageNum=1">首页</a>
+            <a href="${ctx }/photo/findallphoto?pageNum=${photos.prePageNum }">上一页</a>
+            <a href="${ctx }/photo/findallphoto?pageNum=${photos.nextPageNum }">下一页</a>
+            <a href="${ctx }/photo/findallphoto?pageNum=${photos.totalPageNum }">末页</a>
+        </div>
+</div>
 	<jsp:include page="footer.jsp" flush="true"></jsp:include>
 	</body>
 </html>

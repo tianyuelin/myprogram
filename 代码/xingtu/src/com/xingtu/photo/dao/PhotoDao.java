@@ -64,9 +64,54 @@ public class PhotoDao {
 			}
 		}
 	}
-	public List<Photo> findAllPhoto(Users u){
+	public List<Photo> findAllPhoto(Users u,int pageNum,int pageSize,String searchaddress,String searchpeople,String searchdate){
 		Session session = sf.getCurrentSession();
-		Query q = session.createQuery("from Photo where email.email='"+u.getEmail()+"'");
+		Query q;
+		if(searchaddress.equals("null")&&searchpeople.equals("null")&&searchdate.equals("null")) {
+			q= session.createQuery("from Photo where email.email='"+u.getEmail()+"'");
+		}else if(searchaddress.equals("null")&&searchpeople.equals("null")&&!searchdate.equals("null")){
+			q = session.createQuery("from Photo where phototime like '%"+searchdate+"%' and email.email='"+u.getEmail()+"'");
+		}else if(searchaddress.equals("null")&&!searchpeople.equals("null")&&searchdate.equals("null")) {
+			q = session.createQuery("from Photo where people like '%"+searchpeople+"%' and email.email='"+u.getEmail()+"'");
+		}else if(!searchaddress.equals("null")&&searchpeople.equals("null")&&searchdate.equals("null")) {
+			q = session.createQuery("from Photo where address like '%"+searchaddress+"%' and email.email='"+u.getEmail()+"'");
+		}else if(!searchaddress.equals("null")&&!searchpeople.equals("null")&&searchdate.equals("null")) {
+			q = session.createQuery("from Photo where address like '%"+searchaddress+"%' and people like '%"+searchpeople+"%' and email.email='"+u.getEmail()+"'");
+		}else if(!searchaddress.equals("null")&&searchpeople.equals("null")&&!searchdate.equals("null")) {
+			q = session.createQuery("from Photo where address like '%"+searchaddress+"%' and phototime like '%"+searchdate+"%' and email.email='"+u.getEmail()+"'");
+		}else if(searchaddress.equals("null")&&!searchpeople.equals("null")&&!searchdate.equals("null")) {
+			q = session.createQuery("from Photo where people like '%"+searchpeople+"%' and phototime like '%"+searchdate+"%' and email.email='"+u.getEmail()+"'");
+		}else {
+			q = session.createQuery("from Photo where address like '%"+searchaddress+"%' and people like '%"+searchpeople+"%' and phototime like '%"+searchdate+"%' and email.email='"+u.getEmail()+"'");
+		}
+		q.setFirstResult((pageNum-1)*pageSize);
+		q.setMaxResults(pageSize);
+		return q.list();
+	}
+	public void updatephoto(String people,String address,String id,String phototime) {
+		Session session = sf.getCurrentSession();
+		Query q = session.createQuery("update Photo set people='"+people+"',address='"+address+"',phototime='"+phototime+"' where id="+id);
+		q.executeUpdate();
+	}
+	public List<Photo> findphotpByAdd(String address,Users u,int pageNum,int pageSize){
+		Session session = sf.getCurrentSession();
+		Query q = session.createQuery("from Photo where address like '%"+address+"%' and email.email='"+u.getEmail()+"'");
+		q.setFirstResult((pageNum-1)*pageSize);
+		q.setMaxResults(pageSize);
+		return q.list();
+	}
+	public List<Photo> findphotoByPeople(String people,Users u,int pageNum,int pageSize){
+		Session session = sf.getCurrentSession();
+		Query q = session.createQuery("from Photo where people like '%"+people+"%' and email.email='"+u.getEmail()+"'");
+		q.setFirstResult((pageNum-1)*pageSize);
+		q.setMaxResults(pageSize);
+		return q.list();
+	}
+	public List<Photo> findphotoByDate(String date,Users u,int pageNum,int pageSize){
+		Session session = sf.getCurrentSession();
+		Query q = session.createQuery("from Photo where phototime like '%"+date+"%' and email.email='"+u.getEmail()+"'");
+		q.setFirstResult((pageNum-1)*pageSize);
+		q.setMaxResults(pageSize);
 		return q.list();
 	}
 }
