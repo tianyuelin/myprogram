@@ -68,7 +68,6 @@ public class GuanzhuDao {
 			String email1=f.getFollwed_user();//获得被关注人的邮箱
 			Users fellowUser=(Users)session.createQuery("from Users where email='"+email1+"'").uniqueResult();
 			
-			System.out.println(fellowUser+"看看第三处是否能运行");
 			
 			usersList.add(fellowUser);
 		}

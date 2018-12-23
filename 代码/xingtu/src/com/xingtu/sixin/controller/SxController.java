@@ -67,6 +67,15 @@ public class SxController {
 	 
 	 
 	 
+	 //从导航栏点击信息跳入sixin页面
+	 @RequestMapping(value="/sixinPage",method=RequestMethod.GET)
+	 public String getsixinPage(HttpServletRequest request) {
+		 
+		 
+		 
+		 return "sixin";
+	 }
+	 
 	
 	 
 	 
