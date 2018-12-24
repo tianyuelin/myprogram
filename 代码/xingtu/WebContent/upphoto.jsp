@@ -14,7 +14,8 @@
 	<link href="${ctx }/dist/styles.imageuploader.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-<form action="${ctx }/photo/up" method="POST" enctype="multipart/form-data">
+<div id="mysesisgn">
+<form action="${ctx }/photo/up" method="POST" enctype="multipart/form-data" id="myformid">
 <div style="position: relative;">
 	<section role="main" class="l-main" style="margin-top:50px;margin-bottom:50px;">
 		<div class="uploader__box js-uploader__box l-center-box">
@@ -26,6 +27,8 @@
 	</section>
 </div>
 </form>
+</div>
+
 	<script src="${ctx }/js/photo/jquery-1.11.0.min.js" type="text/javascript"></script>
 	<script src="${ctx }/dist/jquery.imageuploader.js" type="text/javascript"></script>
 	<script type="text/javascript">
@@ -39,5 +42,25 @@
 		});
 	}());
 	</script>
+	
+	 <!-- 引入jquery-form.js（这个是必须的，否则绑定form提交事件不会生效，还有一些jquery必需文件不再多说）-->
+<script src="js/user/jquery.form.js"></script>
+
+<!-- 实现局部刷新js -->
+<script type="text/javascript">
+    $(document).ready(function(){
+        var options = {   
+            //需要刷新的区域id 
+            target:'#mysesisgn',
+        };
+        //绑定FORM提交事件  
+        $('#myformid').submit(function() {  
+            $(this).ajaxSubmit(options);   
+            return false;   
+        }); 
+       
+    });     
+</script>
+
 </body>
 </html>

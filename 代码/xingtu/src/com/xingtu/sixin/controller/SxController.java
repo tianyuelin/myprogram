@@ -70,9 +70,13 @@ public class SxController {
 	 //从导航栏点击信息跳入sixin页面
 	 @RequestMapping(value="/sixinPage",method=RequestMethod.GET)
 	 public String getsixinPage(HttpServletRequest request) {
-		 
-		 
-		 
+		 //获取登录账户的邮箱
+		 Object obj=request.getSession().getAttribute("user");
+		 Users myuser=(Users) obj;
+		 String myemail=myuser.getEmail();
+		 //得到每个人及其最后一条信息
+		 List<Sx> finallXinxi=this.sxService.getSiXinPageContent1(myemail);
+		 request.setAttribute("finallXinxi",finallXinxi);
 		 return "sixin";
 	 }
 	 

@@ -31,4 +31,10 @@ public class SxService {
     	return this.sxDao.getAllContent(myemail, otheremail);
     }
     
+    //得到与每个人的最后一条信息
+    public List<Sx> getSiXinPageContent1(String myemail){
+    	return this.sxDao.getSiXinPageContent(myemail);
+    }
+    
+    
 }

@@ -2,6 +2,7 @@ package com.xingtu.entity;
 
 import java.util.Date;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -51,6 +52,7 @@ public class Sx {
 	public void setIfRead(int ifRead) {
 		this.ifRead = ifRead;
 	}
+	
 	public Date getSxtime() {
 		return sxtime;
 	}

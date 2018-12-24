@@ -117,7 +117,7 @@
 	        </div>      
 	        <br/>
 	        <div style="float:left;margin-left:200px;margin-top:17px;">
-	            <input style="opacity: 0.9;background-color:white;border:1px solid gray;width:60px;height:30px;" type="button" value="私信"/>
+	            <a href="${ctx }/sxPerson?otheremail=${fpn.email }"><input style="opacity: 0.9;background-color:white;border:1px solid gray;width:60px;height:30px;" type="button" value="私信"/></a>
 	        </div>   
 	    </div>
 	    </c:forEach>
