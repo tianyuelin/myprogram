@@ -1,6 +1,5 @@
 package com.xingtu.scene.dao;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -10,8 +9,6 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Query;
 import org.springframework.stereotype.Repository;
-
-import com.xingtu.entity.Followed;
 import com.xingtu.entity.Scene;
 import com.xingtu.entity.SceneImgs;
 import com.xingtu.entity.Sceneshoucang;
@@ -126,9 +123,14 @@ public class SceneDao{
 			Scene shoucangscene=(Scene)session.createQuery("from Scene where sceneId='"+id+"'").uniqueResult();
 				
 			System.out.println(shoucangscene+"看看第三处是否能运行");
-				
 			SceneList.add(shoucangscene);
 		}
 		return SceneList;
+	}
+	//通过名字获取景点
+	public List<Scene> findbyname(String name){
+		Session session = sf.getCurrentSession();
+		Query q = session.createQuery("from Scene where sname='"+name+"'");
+		return q.list();
 	}
 }

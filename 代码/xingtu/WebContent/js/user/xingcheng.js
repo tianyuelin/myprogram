@@ -263,20 +263,16 @@ function getRandomArrayElements(arr, count) {
     return shuffled.slice(min);
 }
 $("#changeTag").click(function(){
-	var items = ['家庭出游','绘画','摄影','骑行','情侣','独自一人','三五好友','穷游','毕业游','亲子','三五好友','美食','潜水','滑雪','自驾','春节','端午','夏季','暑假','寒假','蜜月','学生','海边','徒步','人文'];
+	var items = ['家庭出游','绘画','摄影','骑行','情侣','独自一人','穷游','毕业游','亲子','三五好友','美食','潜水','滑雪','自驾','春节','端午','夏季','暑假','寒假','蜜月','学生','海边','徒步','人文'];
 	var tags = getRandomArrayElements(items, 9);
-	var tag  = $("#love1").val();
-	var input = document.getElementById('love1');
-	var label = document.querySelector('label[for="'+input.id+'"]');
-	var value = label.innerText.trim();
-	label.innerText=tags[0];
 	var count=1;
 	for(var i in tags){
 		var input = document.getElementById('love'+count);
 		var label = document.querySelector('label[for="'+input.id+'"]');
+		label.innerText=tags[i];
 		var value = label.innerText.trim();
 		input.value=value;
-		label.innerText=tags[count-1];
+		
 		count++;
 	}
 });

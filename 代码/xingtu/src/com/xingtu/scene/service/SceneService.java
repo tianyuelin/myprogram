@@ -50,4 +50,7 @@ public class SceneService {
 	public List<Scene> findShoucangs(String myemail) {
 		return sd.findShoucangs(myemail);
 	}
+	public List<Scene> findByName(String name){
+		return sd.findbyname(name);
+	}
 }

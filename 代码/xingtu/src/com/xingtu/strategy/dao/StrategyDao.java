@@ -4,7 +4,6 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -120,9 +119,30 @@ public class StrategyDao {
 	//根据标签查询
 	public List<Strategy> findStrategyByTag(int pageNum,int pageSize,String tag){
 		Session session = this.sf.getCurrentSession();
-		Query q = session.createQuery("from Strategy where tag like '%"+tag+"'%");
+		Query q = session.createQuery("from Strategy where tag like '%"+tag+"%'");
 		q.setFirstResult((pageNum-1)*pageSize);
 		q.setMaxResults(pageSize);
 		return q.list();
+	}
+	//查出首页6个攻略
+	public List<Strategy> findTheIndexStrategy(){
+		Session session = this.sf.getCurrentSession();
+		Query q = session.createQuery("from Strategy order by looktimes desc");
+		q.setFirstResult(0);
+		q.setMaxResults(6);
+		return q.list();
+	}
+	public List<Strategy> findByAddress(String address){
+		 Session session = this.sf.getCurrentSession();
+		 List<Strategy> strategylist = new ArrayList<Strategy>(0);
+		 List<StrategyDiv> list = new ArrayList<StrategyDiv>(0);
+		 Query q = session.createQuery("from StrategyDiv");
+		 list = q.list();
+		 for(StrategyDiv sd : list) {
+			 if(sd.getAddress().equals(address)) {
+				 strategylist.add(this.findStrategyById(sd.getStrategy().getsId()));
+			 }
+		 }
+		return strategylist;
 	}
 }
