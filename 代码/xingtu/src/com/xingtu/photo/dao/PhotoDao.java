@@ -90,8 +90,30 @@ public class PhotoDao {
 	}
 	public void updatephoto(String people,String address,String id,String phototime) {
 		Session session = sf.getCurrentSession();
-		Query q = session.createQuery("update Photo set people='"+people+"',address='"+address+"',phototime='"+phototime+"' where id="+id);
-		q.executeUpdate();
+		Query q;
+		if(!people.equals("null")&&!address.equals("null")&&!phototime.equals("null")) {
+			q = session.createQuery("update Photo set people='"+people+"',address='"+address+"',phototime='"+phototime+"' where id="+id);
+			q.executeUpdate();
+		}else if(people.equals("null")&&address.equals("null")&&!phototime.equals("null")) {
+			q = session.createQuery("update Photo set phototime='"+phototime+"' where id="+id);
+			q.executeUpdate();
+		}else if(people.equals("null")&&!address.equals("null")&&phototime.equals("null")) {
+			q = session.createQuery("update Photo set address='"+address+"' where id="+id);
+			q.executeUpdate();
+		}else if(!people.equals("null")&&address.equals("null")&&phototime.equals("null")) {
+			q = session.createQuery("update Photo set people='"+people+"' where id="+id);
+			q.executeUpdate();
+		}else if(!people.equals("null")&&!address.equals("null")&&phototime.equals("null")) {
+			q = session.createQuery("update Photo set people='"+people+"',address='"+address+"' where id="+id);
+			q.executeUpdate();
+		}else if(!people.equals("null")&&address.equals("null")&&!phototime.equals("null")) {
+			q = session.createQuery("update Photo set people='"+people+"',phototime='"+phototime+"' where id="+id);
+			q.executeUpdate();
+		}else if(people.equals("null")&&!address.equals("null")&&!phototime.equals("null")) {
+			q = session.createQuery("update Photo set address='"+address+"',phototime='"+phototime+"' where id="+id);
+			q.executeUpdate();
+		}
+		
 	}
 	public List<Photo> findphotpByAdd(String address,Users u,int pageNum,int pageSize){
 		Session session = sf.getCurrentSession();

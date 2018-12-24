@@ -116,25 +116,26 @@ $(document).on('click','.close-miaoshushow',function(){
 	</div>
 	<div class="theleft" style="width: 20%;float: left;border-right: 1px solid #ededed; height: 600px;">
 		<form action="${ctx }/photo/findallphoto">
-		<h2 style="margin-left: 10px;" class="type">按照人物搜索:</h2>
+		<img src="${ctx }/img/zi2.png"/>
+		<!--  h2 class="type">按照人物搜索:</h2-->
 			<input type="submit" class="sousuo" value="查询"/><input type="text" placeholder="输入人物姓名" class="shurukuang" name="searchpeople"/>
-		<h2 style="margin-left: 10px;" class="type" >按照时间搜索:</h2>
+		<!--h2 class="type" >按照时间搜索:</h2-->
 			<input type="submit" class="sousuo" value="查询"/><input type="text" placeholder="输入拍照时间" class="shurukuang" name="searchdate"/>
-		<h2 style="margin-left: 10px;" class="type">按照地点搜索:</h2>
+		<!--h2  class="type">按照地点搜索:</h2-->
 			<input type="submit" class="sousuo" value="查询"/><input type="text" placeholder="输入地点名称" class="shurukuang" name="searchaddress"/>
 		</form>
 	</div>
 	<div style="margin-bottom: 25px;width: 75%;margin: auto;margin-left: 20.5%; height: 600px;">
-		<a href="${ctx }/upphoto.jsp"><img src="${ctx }/img/up.png" width="150px" height="150px" style="margin: 10px;"/></a>
+		<a href="${ctx }/upphoto.jsp"><img src="${ctx }/img/up.png" width="15%" height="150px" style="margin: 10px;"/></a>
 		<c:forEach items="${photos.list}" var="photo">
 		<c:if test="${photo.address==null&&photo.people==null&&photo.phototime==null }">
 		<a href="javascript:void(0);">
-			<img src="${ctx }/${photo.src}"class="photo" alt="" width="150px" height="150px" style="margin: 10px;" id="${photo.id }"/>
+			<img src="${ctx }/${photo.src}"class="photo" alt="" width="15%" height="150px" style="margin: 10px;" id="${photo.id }"/>
 		</a>
 		</c:if>
 		<c:if test="${photo.address!=null||photo.people!=null||photo.phototime!=null }">
 		<a>
-			<img src="${ctx }/${photo.src}" alt="" width="150px" height="150px" style="margin: 10px;" id="${photo.id }" onclick="showphoto(this.id)"/>
+			<img src="${ctx }/${photo.src}" alt="" width="15%" height="150px" style="margin: 10px;" id="${photo.id }" onclick="showphoto(this.id)"/>
 		</a>
 		</c:if>
 		<div class="miaoshushow" id="info${photo.id }">
