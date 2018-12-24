@@ -1,8 +1,10 @@
 package com.xingtu.strategy.dao;
 
+import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -31,10 +33,17 @@ public class StrategyDao {
 		if(!file.isEmpty()){//�ж��ļ��Ƿ�Ϊ��
 			try {
 				InputStream is=file.getInputStream();//�õ����������
+				String dirPath = path+"img\\"+user.getEmail()+"\\strategy";
+				System.out.println(dirPath);
+				File foder=new File(dirPath);
+				if(!foder.exists()) {
+					foder.mkdirs();
+					System.out.println("创建目录");
+				}
 				FileOutputStream fos=new FileOutputStream(
-						path+"\\img\\strategy\\"
+						dirPath
 						+file.getOriginalFilename());//������ļ��ŵ��ҵ���Ŀ��ʵ·���µ�һ��upload��
-				s.setImg("img//strategy//"
+				s.setImg("img\\"+user.getEmail()+"\\strategy"
 						+file.getOriginalFilename());
 				int i=0;
 				while((i=is.read())!=-1) {

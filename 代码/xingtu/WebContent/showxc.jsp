@@ -42,25 +42,13 @@
 			<div class="shxq">行程详情</div>
 			<c:forEach items="${journey.jd}" var="myjour">
 			<div class="xian1">
-				<img src="${myjour.scene.img}">
+				<img src="${myjour.scene.img}"/>
 					<div class="di1">${myjour.scene.sname}</div>
-					<p class="pj1">地址：${myjour.scene.address}</p> <a href="#" class="ck">查看周边</a>
+					<p class="pj1">地址：${myjour.scene.address}</p> <a href="#" class="ck">查看地图</a>
 			</div>
 			</c:forEach>
-			<%-- <div class="xian1">
-				<img src="${ctx }/img/c2.jpg">
-					<div class="di1">正定古城墙</div>
-					<p class="pj1">地址：石家庄市桥西区中花市街与四中路交叉口</p> <a href="#" class="ck">查看周边</a>
-			</div>
-			<div class="xian1">
-				<img src="${ctx }/img/c1.jpg">
-					<div class="di1">抱犊寨</div>
-					<p class="pj1">地址：石家庄市鹿泉市抱犊寨风景区</p> <a href="#" class="ck">查看周边</a>
-			</div> --%>
 		</div>
 	</div>
-    </div>
-
 <jsp:include page="footer.jsp" flush="true"></jsp:include>
 </body>
 </html>

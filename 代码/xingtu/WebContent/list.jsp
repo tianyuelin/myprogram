@@ -61,19 +61,8 @@
                           <div class="kd-usernetwork">
                             <ul class="kd-blogcomment">
                                 <li><a href="#" class="thcolorhover"><i class="fa fa-eye"></i>565</a></li>
-                                <li><a href="#" class="thcolorhover"><i class="fa fa-comments-o"></i> 15</a></li>
                               <li><a href="#" class="thcolorhover"><i class="fa fa-heart-o"></i> 456</a></li>
-
-                             
                             </ul>
-                            <div class="kd-social-network">
-                              <ul>
-                                <li><a href="#" class="thcolorhover"><i class="fa fa-qq"></i></a></li>
-                                <li><a href="#" class="thcolorhover"><i class="fa fa-weixin"></i></a></li>
-                                <li><a href="#" class="thcolorhover"><i class="fa fa-weibo"></i></a></li>
-         
-                              </ul>
-                            </div>
                           </div>
                         </section>
                       </div>
