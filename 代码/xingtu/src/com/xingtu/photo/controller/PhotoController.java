@@ -31,7 +31,7 @@ public class PhotoController {
 		ps.upPhoto(files, path, u);
 		Page<Photo> p = new Page<Photo>();
 		p.setCurrentPageNum(pageNum);
-		p.setPageSize(20);
+		p.setPageSize(14);
 		p.setNextPageNum(pageNum+1);
 		p.setPrePageNum(pageNum-1);
 		List<Photo> photos = ps.findphoto(u,p.getCurrentPageNum(),p.getPageSize(),searchaddress,searchpeople,searchdate);
@@ -44,7 +44,7 @@ public class PhotoController {
 			@RequestParam(value="searchpeople",defaultValue="null")String searchpeople,@RequestParam(value="searchaddress",defaultValue="null")String searchaddress,@RequestParam(value="searchdate",defaultValue="null")String searchdate) {
 		Page<Photo> p = new Page<Photo>();
 		p.setCurrentPageNum(pageNum);
-		p.setPageSize(20);
+		p.setPageSize(14);
 		p.setNextPageNum(pageNum+1);
 		p.setPrePageNum(pageNum-1);
 		Users u = (Users)session.getAttribute("user");
@@ -59,7 +59,7 @@ public class PhotoController {
 	public String updatePhoto(HttpSession session,HttpServletRequest request,@RequestParam(value="address",defaultValue="null")String address,@RequestParam(value="people",defaultValue="null")String people,@RequestParam(value="phototime",defaultValue="null")String phototime,@RequestParam(value="photoid")String id,@RequestParam(value="pageNum",defaultValue="1")int pageNum,@RequestParam(value="searchpeople",defaultValue="null")String searchpeople,@RequestParam(value="searchaddress",defaultValue="null")String searchaddress,@RequestParam(value="searchdate",defaultValue="null")String searchdate) {
 		Page<Photo> p = new Page<Photo>();
 		p.setCurrentPageNum(pageNum);
-		p.setPageSize(20);
+		p.setPageSize(14);
 		p.setNextPageNum(pageNum+1);
 		p.setPrePageNum(pageNum-1);
 		Users u = (Users)session.getAttribute("user");
