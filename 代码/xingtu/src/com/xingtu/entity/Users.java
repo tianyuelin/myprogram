@@ -36,6 +36,7 @@ public class Users {
 	//һ���û����Դ�������г�
 	private List<Journey> journeys;//�������г�
 	private List<Sceneshoucang> sceneshoucang;
+	private List<Photo> photos;
 	@Id
 	@GeneratedValue(generator="assigned")
 	@GenericGenerator(name="assigned",strategy="assigned")
@@ -132,6 +133,14 @@ public class Users {
 	}
 	public void setJourneys(List<Journey> journeys) {
 		this.journeys = journeys;
+	}
+	@OneToMany(mappedBy="email",targetEntity=Photo.class,
+			cascade= {CascadeType.ALL})
+	public List<Photo> getPhotos() {
+		return photos;
+	}
+	public void setPhotos(List<Photo> photos) {
+		this.photos = photos;
 	}
 	
 }

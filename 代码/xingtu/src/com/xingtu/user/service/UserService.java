@@ -63,7 +63,7 @@ public class UserService {
 			return false;
 		}
 	}
-	//进入个人中心页
+	//根据邮箱查找用户信息。进入个人中心页
 	public Users UserCenter(String email) {
 		return this.userDao.findUserByEmail(email);
 	}

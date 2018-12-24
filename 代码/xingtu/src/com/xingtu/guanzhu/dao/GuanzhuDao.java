@@ -54,10 +54,8 @@ public class GuanzhuDao {
 	public List<Users> findFollows(String myemail) {
 		
 		Session session=this.sessionFactory.getCurrentSession();
-		Query q=session.createQuery("from Followed where useremail=?0");
-		
-		q.setParameter(0,myemail);
-		
+		Query q=session.createQuery("from Followed where useremail=?0");	
+		q.setParameter(0,myemail);	
 		List<Followed> fs = q.list();//关注人的集合
 		
 		//创建一个关注人用户信息的集合
@@ -67,9 +65,7 @@ public class GuanzhuDao {
 			
 			String email1=f.getFollwed_user();//获得被关注人的邮箱
 			Users fellowUser=(Users)session.createQuery("from Users where email='"+email1+"'").uniqueResult();
-			
-			System.out.println(fellowUser+"看看第三处是否能运行");
-			
+	
 			usersList.add(fellowUser);
 		}
 		return usersList;
