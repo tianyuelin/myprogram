@@ -56,6 +56,11 @@ $(document).on('click','.close-miaoshushow',function(){
 </script>
 </head>
 <body>
+
+
+
+
+
 <jsp:include page="header.jsp" flush="true"></jsp:include>
 	<div class="qn-header"  style="margin-top:5%">
 		<div class="main-zt">
@@ -187,5 +192,13 @@ $(document).on('click','.close-miaoshushow',function(){
         </div>
 </div>
 	<jsp:include page="footer.jsp" flush="true"></jsp:include>
+
+
+	
+
+           
+	
+	
+	
 	</body>
 </html>

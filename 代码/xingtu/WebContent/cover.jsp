@@ -15,9 +15,8 @@
  -->
  <title>index</title>
  <link rel="stylesheet" href="css/covercss/reset.css" type="text/css"/>
-  <link rel="stylesheet" href="css/covercss/style.css" type="text/css"/>
-  
-  <script type="text/javascript" src="js/coverjs/modernizr.js"></script>
+ <link rel="stylesheet" href="css/covercss/style.css" type="text/css"/>
+ <script type="text/javascript" src="js/coverjs/modernizr.js"></script>
 </head>
 <body>
 <section class="cd-slider-wrapper">

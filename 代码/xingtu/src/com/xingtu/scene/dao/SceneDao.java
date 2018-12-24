@@ -1,6 +1,7 @@
 package com.xingtu.scene.dao;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.annotation.Resource;
@@ -10,8 +11,10 @@ import org.hibernate.SessionFactory;
 import org.hibernate.Query;
 import org.springframework.stereotype.Repository;
 
+import com.xingtu.entity.Followed;
 import com.xingtu.entity.Scene;
 import com.xingtu.entity.SceneImgs;
+import com.xingtu.entity.Sceneshoucang;
 import com.xingtu.entity.Users;
 @Repository
 public class SceneDao{
@@ -68,5 +71,64 @@ public class SceneDao{
 		Session session = sf.getCurrentSession();
 		Scene scene = (Scene)session.createQuery("from Scene where sceneId="+id).uniqueResult();
 		
+	}
+	//判断是否已收藏
+	public Boolean IfShouCang(int sceneid,Users user) {//如果已关注返回true，未关注返回false
+		Session session =sf.getCurrentSession();		
+		String myemail=user.getEmail();//登录用户的email
+		Query q=session.createQuery("from Sceneshoucang sh where sh.user.email=?0 and sh.scene.sceneId=?1");
+		q.setParameter(0,myemail);
+		q.setParameter(1, sceneid);
+		if(q.list().size()!=0) {//说明存在这样一条数据，已收藏
+			return true;
+		}else {
+			return false;
+		}
+	}
+	//点击收藏，将收藏名单插入收藏表
+	public Sceneshoucang InsertShoucang(int sceneid,Users user) {
+		Session session=sf.getCurrentSession();
+		List<Scene> scenes = new ArrayList<Scene>();
+		Scene s =(Scene)session.createQuery("from Scene where sceneId="+sceneid).uniqueResult();
+		scenes.add(s);
+		Sceneshoucang ssc=new Sceneshoucang();
+		ssc.setUser(user);
+		ssc.setScene(s);
+		session.save(ssc);
+		return ssc;
+		
+	}
+	//将收藏者删除
+	public int delectShoucang(int sceneid,Users user) {
+		Session session = sf.getCurrentSession();
+		String myemail=user.getEmail();//登录用户的email
+		Query q=session.createQuery("delete from Sceneshoucang s where s.user.email='"+myemail+"' and s.scene.sceneId='"+sceneid+"'");
+		int x=q.executeUpdate();
+		return x;//返回受影响的条数
+	}
+	//从收藏表中取出本人收藏的景点有那几个
+	@SuppressWarnings("null")
+	public List<Scene> findShoucangs(String myemail) {
+			
+		Session session=sf.getCurrentSession();
+		Query q=session.createQuery("from Sceneshoucang where user.email=?0");
+			
+		q.setParameter(0,myemail);
+			
+		List<Sceneshoucang> ssc = q.list();//收藏景点的集合
+			
+		//创建一个收藏景点的集合
+		List<Scene> SceneList=new ArrayList<Scene>();
+		//根据上面获得的被收藏景点的id查找被收藏景点的信息
+		for(Sceneshoucang sc : ssc) {
+				
+			int id=sc.getScene().getSceneId();//获取景点的id
+			Scene shoucangscene=(Scene)session.createQuery("from Scene where sceneId='"+id+"'").uniqueResult();
+				
+			System.out.println(shoucangscene+"看看第三处是否能运行");
+				
+			SceneList.add(shoucangscene);
+		}
+		return SceneList;
 	}
 }

@@ -94,7 +94,7 @@ public class Users {
 	public void setRegisttime(Date registtime) {
 		this.registtime = registtime;
 	}
-	@OneToMany(mappedBy="u",targetEntity=Sceneshoucang.class,
+	@OneToMany(mappedBy="user",targetEntity=Sceneshoucang.class,
 			cascade= {CascadeType.ALL})
 	public List<Sceneshoucang> getSceneshoucang() {
 		return sceneshoucang;
