@@ -36,8 +36,16 @@
 			<a href="${ctx }/sign.jsp" onmouseover="shoucang()" onmouseout="shoucang1()" onclick="shoucang()"><img alt="" src="${ctx }/img/icon/shoucang.png" id="shoucang" >&nbsp&nbsp<span style="font-size: 16px;">收藏</span></a>
 			</c:if>
 			<c:if test="${isSigned==true}">
-			<a href="#" onmouseover="gone()" onmouseout="gone1()" onclick="gone()"><img alt="" src="${ctx }/img/icon/go.png" id="go" >&nbsp<span style="font-size: 16px;">去过&nbsp&nbsp&nbsp&nbsp</span></a>
-			<a href="${ctx }/sence/addshoucang?sceneid=${singlescene.sceneId}" onmouseover="shoucang()" onmouseout="shoucang1()" onclick="shoucang()"><img alt="" src="${ctx }/img/icon/shoucang.png" id="shoucang" >&nbsp&nbsp<span style="font-size: 16px;">收藏</span></a>
+			   <!-- 如果还未收藏 -->
+			     <c:if test="${ifShoucang==false }">
+			          <a href="#" onmouseover="gone()" onmouseout="gone1()" onclick="gone()"><img alt="" src="${ctx }/img/icon/go.png" id="go" >&nbsp<span style="font-size: 16px;">去过&nbsp&nbsp&nbsp&nbsp</span></a>
+			          <a href="${ctx }/sence/addshoucang?sceneid=${singlescene.sceneId}" onmouseover="shoucang()" onmouseout="shoucang1()" onclick="shoucang()"><img alt="" src="${ctx }/img/icon/shoucang.png" id="shoucang" >&nbsp&nbsp<span style="font-size: 16px;">收藏</span></a>
+			     </c:if>
+			     <!-- 如果已收藏 -->
+			     <c:if test="${ifShoucang==true }">
+				     <a href="#" onmouseover="gone()" onmouseout="gone1()" onclick="gone()"><img alt="" src="${ctx }/img/icon/go.png" id="go" >&nbsp<span style="font-size: 16px;">去过&nbsp&nbsp&nbsp&nbsp</span></a>
+			         <a href="${ctx }/sence/noshoucang?sceneid=${singlescene.sceneId}" onmouseover="shoucang()" onmouseout="shoucang1()" onclick="shoucang()"><img alt="" src="${ctx }/img/icon/shoucanged.png" id="shoucang" >&nbsp&nbsp<span style="font-size: 16px;">收藏</span></a>
+			     </c:if>
 			</c:if>
 			</div>
 			<div><span style="font-size: 14px;color: #bcbcbc">${singlescene.address }</span></div>

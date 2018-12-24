@@ -14,6 +14,8 @@ import org.springframework.stereotype.Repository;
 import com.sun.net.httpserver.HttpContext;
 import com.xingtu.entity.Journey;
 import com.xingtu.entity.Md5Encode;
+import com.xingtu.entity.Scene;
+import com.xingtu.entity.Sceneshoucang;
 import com.xingtu.entity.Strategy;
 import com.xingtu.entity.Users;
 
@@ -82,6 +84,12 @@ public class UserDao{
 	public List<Journey> findJourneyByEmail(String email){
 		Session session=this.sessionFactory.getCurrentSession();
 		Query q=session.createQuery("from Journey where user.email='"+email+"'");
+		return q.list();
+	}
+	//查询收藏的景点（心愿清单）
+	public List<Sceneshoucang> findScScene(String email){
+		Session session=this.sessionFactory.getCurrentSession();
+		Query q=session.createQuery("from Sceneshoucang where user.email='"+email+"'");
 		return q.list();
 	}
 }
