@@ -57,7 +57,6 @@ public class JourneyDao {
 			Scene s =(Scene)session.createQuery("from Scene where sceneId="+id).uniqueResult();
 			scenes.add(s);
 		}
-	
 			for(Scene diid : scenes) {
 				JourDiv jd=new JourDiv();
 				jd.setScene(diid);

@@ -1,5 +1,6 @@
 package com.xingtu.strategy.dao;
 
+import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -31,10 +32,17 @@ public class StrategyDao {
 		if(!file.isEmpty()){//�ж��ļ��Ƿ�Ϊ��
 			try {
 				InputStream is=file.getInputStream();//�õ����������
+				String dirPath = path+"img\\"+user.getEmail()+"\\strategy";
+				System.out.println(dirPath);
+				File foder=new File(dirPath);
+				if(!foder.exists()) {
+					foder.mkdirs();
+					System.out.println("创建目录");
+				}
 				FileOutputStream fos=new FileOutputStream(
-						path+"\\img\\strategy\\"
+						dirPath
 						+file.getOriginalFilename());//������ļ��ŵ��ҵ���Ŀ��ʵ·���µ�һ��upload��
-				s.setImg("img//strategy//"
+				s.setImg("img\\"+user.getEmail()+"\\strategy"
 						+file.getOriginalFilename());
 				int i=0;
 				while((i=is.read())!=-1) {
@@ -111,9 +119,30 @@ public class StrategyDao {
 	//根据标签查询
 	public List<Strategy> findStrategyByTag(int pageNum,int pageSize,String tag){
 		Session session = this.sf.getCurrentSession();
-		Query q = session.createQuery("from Strategy where tag like '%"+tag+"'%");
+		Query q = session.createQuery("from Strategy where tag like '%"+tag+"%'");
 		q.setFirstResult((pageNum-1)*pageSize);
 		q.setMaxResults(pageSize);
 		return q.list();
+	}
+	//查出首页6个攻略
+	public List<Strategy> findTheIndexStrategy(){
+		Session session = this.sf.getCurrentSession();
+		Query q = session.createQuery("from Strategy order by looktimes desc");
+		q.setFirstResult(0);
+		q.setMaxResults(6);
+		return q.list();
+	}
+	public List<Strategy> findByAddress(String address){
+		 Session session = this.sf.getCurrentSession();
+		 List<Strategy> strategylist = new ArrayList<Strategy>(0);
+		 List<StrategyDiv> list = new ArrayList<StrategyDiv>(0);
+		 Query q = session.createQuery("from StrategyDiv");
+		 list = q.list();
+		 for(StrategyDiv sd : list) {
+			 if(sd.getAddress().equals(address)) {
+				 strategylist.add(this.findStrategyById(sd.getStrategy().getsId()));
+			 }
+		 }
+		return strategylist;
 	}
 }

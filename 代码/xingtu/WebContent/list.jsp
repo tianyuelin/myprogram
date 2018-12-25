@@ -61,19 +61,8 @@
                           <div class="kd-usernetwork">
                             <ul class="kd-blogcomment">
                                 <li><a href="#" class="thcolorhover"><i class="fa fa-eye"></i>565</a></li>
-                                <li><a href="#" class="thcolorhover"><i class="fa fa-comments-o"></i> 15</a></li>
                               <li><a href="#" class="thcolorhover"><i class="fa fa-heart-o"></i> 456</a></li>
-
-                             
                             </ul>
-                            <div class="kd-social-network">
-                              <ul>
-                                <li><a href="#" class="thcolorhover"><i class="fa fa-qq"></i></a></li>
-                                <li><a href="#" class="thcolorhover"><i class="fa fa-weixin"></i></a></li>
-                                <li><a href="#" class="thcolorhover"><i class="fa fa-weibo"></i></a></li>
-         
-                              </ul>
-                            </div>
                           </div>
                         </section>
                       </div>
@@ -96,8 +85,8 @@
                 
                <div class="widget widget_search">
                   <div class="kd-section-title"><h3>搜索</h3></div>
-                  <form>
-                    <input type="text" placeholder="搜索要去的地名">
+                  <form action="${ctx }/strategy/findbyaddress" method="post">
+                    <input type="text" placeholder="搜索要去的地名" name="address">
                     <input type="submit" value="">
                     <i class="fa fa-search"></i>
                   </form>
@@ -155,12 +144,18 @@
                     <!--kd-widget-title-->
                   <div class="kd-widget-title"><h3>标签</h3></div>
                   <div class="kd-tag">
-                    <a href="#"><H6>家庭</H6></a>
-                    <a href="#"><h6>闺蜜</h6></a>
-                    <a href="#"><h6>情侣</h6></a>
-                    <a href="#"><h6>学生</h6></a>
-                    <a href="#"><h6>徒步</h6></a>
-                    <a href="#"><h6>三五好友</h6></a>
+                  	<a href="${ctx }/strategy/findbyTag?tag=家庭出游"><H6>家庭出游</H6></a>
+                    <a href="${ctx }/strategy/findbyTag?tag=独自一人"><h6>独自一人</h6></a>
+                    <a href="${ctx }/strategy/findbyTag?tag=摄影"><h6>摄影</h6></a>
+                    <a href="${ctx }/strategy/findbyTag?tag=学生"><h6>学生</h6></a>
+                    <a href="${ctx }/strategy/findbyTag?tag=徒步"><h6>徒步</h6></a>
+                    <a href="${ctx }/strategy/findbyTag?tag=三五好友"><h6>三五好友</h6></a>
+                    <a href="${ctx }/strategy/findbyTag?tag=情侣"><H6>情侣</H6></a>
+                    <a href="${ctx }/strategy/findbyTag?tag=独自一人"><h6>独自一人</h6></a>
+                    <a href="${ctx }/strategy/findbyTag?tag=自驾"><h6>自驾</h6></a>
+                    <a href="${ctx }/strategy/findbyTag?tag=学生"><h6>人文</h6></a>
+                    <a href="${ctx }/strategy/findbyTag?tag=毕业游"><h6>毕业游</h6></a>
+                    <a href="${ctx }/strategy/findbyTag?tag=美食"><h6>美食</h6></a>
                   </div>
                 </div>
               </aside>

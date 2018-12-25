@@ -64,7 +64,6 @@
                           <div class="kd-usernetwork">
                             <ul class="kd-blogcomment">
                                 <li><a href="#" class="thcolorhover"><i class="fa fa-eye"></i>565</a></li>
-                                <li><a href="#" class="thcolorhover"><i class="fa fa-comments-o"></i> 15</a></li>
                               <li><a href="#" class="thcolorhover"><i class="fa fa-heart-o"></i> 456</a></li>
                             </ul>
                           </div>
@@ -89,8 +88,8 @@
                 
                <div class="widget widget_search">
                   <div class="kd-section-title"><h3>位置查看</h3></div>
-                  <form>
-                    <input type="text" placeholder="搜索地名">
+                  <form action="${ctx }/sence/findbyname" method="post">
+                    <input type="text" placeholder="搜索地名" name="name">
                     <input type="submit" value="">
                     <i class="fa fa-search"></i>
                   </form>

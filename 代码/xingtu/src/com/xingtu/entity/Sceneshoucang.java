@@ -11,7 +11,7 @@ import javax.persistence.Table;
 @Table(name="sceneshoucang")
 public class Sceneshoucang {
 	private int id;
-	private Users u;//收藏景点的人
+	private Users user;//收藏景点的人
 	private Scene scene;//收藏的景点
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
@@ -23,14 +23,14 @@ public class Sceneshoucang {
 	}
 	@ManyToOne
 	@JoinColumn(name="useremail")
-	public Users getU() {
-		return u;
+	public Users getUser() {
+		return user;
 	}
-	public void setU(Users u) {
-		this.u = u;
+	public void setUser(Users user) {
+		this.user = user;
 	}
 	@ManyToOne
-	@JoinColumn(name="sceneid")
+	@JoinColumn(name="sceneId")
 	public Scene getScene() {
 		return scene;
 	}

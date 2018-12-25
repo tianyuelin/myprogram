@@ -45,10 +45,15 @@
         <!-- <div class="bz">添加备注</div> -->
    </div>
    <div class="you">
-        <div class="re"><a href="#">热门推荐</a>
-        </div>
-        <div class="shou"><a href="#">我的收藏</a></div>
-        <div class="dao">
+        <div class="mybox">
+			<div id="remen">
+				<a href="#" onclick="retj()">热门推荐</a>
+			</div>
+			<div id="wsc">
+				<a href="#" onclick="shc()">我的收藏</a>
+			</div>
+		</div>
+        <div class="dao" id="dao1" style="display:block">
                <div class="dian"><a href="#">景点</a></div>
                <div class="shi"><a href="#">美食</a></div>
                <div class="duo"><a href="#">更多</a></div>
@@ -91,6 +96,30 @@
                     <a href="${ctx }/journey/journeylist?pageNum=${page.totalPageNum }">末页</a>
                   </div>
                 </div>
+        </div>
+        <div class="dao" id="dao2" style="display:none">
+               <div class="jing1">
+                   <div class="jd1"><img src="${ctx }/img/c2.jpg"></div>
+                   <div class="jie1">正定古城墙</div>
+                   <div class="biao1">标签：遗址</div>
+                   <div class="ping1">评论（280+）</div>
+                   <div class="jia1" onclick="add()">加入编辑</div>
+               </div>
+               <div class="jing1">
+                   <div class="jd1"><img src="${ctx }/img/c1.jpg"></div>
+                   <div class="jie1">抱犊寨</div>
+                   <div class="biao1">标签：山峦</div>
+                   <div class="ping1">评论（280+）</div>
+                   <div class="jia1" onclick="add()">加入编辑</div>
+               </div>
+               <%-- <div class="pagination-wrap">
+                  <div class="pagination">
+                    <a href="${ctx }/journey/journeylist?pageNum=1">首页</a>
+                    <a href="${ctx }/journey/journeylist?pageNum=${page.prePageNum }">上一页</a>
+                    <a href="${ctx }/journey/journeylist?pageNum=${page.nextPageNum }">下一页</a>
+                    <a href="${ctx }/journey/journeylist?pageNum=${page.totalPageNum }">末页</a>
+                  </div>
+                </div> --%>
         </div>
         
    </div>

@@ -1,4 +1,9 @@
 var count=1;
+var tianshu=1;
+var tianshu1=1;
+var tianshu2=1;
+var tianshu3=1;
+var tianshu4=1;
 function addcity(obj){
 	//使div的display为none
 	var dele1=document.getElementById('did0');
@@ -15,6 +20,7 @@ function addcity(obj){
 	var shu=document.createTextNode("1");
 	var rigimg=document.createElement("img");
 	var delimg=document.createElement("img");
+	tianshu=1;
 	newdi.id='myci'+count;
 	didi.id='dizhi'+count;
 	num.id='ts'+count;
@@ -31,9 +37,7 @@ function addcity(obj){
 	newdi.appendChild(rigimg);
 	newdi.appendChild(delimg);
 	fid.appendChild(newdi);
-	count++;
-	lefimg.attachEvent("onclick",delnum);
-	rigimg.attachEvent("onclick",addnum);
+	count=count+1;
 }
 /*function changecity(){
 	var dele1=document.getElementById('did0');
@@ -61,20 +65,55 @@ function addcity(obj){
 	fid.appendChild(newdi);
 	count++;
 }*/
-document.getElementById('lef1').onclick=function(){
+
+$(document).on("click",'#lef1',function(){
 	var jian=document.getElementById('ts1');
-	var shuzi=jian.innerText;
-	alert(zhuzi);
-	shuzi--;
-	alert(zhuzi);
-	jian.innerText=shuzi;
-}
-document.getElementById('rig1').onclick=function(){
+	if(tianshu1>1){
+		tianshu1--;
+		jian.innerText=tianshu1;
+	}else{
+		jian.innerText=1;
+	}
+})
+$(document).on("click","#rig1",function(){
 	var jia=document.getElementById('ts1');
-	var shuzi=jia.innerText;
-	shuzi++;
-	jia.innerText=shuzi;
-}
-/*$("#del1").click(function(){
+	tianshu1++;
+	jia.innerText=tianshu1;
+})
+$(document).on("click","#del1",function(){
 	$("div").remove("#myci1");
-}*/
+})
+$(document).on("click",'#lef2',function(){
+	var jian=document.getElementById('ts2');
+	if(tianshu2>1){
+		tianshu2--;
+		jian.innerText=tianshu2;
+	}else{
+		jian.innerText=1;
+	}
+})
+$(document).on("click","#rig2",function(){
+	var jia=document.getElementById('ts2');
+	tianshu2++;
+	jia.innerText=tianshu2;
+})
+$(document).on("click","#del2",function(){
+	$("div").remove("#myci2");
+})
+$(document).on("click",'#lef3',function(){
+	var jian=document.getElementById('ts3');
+	if(tianshu3>1){
+		tianshu3--;
+		jian.innerText=tianshu3;
+	}else{
+		jian.innerText=1;
+	}
+})
+$(document).on("click","#rig3",function(){
+	var jia=document.getElementById('ts3');
+	tianshu3++;
+	jia.innerText=tianshu3;
+})
+$(document).on("click","#del3",function(){
+	$("div").remove("#myci3");
+})

@@ -23,8 +23,12 @@
         var map = new BMap.Map("allmap");         
         map.centerAndZoom(new BMap.Point(121.4, 31.2), 11);
         map.setCurrentCity("上海");  
-        var local = new BMap.LocalSearch(map, {
+        var local1 = new BMap.LocalSearch(map, {
             renderOptions:{map: map}
         });
-        local.search("河北石家庄");
+        var local2 = new BMap.LocalSearch(map, {
+            renderOptions:{map: map}
+        });
+        local1.search("河北石家庄");
+        local2.search("河北石家庄正定");
     </script>

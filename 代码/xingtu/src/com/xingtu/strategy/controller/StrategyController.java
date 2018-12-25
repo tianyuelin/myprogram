@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.xingtu.entity.Page;
-import com.xingtu.entity.Scene;
 import com.xingtu.entity.Strategy;
 import com.xingtu.entity.Users;
 import com.xingtu.strategy.service.StrategyService;
@@ -67,5 +66,39 @@ public class StrategyController {
 		Strategy s = ss.findSingleStrategy(id);
 		request.setAttribute("strategy", s);
 		return "YouJishow";
+	}
+	@RequestMapping(value="/findbyTag",method=RequestMethod.GET)
+	public String findStrategyByTag(HttpServletRequest request,@RequestParam(value="tag")String tag,@RequestParam(value="pageNum",defaultValue="1")int pageNum) {
+		Page<Strategy> p = new Page<Strategy>();
+		p.setCurrentPageNum(pageNum);
+		p.setPageSize(4);
+		p.setNextPageNum(pageNum+1);
+		p.setPrePageNum(pageNum-1);
+		List<Strategy> allstrategy=new ArrayList<Strategy>();
+		allstrategy = ss.findByTag(p.getCurrentPageNum(),p.getPageSize(),tag);
+		p.setList(allstrategy);
+		List<Strategy> newstrategy = ss.findNewStrategy();
+		List<Strategy> hotstrategy = ss.findHotStrategy();
+		request.setAttribute("newstrategy", newstrategy);
+		request.setAttribute("hotstrategy", hotstrategy);
+		request.setAttribute("allstrategy", p);
+		return "list";
+	}
+	@RequestMapping(value="/findbyaddress",method=RequestMethod.POST)
+	public String findbyAddress(@RequestParam(value="address")String address,HttpServletRequest request,@RequestParam(value="pageNum",defaultValue="1")int pageNum) {
+		Page<Strategy> p = new Page<Strategy>();
+		p.setCurrentPageNum(pageNum);
+		p.setPageSize(4);
+		p.setNextPageNum(pageNum+1);
+		p.setPrePageNum(pageNum-1);
+		List<Strategy> allstrategy=new ArrayList<Strategy>();
+		allstrategy = ss.findByAddress(address);
+		p.setList(allstrategy);
+		List<Strategy> newstrategy = ss.findNewStrategy();
+		List<Strategy> hotstrategy = ss.findHotStrategy();
+		request.setAttribute("newstrategy", newstrategy);
+		request.setAttribute("hotstrategy", hotstrategy);
+		request.setAttribute("allstrategy", p);
+		return "list";
 	}
 }

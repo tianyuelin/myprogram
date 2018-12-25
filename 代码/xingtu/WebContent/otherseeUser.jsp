@@ -154,7 +154,18 @@
 					</div>
 					<div id="mygz">
 					    <div class="zdgz">心愿清单</div>
-						<ul class="fans-listclrfix">
+						<c:if test="${CenterOwn.sceneshoucang!=null }">
+				        <c:forEach items="${CenterOwn.sceneshoucang }" var="myscene">
+				        <div class="xiny1">
+				              <div class="xyimg"><img src="${myscene.scene.img}"></img></div>
+				              <div class="myx1"><a href="${ctx }/sence/singlesence?id=${myscene.scene.sceneId}">${myscene.scene.sname}</a></div>
+				       
+				         </div>
+				         </c:forEach>
+				         </c:if>
+				         <c:if test="${CenterOwn.sceneshoucang == null }">
+				         <div class="nostrategy">您的心愿清单空空如也~</div>
+				         </c:if>
 							
 						</ul>
 					</div>

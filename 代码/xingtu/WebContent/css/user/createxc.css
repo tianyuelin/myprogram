@@ -48,35 +48,36 @@
 	border:1px solid #000000;
 	
 }
-#myci1,#myci2,#myci3,#myci4,#myci5{
-	width:80%;
+#myci1,#myci2,#myci3,#myci4,#myci5,#myci6,#myci7{
+	width:75%;
 	height:40px;
 	border:1px solid #000000;
-	margin-top:12px;
+	margin-top:20px;
 	margin-left:10%;
 }
-#dizhi1,#dizhi2,#dizhi3,#dizhi4{
-	font-size:20px;
+#dizhi1,#dizhi2,#dizhi3,#dizhi4,#dizhi5,#dizhi6,#dizhi7{
+	font-size:25px;
 	margin-left:15px;
 	float:left;
 	display:inline;
 }
-#ts1,#ts2,#ts3,#ts4{
+#ts1,#ts2,#ts3,#ts4,#ts5,#ts6,#ts7{
 	display:inline;
+	font-size:25px;
 }
-#lef1,#lef2,#lef3,#lef4,#lef5{
-	width:20px;
-	height:20px;
-	margin-left:40px;
+#lef1,#lef2,#lef3,#lef4,#lef5,#lef6,#lef7{
+	width:25px;
+	height:25px;
+	margin-left:30px;
 	display:inline;
 } 
-#rig1,#rig2,#rig3,#rig4{
-	width:20px;
-	height:20px;
+#rig1,#rig2,#rig3,#rig4,#rig5,#rig6,#rig7{
+	width:25px;
+	height:25px;
 	margin-left:10px;
 	display:inline;
 }
-#del1,#del2,#del3,#del4{
+#del1,#del2,#del3,#del4,#del5,#del6,#del7{
 	width:20px;
 	height:20px;
 	float:right;
@@ -164,7 +165,7 @@ img:hover
 }
 .dian1{
 	margin-top:50px;
-	width:220px;
+	width:20%;
 	height:200px;
 	margin-left:70px;
 	float:left;

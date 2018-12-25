@@ -18,12 +18,8 @@ String htmlData = request.getParameter("content1") != null ? request.getParamete
     <link href="${ctx }/css/user/xingcheng.css" rel="stylesheet">
     <script src="${ctx }/js/user/xingcheng.js"></script>
 <link rel="stylesheet" type="text/css" href="http://apps.bdimg.com/libs/bootstrap/3.3.4/css/bootstrap.css">
-<link href="${ctx }/dist/summernote.css" rel="stylesheet"/>
-
-<script src="${ctx }/js/jquery.min.js"></script>
-<script src="${ctx }/js/bootstrap.min.js"></script>
-<script src="${ctx }/dist/summernote.js"></script>
-<script src="${ctx }/dist/lang/summernote-zh-CN.js"></script>    <!-- 中文-->
+<script src="${ctx }/js/user/jquery.min.js"></script>
+<script src="${ctx }/js/user/bootstrap.min.js"></script>
 
 <style>
 	.m{ width: 100%; margin-left: auto; margin-right: auto; }
@@ -57,7 +53,6 @@ String htmlData = request.getParameter("content1") != null ? request.getParamete
 		</div>
 		<div id="dt"  onmouseover="deleteed4()" onmouseout="qdeeted4()">
 			<img src="${ctx }/img/icon/delete.png" id="d4">
-			<input type="file" style="opacity: 0; display: inline; width:5px;" id="uploadimg">
 			<span>删除目录</span>
 		</div>
 		<div class="RadioStyle">

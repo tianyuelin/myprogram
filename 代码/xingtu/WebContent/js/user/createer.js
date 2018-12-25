@@ -1,5 +1,26 @@
 var count=1;
 var spancount=0;
+function shc(){
+	var div1=document.getElementById('dao1');
+	var div2=document.getElementById('dao2');
+	var adiv1=document.getElementById('remen');
+	var adiv2=document.getElementById('wsc');
+	div1.style.display="none";
+	div2.style.display="block";
+	adiv2.style.backgroundColor="#eff1f1";
+	adiv1.style.backgroundColor="#fff";
+	
+}
+function retj(){
+	var div1=document.getElementById('dao1');
+	var div2=document.getElementById('dao2');
+	div2.style.display="none";
+	div1.style.display="block";
+	var adiv1=document.getElementById('remen');
+	var adiv2=document.getElementById('wsc');
+	adiv1.style.backgroundColor="#eff1f1";
+	adiv2.style.backgroundColor="#fff";
+}
 function addxq(obj){
 	var oldimg=obj.getElementsByTagName("img")[0];
 	var oldname=obj.getElementsByTagName("div")[2];

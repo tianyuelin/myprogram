@@ -9,10 +9,12 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.xingtu.entity.Scene;
 import com.xingtu.entity.SceneImgs;
+import com.xingtu.entity.Sceneshoucang;
+import com.xingtu.entity.Users;
 import com.xingtu.scene.dao.SceneDao;
 
 @Service
-@Transactional(readOnly=true)
+@Transactional(readOnly=false)
 public class SceneService {
 	@Resource
 	private SceneDao sd;
@@ -31,5 +33,24 @@ public class SceneService {
 	}
 	public List<Scene> getHotScene(){
 		return sd.getHotScene();
+	}
+	//判断是否已收藏
+	public Boolean IfShouCang(int sceneid,Users user) {
+		return sd.IfShouCang(sceneid, user);
+	}
+	//点击收藏，将收藏名单插入收藏表
+	public Sceneshoucang InsertShoucang(int sceneid,Users user) {
+		return sd.InsertShoucang(sceneid, user);
+	}
+	//将收藏者删除
+	public void delectShoucang(int sceneid,Users user) {
+		sd.delectShoucang(sceneid, user);
+	}
+	//获取我的收藏
+	public List<Scene> findShoucangs(String myemail) {
+		return sd.findShoucangs(myemail);
+	}
+	public List<Scene> findByName(String name){
+		return sd.findbyname(name);
 	}
 }

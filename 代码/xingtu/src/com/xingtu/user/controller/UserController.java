@@ -15,6 +15,7 @@ import com.xingtu.entity.Followed;
 import com.xingtu.entity.Journey;
 import com.xingtu.entity.Md5Encode;
 import com.xingtu.entity.Scene;
+import com.xingtu.entity.Sceneshoucang;
 import com.xingtu.entity.Strategy;
 import com.xingtu.entity.Users;
 import com.xingtu.guanzhu.service.GuanzhuService;
@@ -92,6 +93,9 @@ public class UserController {
 			//获取行程
 			List<Journey> journeys=this.userService.findJourneyByEmail(myemail);
 			request.setAttribute("journeys", journeys);
+			//获取心愿清单（收藏景点）
+			List<Sceneshoucang> scenes=this.userService.findScScene(myemail);
+			request.setAttribute("scenes", scenes);
 			return "user";
 		}
 		return "";

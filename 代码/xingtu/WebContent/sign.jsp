@@ -98,15 +98,6 @@
 						</div>
 					</div>
 				</div>
-				<div style="float:right;padding-right:10%;">
-					<div style="float: left;margin-top:3px;margin-right:2px;">
-						<font color="black">记住密码</font>
-					</div>
-					<div style="float: left;">
-						<input name="form-field-checkbox" id="saveid" type="checkbox"
-							onclick="savePaw();" style="padding-top:0px;" />
-					</div>
-				</div>
 				<div class="form-actions">
 					<div style="width:86%;padding-left:8%;">
 
@@ -122,8 +113,7 @@
 							<i><img style="height:22px;" id="codeImg" alt="点击更换" title="点击更换" src="" /></i>
 						</div-->
 						
-						<span class="pull-right" style="width:55px;height:30.1px;background-color: green;color:white;border-color:green"><a href="javascript:changepage(1);" class="btn btn-success">注册</a></span>
-						
+						<span class="pull-right" style="width:13.55%;height:30.1px;background-color: green;color:white;border-color:green;font-size: 1em;"><a href="javascript:changepage(1);" style="color: white;">注册</a></span>
 						<span class="pull-right"><a onclick="severCheck();"  id="to-recover"><input style="width:55px;height:30.1px;background-color: green;color:white;opacity: 0.65;border-color:green;" type="submit" value="登录"></a></span>
 					</div>
 				</div>
@@ -131,13 +121,6 @@
 			
 		</div>
 		</div>
-		
-		
-		
-		
-		
-		
-			
 		<!-- 注册 -->
 		<div id="windows2" style="display: none;">
 		<div id="loginbox">
@@ -189,18 +172,7 @@
 				
 				<div class="form-actions">
 					<div style="width:86%;padding-left:8%;">
-
-						<!-- div style="float: left;padding-top:2px;">
-							<i><img src="img/yan.png" /></i>
-						</div>
-						<div style="float: left;" class="codediv">
-							<input type="text" name="rcode" id="rcode" class="login_code"
-								style="height:16px; padding-top:4px;" />
-						</div>
-						<div style="float: left;">
-							<i><img style="height:22px;" id="zcodeImg" alt="点击更换" title="点击更换" src="" /></i>
-						</div-->
-						<span class="pull-right" style="width:55px;height:30.1;background-color: green;color:white;border-color:green"><a href="javascript:changepage(2);" class="btn btn-success">取消</a></span>
+						<span class="pull-right" style="width:13.55%;height:30.1px; background-color: green;color:white;border-color:green;font-size: 15px;"><a href="javascript:changepage(2);"style="color: white;">取消</a></span>
 						
 						<span class="pull-right"><input style="width:55px;height:30.1px;background-color: green;color:white;opacity: 0.65;border-color:green" onclick="return rcheck()" type="submit" value="注册"> </span>					
 					</div>
