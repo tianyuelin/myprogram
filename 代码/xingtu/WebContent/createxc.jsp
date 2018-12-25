@@ -53,7 +53,6 @@ String htmlData = request.getParameter("content1") != null ? request.getParamete
 		</div>
 		<div id="dt"  onmouseover="deleteed4()" onmouseout="qdeeted4()">
 			<img src="${ctx }/img/icon/delete.png" id="d4">
-			<input type="file" style="opacity: 0; display: inline; width:5px;" id="uploadimg">
 			<span>删除目录</span>
 		</div>
 		<div class="RadioStyle">
