@@ -12,6 +12,7 @@ import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Repository;
 
 import com.sun.net.httpserver.HttpContext;
+import com.xingtu.entity.Glshoucang;
 import com.xingtu.entity.Journey;
 import com.xingtu.entity.Md5Encode;
 import com.xingtu.entity.Scene;
@@ -90,6 +91,12 @@ public class UserDao{
 	public List<Sceneshoucang> findScScene(String email){
 		Session session=this.sessionFactory.getCurrentSession();
 		Query q=session.createQuery("from Sceneshoucang where user.email='"+email+"'");
+		return q.list();
+	}
+	//查询收藏的攻略
+	public List<Glshoucang> findglShoucang(String email){
+		Session session=this.sessionFactory.getCurrentSession();
+		Query q=session.createQuery("from Glshoucang where user.email='"+email+"'");
 		return q.list();
 	}
 }
