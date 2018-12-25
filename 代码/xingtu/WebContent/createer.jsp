@@ -74,20 +74,6 @@
                    <div class="jia1" id="jrbj${journeylist.sceneId}" >加入编辑</div>
                </div>
                </c:forEach>
-               <%-- <div class="jing2">
-                   <div class="jd2"><img src="${ctx }/img/c2.jpg"></div>
-                   <div class="jie2">正定古城墙</div>
-                   <div class="biao2">标签：遗址</div>
-                   <div class="ping2">评论（280+）</div>
-                   <div class="jia2" onclick="add()">加入编辑</div>
-               </div>
-               <div class="jing3">
-                   <div class="jd3"><img src="${ctx }/img/c1.jpg"></div>
-                   <div class="jie3">抱犊寨</div>
-                   <div class="biao3">标签：山峦</div>
-                   <div class="ping3">评论（280+）</div>
-                   <div class="jia3" onclick="add()">加入编辑</div>
-               </div> --%>
                <div class="pagination-wrap">
                   <div class="pagination">
                     <a href="${ctx }/journey/journeylist?pageNum=1">首页</a>
@@ -98,28 +84,25 @@
                 </div>
         </div>
         <div class="dao" id="dao2" style="display:none">
-               <div class="jing1">
-                   <div class="jd1"><img src="${ctx }/img/c2.jpg"></div>
-                   <div class="jie1">正定古城墙</div>
-                   <div class="biao1">标签：遗址</div>
-                   <div class="ping1">评论（280+）</div>
-                   <div class="jia1" onclick="add()">加入编辑</div>
+               <c:forEach var="shoucanglist" items="${mypage.list }">
+               <div class="jing1" id="jing${shoucanglist.scene.sceneId}" onclick="addxq(this)">
+                   <div class="jd1"><img id="im${shoucanglist.scene.sceneId}" src="${shoucanglist.scene.img}"></div>
+                   <div class="jx1" id="jx${shoucanglist.scene.sceneId}">${shoucanglist.scene.sceneId}</div>
+                   <div class="jie1" id="ji${shoucanglist.scene.sceneId}">${shoucanglist.scene.sname}</div>
+                   <div class="biao1">标签：美景</div>
+                   <div class="ping1">评论（300+）</div>
+                   <div class="dizh1">${shoucanglist.scene.address}</div>
+                   <div class="jia1" id="jrbj${shoucanglist.scene.sceneId}" >加入编辑</div>
                </div>
-               <div class="jing1">
-                   <div class="jd1"><img src="${ctx }/img/c1.jpg"></div>
-                   <div class="jie1">抱犊寨</div>
-                   <div class="biao1">标签：山峦</div>
-                   <div class="ping1">评论（280+）</div>
-                   <div class="jia1" onclick="add()">加入编辑</div>
-               </div>
-               <%-- <div class="pagination-wrap">
+               </c:forEach>
+               <div class="pagination-wrap">
                   <div class="pagination">
                     <a href="${ctx }/journey/journeylist?pageNum=1">首页</a>
-                    <a href="${ctx }/journey/journeylist?pageNum=${page.prePageNum }">上一页</a>
-                    <a href="${ctx }/journey/journeylist?pageNum=${page.nextPageNum }">下一页</a>
-                    <a href="${ctx }/journey/journeylist?pageNum=${page.totalPageNum }">末页</a>
+                    <a href="${ctx }/journey/journeylist?pageNum=${mypage.prePageNum }">上一页</a>
+                    <a href="${ctx }/journey/journeylist?pageNum=${mypage.nextPageNum }">下一页</a>
+                    <a href="${ctx }/journey/journeylist?pageNum=${mypage.totalPageNum }">末页</a>
                   </div>
-                </div> --%>
+                </div>
         </div>
         
    </div>

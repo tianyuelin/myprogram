@@ -15,6 +15,7 @@ import org.springframework.web.multipart.MultipartFile;
 import com.xingtu.entity.Journey;
 import com.xingtu.entity.Page;
 import com.xingtu.entity.Scene;
+import com.xingtu.entity.Sceneshoucang;
 import com.xingtu.entity.Strategy;
 import com.xingtu.entity.Users;
 import com.xingtu.journey.service.JourneyService;
@@ -32,7 +33,7 @@ public class JourneyController {
 		return "createxingcheng";
 	}
 	@RequestMapping(value="/journeylist",method=RequestMethod.GET)
-	public String createJour(HttpServletRequest request,@RequestParam(value="pageNum",defaultValue="1")int pageNum) {
+	public String createJour(HttpServletRequest request,HttpSession session,@RequestParam(value="pageNum",defaultValue="1")int pageNum) {
 		/* 获取热门城市 */
 		Page<Scene> p = new Page<Scene>();
 		p.setCurrentPageNum(pageNum);
@@ -43,6 +44,15 @@ public class JourneyController {
 		List<Scene> scens = js.getJourneyList(p.getCurrentPageNum(),p.getPageSize());
 		p.setList(scens);
 		request.setAttribute("page", p);
+		Page<Sceneshoucang> p1 = new Page<Sceneshoucang>();
+		p1.setCurrentPageNum(pageNum);
+		p1.setPageSize(3);
+		p1.setNextPageNum(pageNum+1);
+		p1.setPrePageNum(pageNum-1);
+		Users u= (Users)session.getAttribute("user");
+		List<Sceneshoucang> sce2=js.getScScene(u.getEmail(), p1.getCurrentPageNum(),p1.getPageSize());
+		p1.setList(sce2);
+		request.setAttribute("mypage", p1);
 		return "createer";
 	}
 	//创建行程
