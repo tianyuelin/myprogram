@@ -50,7 +50,7 @@
 		<div class="mynav">
 			<ul id="mydao">
 				<li class="item item-hover item-active" data-beacon="myhomepage"><a
-					href="user.jsp">首页</a></li>
+					href="${ctx }/user.jsp">首页</a></li>
 				<li class="item"><a
 					href="${ctx }/photo/findallphoto"
 					data-beacon="photos">相册</a></li>

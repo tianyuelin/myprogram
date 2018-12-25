@@ -18,12 +18,15 @@ import com.xingtu.entity.Photo;
 import com.xingtu.entity.Scene;
 import com.xingtu.entity.Users;
 import com.xingtu.photo.service.PhotoService;
+import com.xingtu.user.service.UserService;
 
 @Controller
 @RequestMapping("/photo")
 public class PhotoController {
 	@Resource
 	private PhotoService ps;
+	@Resource
+	private UserService userService;
 	@RequestMapping(value="/up",method=RequestMethod.POST)
 	public String upPhoto(@RequestParam(value="files")MultipartFile []files,HttpServletRequest request,HttpSession session,@RequestParam(value="pageNum",defaultValue="1")int pageNum,@RequestParam(value="searchpeople",defaultValue="null")String searchpeople,@RequestParam(value="searchaddress",defaultValue="null")String searchaddress,@RequestParam(value="searchdate",defaultValue="null")String searchdate) {
 		String path= session.getServletContext().getRealPath("/");
@@ -52,6 +55,18 @@ public class PhotoController {
 		p.setList(photos);
 		request.setAttribute("photos", p);
 		//return "photo";
+		
+		//获得粉丝数和关注者数
+		Users user=(Users) request.getSession().getAttribute("user");
+		String myemail=user.getEmail();
+		//获得对方关注的人的人数
+		Long FGCount=this.userService.findFGCount1(myemail);
+		request.setAttribute("FGCount", FGCount);	
+		//获取粉丝的人数
+		Long fansCount = this.userService.findfansCount1(myemail);
+		request.setAttribute("fansCount",fansCount);
+		
+
 		return "photo";
 	}
 
@@ -69,4 +84,8 @@ public class PhotoController {
 		ps.updatePhoto(people, address, id, phototime);
 		return "photo";
 	}
+	
+
+	
+	
 }
