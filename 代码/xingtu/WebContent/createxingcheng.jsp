@@ -17,21 +17,18 @@
 <body>
 <jsp:include page="header.jsp" flush="true"></jsp:include>
 	<div class="all">
-		<div class="left" style="margin-top: 5%;back">
+		<div class="left" style="margin-top: 1.5%;border-right: 1px solid #ccc;">
 			<div class="tit">已选目的地</div>
 			<div id="titna">
 			    <div id="did0" >
 			         <div id="xu">从右侧添加想去的地方</div>
 			    </div>
 			</div>
-			<div id="tianjia"><input type="text"  id="diz" placeholder="+手动添加行程" onchange="changecity()"></div>
-			<div class="bian">
 				<div class="bj">
 					<a href="${ctx }/journey/journeylist">开始编辑</a>
 				</div>
-			</div>
 		</div>
-		<div class="myright" style="margin-top: 5%">
+		<div class="myright">
 			<div class="shang">
 				<div class="ti1">热门推荐</div>
 				<div class="ssk">

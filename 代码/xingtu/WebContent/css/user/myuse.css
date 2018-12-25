@@ -131,17 +131,17 @@
 }
 .zdsc{
 	width:80%;
-	height:40px;
+	height:auto;
 	font-size:30px;
 	color:#880000;
 }
 .sphoto1{
 	margin-top:25px;
-	width:80%;
+	width:75%;
 	border:2px solid #cccccc;
 	height:240px;
 	float:left;
-	margin-left:50px;
+	margin-left:10%;
 	margin-bottom:20px;
 }
 .sc1 img{
@@ -187,25 +187,27 @@
 	margin-bottom:20px;
 }
 .xiny1{
+	margin-left:13%;
+	margin-top:100px;
 	border:2px solid #cccccc;
-	width:300px;
+	width:30%;
 	height:220px;
 	display:block;
 	float:left;
-	margin-top:50px;
-	margin-left:50px;
-	padding-left:20px;
 }
 .xyimg img{
-	width:240px;
+	width:90%;
 	height:160px;
 	float:left;
-	margin-top:10px;
+	margin:auto;
+	margin-left: 5%;
+	margin-top: 5%;
 }
 .myx1{
+	width:100%;
 	float:left;
 	font-size:25px;
-	margin-left:70px;
+	text-align: center;
 }
 .btn-huan{
 	width:500px;

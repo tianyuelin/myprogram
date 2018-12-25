@@ -65,6 +65,6 @@ public class JourneyController {
 	public String findSingleJour(HttpServletRequest request,@RequestParam(value="jid")int id) {
 		Journey j = js.findJourById(id);
 		request.setAttribute("journey", j);
-		return "showxc";
+		return "xingchengshow";
 	}
 }

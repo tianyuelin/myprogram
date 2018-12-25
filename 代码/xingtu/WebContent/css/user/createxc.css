@@ -6,7 +6,7 @@
 .left{
 	width:20%;
 	height:800px;
-	margin-left:91px;
+	text-align:center;
 	float:left;
 }
 .myright{
@@ -15,63 +15,58 @@
 	float:right;
 }
 .tit{
-	width:240px;
+	width:100%;
 	height:50px;
 	font-size:30px;
-	margin-left:15px;
 }
 #titna{
 	width:100%;
-	height:auto;
+	height:600px;
 }
 #did0{
-	width:100%;
-	height:40px;
-	font-size:19px;
-	float:left;
-	margin-top:15px;
-	display:inline;
-}
-#xu{
-	width:200px;
-	height:40px;
-	display:inline;
-	float:left;
-	margin-left:20px;
+	width:90%;
+	height:50px;
+	margin:5%;
+	font-size:16px;
+	line-height:50px;
+	text-align:center;
+	border:1px dotted #ccc;
 }
 #myci1,#myci2,#myci3,#myci4,#myci5,#myci6,#myci7{
 	width:75%;
-	height:40px;
-	margin-top:20px;
-	margin-left:10%;
+	height:50px;
+	line-height:50px;
+	margin: auto;
+	margin-bottom:10px;
+	border: 1px solid #ccc;
+	text-align: center;
 }
 #dizhi1,#dizhi2,#dizhi3,#dizhi4,#dizhi5,#dizhi6,#dizhi7{
 	font-size:25px;
-	margin-left:15px;
-	float:left;
+	/*float:left;*/
 	display:inline;
 }
 #ts1,#ts2,#ts3,#ts4,#ts5,#ts6,#ts7{
 	display:inline;
-	font-size:25px;
+	font-size:20px;
 }
 #lef1,#lef2,#lef3,#lef4,#lef5,#lef6,#lef7{
-	width:25px;
-	height:25px;
-	margin-left:30px;
+	width:20px;
+	height:20px;
 	display:inline;
+	margin: 10px;
 } 
 #rig1,#rig2,#rig3,#rig4,#rig5,#rig6,#rig7{
-	width:25px;
-	height:25px;
-	margin-left:10px;
+	width:20px;
+	height:20px;
 	display:inline;
+	margin: 10px;
 }
 #del1,#del2,#del3,#del4,#del5,#del6,#del7{
 	width:20px;
-	height:20px;
-	float:right;
+	height:auto;
 	display:inline;
+	margin-left: 8%;
 }
 
 #tianjia{
@@ -88,21 +83,21 @@
 	height:20px;
 	float:right;
 }
-.bian{
-	width:240px;
-	height:50px;
-	margin-top:350px;
-	margin-left:20px;
-}
 .bj{
-	width:160px;
-	height:40px;
+	width:70%;
+	height:50px;
 	font-size:20px;
-	margin-top:20px;
-	margin-left:30px;
+	margin:auto;
+	color:white;
+	line-height:50px;
 	text-align:center;
-	
+	border: 1px solid #ccc;
+	background-color: #ccc;
 }
+.bj a{
+	color: white;
+}
+
 .shang{
 	width:920px;
 	height:70px;
@@ -169,5 +164,4 @@ img:hover
 	text-align:center;
 	margin-left:50px;
 	font-size:20px;
-	
 }
