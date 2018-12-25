@@ -14,9 +14,9 @@
 <script src="js/index/modernizr.js"></script>
  -->
  <title>index</title>
- <link rel="stylesheet" href="css/covercss/reset.css" type="text/css"/>
- <link rel="stylesheet" href="css/covercss/style.css" type="text/css"/>
- <script type="text/javascript" src="js/coverjs/modernizr.js"></script>
+ <link rel="stylesheet" href="${ctx }/css/covercss/reset.css" type="text/css"/>
+ <link rel="stylesheet" href="${ctx }/css/covercss/style.css" type="text/css"/>
+ <script type="text/javascript" src="${ctx }/js/coverjs/modernizr.js"></script>
 </head>
 <body>
 <section class="cd-slider-wrapper">
@@ -62,8 +62,8 @@
 		</svg>
 	</div> <!-- .cd-svg-cover -->
 </section> <!-- .cd-slider-wrapper -->
-<script src="js/coverjs/jquery-2.1.4.js"></script>
-<script src="js/coverjs/snap.svg-min.js"></script>
-<script src="js/coverjs/main.js"></script> <!-- Resource jQuery -->
+<script src="${ctx }/js/coverjs/jquery-2.1.4.js"></script>
+<script src="${ctx }/js/coverjs/snap.svg-min.js"></script>
+<script src="${ctx }/js/coverjs/main.js"></script> <!-- Resource jQuery -->
 </body>
 </html>
