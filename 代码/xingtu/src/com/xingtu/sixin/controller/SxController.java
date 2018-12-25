@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.xingtu.entity.Sx;
+import com.xingtu.entity.SxAndCount;
 import com.xingtu.entity.Users;
 import com.xingtu.sixin.service.SxService;
 import com.xingtu.user.service.UserService;
@@ -75,9 +76,19 @@ public class SxController {
 		 Users myuser=(Users) obj;
 		 String myemail=myuser.getEmail();
 		 //得到每个人及其最后一条信息
-		 List<Sx> finallXinxi=this.sxService.getSiXinPageContent1(myemail);
+		 List<SxAndCount> finallXinxi=this.sxService.getSiXinPageContent1(myemail);
+		 int allConversionNum=finallXinxi.size();
+		 request.setAttribute("allConversionNum", allConversionNum);
 		 request.setAttribute("finallXinxi",finallXinxi);
-		 return "sixin";
+		//获得粉丝数和关注者数
+		 Long FGCount=this.userService.findFGCount1(myemail);
+		 request.setAttribute("FGCount", FGCount);	
+		//获取粉丝的人数
+		Long fansCount = this.userService.findfansCount1(myemail);
+		request.setAttribute("fansCount",fansCount);
+		 
+		 
+		return "sixin";
 	 }
 	 
 	

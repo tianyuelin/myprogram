@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+ <c:set var="ctx" value="${pageContext.request.contextPath}"/>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -33,6 +34,7 @@
         width:730px;
         height:120px;
         border:1px solid #C0C0C0;
+        margin-bottom:20px;
     }
 </style>
 
@@ -62,13 +64,13 @@
 			</div>
 			<div class="fruser-fans">
 				<div class="fz">
-					<div class="shu">0</div>
-					<div class="guzh">关注</div>
+					<div class="shu">${FGCount }</div>
+					<div class="guzh"><a href="${ctx }/guanzhuUser">关注</a></div>
 				</div>
 				<div class="hz">|</div>
 				<div class="fy">
-					<div>0</div>
-					<div>粉丝</div>
+					<div>${fansCount }</div>
+					<div><a href="${ctx }/fansUser">粉丝</a></div>
 				</div>
 			</div>
 		</div>
@@ -99,13 +101,12 @@
 	
 	<!-- 关于私信的内容 -->
 	<div class="topdiv">
-	      <div style="margin-bottom: 20px;">我的私信(1)</div>
-	      
-	      
-	      
-	      
+	      <div style="margin-bottom: 20px;">我的私信(${allConversionNum })</div>
+	          
 	      <c:forEach items="${finallXinxi }" var="fx">
-	      <a href="#">
+	      
+	      未读条数${fx.unreadCount }
+	      <a href="${ctx }/sxPerson?otheremail=${fx.fromUserEm }">
 	          <div class="secondiv">
 	              <!-- 左边的div -->
 	              <div style="float:left">

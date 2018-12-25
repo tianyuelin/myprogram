@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.xingtu.entity.Sx;
+import com.xingtu.entity.SxAndCount;
 import com.xingtu.sixin.dao.SxDao;
 
 @Service
@@ -22,6 +23,7 @@ public class SxService {
     @Transactional(readOnly=false)
     public List<Sx> InsertLTContent1(Sx sx) {
     	sx.setSxtime(new Date());
+    	sx.setIfRead(0);
     	return this.sxDao.InsertLTContent(sx);
     }
     
@@ -32,7 +34,7 @@ public class SxService {
     }
     
     //得到与每个人的最后一条信息
-    public List<Sx> getSiXinPageContent1(String myemail){
+    public List<SxAndCount> getSiXinPageContent1(String myemail){
     	return this.sxDao.getSiXinPageContent(myemail);
     }
     
