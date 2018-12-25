@@ -29,20 +29,11 @@
    </div>
    <div id="zuo">
         <div class="xc">我的行程</div>
-        <!-- <div class="di">天安门广场</div>
-        <div class="xia">相距220km</div> -->
    </div>
    <div id="zhong">
         <div class="bj">编辑</div>
         <div class="sj">北京</div>
         <div class="tj">添加城市</div>
-        <%-- <div id="xian1">
-             <img src="${ctx }/img/di1.jpg">
-             <div id="di1">01&nbsp;&nbsp;&nbsp;&nbsp;空中花园</div>
-             <p id="pj1">地址：石家庄桥东区石市翟营南大街</p>
-             <a href="#" id="ck1">查看周边</a>
-        </div> --%>
-        <!-- <div class="bz">添加备注</div> -->
    </div>
    <div class="you">
         <div class="mybox">
