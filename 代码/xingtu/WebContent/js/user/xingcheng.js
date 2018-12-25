@@ -139,16 +139,18 @@ $(document).on('click', '#dtext',function(){
 		alert("还没有创建第一个啦！");
 	}
 });
+*/
 //删除图片
-$(document).on('click', '#di',function(){
-	if(imgcount!=0){
-		$("img").remove("#img"+imgcount);
-		imgcount--;
-	}else if(imgcount==0){
+$(document).on('click', '#dt',function(){
+	alert(1)
+	if(titlecount!=0){
+		$("div").remove('#part'+titlecount);
+		titlecount--;
+	}else if(titlecount==0){
 		alert("还没有创建第一个啦！");
 	}
 });
-*/
+
 //添加图片
 //获取到上传的图片的地址
 $(document).on('change', '#cimg', function () { //PictureUrl为input file 的id
