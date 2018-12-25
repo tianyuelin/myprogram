@@ -5,11 +5,11 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 <title>QTL的空间</title>
-<link href="${ctx }/css/user/showxc.css" rel="stylesheet">
-<link href="${ctx }/css/home/header.css" rel="stylesheet">
-<link href="${ctx }/css/home/bootstrap.min.css" rel="stylesheet">
+<link href="${ctx }/css/user/showxc.css" rel="stylesheet"/>
+<link href="${ctx }/css/home/header.css" rel="stylesheet"/>
+<link href="${ctx }/css/home/bootstrap.min.css" rel="stylesheet"/>
 <script src="${ctx }/js/home/jquery-1.11.3.min.js"></script>
 <script src="${ctx }/js/home/bootstrap.min.js"></script>
 <script src="${ctx }/js/home/swiper.min.js"></script>

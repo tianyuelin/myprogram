@@ -14,7 +14,6 @@
 </head>
 <body>
 <jsp:include page="header.jsp" flush="true"></jsp:include>
-<div class="move"></div>
 <div class="header">
 <img alt="" src="${ctx }/${strategy.img}" style="width: 100%;height: 450px;">
 <div class="title">

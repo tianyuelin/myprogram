@@ -1,31 +1,24 @@
 .all{
-	background-color: #ffffff;
+	background-color:#000;
 	width:100%;
-	height:890px;
+	height:auto;
 }
 .left{
-	border:2px solid #cccccc;
 	width:20%;
 	height:800px;
-	background-color:#eff1f1;
 	margin-left:91px;
 	float:left;
 }
 .myright{
-	border-left:5px solid #cccccc;
 	width:73%;
 	height:803px;
 	float:right;
-	backdround-color:#ffffff;
 }
 .tit{
-	border-bottom:5px solid #ffffff;
 	width:240px;
 	height:50px;
 	font-size:30px;
 	margin-left:15px;
-	margin-top:20px;	
-	
 }
 #titna{
 	width:100%;
@@ -45,13 +38,10 @@
 	display:inline;
 	float:left;
 	margin-left:20px;
-	border:1px solid #000000;
-	
 }
 #myci1,#myci2,#myci3,#myci4,#myci5,#myci6,#myci7{
 	width:75%;
 	height:40px;
-	border:1px solid #000000;
 	margin-top:20px;
 	margin-left:10%;
 }
@@ -99,14 +89,12 @@
 	float:right;
 }
 .bian{
-	border-top:2px solid #ffffff;
 	width:240px;
 	height:50px;
 	margin-top:350px;
 	margin-left:20px;
 }
 .bj{
-	border:2px solid #ffffff;
 	width:160px;
 	height:40px;
 	font-size:20px;
@@ -116,11 +104,8 @@
 	
 }
 .shang{
-	border:2px solid #cccccc;
 	width:920px;
 	height:70px;
-	background-color:#eff1f1;
-	
 }
 .ti1{
 	width:130px;
