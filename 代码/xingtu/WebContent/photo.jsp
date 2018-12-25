@@ -82,12 +82,12 @@ $(document).on('click','.close-miaoshushow',function(){
 			</div>
 			<div class="fruser-fans">
 				<div class="fz">
-					<div class="shu">${followedcount }</div>
+					<div class="shu">${FGCount }</div>
 					<div class="guzh">关注</div>
 				</div>
 				<div class="hz">|</div>
 				<div class="fy">
-					<div>${funscount }</div>
+					<div>${fansCount }</div>
 					<div>粉丝</div>
 				</div>
 			</div>
@@ -95,21 +95,21 @@ $(document).on('click','.close-miaoshushow',function(){
 		<div class="mynav">
 			<ul id="mydao">
 				<li class="item item-hover item-active" data-beacon="myhomepage"><a
-					href="user.jsp">首页</a></li>
+					href="${ctx }/user.jsp">首页</a></li>
 				<li class="item"><a
-					href="photo.jsp"
+					href="${ctx }/photo/findallphoto"
 					data-beacon="photos">相册</a></li>
 				<li class="item"><a
-					href="sixin.jsp"
+					href="${ctx }/sixinPage"
 					data-beacon="letter">消息</a></li>
 				<li class="item"><a
-					href="person.jsp"
+					href="${ctx }/person.jsp"
 					data-beacon="letter">个人信息</a></li>
 				<li class="item"><a
-					href="createxingcheng.jsp"
+					href="${ctx }/journey/citylist"
 					data-beacon="letter">创建行程</a></li>
 				<li class="item"><a
-					href="createyouji.jsp"
+					href="${ctx }/strategy/opencreate"
 					data-beacon="letter">创建攻略</a></li>
 			</ul>
 		</div>
