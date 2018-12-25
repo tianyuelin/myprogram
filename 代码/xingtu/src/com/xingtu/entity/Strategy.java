@@ -28,6 +28,7 @@ public class Strategy {
 	private String img;//ͼƬ
 	private int looktimes;
 	private List<StrategyDiv> sd;
+	private List<Glshoucang> glshoucang;
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	public int getsId() {
@@ -83,5 +84,14 @@ public class Strategy {
 	public void setSd(List<StrategyDiv> sd) {
 		this.sd = sd;
 	}
+	@OneToMany(mappedBy="strategy",targetEntity=Glshoucang.class,
+			cascade= {CascadeType.ALL})
+	public List<Glshoucang> getGlshoucang() {
+		return glshoucang;
+	}
+	public void setGlshoucang(List<Glshoucang> glshoucang) {
+		this.glshoucang = glshoucang;
+	}
+	
 	
 }

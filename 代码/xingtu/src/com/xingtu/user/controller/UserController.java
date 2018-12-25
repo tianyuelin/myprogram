@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.xingtu.entity.Followed;
+import com.xingtu.entity.Glshoucang;
 import com.xingtu.entity.Journey;
 import com.xingtu.entity.Md5Encode;
 import com.xingtu.entity.Scene;
@@ -96,6 +97,8 @@ public class UserController {
 			//获取心愿清单（收藏景点）
 			List<Sceneshoucang> scenes=this.userService.findScScene(myemail);
 			request.setAttribute("scenes", scenes);
+			List<Glshoucang> glshoucangs=this.userService.findglShoucang(myemail);
+			request.setAttribute("glshous", glshoucangs);
 			return "user";
 		}
 		return "";

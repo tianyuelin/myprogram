@@ -27,7 +27,6 @@ public class Scene {
 	private String opentime;//����ʱ��
 	private String city;//����
 	private String img;//����ͼƬ
-	private List<Scenecomment> sc;
 	private List<JourDiv> dj;
 	private List<Sceneshoucang> shoucang;
 	@Id
@@ -93,14 +92,6 @@ public class Scene {
 	}
 	public void setRoute(String route) {
 		this.route = route;
-	}
-	@OneToMany(mappedBy="scene",targetEntity=Scenecomment.class,
-			cascade= {CascadeType.ALL})
-	public List<Scenecomment> getSc() {
-		return sc;
-	}
-	public void setSc(List<Scenecomment> sc) {
-		this.sc = sc;
 	}
 	public String getImg() {
 		return img;
