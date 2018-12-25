@@ -88,8 +88,8 @@
                 
                <div class="widget widget_search">
                   <div class="kd-section-title"><h3>位置查看</h3></div>
-                  <form>
-                    <input type="text" placeholder="搜索地名">
+                  <form action="${ctx }/sence/findbyname" method="post">
+                    <input type="text" placeholder="搜索地名" name="name">
                     <input type="submit" value="">
                     <i class="fa fa-search"></i>
                   </form>

@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.xingtu.entity.Followed;
 import com.xingtu.entity.Page;
 import com.xingtu.entity.Scene;
 import com.xingtu.entity.SceneImgs;
@@ -95,5 +94,20 @@ public class SceneController {
 		request.setAttribute("singlescene", s);
 		request.setAttribute("imglist", imgs);
 		return "Detilstest";
+	}
+	@RequestMapping(value="/findbyname",method=RequestMethod.POST)
+	public String findbyname(@RequestParam(value="name")String name,@RequestParam(value="pageNum",defaultValue="1")int pageNum,HttpServletRequest request) {
+		Page<Scene> p = new Page<Scene>();
+		p.setCurrentPageNum(pageNum);
+		p.setPageSize(8);
+		p.setNextPageNum(pageNum+1);
+		p.setPrePageNum(pageNum-1);
+		System.out.println(pageNum);
+		List<Scene> scenes = ss.findByName(name);
+		p.setList(scenes);
+		List<Scene> hotscene = ss.getHotScene();
+		request.setAttribute("hotscene", hotscene);
+		request.setAttribute("page", p);
+		return "meijing";
 	}
 }

@@ -35,4 +35,10 @@ public class StrategyService {
 	public List<Strategy> findByTag(int pageNum,int pageSize,String tag){
 		return sd.findStrategyByTag(pageNum,pageSize,tag);
 	}
+	public List<Strategy> findIndexStrategy(){
+		return sd.findTheIndexStrategy();
+	}
+	public List<Strategy> findByAddress(String address){
+		return sd.findByAddress(address);
+	}
 }

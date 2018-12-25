@@ -96,90 +96,9 @@
 			</div>
 		</div>
 		</c:forEach>
-
-		<!-- <div class="col-md-6 col-lg-4">
-            <div class="category-item effect-1">
-              <img src="img/zhengding.jpg" alt="img12">
-              <div class="caption">
-                <div>
-                  <p class="title">正定南门</p>
-                  <p class="description">地址：石家庄市正定县</p>
-                  <p class="description">公交：177路；130路</p>
-                  <p class="description">票价：无门票</p>
-                </div>
-                <a href="#">View more</a>
-              </div>     
-            </div>
-          </div>
-
-          <div class="col-md-6 col-lg-4">
-            <div class="category-item effect-1">
-              <img src="img/quna.jpg" alt="img12">
-              <div class="caption">
-                <div>
-                  <p class="title">正定森林河趣那主题公园</p>
-                  <p class="description">地址：石家庄市中华北大街滹沱河景区云龙大桥河心岛西侧</p>
-                  <p class="description">公交：117路</p>
-                  <p class="description">票价：40元</p>
-                </div>
-                <a href="xiangqing.jsp">View more</a>
-              </div>     
-            </div>
-          </div>
-
-          <div class="col-md-6 col-lg-4">
-            <div class="category-item effect-1">
-              <img src="img/yeshi.jpg" alt="img12">
-              <div class="caption">
-                <div>
-                  <p class="title">石家庄新市中路夜市</p>
-                  <p class="description">营业时间：18:00-23:00</p>
-                  <p class="description">地址：石家庄市新石中路</p>
-                  <p class="description">公交：2环1路</p>
-                  <p class="description">人均：15元</p>
-                </div>
-                <a href="#">View more</a>
-              </div>     
-            </div>
-          </div>
-
-          <div class="col-md-6 col-lg-4">
-            <div class="category-item effect-1">
-              <img src="img/fuyuan.jpg" alt="img12">
-              <div class="caption">
-                <div>
-                  <p class="title">福缘烤肉王</p>
-                  <p class="description">营业时间：全天</p>
-                  <p class="description">地址：石家庄市长安区中山东路39号勒泰中心4楼</p>
-                  <p class="description">公交：10路、30路、31路</p>
-                  <p class="description">人均：56元</p>
-                </div>
-                <a href="#">View more</a>
-              </div>     
-            </div>
-          </div>
-
-          <div class="col-md-6 col-lg-4">
-            <div class="category-item effect-1">
-              <img src="img/chunmao.jpg" alt="img12">
-              <div class="caption">
-                <div>
-                   <p class="title">春猫音乐餐厅</p>
-                  <p class="description">营业时间：11:00-00:00</p>
-                  <p class="description">地址：石家庄市中山路与广安大街交叉口北行50米路东</p>
-                  <p class="description">公交：130路，141路</p>
-                  <p class="description">人均：81元</p>
-                </div>
-                <a href="#">View more</a>
-              </div>     
-            </div>
-          </div> -->
 	</div>
 	<!-- *******************************上半部分**************************** -->
-      <div class="blue_title text-center">
-        <span>行途中，吃喝玩儿乐</span>
-    </div>
-<div class="container blue_still">
+<!--  div class="container blue_still">
     <div class="row">
         <div class="col-md-3 col-xs-6">
             <div class="blue_bg blue_still_box" style="background-image: url('${ctx}/img/bg.jpg');">
@@ -222,7 +141,7 @@
             </div>
         </div>
     </div>
-</div>
+</div-->
 <div id = "type">
 <div class="container-fluid">
     <div class="blue_title text-center">
@@ -234,7 +153,7 @@
             <div class="swiper-container">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
-                        <a href="javascript:;">
+                        <a href="${ctx }/strategy/findbyTag?tag=家庭出游">
                             <div class="blue_img">
                                 <img src="${ctx }/img/type_1.jpg" alt="">
                             </div>
@@ -242,7 +161,7 @@
                         </a>
                     </div>
                     <div class="swiper-slide">
-                        <a href="javascript:;">
+                        <a href="${ctx }/strategy/findbyTag?tag=独自一人">
                             <div class="blue_img">
                                 <img src="${ctx }/img/type_2.jpg" alt="">
                             </div>
@@ -250,7 +169,7 @@
                         </a>
                     </div>
                     <div class="swiper-slide">
-                        <a href="javascript:;">
+                        <a href="${ctx }/strategy/findbyTag?tag=情侣">
                             <div class="blue_img">
                                 <img src="${ctx }/img/type_3.jpg" alt="">
                             </div>
@@ -258,15 +177,15 @@
                         </a>
                     </div>
                     <div class="swiper-slide">
-                        <a href="javascript:;">
+                        <a href="${ctx }/strategy/findbyTag?tag=毕业游">
                             <div class="blue_img">
-                                <img src="${ctx }/img/type_4.jpg" alt="">
+                                <img src="${ctx }/img/byy.jpg" alt="">
                             </div>
-                            <p>生日聚餐</p>
+                            <p>毕业游</p>
                         </a>
                     </div>
                     <div class="swiper-slide">
-                        <a href="javascript:;">
+                        <a href="${ctx }/strategy/findbyTag?tag=三五好友">
                             <div class="blue_img">
                                 <img src="${ctx }/img/type_5.jpg" alt="">
                             </div>
@@ -274,7 +193,7 @@
                         </a>
                     </div>
                     <div class="swiper-slide">
-                        <a href="javascript:;">
+                        <a href="${ctx }/strategy/findbyTag?tag=团队团建">
                             <div class="blue_img">
                                 <img src="${ctx }/img/type_6.jpg" alt="">
                             </div>
@@ -289,9 +208,31 @@
     </div>
 </div>
 </div>
-
-
-<div class="container-fluid blue_bg" style="margin-bottom: 5%">
+ <div class="blue_title text-center">
+        <span>不知道怎么玩儿？看看他们！</span>
+    </div>
+<div style="width: 80%;margin: auto">
+<c:forEach items="${indexStrategy }" var="strategy">
+		<div class="col-md-6 col-lg-4" style="background-color: white;">
+            <div class="category-item effect-1">
+              <img src="${ctx }/${strategy.img }" alt="img12" style="width: 110%;height: 300px;">
+              <div class="caption" style="width: 100%;">
+                <div>
+                  <p class="title">${strategy.title }</p>
+                  <p class="description"><a href="${ctx }/user/otherUserCenter?useremail=${strategy.user.email}" style="color: white;">作者：${strategy.user.email }</a></p>
+                  <p class="description">游玩儿地：
+                  <c:forEach items="${strategy.sd }" var="sd">
+                  	<span>${sd.address }&nbsp&nbsp&nbsp</span>
+                  </c:forEach>
+                  </p>
+                </div>
+                <a href="${ctx }/strategy/singleStrategy?StrategyId=${strategy.sId}">View more</a>
+              </div>     
+            </div>
+          </div>
+</c:forEach>
+</div>
+<div class="container-fluid blue_bg" style="margin-bottom: 5%; clear: both">
     <div class="blue_title text-center">
         <span>是什么让我们与众不同</span>
     </div>
