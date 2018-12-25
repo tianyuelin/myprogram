@@ -118,19 +118,6 @@
 				    </div>
 					<div id="mysc">
 						<div class="zdsc">攻略收藏</div>
-						<%-- <div class="sphoto1">
-							<div class="sc1">
-								<img src="${ctx }/img/sc1.jpg">
-							</div>
-							<div class="sz1">
-								<img src="${ctx }/img/tou5.jpg">
-									<div>
-										<a href="#">快过年了，旅行不可以放下，南极的风景。。。</a>
-									</div>
-									<p>小溪被&nbsp;&nbsp;2018年11月1日出发&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;共一天&nbsp;&nbsp;|&nbsp;&nbsp;30图</p>
-									<p>白雪世界，生活着它们原始的种族，它们憨厚可爱。。。。。。</p>
-							</div>
-						</div> --%>
 						<c:if test="${glshous!=null }">
 				        <c:forEach items="${glshous }" var="mygl">
 				           <div class="sphoto1">
