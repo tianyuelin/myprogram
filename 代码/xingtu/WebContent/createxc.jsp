@@ -37,7 +37,7 @@ String htmlData = request.getParameter("content1") != null ? request.getParamete
 <div class="move"></div>
 <form action="${ctx }/strategy/create" method="post" enctype="multipart/form-data">
 <div class="header">
-<img src="${ctx }/img/banner2.jpg" style="width: 100%;height: 450px;" id="timg">
+<img src="${ctx }/img/banner2.jpg" style="width: 100%;height: 450px;" id="timg"/>
 <input type="file" style="opacity: 0; position:absolute;top:20px; width:100%;height: 350px;" id="cimg" name="headerimg" multiple/>
 <span class="spanchange">点击更换头图片</span>
 <div class="title">
