@@ -93,4 +93,13 @@ public class JourneyDao {
 		Journey j=(Journey) session.createQuery("from Journey j where j.jid="+id).uniqueResult();
 		return j;		
 	}
+	/**
+	 * 删除行程
+	 */
+	public int deletJour(int id) {
+		Session session = sf.getCurrentSession();
+		Query q=session.createQuery("delete from Journey j where j.jid='"+id+"'");
+		int x=q.executeUpdate();
+		return x;//返回受影响的条数
+	}
 }

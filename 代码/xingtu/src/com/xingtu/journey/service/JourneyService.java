@@ -36,4 +36,7 @@ public class JourneyService {
 	public Journey findJourById(int id) {
 		return jd.findJourById(id);
 	}
+	public void deletJour(int id) {
+		jd.deletJour(id);
+	}
 }

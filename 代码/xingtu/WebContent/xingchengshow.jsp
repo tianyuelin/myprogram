@@ -23,6 +23,7 @@
     <div class="shtit">${journey.jtitle }<br />
        <div class="shxij">${user.username }&nbsp;&nbsp;&nbsp;|${journey.jtime }出发&nbsp;&nbsp;&nbsp;&nbsp;|共一天</div>
     </div>
+    <div class="shbj"><a href="${ctx }/journey/deletJour?jid=${journey.jid}">删除</a></div>
 </div>
 <div class="shcon">
    <div class="shgs">
@@ -42,11 +43,6 @@
 		</thead>
 		<c:forEach items="${journey.jd}" var="myjour">
 		<tr height="200px">
-			<td width="30%">
-				<span><input type="text" value="2018-01-30 08:00"/></span><br>
-				<span>|</span><br>
-				<span><input type="text" value="2018-01-30 08:00"/></span>
-			</td>
 			<td width="40%">
 				<div class="scene">
 					<img src="${myjour.scene.img}" style="float: left;margin-left:10px; " width="40%" height="180px;"/>
@@ -57,6 +53,9 @@
 				</div>
 			</td>
 			<td width="30%">游玩儿时长：<input type="text" style="border: none;" value="建议${myjour.scene.playtime }"/></td>
+			<td width="30%" style="text-align: left">
+				<span>${myjour.scene.route}</span>
+			</td>
 		</tr>
 		</c:forEach>
 	</table>
