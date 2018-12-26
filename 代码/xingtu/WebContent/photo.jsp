@@ -66,8 +66,9 @@ $(document).on('click','.close-miaoshushow',function(){
 		<div class="main-zt">
 			<div class="user-info">
 				<dt class="flpic">
-					<img
-						src="${ctx }/${user.icon }" />
+				<div style="width: 100px;height: 100px;border-radius:50%;border: solid 1px #555;" id="replaceImg"  >
+                     <img id="finalImg" src="${ctx }/${user.icon}" width="100px" height="100px" style="border-radius:50%;/">
+                </div>
 				</dt><!-- 个人头像 -->
 				<dd class="flintro">
 					<h3 class="intro-title">

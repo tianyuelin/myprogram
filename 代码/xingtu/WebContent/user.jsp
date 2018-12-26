@@ -21,7 +21,7 @@
 			<div class="user-info">
 				<dt class="flpic">
 					<div style="width: 100px;height: 100px;border-radius:50%;border: solid 1px #555;" id="replaceImg"  >
-                     <img id="finalImg" src="${ctx }/${user.icon}" width="100% " style="border-radius:50%;">
+                     <img id="finalImg" src="${ctx }/${user.icon}" width="100px" height="100px" style="border-radius:50%;">
                 </div>
 				</dt><!-- 个人头像 -->
 				<dd class="flintro">
@@ -179,12 +179,23 @@
 	<jsp:include page="footer.jsp" flush="true"></jsp:include>
 </body>
 </html>
+
+
+
+
+
+
 <!--图片裁剪框 start-->
+
 <div style="display: none" class="tailoring-container">
     <div class="black-cloth" onClick="closeTailor(this)"></div>
+    
+    <form action="${ctx}/iconController" enctype="multipart/form-data" name="myform" method="post">
     <div class="tailoring-content">
             <div class="tailoring-content-one">
                 <label title="上传图片" for="chooseImg" class="l-btn choose-btn">
+                 
+                    <!-- 从此处能上传头像 -->
                     <input type="file" accept="image/jpg,image/jpeg,image/png" name="file" id="chooseImg" class="hidden" onChange="selectImg(this)">
                     选择图片
                 </label>
@@ -204,10 +215,21 @@
                 <button class="l-btn cropper-reset-btn">复位</button>
                 <button class="l-btn cropper-rotate-btn">旋转</button>
                 <button class="l-btn cropper-scaleX-btn">换向</button>
-                <button class="l-btn sureCut" id="sureCut">确定</button>
+                <!-- 从此处能提交 -->
+                <button class="l-btn sureCut" id="sureCut" onclick="check(this.form)">确定</button> 
             </div>
         </div>
+        
+        </form>
 </div>
+
+
+
+
+
+
+
+
 <!--图片裁剪框 end-->
 <script type="text/javascript" src="${ctx }/js/touxiang/jquery.min.js"></script>
 <script type="text/javascript" src="${ctx }/js/touxiang/cropper.min.js"></script>
@@ -242,8 +264,7 @@
         reader.onload = function (evt) {
             var replaceSrc = evt.target.result;
             //更换cropper的图片
-            $('#tailoringImg').cropper('replace', replaceSrc,false);//默认false，适应高度，不失真
-            
+            $('#tailoringImg').cropper('replace',replaceSrc,false);//默认false，适应高度，不失真           
         }
         reader.readAsDataURL(file.files[0]);
     }
@@ -292,15 +313,23 @@
             return false;
         }else{
             var cas = $('#tailoringImg').cropper('getCroppedCanvas');//获取被裁剪后的canvas
-            var base64url = cas.toDataURL('image/png'); //转换为base64地址形式
+            var base64url = cas.toDataURL('image/png');//转换为base64地址形式
             $("#finalImg").prop("src",base64url);//显示为图片的形式
 
             //关闭裁剪框
             closeTailor();
         }
     });
+    
     //关闭裁剪框
     function closeTailor() {
         $(".tailoring-container").toggle();
     }
+    
+    //点击表单，表单提交
+    function check(form){
+    	document.myform.submit();
+    }
+    
+    
 </script>

@@ -7,9 +7,6 @@
 <head>
 <!-- 设置这个页面每20秒更新一次 -->
 <meta http-equiv="refresh" content="10"/>
-
-
-
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
 
@@ -83,13 +80,11 @@
 		<div class="main-zt">
 			<div class="user-info">
 				<dt class="flpic">
-					<img src="img/tou2.jpg" />
+					<img src="${user.icon }" />
 				</dt><!-- 个人头像 -->
 				<dd class="flintro">
 					<h3 class="intro-title">
-						<span class="name" title="QTL">QTL</span><span class="score"><a
-							target="_blank"
-							href="#">100积分</a></span>
+						<span class="name" title="QTL">${user.username }</span>
 					</h3>
 					<div class="intro-body">
 						<form action="">
@@ -100,12 +95,12 @@
 			</div>
 			<div class="fruser-fans">
 				<div class="fz">
-					<div class="shu">0</div>
+					<div class="shu">${FGCount }</div>
 					<div class="guzh">关注</div>
 				</div>
 				<div class="hz">|</div>
 				<div class="fy">
-					<div>0</div>
+					<div>${fansCount }</div>
 					<div>粉丝</div>
 				</div>
 			</div>

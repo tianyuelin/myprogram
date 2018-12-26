@@ -48,7 +48,9 @@
 		<div class="main-zt">
 			<div class="user-info">
 				<dt class="flpic">
-					<img src="${ctx }/${user.icon}" />
+					<div style="width: 100px;height: 100px;border-radius:50%;border: solid 1px #555;" id="replaceImg"  >
+                     <img id="finalImg" src="${ctx }/${user.icon}" width="100px" height="100px" style="border-radius:50%;">
+                </div>
 				</dt><!-- 个人头像 -->
 				<dd class="flintro">
 					<h3 class="intro-title">
@@ -110,7 +112,7 @@
 	          </div>
 	          <div style="float:left;margin-left:20px;">
 	            <div style="margin-top:25px;">${fp.username }</div>
-	            <div style="color:gray;margin-top:10px;">游记&nbsp;3  &nbsp;&nbsp;&nbsp;  行程&nbsp;2  &nbsp;&nbsp;&nbsp; 评论&nbsp;2 &nbsp;&nbsp;&nbsp;  关注&nbsp;2   &nbsp;&nbsp;&nbsp; 粉丝&nbsp;2</div>
+	            <div style="color:gray;margin-top:10px;">攻略&nbsp;${fp.strategyCount }  &nbsp;&nbsp;&nbsp;  行程&nbsp;${fp.routeCount } &nbsp;&nbsp;&nbsp;  关注&nbsp;${fp.guanzhuCount }  &nbsp;&nbsp;&nbsp; 粉丝&nbsp;${fp.fansCount }</div>
 	          </div>
 	        </div>      
 	        <br/>
