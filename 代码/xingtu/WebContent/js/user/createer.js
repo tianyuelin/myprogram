@@ -87,7 +87,7 @@ function addxq(obj){
 	var output = "两地之间的距离为";
 	var dis = "距离：";
 	var divertime = "驾车所需时长：";
-	var bustime;
+	var bustime="公交所需时长：";
 	var searchComplete = function (results){
 		if (transit.getStatus() != BMAP_STATUS_SUCCESS){
 			return ;
@@ -95,7 +95,15 @@ function addxq(obj){
 		var plan = results.getPlan(0);
 		dis+=plan.getDistance(true)+' \n ';
 		divertime+=plan.getDuration(true)+' \n ';
-		bustime="公交所需时长："+plan.getDuration(true)+' \n ';
+	}
+	var searchComplete2 = function (results){
+		if (transit.getStatus() != BMAP_STATUS_SUCCESS){
+			return ;
+		}
+		alert(1);
+		var plan = results.getPlan(0);
+		bustime+=plan.getDuration(true)+' \n ';
+		alert(bustime);
 	}
 	var percount = count-1;
 	var zuospan1=document.createElement("span");
@@ -120,11 +128,11 @@ function addxq(obj){
 	}});
 	
 	var transit2 = new BMap.TransitRoute(map, {renderOptions: {map: map},
-		onSearchComplete: searchComplete,
+		onSearchComplete: searchComplete2,
 		onPolylinesSet: function(){
 			document.getElementById("tspan"+spancount).innerText=bustime;
 		}});
-
+	
 	transit.search(id1,id2);
 	transit2.search(id1,id2);
 	}

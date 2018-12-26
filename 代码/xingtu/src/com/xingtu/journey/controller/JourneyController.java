@@ -60,7 +60,7 @@ public class JourneyController {
 	public String fenyeJour(HttpServletRequest request,HttpSession session) {
 		/* 获取热门城市 */
 		int pageNum = request.getParameter("pageNum")==null?1:request.getParameter("pageNum").toString().trim()==""?1:Integer.parseInt(request.getParameter("pageNum").toString().trim());
-		
+		int pageNum2 = request.getParameter("pageNum2")==null?1:request.getParameter("pageNum2").toString().trim()==""?1:Integer.parseInt(request.getParameter("pageNum2").toString().trim());
 		Page<Scene> p = new Page<Scene>();
 		p.setCurrentPageNum(pageNum);
 		p.setPageSize(3);
@@ -70,14 +70,14 @@ public class JourneyController {
 		p.setList(scens);
 		request.setAttribute("page", p);
 		Page<Sceneshoucang> p1 = new Page<Sceneshoucang>();
-		p1.setCurrentPageNum(pageNum);
+		p1.setCurrentPageNum(pageNum2);
 		p1.setPageSize(3);
-		p1.setNextPageNum(pageNum+1);
-		p1.setPrePageNum(pageNum-1);
+		p1.setNextPageNum(pageNum2+1);
+		p1.setPrePageNum(pageNum2-1);
 		Users u= (Users)session.getAttribute("user");
 		List<Sceneshoucang> sce2=js.getScScene(u.getEmail(), p1.getCurrentPageNum(),p1.getPageSize());
 		p1.setList(sce2);
-		System.out.println("seccess"+pageNum);
+		System.out.println("seccess"+pageNum2);
 		request.setAttribute("mypage", p1);
 		//HashMap map = new HashMap();
 	   //map.put("mypage", p1);
