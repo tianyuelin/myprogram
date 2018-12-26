@@ -63,14 +63,14 @@
 }
 .rq1,.rq2{
 	float:right;
-	width:100px;
+	width:130px;
 	height:80px;
 	margin-right:45px;
 	
 }
 .ts1,.ts2{
 	font-size:22px;
-	width:100px;
+	width:130px;
 	height:55px;
 	background-color:#e6d8ca;
 	padding-left:19px;
@@ -125,43 +125,57 @@
 }
 #mysc{
 	width:85%;
-	height:880px;
+	height:auto;
 	margin-top:3%;
 	margin-left:40px;
 }
 .zdsc{
 	width:80%;
-	height:40px;
+	height:auto;
 	font-size:30px;
 	color:#880000;
 }
-.sphoto1,.sphoto2,.sphoto3,.sphoto4{
+.sphoto1{
 	margin-top:25px;
-	width:780px;
+	width:75%;
 	border:2px solid #cccccc;
 	height:240px;
 	float:left;
-	margin-left:15px;
+	margin-left:10%;
+	margin-bottom:20px;
 }
-.sc1,.sc2,.sc3,.sc4{
-	margin-left:35px;
-	margin-top:25px;
+.sc1 img{
+	width:30%;
+	height:180px;
+	margin-top:15px;
+	margin-left:30px;
 	float:left;
-	margin-right:30px;
 }
-.sz1,.sz2,.sz3,.sz4{
+.sz1{
 	float:left;
 	margin-top:20px;
 	font-size:20px;
+	width:60%;
+	height:200px;
 }
-.sz1 p,.sz2 p,.sz3 p,.sz4 p{
-	margin-top:20px;
-	font-size:14px;
+.zztt{
+	margin-left:10%;
+}
+.zzmz,.glbq{
+	margin-left:10%;
+	margin-top:5px;
+}
+.glmz{
+	margin-left:10%;
+	margin-top:10px;
+	font-size:24px;
+	width:60%;
+	
 }
 #mygz{
-	width:85%;
+	width:90%;
 	height:auto;
-	margin-top:3%;
+	margin-top:10%;
 	margin-left:40px;
 	margin-bottom:20px;
 }
@@ -170,27 +184,30 @@
 	height:40px;
 	font-size:30px;
 	color:#880000;
+	margin-bottom:20px;
 }
 .xiny1{
+	margin-left:13%;
+	margin-top:100px;
 	border:2px solid #cccccc;
-	width:300px;
+	width:30%;
 	height:220px;
 	display:block;
 	float:left;
-	margin-top:20px;
-	margin-left:50px;
-	padding-left:20px;
 }
 .xyimg img{
-	width:240px;
+	width:90%;
 	height:160px;
 	float:left;
-	margin-top:10px;
+	margin:auto;
+	margin-left: 5%;
+	margin-top: 5%;
 }
 .myx1{
+	width:100%;
 	float:left;
 	font-size:25px;
-	margin-left:70px;
+	text-align: center;
 }
 .btn-huan{
 	width:500px;

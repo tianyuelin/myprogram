@@ -9,9 +9,6 @@
 <meta http-equiv="refresh" content="10"/>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
-
-
-
 <link rel="stylesheet" href="css/user/demo.css">
 <link rel="stylesheet" href="css/user/cropper.min.css">
 <title>QTL的空间</title>
@@ -26,11 +23,8 @@
 <script src="js/home/main.js"></script>
 <script type="text/javascript" src="js/user/jquery.min.js"></script>
 <script type="text/javascript" src="js/user/up.js"></script>
-
 <!-- 关于表情 -->
 <link rel="stylesheet" type="text/css" href="js/emoji/jquery.sinaEmotion.css" />
-
-
 <style>
     .topdiv{
         font-size:12px;
@@ -63,20 +57,13 @@
         font-size:16px;
     }
 </style>
-
-
-
-
-  
-
-
 </head>
 <body>
 
 <div  id="fortext1">
 
 <jsp:include page="header.jsp" flush="true"></jsp:include>
-	<div class="qn-header"  style="margin-top:5%;">
+	<div class="qn-header">
 		<div class="main-zt">
 			<div class="user-info">
 				<dt class="flpic">

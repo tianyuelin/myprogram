@@ -10,12 +10,8 @@
 <link rel="stylesheet" href="${ctx }/css/user/youer.css">
 <link href="${ctx }/css/home/header.css" rel="stylesheet">
 <link href="${ctx }/css/home/bootstrap.min.css" rel="stylesheet">
+ <link rel="stylesheet" href="${ctx }/css/datepicker.css">
 <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=no84ceXVi8gDw2sbzALgBU2HxUkcwEpM"></script>
-<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=no84ceXVi8gDw2sbzALgBU2HxUkcwEpM"></script>
-
-<script type="text/javascript" src="${ctx }/js/date/jquery.min.js"></script>
-<script type="text/javascript" src="${ctx }/js/date/angular.min.js"></script>
-<script type="text/javascript" src="${ctx }/js/date/wui-date.js" charset="utf-8"></script>
 </head>
 <body>
 <jsp:include page="header.jsp" flush="true"></jsp:include>
@@ -23,28 +19,21 @@
 <div class="erall">
    <div class="tou">
          <div class="biaot"><input class="tit" type="text" placeholder='北京一日游' name="jtitle"></div>
-         <div class="cf">出发时间
-         <input type="text" name="jtime"></div>
-         <div class="wc"><input type="submit" style="width:80px;height:30px" value="完成" ></div>
-   </div>
+      <div class="cf">出发时间
+         <div class="c-datepicker-date-editor c-datepicker-single-editor J-datepicker-day mt10"  style="width: 60%;clear:both">
+          <i class="c-datepicker-range__icon kxiconfont icon-clock"></i>
+          <input type="text" autocomplete="off" name="jtime" placeholder="选择日期" class=" c-datepicker-data-input only-date" value="">
+         </div>
+         <div style="margin-left: 20%">
+         <input type="submit" value="完成" class="wc">
+         </div>
+      </div>
    <div id="zuo">
         <div class="xc">我的行程</div>
-        <!-- <div class="di">天安门广场</div>
-        <div class="xia">相距220km</div> -->
    </div>
    <div id="zhong">
-        <div class="bj">编辑</div>
-        <div class="sj">北京</div>
-        <div class="tj">添加城市</div>
-        <%-- <div id="xian1">
-             <img src="${ctx }/img/di1.jpg">
-             <div id="di1">01&nbsp;&nbsp;&nbsp;&nbsp;空中花园</div>
-             <p id="pj1">地址：石家庄桥东区石市翟营南大街</p>
-             <a href="#" id="ck1">查看周边</a>
-        </div> --%>
-        <!-- <div class="bz">添加备注</div> -->
    </div>
-   <div class="you">
+   <div class="you" id="you">
         <div class="mybox">
 			<div id="remen">
 				<a href="#" onclick="retj()">热门推荐</a>
@@ -53,6 +42,7 @@
 				<a href="#" onclick="shc()">我的收藏</a>
 			</div>
 		</div>
+        <div id="fenye">
         <div class="dao" id="dao1" style="display:block">
                <div class="dian"><a href="#">景点</a></div>
                <div class="shi"><a href="#">美食</a></div>
@@ -74,54 +64,37 @@
                    <div class="jia1" id="jrbj${journeylist.sceneId}" >加入编辑</div>
                </div>
                </c:forEach>
-               <%-- <div class="jing2">
-                   <div class="jd2"><img src="${ctx }/img/c2.jpg"></div>
-                   <div class="jie2">正定古城墙</div>
-                   <div class="biao2">标签：遗址</div>
-                   <div class="ping2">评论（280+）</div>
-                   <div class="jia2" onclick="add()">加入编辑</div>
-               </div>
-               <div class="jing3">
-                   <div class="jd3"><img src="${ctx }/img/c1.jpg"></div>
-                   <div class="jie3">抱犊寨</div>
-                   <div class="biao3">标签：山峦</div>
-                   <div class="ping3">评论（280+）</div>
-                   <div class="jia3" onclick="add()">加入编辑</div>
-               </div> --%>
                <div class="pagination-wrap">
-                  <div class="pagination">
-                    <a href="${ctx }/journey/journeylist?pageNum=1">首页</a>
-                    <a href="${ctx }/journey/journeylist?pageNum=${page.prePageNum }">上一页</a>
-                    <a href="${ctx }/journey/journeylist?pageNum=${page.nextPageNum }">下一页</a>
-                    <a href="${ctx }/journey/journeylist?pageNum=${page.totalPageNum }">末页</a>
+                   <div class="pagination">
+                    <a href="javascript:doPage(1,1)">首页</a>
+                    <a href="javascript:doPage(${page.prePageNum },1);">上一页</a>
+                    <a href="javascript:doPage(${page.nextPageNum },1);">下一页</a>
+                    <a href="javascript:doPage(${page.totalPageNum },1);">末页</a>
                   </div>
                 </div>
         </div>
         <div class="dao" id="dao2" style="display:none">
-               <div class="jing1">
-                   <div class="jd1"><img src="${ctx }/img/c2.jpg"></div>
-                   <div class="jie1">正定古城墙</div>
-                   <div class="biao1">标签：遗址</div>
-                   <div class="ping1">评论（280+）</div>
-                   <div class="jia1" onclick="add()">加入编辑</div>
+               <c:forEach var="shoucanglist" items="${mypage.list }">
+               <div class="jing1" id="jing${shoucanglist.scene.sceneId}" onclick="addxq(this)">
+                   <div class="jd1"><img id="im${shoucanglist.scene.sceneId}" src="${shoucanglist.scene.img}"></div>
+                   <div class="jx1" id="jx${shoucanglist.scene.sceneId}">${shoucanglist.scene.sceneId}</div>
+                   <div class="jie1" id="ji${shoucanglist.scene.sceneId}">${shoucanglist.scene.sname}</div>
+                   <div class="biao1">标签：美景</div>
+                   <div class="ping1">评论（300+）</div>
+                   <div class="dizh1">${shoucanglist.scene.address}</div>
+                   <div class="jia1" id="jrbj${shoucanglist.scene.sceneId}" >加入编辑</div>
                </div>
-               <div class="jing1">
-                   <div class="jd1"><img src="${ctx }/img/c1.jpg"></div>
-                   <div class="jie1">抱犊寨</div>
-                   <div class="biao1">标签：山峦</div>
-                   <div class="ping1">评论（280+）</div>
-                   <div class="jia1" onclick="add()">加入编辑</div>
-               </div>
-               <%-- <div class="pagination-wrap">
+               </c:forEach>
+				 <div class="pagination-wrap">
                   <div class="pagination">
-                    <a href="${ctx }/journey/journeylist?pageNum=1">首页</a>
-                    <a href="${ctx }/journey/journeylist?pageNum=${page.prePageNum }">上一页</a>
-                    <a href="${ctx }/journey/journeylist?pageNum=${page.nextPageNum }">下一页</a>
-                    <a href="${ctx }/journey/journeylist?pageNum=${page.totalPageNum }">末页</a>
+                    <a href="javascript:doPage(1,1)">首页</a>
+                    <a href="javascript:doPage(1,${mypage.prePageNum });">上一页</a>
+                    <a href="javascript:doPage(1,${mypage.nextPageNum });">下一页</a>
+                    <a href="javascript:doPage(1,${mypage.totalPageNum });">末页</a>
                   </div>
-                </div> --%>
+                </div>
         </div>
-        
+    </div>
    </div>
 </div>
 </form>
@@ -129,10 +102,130 @@
 <jsp:include page="footer.jsp" flush="true"></jsp:include>
 </body>
 </html>
+<script type="text/javascript">
+		function doPage(n,n2){
+			//$('#you').html("");
+			alert(n);
+			$.ajax({
+			       type:"POST",
+			       url:"/xingtu/journey/journeyfenye",
+			       data:{'pageNum':n,'pageNum2':n2},
+			       dataType: "html",   //返回值类型       使用json的话也可以，但是需要在JS中编写迭代的html代码
+			       cache:false,
+			       success:function(data){
+			    	   //alert(1);
+			           //$("#you").load(location.href+" #you");
+			           $('#fenye').html(data);
+			       },
+			       error:function(XMLHttpRequest,textStatus,errorThrown){
+			    	   alert(XMLHttpRequest.readyState);
+			    	   alert(textStatus);
+			    	   alert(errorThrown);
+			    	   }
+			   });
+		}
+	</script>
 <script src="${ctx }/js/home/jquery-1.11.3.min.js"></script>
 <script src="${ctx }/js/user/jquery.min.js"></script>
-<script src="${ctx }/js/user/ajaxfileupload.js"></script>
 <script src="${ctx }/js/home/bootstrap.min.js"></script>
 <script src="${ctx }/js/home/swiper.min.js"></script>
 <script src="${ctx }/js/home/main.js"></script>
 <script src="${ctx }/js/user/createer.js"></script>
+<script src="${ctx }/js/jquery.min.js"></script>
+<script src="${ctx }/js/plugins/moment.min.js"></script>
+<script src="${ctx }/js/datepicker.all.js"></script>
+    <script type="text/javascript">
+      $(function(){
+        var DATAPICKERAPI = {
+          // 默认input显示当前月,自己获取后填充
+          activeMonthRange: function () {
+            return {
+              begin: moment().set({ 'date': 1, 'hour': 0, 'minute': 0, 'second': 0 }).format('YYYY-MM-DD HH:mm:ss'),
+              end: moment().set({ 'hour': 23, 'minute': 59, 'second': 59 }).format('YYYY-MM-DD HH:mm:ss')
+            }
+          },
+          shortcutMonth: function () {
+            // 当月
+            var nowDay = moment().get('date');
+            var prevMonthFirstDay = moment().subtract(1, 'months').set({ 'date': 1 });
+            var prevMonthDay = moment().diff(prevMonthFirstDay, 'days');
+            return {
+              now: '-' + nowDay + ',0',
+              prev: '-' + prevMonthDay + ',-' + nowDay
+            }
+          },
+          // 注意为函数：快捷选项option:只能同一个月份内的
+          rangeMonthShortcutOption1: function () {
+            var result = DATAPICKERAPI.shortcutMonth();
+            return [{
+              name: '昨天',
+              day: '-1,-1',
+              time: '00:00:00,23:59:59'
+            }, {
+              name: '这一月',
+              day: result.now,
+              time: '00:00:00,'
+            }, {
+              name: '上一月',
+              day: result.prev,
+              time: '00:00:00,23:59:59'
+            }];
+          },
+          // 快捷选项option
+          rangeShortcutOption1: [{
+            name: '最近一周',
+            day: '-7,0'
+          }, {
+            name: '最近一个月',
+            day: '-30,0'
+          }, {
+            name: '最近三个月',
+            day: '-90, 0'
+          }],
+          singleShortcutOptions1: [{
+            name: '今天',
+            day: '0'
+          }, {
+            name: '昨天',
+            day: '-1',
+            time: '00:00:00'
+          }, {
+            name: '一周前',
+            day: '-7'
+          }]
+        };
+          //年月日单个
+          $('.J-datepicker-day').datePicker({
+            hasShortcut: true,
+            format:'YYYY-MM-DD',
+            shortcutOptions: [{
+              name: '今天',
+              day: '0'
+            }, {
+              name: '昨天',
+              day: '-1'
+            }, {
+              name: '一周前',
+              day: '-7'
+            }]
+          });
+          
+         
+
+          //年月单个
+          $('.J-yearMonthPicker-single').datePicker({
+            format: 'YYYY-MM',
+            min: '2018-01',
+            max: '2019-04'
+          });
+          
+          //选择年
+          $('.J-yearPicker-single').datePicker({
+            format: 'YYYY',
+            min: '2018',
+            max: '2020'
+          });
+          
+          
+      });
+    </script>

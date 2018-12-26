@@ -8,6 +8,7 @@ import javax.annotation.Resource;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.xingtu.entity.Glshoucang;
 import com.xingtu.entity.Journey;
 import com.xingtu.entity.Md5Encode;
 import com.xingtu.entity.Scene;
@@ -84,7 +85,12 @@ public class UserService {
 	public List<Journey> findJourneyByEmail(String email){
 		return this.userDao.findJourneyByEmail(email);
 	}
+	//查询心愿清单
 	public List<Sceneshoucang> findScScene(String email){
 		return this.userDao.findScScene(email);
+	}
+	//查询收藏的攻略
+	public List<Glshoucang> findglShoucang(String email){
+		return this.userDao.findglShoucang(email);
 	}
 }

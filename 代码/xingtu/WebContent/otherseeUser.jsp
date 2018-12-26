@@ -19,7 +19,7 @@
 </head>
 <body>
 <jsp:include page="header.jsp" flush="true"></jsp:include>
-	<div class="qn-header"  style="margin-top:5%">
+	<div class="qn-header">
 		<div class="main-zt">
 			<div class="user-info">
 				<dt class="flpic">
@@ -113,44 +113,24 @@
 				    </div>
 					<div id="mysc">
 						<div class="zdsc">攻略收藏</div>
-						<div class="sphoto1">
-							<div class="sc1">
-								<img src="${ctx }/img/sc1.jpg">
-							</div>
-							<div class="sz1">
-								<img src="${ctx }/img/tou5.jpg">
-									<div>
-										<a href="#">快过年了，旅行不可以放下，南极的风景。。。</a>
-									</div>
-									<p>小溪被&nbsp;&nbsp;2018年11月1日出发&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;共一天&nbsp;&nbsp;|&nbsp;&nbsp;30图</p>
-									<p>白雪世界，生活着它们原始的种族，它们憨厚可爱。。。。。。</p>
-							</div>
-						</div>
-						<div class="sphoto2">
-							<div class="sc2">
-								<img src="${ctx }/img/sc2.jpg">
-							</div>
-							<div class="sz2">
-								<img src="${ctx }/img/tou8.jpg">
-									<div>
-										<a href="#">最浪漫的三亚旅游攻略</a>
-									</div>
-									<p>lush陆森&nbsp;&nbsp;2018年7月12日出发&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;共三天&nbsp;&nbsp;|&nbsp;&nbsp;25图</p>
-									<p>有的人为了放松心情而去旅行，有的人只是为了。。。。。。。</p>
-							</div>
-						</div>
-						<div class="sphoto3">
-							<div class="sc3">
-								<img src="${ctx }/img/sc3.jpg">
-							</div>
-							<div class="sz3">
-								<img src="${ctx }/img/tou7.jpg">
-									<div>
-										<a href="#">严冬里北京最火爆的烤肉</a>
-									</div>
-									<p>不爱吃鱼的猫&nbsp;&nbsp;2018年11月11日出发&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;共一天&nbsp;&nbsp;|&nbsp;&nbsp;12图</p>
-							</div>
-						</div>
+						<c:if test="${CenterOwn.glshoucang!=null }">
+				        <c:forEach items="${CenterOwn.glshoucang}" var="mygl">
+				           <div class="sphoto1">
+				              <div class="sc1"><img src="${ctx }/${mygl.strategy.img}"></img></div>
+				              <div class="sz1">
+				                   <div class="zztt"><img src="${ctx }/${mygl.user.icon}"></div>
+				                   <div class="zzmz">${mygl.user.username}</div>
+				                   <a href="${ctx }/strategy/singleStrategy?StrategyId=${mygl.strategy.sId}" class="glmz">${mygl.strategy.title}</a>
+				                   <div class="glbq">${mygl.strategy.tag }</div>
+				              </div>
+				        
+				         </div>
+				         </c:forEach>
+				         </c:if>
+				         <c:if test="${CenterOwn.glshoucang== null }">
+				         <div class="nostrategy">您的收藏清单空空如也~</div>
+				         </c:if>
+						
 					</div>
 					<div id="mygz">
 					    <div class="zdgz">心愿清单</div>

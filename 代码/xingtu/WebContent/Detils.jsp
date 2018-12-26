@@ -25,7 +25,6 @@
 </head>
 <body>
 <jsp:include page="header.jsp" flush="true"></jsp:include>
-<div class="move"></div>
 <div class="content">
 	<div class="first">
 		<div class="title">

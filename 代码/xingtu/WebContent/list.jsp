@@ -8,7 +8,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Travel</title>
-
     <!-- Css Folder -->
     <link href="${ctx }/css/list/bootstrap.css" rel="stylesheet">
     <link href="${ctx }/css/list/font-awesome.css" rel="stylesheet">
@@ -33,7 +32,7 @@
   <body>
   <jsp:include page="header.jsp" flush="true"></jsp:include>
     <!--// Content //-->
-    <div class="kd-content" style="padding-top: 5%">
+    <div class="kd-content">
       <!--// Page Section //-->
       <section class="kd-pagesection" style=" padding: 0px 0px 0px 0px; background: #ffffff; ">
         <div class="container">
@@ -60,8 +59,8 @@
                           <p>${strategy.tag }</p>
                           <div class="kd-usernetwork">
                             <ul class="kd-blogcomment">
-                                <li><a href="#" class="thcolorhover"><i class="fa fa-eye"></i>565</a></li>
-                              <li><a href="#" class="thcolorhover"><i class="fa fa-heart-o"></i> 456</a></li>
+                                <li><i class="fa fa-eye"></i>${strategy.looktimes }</li>
+                              <li><i class="fa fa-heart-o"></i>${strategy.shoucangtimes }</li>
                             </ul>
                           </div>
                         </section>

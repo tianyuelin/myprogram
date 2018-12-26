@@ -17,36 +17,24 @@
 <body>
 <jsp:include page="header.jsp" flush="true"></jsp:include>
 	<div class="all">
-		<div class="left" style="margin-top: 5%;back">
+		<div class="left" style="margin-top: 1.5%;border-right: 1px solid #ccc;">
 			<div class="tit">已选目的地</div>
 			<div id="titna">
 			    <div id="did0" >
 			         <div id="xu">从右侧添加想去的地方</div>
 			    </div>
-				<%-- <div id="myci1">
-					<div id="did1">
-						<span>北京</span> 
-						<img src="${ctx }/img/left-square.png" id="lef1"> 
-						<span class="cou1">1</span> 
-						<img src="${ctx }/img/right-square.png" id="rig1">
-						<img src="${ctx }/img/clo.png" onmouseover="deleteed()" id="del1">
-					</div>
-				</div> --%>
 			</div>
-			<div id="tianjia"><input type="text"  id="diz" placeholder="+手动添加行程" onchange="changecity()"></div>
-			<div class="bian">
 				<div class="bj">
 					<a href="${ctx }/journey/journeylist">开始编辑</a>
 				</div>
-			</div>
 		</div>
-		<div class="myright" style="margin-top: 5%">
+		<div class="myright">
 			<div class="shang">
 				<div class="ti1">热门推荐</div>
 				<div class="ssk">
 					<form>
-						<input type="text" style="width: 240px; height: 23px"> <input
-							type="submit" style="width: 40px; height: 25px" value="搜索">
+						<input type="text" style="width: 75%; height: 25px" placeholder="搜索想去的城市"> <input
+							type="submit" style="width: 20%; height: 25px" value="搜索" >
 					</form>
 				</div>
 			</div>
@@ -66,7 +54,4 @@
 <script src="${ctx }/js/home/jquery-1.11.3.min.js"></script>
 <script src="${ctx }/js/user/jquery.min.js"></script>
 <script src="${ctx }/js/user/ajaxfileupload.js"></script>
-<script src="${ctx }/js/home/bootstrap.min.js"></script>
-<script src="${ctx }/js/home/swiper.min.js"></script>
-<script src="${ctx }/js/home/main.js"></script>
 <script src="${ctx }/js/user/createxc.js"></script>

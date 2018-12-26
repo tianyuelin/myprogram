@@ -4,34 +4,35 @@
 }
 .tou{
 	width:100%;
-	height:70px;
-	margin-top:5%;
+	height:80px;
 }
 .biaot{
 	font-size:28px;
-	margin-left:50px;
+	margin-left:15px;
 	padding-top:10px;
-	width:60%;
+	width:55%;
 	height:60px;
 	float:left;
 }
 .cf{
-	width:20%;
+	width:30%;
 	float:left;
 	margin-top:22px;
 }
 .wc{
 	float:left;
 	font-size:20px;
-	margin-right:70px;
-	margin-top:20px;
-	margin-left: 5px;
+	margin-left:380px;
+	padding-bottom:30px;
+	width:20%;
+	height:30px;
+	
 }
 #zuo{
-	border-right:5px solid #cccccc;
+	border-right:5px solid #c09b75;
 	background-size: cover;
 	width:15%;
-	height:850px;
+	height:865px;
 	font-size:30px;
 	float:left;
 	margin-left: 10px;
@@ -63,11 +64,11 @@ span{
 }
 #zhong{
 	width:43%;
-	height:850px;
+	height:865px;
 	font-size:30px;
 	text-align:center;
 	float:left;
-	border-right:4px solid #cccccc;
+	border-right:4px solid #c09b75;
 }
 .sj{
 	border:2px solid #000000;
@@ -127,11 +128,10 @@ span{
 }
 .you{
 	width:40%;
-	height:850px;
+	height:865px;
 	font-size:30px;
 	text-align:center;
 	float:left;
-	background-color:#eff1f1;
 }
 .mybox {
     width:100%;
@@ -177,9 +177,9 @@ span{
 	margin-left:150px;
 }
 .jing1{
-	width:480px;
+	width:100%;
 	height:190px;
-	background-color:#ffffff;
+	background-color:#efefef;
 	float:left;
 	margin-top:39px;
 	margin-left:20px;

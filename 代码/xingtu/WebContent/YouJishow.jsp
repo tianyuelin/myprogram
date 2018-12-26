@@ -14,13 +14,27 @@
 </head>
 <body>
 <jsp:include page="header.jsp" flush="true"></jsp:include>
-<div class="move"></div>
 <div class="header">
 <img alt="" src="${ctx }/${strategy.img}" style="width: 100%;height: 450px;">
 <div class="title">
-	<a href="${ctx }/user/otherUserCenter?useremail=${strategy.user.email}"><img alt="" src="${ctx }/${strategy.user.icon}"></a>
-	<span>${strategy.title }</span>
+	<a href="${ctx }/user/otherUserCenter?useremail=${strategy.user.email}"><img id="backj" alt="" src="${ctx }/${strategy.user.icon}"></a>
+	<span id="stt">${strategy.title }</span>
+	
+	
 </div>
+<c:if test="${isSigned==false or isSigned==null }">
+	<a href="${ctx }/sign.jsp" id="glsc"><img alt="" src="${ctx }/img/guzh.png">&nbsp&nbsp<span>收藏</span></a>
+</c:if>
+<c:if test="${isSigned==true}">
+	<!-- 如果还未收藏 -->
+	<c:if test="${ifShoucanggl==false }">
+		 <a href="${ctx }/strategy/addshoucang?StrategyId=${strategy.sId}" id="glsc"><img alt="" src="${ctx }/img/guzh.png">&nbsp&nbsp<span>收藏</span></a>
+	 </c:if>
+	 <!-- 如果已收藏 -->
+	 <c:if test="${ifShoucanggl==true }">
+		 <a href="${ctx }/strategy/noshoucang?StrategyId=${strategy.sId}" id="glsc"><img alt="" src="${ctx }/img/guzhed.png">&nbsp&nbsp<span>收藏</span></a>
+	 </c:if>
+ </c:if>
 </div>
 <div class="showleft">
 <div class="概览">

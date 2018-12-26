@@ -56,13 +56,8 @@ $(document).on('click','.close-miaoshushow',function(){
 </script>
 </head>
 <body>
-
-
-
-
-
 <jsp:include page="header.jsp" flush="true"></jsp:include>
-	<div class="qn-header"  style="margin-top:5%">
+	<div class="qn-header">
 		<div class="main-zt">
 			<div class="user-info">
 				<dt class="flpic">
@@ -96,16 +91,13 @@ $(document).on('click','.close-miaoshushow',function(){
 		<div class="mynav">
 			<ul id="mydao">
 				<li class="item item-hover item-active" data-beacon="myhomepage"><a
-					href="${ctx }/user.jsp">首页</a></li>
+					href="${ctx }/user/usercenter">首页</a></li>
 				<li class="item"><a
 					href="${ctx }/photo/findallphoto"
 					data-beacon="photos">相册</a></li>
 				<li class="item"><a
 					href="${ctx }/sixinPage"
 					data-beacon="letter">消息</a></li>
-				<li class="item"><a
-					href="${ctx }/person.jsp"
-					data-beacon="letter">个人信息</a></li>
 				<li class="item"><a
 					href="${ctx }/journey/citylist"
 					data-beacon="letter">创建行程</a></li>
@@ -117,13 +109,13 @@ $(document).on('click','.close-miaoshushow',function(){
 	</div>
 	<div class="theleft" style="width: 20%;float: left;border-right: 1px solid #ededed; height: 600px;">
 		<form action="${ctx }/photo/findallphoto">
-		<img src="${ctx }/img/zi2.png"/>
+		<img src="${ctx }/img/zi2.png" style="display: block"/>
 		<!--  h2 class="type">按照人物搜索:</h2-->
-			<input type="submit" class="sousuo" value="查询"/><input type="text" placeholder="输入人物姓名" class="shurukuang" name="searchpeople"/>
+			<input type="submit" class="sousuo" value="查询" style="clear:both;"/><input type="text" placeholder="输入人物姓名" class="shurukuang" name="searchpeople"/>
 		<!--h2 class="type" >按照时间搜索:</h2-->
-			<input type="submit" class="sousuo" value="查询"/><input type="text" placeholder="输入拍照时间" class="shurukuang" name="searchdate"/>
+			<input type="submit" class="sousuo" value="查询" style="clear:both;"/><input type="text" placeholder="输入拍照时间" class="shurukuang" name="searchdate"/>
 		<!--h2  class="type">按照地点搜索:</h2-->
-			<input type="submit" class="sousuo" value="查询"/><input type="text" placeholder="输入地点名称" class="shurukuang" name="searchaddress"/>
+			<input type="submit" class="sousuo" value="查询" style="clear:both;"/><input type="text" placeholder="输入地点名称" class="shurukuang" name="searchaddress"/>
 		</form>
 	</div>
 	<div style="margin-bottom: 25px;width: 75%;margin: auto;margin-left: 20.5%; height: 600px;">

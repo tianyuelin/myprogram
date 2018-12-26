@@ -9,6 +9,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.xingtu.entity.Journey;
 import com.xingtu.entity.Scene;
+import com.xingtu.entity.Sceneshoucang;
 import com.xingtu.entity.Users;
 import com.xingtu.journey.dao.JourneyDao;
 
@@ -23,6 +24,9 @@ public class JourneyService {
 	public List<Scene> getJourneyList(int pageNum,int pageSize){
 		return jd.getJourneyList(pageNum,pageSize);
 	}
+	public List<Sceneshoucang> getScScene(String email,int pageNum,int pageSize){
+		return jd.getScScene(email,pageNum,pageSize);
+	}
 	public Journey createJourney(String scenes[],Users user,String jtime,String jtitle) {
 		return jd.saveJourney(scenes, user, jtime, jtitle);
 	}
@@ -31,5 +35,8 @@ public class JourneyService {
 	}*/
 	public Journey findJourById(int id) {
 		return jd.findJourById(id);
+	}
+	public void deletJour(int id) {
+		jd.deletJour(id);
 	}
 }

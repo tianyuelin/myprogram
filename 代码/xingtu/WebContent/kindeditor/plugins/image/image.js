@@ -192,9 +192,9 @@ KindEditor.plugin('image', function(K) {
 				dialog.hideLoading();
 				if (data.error === 0) {
 					var url = data.url;
-					if (formatUploadUrl) {
-						url = K.formatUrl(url, 'absolute');
-					}
+//					if (formatUploadUrl) {
+//						url = K.formatUrl(url, 'absolute');
+//					}
 					if (self.afterUpload) {
 						self.afterUpload.call(self, url, data, name);
 					}

@@ -15,6 +15,7 @@ import org.springframework.stereotype.Repository;
 import com.xingtu.entity.JourDiv;
 import com.xingtu.entity.Journey;
 import com.xingtu.entity.Scene;
+import com.xingtu.entity.Sceneshoucang;
 import com.xingtu.entity.StrategyDiv;
 import com.xingtu.entity.Users;
 
@@ -40,6 +41,16 @@ public class JourneyDao {
 	public List<Scene> getJourneyList(int pageNum,int pageSize){
 		Session session = sf.getCurrentSession();
 		Query q = session.createQuery("from Scene s where s.img is not null");
+		q.setFirstResult((pageNum-1)*pageSize);
+		q.setMaxResults(pageSize);
+		return q.list();
+	}
+	/**
+	 * 获取收藏的景点
+	 */
+	public List<Sceneshoucang> getScScene(String email,int pageNum,int pageSize){
+		Session session=sf.getCurrentSession();
+		Query q=session.createQuery("from Sceneshoucang where user.email='"+email+"'");
 		q.setFirstResult((pageNum-1)*pageSize);
 		q.setMaxResults(pageSize);
 		return q.list();
@@ -81,5 +92,14 @@ public class JourneyDao {
 		Session session=sf.getCurrentSession();
 		Journey j=(Journey) session.createQuery("from Journey j where j.jid="+id).uniqueResult();
 		return j;		
+	}
+	/**
+	 * 删除行程
+	 */
+	public int deletJour(int id) {
+		Session session = sf.getCurrentSession();
+		Query q=session.createQuery("delete from Journey j where j.jid='"+id+"'");
+		int x=q.executeUpdate();
+		return x;//返回受影响的条数
 	}
 }

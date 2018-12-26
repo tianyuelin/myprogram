@@ -23,20 +23,6 @@
                         <c:if test="${isSigned==true}">
                         <li class="col-md-nav"><a href="${ctx }/user/usercenter"> 个性定制</a>
                         </c:if>
-                        <li class="col-md-nav dropdown">
-                            <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                               aria-expanded="false">
-                                关于我们 <span class="glyphicon glyphicon-menu-down"></span>
-                            </a>
-                            <ul class="dropdown-menu dropdown-list">
-                                <li class="dropdown-item col-md-nav">
-                                    <dl>
-                                        <dd><a href="liebiao.jsp">使用攻略</a></dd>
-                                        <dd><a href="liebiao.jsp">联系我们</a></dd>
-                                    </dl>
-                                </li>
-                         </ul>
-                        </li>
                     </ul>
                 </div>
                 <div style="width: 20%;display: inline-block;position: relative;margin: auto;float: right;text-align: right;">

@@ -41,7 +41,7 @@
 </head>
 <body>
 <jsp:include page="header.jsp" flush="true"></jsp:include>
-	<div class="qn-header"  style="margin-top:5%;">
+	<div class="qn-header">
 		<div class="main-zt">
 			<div class="user-info">
 				<dt class="flpic">
@@ -75,21 +75,18 @@
 		<div class="mynav">
 			<ul id="mydao">
 				<li class="item item-hover item-active" data-beacon="myhomepage"><a
-					href="user.jsp">首页</a></li>
+					href="${ctx }/user/usercenter">首页</a></li>
 				<li class="item"><a
-					href="photo.jsp"
+					href="${ctx }/photo/findallphoto"
 					data-beacon="photos">相册</a></li>
 				<li class="item"><a
 					href="sixin.jsp"
 					data-beacon="letter">消息</a></li>
 				<li class="item"><a
-					href="person.jsp"
-					data-beacon="letter">个人信息</a></li>
-				<li class="item"><a
-					href="createxingcheng.jsp"
+					href="${ctx }/journey/citylist"
 					data-beacon="letter">创建行程</a></li>
 				<li class="item"><a
-					href="createyouji.jsp"
+					href="${ctx }/strategy/opencreate"
 					data-beacon="letter">创建攻略</a></li>
 			</ul>
 		</div>

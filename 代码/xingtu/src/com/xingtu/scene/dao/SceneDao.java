@@ -20,6 +20,9 @@ public class SceneDao{
 	public Scene findSceneById(int id) {
 		Session session = sf.getCurrentSession();
 		Scene s = (Scene)session.createQuery("from Scene where sceneId="+id).uniqueResult();
+		s.setLooktimes(s.getLooktimes()+1);
+		Query q1 = session.createQuery("update Scene set looktimes="+s.getLooktimes()+"where sceneId="+id);
+		q1.executeUpdate();
 		String route = s.getRoute().replaceAll("\n", "<br>");
 		s.setRoute(route);
 		String ticketPrice = s.getTicketPrice().replaceAll("\\r\\n", "<br>");
@@ -87,6 +90,9 @@ public class SceneDao{
 		Session session=sf.getCurrentSession();
 		List<Scene> scenes = new ArrayList<Scene>();
 		Scene s =(Scene)session.createQuery("from Scene where sceneId="+sceneid).uniqueResult();
+		s.setShoucangtimes(s.getShoucangtimes()+1);
+		Query q = session.createQuery("update Scene set shoucangtimes="+s.getShoucangtimes()+"where sceneId="+sceneid);
+		q.executeUpdate();
 		scenes.add(s);
 		Sceneshoucang ssc=new Sceneshoucang();
 		ssc.setUser(user);

@@ -16,6 +16,9 @@ import org.hibernate.query.Query;
 import org.springframework.stereotype.Repository;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.xingtu.entity.Glshoucang;
+import com.xingtu.entity.Scene;
+import com.xingtu.entity.Sceneshoucang;
 import com.xingtu.entity.Strategy;
 import com.xingtu.entity.StrategyDiv;
 import com.xingtu.entity.Users;
@@ -71,6 +74,7 @@ public class StrategyDao {
 				sds.get(i).setAddress(addersses[i]);
 			}
 			s.setUser(user);
+			s.setLooktimes(0);
 			s.setStime(new Date());
 			s.setTitle(title);
 			session.save(s);
@@ -98,6 +102,9 @@ public class StrategyDao {
 	public Strategy findStrategyById(int id) {
 		Session session = this.sf.getCurrentSession();
 		Strategy s =(Strategy)session.createQuery("from Strategy where sId="+id).uniqueResult();
+		s.setLooktimes(s.getLooktimes()+1);
+		Query q = session.createQuery("update Strategy set looktimes ="+s.getLooktimes()+"where sId="+id);
+		q.executeUpdate();
 		return s;
 	}
 	//查询出最新攻略的三个
@@ -144,5 +151,66 @@ public class StrategyDao {
 			 }
 		 }
 		return strategylist;
+	}
+	
+	//判断是否已收藏
+	public Boolean IfShouCanggl(int strategyid,Users user) {//如果已关注返回true，未关注返回false
+		Session session =sf.getCurrentSession();		
+		String myemail=user.getEmail();//登录用户的email
+		Query q=session.createQuery("from Glshoucang sh where sh.user.email=?0 and sh.strategy.sId=?1");
+		q.setParameter(0,myemail);
+		q.setParameter(1, strategyid);
+		if(q.list().size()!=0) {//说明存在这样一条数据，已收藏
+			return true;
+		}else {
+			return false;
+		}
+	}
+	//点击收藏，将收藏名单插入收藏表
+	public Glshoucang InsertShoucanggl(int strategyid,Users user) {
+		Session session=sf.getCurrentSession();
+		List<Strategy> strategys = new ArrayList<Strategy>();
+		Strategy s =(Strategy)session.createQuery("from Strategy where sId="+strategyid).uniqueResult();
+		strategys.add(s);
+		Glshoucang gls=new Glshoucang();
+		gls.setUser(user);
+		s.setShoucangtimes(s.getShoucangtimes()+1);
+		Query q = session.createQuery("update Strategy set shoucangtimes ="+s.getShoucangtimes()+"where sId="+s.getsId());
+		q.executeUpdate();
+		gls.setStrategy(s);
+		session.save(gls);
+		return gls;
+	}
+		//将收藏者删除
+	public int delectShoucanggl(int strategyid,Users user) {
+		Session session = sf.getCurrentSession();
+		String myemail=user.getEmail();//登录用户的email
+		Query q=session.createQuery("delete from Glshoucang gs where gs.user.email='"+myemail+"' and gs.strategy.sId='"+strategyid+"'");
+		int x=q.executeUpdate();
+		return x;//返回受影响的条数
+	}
+		//从收藏表中取出本人收藏的攻略有那几个
+	@SuppressWarnings("null")
+	public List<Strategy> findShoucanggl(String myemail) {
+				
+		Session session=sf.getCurrentSession();
+		Query q=session.createQuery("from Glshoucang where user.email=?0");
+				
+		q.setParameter(0,myemail);
+				
+		List<Glshoucang> gls = q.list();//收藏景点的集合
+				
+		//创建一个收藏景点的集合
+		List<Strategy> StrateList=new ArrayList<Strategy>();
+		//根据上面获得的被收藏景点的id查找被收藏景点的信息
+		for(Glshoucang gl : gls) {
+					
+			int id=gl.getStrategy().getsId();//获取景点的id
+			Strategy shoucanggl=(Strategy)session.createQuery("from Strategy where sId='"+id+"'").uniqueResult();
+					
+			System.out.println(shoucanggl+"看看第三处是否能运行");
+			StrateList.add(shoucanggl);
+		}
+		return StrateList;
 	}
 }

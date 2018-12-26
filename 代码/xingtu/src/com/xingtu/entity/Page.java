@@ -55,6 +55,9 @@ public class Page<T> {
 	}
 
 	public void setPrePageNum(int prePageNum) {
+		if(prePageNum==0) {
+			this.prePageNum = 1;
+		}
 		this.prePageNum = prePageNum;
 	}
 

@@ -29,14 +29,13 @@ public class Users {
 	private Date registtime;//ע��ʱ��
 	//һ���û������ж�Թ��Եĸ�����
 	private List<StrategyComment> stc;//�Թ��Ե�����
-	//һ���û������ж���Ծ��������
-	private List<Scenecomment> scc;//�Ծ��������
 	//һ���û����Է����������
 	private List<Strategy> st;//����
 	//һ���û����Դ�������г�
 	private List<Journey> journeys;//�������г�
 	private List<Sceneshoucang> sceneshoucang;
 	private List<Photo> photos;
+	private List<Glshoucang> glshoucang;
 	@Id
 	@GeneratedValue(generator="assigned")
 	@GenericGenerator(name="assigned",strategy="assigned")
@@ -110,14 +109,6 @@ public class Users {
 	public void setStc(List<StrategyComment> stc) {
 		this.stc = stc;
 	}
-	@OneToMany(mappedBy="user",targetEntity=Scenecomment.class,
-			cascade= {CascadeType.ALL})
-	public List<Scenecomment> getScc() {
-		return scc;
-	}
-	public void setScc(List<Scenecomment> scc) {
-		this.scc = scc;
-	}
 	@OneToMany(mappedBy="user",targetEntity=Strategy.class,
 			cascade= {CascadeType.ALL})
 	public List<Strategy> getSt() {
@@ -142,5 +133,14 @@ public class Users {
 	public void setPhotos(List<Photo> photos) {
 		this.photos = photos;
 	}
+	@OneToMany(mappedBy="user",targetEntity=Glshoucang.class,
+			cascade= {CascadeType.ALL})
+	public List<Glshoucang> getGlshoucang() {
+		return glshoucang;
+	}
+	public void setGlshoucang(List<Glshoucang> glshoucang) {
+		this.glshoucang = glshoucang;
+	}
+	
 	
 }
