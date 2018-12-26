@@ -90,16 +90,13 @@ $(document).on('click','.close-miaoshushow',function(){
 		<div class="mynav">
 			<ul id="mydao">
 				<li class="item item-hover item-active" data-beacon="myhomepage"><a
-					href="${ctx }/user.jsp">首页</a></li>
+					href="${ctx }/user/usercenter">首页</a></li>
 				<li class="item"><a
 					href="${ctx }/photo/findallphoto"
 					data-beacon="photos">相册</a></li>
 				<li class="item"><a
 					href="${ctx }/sixinPage"
 					data-beacon="letter">消息</a></li>
-				<li class="item"><a
-					href="${ctx }/person.jsp"
-					data-beacon="letter">个人信息</a></li>
 				<li class="item"><a
 					href="${ctx }/journey/citylist"
 					data-beacon="letter">创建行程</a></li>
