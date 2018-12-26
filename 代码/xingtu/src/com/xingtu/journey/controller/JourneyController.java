@@ -14,18 +14,23 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.xingtu.entity.Glshoucang;
 import com.xingtu.entity.Journey;
 import com.xingtu.entity.Page;
 import com.xingtu.entity.Scene;
 import com.xingtu.entity.Sceneshoucang;
+import com.xingtu.entity.Strategy;
 import com.xingtu.entity.Users;
 import com.xingtu.journey.service.JourneyService;
+import com.xingtu.user.service.UserService;
 
 @Controller
 @RequestMapping("/journey")
 public class JourneyController {
 	@Resource
 	private JourneyService js;
+	@Resource
+	private UserService userService;
 	@RequestMapping(value="/citylist",method=RequestMethod.GET)
 	public String getCity(HttpServletRequest request) {
 		/* 获取热门城市 */
@@ -96,5 +101,32 @@ public class JourneyController {
 		Journey j = js.findJourById(id);
 		request.setAttribute("journey", j);
 		return "xingchengshow";
+	}
+	@RequestMapping(value="/deletJour",method=RequestMethod.GET)
+	public String deletJour(HttpServletRequest request,@RequestParam(value="jid")int id,HttpSession session) {
+		this.js.deletJour(id);
+		Object obj = session.getAttribute("user");
+		if(obj!=null) {
+			Users user =(Users)obj;
+			String myemail=user.getEmail();
+			//获取我关注的人数并存入Session
+			Long FGCount=this.userService.findFGCount1(myemail);
+			session.setAttribute("FGCount", FGCount);
+			//获取我粉丝的人数
+			Long fansCount = this.userService.findfansCount1(myemail);
+			session.setAttribute("fansCount",fansCount);		
+			//获取攻略
+			List<Strategy> strategys = this.userService.findStrategyByEmail(myemail);
+			request.setAttribute("strategys", strategys);
+			//获取行程
+			List<Journey> journeys=this.userService.findJourneyByEmail(myemail);
+			request.setAttribute("journeys", journeys);
+			//获取心愿清单（收藏景点）
+			List<Sceneshoucang> scenes=this.userService.findScScene(myemail);
+			request.setAttribute("scenes", scenes);
+			List<Glshoucang> glshoucangs=this.userService.findglShoucang(myemail);
+			request.setAttribute("glshous", glshoucangs);
+		}
+		return "user";
 	}
 }
