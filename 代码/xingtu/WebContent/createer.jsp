@@ -39,7 +39,7 @@
    </div>
    <div id="zhong">
    </div>
-   <div class="you">
+   <div class="you" id="you">
         <div class="mybox">
 			<div id="remen">
 				<a href="#" onclick="retj()">热门推荐</a>
@@ -70,11 +70,11 @@
                </div>
                </c:forEach>
                <div class="pagination-wrap">
-                  <div class="pagination">
-                    <a href="${ctx }/journey/journeylist?pageNum=1">首页</a>
-                    <a href="${ctx }/journey/journeylist?pageNum=${page.prePageNum }">上一页</a>
-                    <a href="${ctx }/journey/journeylist?pageNum=${page.nextPageNum }">下一页</a>
-                    <a href="${ctx }/journey/journeylist?pageNum=${page.totalPageNum }">末页</a>
+                   <div class="pagination">
+                    <a href="javascript:doPage(1)">首页</a>
+                    <a href="javascript:doPage(${page.prePageNum });">上一页</a>
+                    <a href="javascript:doPage(${page.nextPageNum });">下一页</a>
+                    <a href="javascript:doPage(${page.totalPageNum });">末页</a>
                   </div>
                 </div>
         </div>
@@ -92,10 +92,10 @@
                </c:forEach>
                <div class="pagination-wrap">
                   <div class="pagination">
-                    <a href="${ctx }/journey/journeylist?pageNum=1">首页</a>
-                    <a href="${ctx }/journey/journeylist?pageNum=${mypage.prePageNum }">上一页</a>
-                    <a href="${ctx }/journey/journeylist?pageNum=${mypage.nextPageNum }">下一页</a>
-                    <a href="${ctx }/journey/journeylist?pageNum=${mypage.totalPageNum }">末页</a>
+                    <a href="javascript:doPage(1)">首页</a>
+                    <a href="javascript:doPage(${mypage.prePageNum });">上一页</a>
+                    <a href="javascript:doPage(${mypage.nextPageNum });">下一页</a>
+                    <a href="javascript:doPage(${mypage.totalPageNum });">末页</a>
                   </div>
                 </div>
         </div>
@@ -107,6 +107,29 @@
 <jsp:include page="footer.jsp" flush="true"></jsp:include>
 </body>
 </html>
+<script type="text/javascript">
+		function doPage(n){
+			//$('#you').html("");
+			alert(n);
+			$.ajax({
+			       type:"POST",
+			       url:"/xingtu/journey/journeyfenye",
+			       data:{'pageNum':n},
+			       dataType: "html",   //返回值类型       使用json的话也可以，但是需要在JS中编写迭代的html代码
+			       cache:false,
+			       success:function(data){
+			    	   //alert(1);
+			           //$("#you").load(location.href+" #you");
+			           $('#you').html(data);
+			       },
+			       error:function(XMLHttpRequest,textStatus,errorThrown){
+			    	   alert(XMLHttpRequest.readyState);
+			    	   alert(textStatus);
+			    	   alert(errorThrown);
+			    	   }
+			   });
+		}
+	</script>
 <script src="${ctx }/js/home/jquery-1.11.3.min.js"></script>
 <script src="${ctx }/js/user/jquery.min.js"></script>
 <script src="${ctx }/js/user/ajaxfileupload.js"></script>
