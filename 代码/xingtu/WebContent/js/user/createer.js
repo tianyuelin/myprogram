@@ -132,7 +132,6 @@ function addxq(obj){
 		onPolylinesSet: function(){
 			document.getElementById("tspan"+spancount).innerText=bustime;
 		}});
-	
 	transit.search(id1,id2);
 	transit2.search(id1,id2);
 	}
