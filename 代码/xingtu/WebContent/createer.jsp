@@ -12,12 +12,6 @@
 <link href="${ctx }/css/home/bootstrap.min.css" rel="stylesheet">
  <link rel="stylesheet" href="${ctx }/css/datepicker.css">
 <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=no84ceXVi8gDw2sbzALgBU2HxUkcwEpM"></script>
-<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=no84ceXVi8gDw2sbzALgBU2HxUkcwEpM"></script>
-
-<script type="text/javascript" src="${ctx }/js/date/jquery.min.js"></script>
-<script type="text/javascript" src="${ctx }/js/date/angular.min.js"></script>
-<script type="text/javascript" src="${ctx }/js/date/wui-date.js" charset="utf-8"></script>
-
 </head>
 <body>
 <jsp:include page="header.jsp" flush="true"></jsp:include>
@@ -48,6 +42,7 @@
 				<a href="#" onclick="shc()">我的收藏</a>
 			</div>
 		</div>
+        <div id="fenye">
         <div class="dao" id="dao1" style="display:block">
                <div class="dian"><a href="#">景点</a></div>
                <div class="shi"><a href="#">美食</a></div>
@@ -71,10 +66,10 @@
                </c:forEach>
                <div class="pagination-wrap">
                    <div class="pagination">
-                    <a href="javascript:doPage(1)">首页</a>
-                    <a href="javascript:doPage(${page.prePageNum });">上一页</a>
-                    <a href="javascript:doPage(${page.nextPageNum });">下一页</a>
-                    <a href="javascript:doPage(${page.totalPageNum });">末页</a>
+                    <a href="javascript:doPage(1,1)">首页</a>
+                    <a href="javascript:doPage(${page.prePageNum },1);">上一页</a>
+                    <a href="javascript:doPage(${page.nextPageNum },1);">下一页</a>
+                    <a href="javascript:doPage(${page.totalPageNum },1);">末页</a>
                   </div>
                 </div>
         </div>
@@ -90,16 +85,16 @@
                    <div class="jia1" id="jrbj${shoucanglist.scene.sceneId}" >加入编辑</div>
                </div>
                </c:forEach>
-               <div class="pagination-wrap">
+				 <div class="pagination-wrap">
                   <div class="pagination">
-                    <a href="javascript:doPage(1)">首页</a>
-                    <a href="javascript:doPage(${mypage.prePageNum });">上一页</a>
-                    <a href="javascript:doPage(${mypage.nextPageNum });">下一页</a>
-                    <a href="javascript:doPage(${mypage.totalPageNum });">末页</a>
+                    <a href="javascript:doPage(1,1)">首页</a>
+                    <a href="javascript:doPage(1,${mypage.prePageNum });">上一页</a>
+                    <a href="javascript:doPage(1,${mypage.nextPageNum });">下一页</a>
+                    <a href="javascript:doPage(1,${mypage.totalPageNum });">末页</a>
                   </div>
                 </div>
         </div>
-        
+    </div>
    </div>
 </div>
 </form>
@@ -108,19 +103,19 @@
 </body>
 </html>
 <script type="text/javascript">
-		function doPage(n){
+		function doPage(n,n2){
 			//$('#you').html("");
 			alert(n);
 			$.ajax({
 			       type:"POST",
 			       url:"/xingtu/journey/journeyfenye",
-			       data:{'pageNum':n},
+			       data:{'pageNum':n,'pageNum2':n2},
 			       dataType: "html",   //返回值类型       使用json的话也可以，但是需要在JS中编写迭代的html代码
 			       cache:false,
 			       success:function(data){
 			    	   //alert(1);
 			           //$("#you").load(location.href+" #you");
-			           $('#you').html(data);
+			           $('#fenye').html(data);
 			       },
 			       error:function(XMLHttpRequest,textStatus,errorThrown){
 			    	   alert(XMLHttpRequest.readyState);
@@ -132,7 +127,6 @@
 	</script>
 <script src="${ctx }/js/home/jquery-1.11.3.min.js"></script>
 <script src="${ctx }/js/user/jquery.min.js"></script>
-<script src="${ctx }/js/user/ajaxfileupload.js"></script>
 <script src="${ctx }/js/home/bootstrap.min.js"></script>
 <script src="${ctx }/js/home/swiper.min.js"></script>
 <script src="${ctx }/js/home/main.js"></script>

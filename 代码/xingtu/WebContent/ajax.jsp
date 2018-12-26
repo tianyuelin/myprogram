@@ -14,15 +14,7 @@
 <link rel="stylesheet" href="${ctx }/css/user/youer.css">
 </head>
 <body>
-   <div class="you" id="you">
-        <div class="mybox">
-			<div id="remen">
-				<a href="#" onclick="retj()">热门推荐</a>
-			</div>
-			<div id="wsc">
-				<a href="#" onclick="shc()">我的收藏</a>
-			</div>
-		</div>
+<div id="fenye">
         <div class="dao" id="dao1" style="display:block">
                <div class="dian"><a href="#">景点</a></div>
                <div class="shi"><a href="#">美食</a></div>
@@ -46,10 +38,10 @@
                </c:forEach>
                <div class="pagination-wrap">
                    <div class="pagination">
-                    <a href="javascript:doPage(1)">首页</a>
-                    <a href="javascript:doPage(${page.prePageNum });">上一页</a>
-                    <a href="javascript:doPage(${page.nextPageNum });">下一页</a>
-                    <a href="javascript:doPage(${page.totalPageNum });">末页</a>
+                    <a href="javascript:doPage(1,1)">首页</a>
+                    <a href="javascript:doPage(${page.prePageNum },1);">上一页</a>
+                    <a href="javascript:doPage(${page.nextPageNum },1);">下一页</a>
+                    <a href="javascript:doPage(${page.totalPageNum },1);">末页</a>
                   </div>
                 </div>
         </div>
@@ -67,13 +59,13 @@
                </c:forEach>
                <div class="pagination-wrap">
                   <div class="pagination">
-                    <a href="javascript:doPage(1)">首页</a>
-                    <a href="javascript:doPage(${mypage.prePageNum });">上一页</a>
-                    <a href="javascript:doPage(${mypage.nextPageNum });">下一页</a>
-                    <a href="javascript:doPage(${mypage.totalPageNum });">末页</a>
+                    <a href="javascript:doPage(1,1)">首页</a>
+                    <a href="javascript:doPage(1,${mypage.prePageNum });">上一页</a>
+                    <a href="javascript:doPage(1,${mypage.nextPageNum });">下一页</a>
+                    <a href="javascript:doPage(1,${mypage.totalPageNum });">末页</a>
                   </div>
                 </div>
         </div>
-   </div>
+</div>
 </body>
 </html>

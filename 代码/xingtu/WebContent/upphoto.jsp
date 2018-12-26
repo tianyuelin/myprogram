@@ -42,25 +42,5 @@
 		});
 	}());
 	</script>
-	
-	 <!-- 引入jquery-form.js（这个是必须的，否则绑定form提交事件不会生效，还有一些jquery必需文件不再多说）-->
-<script src="js/user/jquery.form.js"></script>
-
-<!-- 实现局部刷新js -->
-<script type="text/javascript">
-    $(document).ready(function(){
-        var options = {   
-            //需要刷新的区域id 
-            target:'#mysesisgn',
-        };
-        //绑定FORM提交事件  
-        $('#myformid').submit(function() {  
-            $(this).ajaxSubmit(options);   
-            return false;   
-        }); 
-       
-    });     
-</script>
-
 </body>
 </html>

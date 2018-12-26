@@ -50,16 +50,13 @@
 		<div class="mynav">
 			<ul id="mydao">
 				<li class="item item-hover item-active" data-beacon="myhomepage"><a
-					href="${ctx }/user.jsp">首页</a></li>
+					href="${ctx }/user/usercenter">首页</a></li>
 				<li class="item"><a
 					href="${ctx }/photo/findallphoto"
 					data-beacon="photos">相册</a></li>
 				<li class="item"><a
 					href="${ctx }/sixinPage"
 					data-beacon="letter">消息</a></li>
-				<li class="item"><a
-					href="person.jsp"
-					data-beacon="letter">个人信息</a></li>
 				<li class="item"><a
 					href="${ctx }/journey/citylist"
 					data-beacon="letter">创建行程</a></li>
@@ -86,7 +83,7 @@
 				          <div class="xich1">
 				              <div class="wcj1">我创建了行程计划</div>
 				              <div class="rq1">
-				                    <div class="ts1">共1天</div>
+				                    <div clas="ts1">共1天</div>
 				                    <div class="mycf1">${journey.jtime }出发</div>
 				              </div>
 				              <div class="zbt1"><a href="${ctx }/journey/singleJour?jid=${journey.jid}">${journey.jtitle}</a></div>
