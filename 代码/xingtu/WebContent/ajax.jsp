@@ -6,35 +6,14 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="expires" content="0">
+<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
 <title>Insert title here</title>
 <link rel="stylesheet" href="${ctx }/css/user/youer.css">
-<link href="${ctx }/css/home/header.css" rel="stylesheet">
-<link href="${ctx }/css/home/bootstrap.min.css" rel="stylesheet">
-<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=no84ceXVi8gDw2sbzALgBU2HxUkcwEpM"></script>
-<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=no84ceXVi8gDw2sbzALgBU2HxUkcwEpM"></script>
-
-<script type="text/javascript" src="${ctx }/js/date/jquery.min.js"></script>
-<script type="text/javascript" src="${ctx }/js/date/angular.min.js"></script>
-<script type="text/javascript" src="${ctx }/js/date/wui-date.js" charset="utf-8"></script>
 </head>
 <body>
-<jsp:include page="header.jsp" flush="true"></jsp:include>
-<form action="${ctx }/journey/createxc" method="post" >
-<div class="erall">
-   <div class="tou">
-         <div class="biaot"><input class="tit" type="text" placeholder='北京一日游' name="jtitle"></div>
-         <div class="cf">出发时间
-         <input type="text" name="jtime"></div>
-         <div class="wc"><input type="submit" style="width:80px;height:30px" value="完成" ></div>
-   </div>
-   <div id="zuo">
-        <div class="xc">我的行程</div>
-   </div>
-   <div id="zhong">
-        <div class="bj">编辑</div>
-        <div class="sj">北京</div>
-        <div class="tj">添加城市</div>
-   </div>
    <div class="you" id="you">
         <div class="mybox">
 			<div id="remen">
@@ -95,41 +74,6 @@
                   </div>
                 </div>
         </div>
-        
    </div>
-</div>
-</form>
-<div id="allmap"></div>
-<jsp:include page="footer.jsp" flush="true"></jsp:include>
 </body>
 </html>
-<script type="text/javascript">
-		function doPage(n){
-			//$('#you').html("");
-			alert(n);
-			$.ajax({
-			       type:"POST",
-			       url:"/xingtu/journey/journeyfenye",
-			       data:{'pageNum':n},
-			       dataType: "html",   //返回值类型       使用json的话也可以，但是需要在JS中编写迭代的html代码
-			       cache:false,
-			       success:function(data){
-			    	   //alert(1);
-			           //$("#you").load(location.href+" #you");
-			           $('#you').html(data);
-			       },
-			       error:function(XMLHttpRequest,textStatus,errorThrown){
-			    	   alert(XMLHttpRequest.readyState);
-			    	   alert(textStatus);
-			    	   alert(errorThrown);
-			    	   }
-			   });
-		}
-	</script>
-<script src="${ctx }/js/home/jquery-1.11.3.min.js"></script>
-<script src="${ctx }/js/user/jquery.min.js"></script>
-<script src="${ctx }/js/user/ajaxfileupload.js"></script>
-<script src="${ctx }/js/home/bootstrap.min.js"></script>
-<script src="${ctx }/js/home/swiper.min.js"></script>
-<script src="${ctx }/js/home/main.js"></script>
-<script src="${ctx }/js/user/createer.js"></script>

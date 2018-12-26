@@ -33,8 +33,8 @@
 				<div class="ti1">热门推荐</div>
 				<div class="ssk">
 					<form>
-						<input type="text" style="width: 240px; height: 23px"> <input
-							type="submit" style="width: 40px; height: 25px" value="搜索">
+						<input type="text" style="width: 75%; height: 25px" placeholder="搜索想去的城市"> <input
+							type="submit" style="width: 20%; height: 25px" value="搜索" >
 					</form>
 				</div>
 			</div>

@@ -99,8 +99,9 @@
 }
 
 .shang{
-	width:920px;
+	width:80%;
 	height:70px;
+	border-bottom: 1px solid #ccc;
 }
 .ti1{
 	width:130px;
@@ -135,7 +136,7 @@
 	margin-right:15px;
 }
 .jingdian{
-	width:920px;
+	width:80%;
 	height:730px;
 	
 }
