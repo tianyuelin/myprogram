@@ -5,51 +5,44 @@
 .tou{
 	width:100%;
 	height:80px;
+	padding-bottom:10px;
+	border-bottom: 1px solid #eee;
+	background-color: #fafafa;
 }
 .biaot{
 	font-size:28px;
 	margin-left:15px;
 	padding-top:10px;
-	width:55%;
+	width:30%;
 	height:60px;
-	float:left;
+	float: left;
+}
+.biaot input{
+	width: 70%;
 }
 .cf{
-	width:30%;
-	float:left;
-	margin-top:22px;
-}
-.wc{
-	float:left;
-	font-size:20px;
-	margin-left:380px;
-	padding-bottom:30px;
-	width:20%;
-	height:30px;
-	
+	margin-left: 31%;
+	width:68%;
 }
 #zuo{
-	border-right:5px solid #c09b75;
+	border-right:1px solid #ccc;
 	background-size: cover;
 	width:15%;
-	height:865px;
+	height:auto;
 	font-size:30px;
+	clear:both;
 	float:left;
-	margin-left: 10px;
+	margin-top:10px;
 }
 .xc{
 	padding-top:20px;
-	float:left;	
 }
 
 #xia1,#xia2,#xia3,#xia4,#xia5{
-	border-left:2px solid #000000;
 	height:auto;
-	width:200px;
+	width:80%;
 	font-size:20px;
-	float:left;
-	margin-top:5px;
-	margin-left: 5px;
+	margin: auto;
 }
 span{
 	font-size: 12px;
@@ -58,9 +51,14 @@ span{
 	display:none;
 }
 #zd1,#zd2,#zd3,#zd4,#zd5{
-	width:200px;
-	height:90px;
-	float:left;
+	width:100%;
+	height:auto;
+	text-align: center;
+}
+#zd1,#zd2,#zd3,#zd4,#zd5 input{
+	margin: auto;
+	text-align: center;
+	border: none;
 }
 #zhong{
 	width:43%;
@@ -68,7 +66,7 @@ span{
 	font-size:30px;
 	text-align:center;
 	float:left;
-	border-right:4px solid #c09b75;
+	border-right:1px solid #ccc;
 }
 .sj{
 	border:2px solid #000000;
@@ -132,6 +130,7 @@ span{
 	font-size:30px;
 	text-align:center;
 	float:left;
+	margin-top: 10px;
 }
 .mybox {
     width:100%;

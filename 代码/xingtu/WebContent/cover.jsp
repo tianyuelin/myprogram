@@ -39,7 +39,6 @@
 				<a href="${ctx }/index/scelist" class="text-uppercase header-btn">Let's Go Now</a>
 			</div>
 		</li>
-	
 		<li>
 			<div>
 				<h1 class="text-1">新大陆</h1><br>
@@ -47,7 +46,6 @@
 			</div>
 		</li>
 	</ul> <!-- .cd-slider -->
-
 	<ol class="cd-slider-navigation">
 		<li class="selected"><a href="#0"><em>Item 1</em></a></li>
 		<li><a href="#0"><em>Item 2</em></a></li>

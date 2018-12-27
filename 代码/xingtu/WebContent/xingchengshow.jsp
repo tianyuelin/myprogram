@@ -21,9 +21,10 @@
 <div class="shhead">
     <div class="shimg"><img src="${ctx }/${user.icon}"></div>
     <div class="shtit">${journey.jtitle }<br />
-       <div class="shxij">${user.username }&nbsp;&nbsp;&nbsp;|${journey.jtime }出发&nbsp;&nbsp;&nbsp;&nbsp;|共一天</div>
+       <div class="shxij">${user.username }&nbsp;&nbsp;&nbsp;|${journey.jtime }出发&nbsp;&nbsp;&nbsp;&nbsp;|共一天
+       </div>
     </div>
-    <div class="shbj"><a href="${ctx }/journey/deletJour?jid=${journey.jid}">删除</a></div>
+    
 </div>
 <div class="shcon">
    <div class="shgs">
@@ -31,7 +32,10 @@
    </div>
    <div class="shzy">
        <div class="shimg1"><img src="${ctx }/img/shtb.jpg"></div>
-           <span style="font-size: 30px;">天安门->故宫->八达岭长城</span>
+			<c:forEach items="${journey.jd}" var="myjour">
+                  <span style="font-size: 30px;">${myjour.scene.sname}-></span>
+            </c:forEach>
+                  <span style="font-size: 30px;">终</span>
    </div>
 </div>
 <div class="xingchengtable">
@@ -53,7 +57,7 @@
 				</div>
 			</td>
 			<td width="30%">游玩儿时长：<input type="text" style="border: none;" value="建议${myjour.scene.playtime }"/></td>
-			<td width="30%" style="text-align: left">
+			<td width="30%" style="text-align: left;line-height: 30px;">
 				<span>${myjour.scene.route}</span>
 			</td>
 		</tr>

@@ -18,18 +18,20 @@
 <form action="${ctx }/journey/createxc" method="post" >
 <div class="erall">
    <div class="tou">
-         <div class="biaot"><input class="tit" type="text" placeholder='北京一日游' name="jtitle"></div>
-      <div class="cf">出发时间
-         <div class="c-datepicker-date-editor c-datepicker-single-editor J-datepicker-day mt10"  style="width: 60%;clear:both">
+         <div class="biaot">行程标题：<input class="tit" type="text" placeholder='北京一日游' name="jtitle"></div>
+      <div class="cf">
+      	<div style="float: right; width: 50%;margin-top: 20px;">
+      	<span style="font-size: 20px;font-weight: 600">出发时间</span>
+         <div class="c-datepicker-date-editor c-datepicker-single-editor J-datepicker-day mt10"  style="width: 60%;margin-right:20px;">
           <i class="c-datepicker-range__icon kxiconfont icon-clock"></i>
-          <input type="text" autocomplete="off" name="jtime" placeholder="选择日期" class=" c-datepicker-data-input only-date" value="">
+          <input style="height: 20px;margin-top: 5px;" type="text" autocomplete="off" name="jtime" placeholder="选择日期" class=" c-datepicker-data-input only-date" value="">
          </div>
-         <div style="margin-left: 20%">
-         <input type="submit" value="完成" class="wc">
          </div>
       </div>
+    </div>
    <div id="zuo">
-        <div class="xc">我的行程</div>
+        <div id="xingcheng" class="xc" style="height: auto;width: 100%"><h2 style="width: 100%;text-align: center;">我的行程</h2></div>
+        <div style="width: 100%;text-align: center;"><input type="submit" value="完成"  height="50px" style="background-color: white;border: 2px dotted #eee; width:80%;margin-bottom: 20px;"/></div>
    </div>
    <div id="zhong">
    </div>

@@ -33,7 +33,7 @@ function addxq(obj){
 	var myadd=document.createElement("div");//插入地址
 	var mya=document.createElement("a");//插入周边
 	
-	var zuofid= document.getElementById('zuo');
+	var zuofid= document.getElementById('xingcheng');
 	var zuoxian=document.createElement("div");//创建显示距离的div
 	/*var zuospan1=document.createElement("span");
 	var zuospan2=document.createElement("span");
@@ -51,7 +51,8 @@ function addxq(obj){
 	zuoname.type="text";
 	zuoname.setAttribute("name","diname");
 	zuoname.className="dz";
-	zuoname.style.width="150px";
+	zuoname.style.border="none";
+	zuoname.style.width="80%";
 	/*zuospan1.id='fspan'+spancount;
 	zuospan2.id='sspan'+spancount;
 	zuospan3.id='tspan'+spancount;*/
@@ -95,7 +96,10 @@ function addxq(obj){
 		var plan = results.getPlan(0);
 		dis+=plan.getDistance(true)+' \n ';
 		divertime+=plan.getDuration(true)+' \n ';
+		bustime = "公交所需时长："+plan.getDuration(true);
+		alert(bustime);
 	}
+	/*
 	var searchComplete2 = function (results){
 		if (transit.getStatus() != BMAP_STATUS_SUCCESS){
 			return ;
@@ -105,6 +109,7 @@ function addxq(obj){
 		bustime+=plan.getDuration(true)+' \n ';
 		alert(bustime);
 	}
+	*/
 	var percount = count-1;
 	var zuospan1=document.createElement("span");
 	var zuospan2=document.createElement("span");
@@ -128,8 +133,9 @@ function addxq(obj){
 	}});
 	
 	var transit2 = new BMap.TransitRoute(map, {renderOptions: {map: map},
-		onSearchComplete: searchComplete2,
+		onSearchComplete: searchComplete,
 		onPolylinesSet: function(){
+			alert(bustime)
 			document.getElementById("tspan"+spancount).innerText=bustime;
 		}});
 	transit.search(id1,id2);
