@@ -39,4 +39,7 @@ public class JourneyService {
 	public void deletJour(int id) {
 		jd.deletJour(id);
 	}
+	public List<Scene> findCitybyname(String name){
+		return jd.findCitybyname(name);
+	}
 }

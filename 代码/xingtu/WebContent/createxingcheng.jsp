@@ -32,8 +32,8 @@
 			<div class="shang">
 				<div class="ti1">热门推荐</div>
 				<div class="ssk">
-					<form>
-						<input type="text" style="width: 75%; height: 25px" placeholder="搜索想去的城市"> <input
+					<form action="${ctx }/journey/findcitybyname" method="post">
+						<input type="text" style="width: 75%; height: 25px" placeholder="搜索想去的城市" name="ctname"> <input
 							type="submit" style="width: 20%; height: 25px" value="搜索" >
 					</form>
 				</div>
