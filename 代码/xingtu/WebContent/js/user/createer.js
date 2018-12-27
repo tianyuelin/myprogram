@@ -41,6 +41,8 @@ function addxq(obj){
 	var zuod=document.createElement("div");//创建地点的div
 	var zuoname= document.createElement("input");//地点的名字
 	var yincang= document.createElement("input");//地点的Id
+	var youxuan= document.createElement("img");
+	youxuan.src="http://localhost:8080/xingtu/img/icon/greatroute.png";
 	newdi.id='xian'+count;
 	myname.id='di'+count;
 	myadd.id='pj'+count;
@@ -73,6 +75,7 @@ function addxq(obj){
 	newdi.appendChild(mya);
 	fid.appendChild(newdi);
 	zuofid.appendChild(zuoxian);
+	zuoxian.appendChild(youxuan);
 	zuod.appendChild(zuoname);
 	zuod.appendChild(yincang);
 	zuofid.appendChild(zuod);/*
@@ -118,9 +121,9 @@ function addxq(obj){
 	zuospan1.id='fspan'+spancount;
 	zuospan2.id='sspan'+spancount;
 	zuospan3.id='tspan'+spancount;
-	zuoxian.appendChild(zuospan1);
+	/*zuoxian.appendChild(zuospan1);
 	zuoxian.appendChild(zuospan2);
-	zuoxian.appendChild(zuospan3);
+	zuoxian.appendChild(zuospan3);*/
 	var name1=document.getElementById('dim'+percount).value;
 	var name2=document.getElementById('dim'+count).value;
 	var id1= name1;
