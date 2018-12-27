@@ -38,6 +38,12 @@ public class JourneyController {
 		request.setAttribute("citylist", list1);
 		return "createxingcheng";
 	}
+	@RequestMapping(value="/findcitybyname",method=RequestMethod.POST)
+	public String findCitybyname(@RequestParam(value="ctname")String name,HttpServletRequest request) {
+		List<Scene> list=js.findCitybyname(name);
+		request.setAttribute("citylist", list);
+		return "createxingcheng";
+	}
 	@RequestMapping(value="/journeylist",method=RequestMethod.GET)
 	public String createJour(HttpServletRequest request,HttpSession session,@RequestParam(value="pageNum",defaultValue="1")int pageNum) {
 		/* 获取热门城市 */

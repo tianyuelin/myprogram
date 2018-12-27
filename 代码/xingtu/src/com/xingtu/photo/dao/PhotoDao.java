@@ -26,7 +26,7 @@ public class PhotoDao {
 	private SessionFactory sf;
 	public void upPhoto(MultipartFile [] files,String path,Users user){
 		Session session  = sf.getCurrentSession();
-		List<Photo> photos = new ArrayList<Photo>(0);
+		List<Photo> photos = new ArrayList<Photo>(0);//创建photo对象
 		System.out.println(files==null);
 		System.out.println(files.length);
 		for(MultipartFile file : files) {

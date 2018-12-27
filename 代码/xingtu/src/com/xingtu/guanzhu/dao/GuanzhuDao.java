@@ -8,6 +8,7 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.stereotype.Repository;
 import com.xingtu.entity.Followed;
+import com.xingtu.entity.UserAndCount;
 import com.xingtu.entity.Users;
 
 @Repository
@@ -51,7 +52,7 @@ public class GuanzhuDao {
 	
 	//从关注表中取出本人关注者都有谁，有几个
 	@SuppressWarnings("null")
-	public List<Users> findFollows(String myemail) {
+	public List<UserAndCount> findFollows(String myemail) {
 		
 		Session session=this.sessionFactory.getCurrentSession();
 		Query q=session.createQuery("from Followed where useremail=?0");	
@@ -59,14 +60,31 @@ public class GuanzhuDao {
 		List<Followed> fs = q.list();//关注人的集合
 		
 		//创建一个关注人用户信息的集合
-		List<Users> usersList=new ArrayList<Users>();
+		List<UserAndCount> usersList=new ArrayList<UserAndCount>();
 		//根据上面获得的被关注人的email查找被关注人的信息
 		for(Followed f : fs) {
 			
 			String email1=f.getFollwed_user();//获得被关注人的邮箱
-			Users fellowUser=(Users)session.createQuery("from Users where email='"+email1+"'").uniqueResult();
-	
-			usersList.add(fellowUser);
+			//根据邮箱获得每个用户的信息
+			Users onlyfellowUser=(Users)session.createQuery("from Users where email='"+email1+"'").uniqueResult();
+			//创建一个实体，里面再绑定根据邮箱查到的攻略条数，行程数，关注数，粉丝数
+			UserAndCount uac=new UserAndCount();
+			uac.setEmail(onlyfellowUser.getEmail());
+			uac.setIcon(onlyfellowUser.getIcon());
+			uac.setUsername(onlyfellowUser.getUsername());
+		    
+			Long strategyCount=(Long) session.createQuery("select count(*) from Strategy st where st.user.email='"+email1+"'").uniqueResult();
+			uac.setStrategyCount(strategyCount);//攻略数	
+			
+			Long routeCount=(Long) session.createQuery("select count(*) from Journey jn where jn.user.email='"+email1+"'").uniqueResult();
+			uac.setRouteCount(routeCount);//行程数
+			
+			Long guanzhuCount=(Long) session.createQuery("select count(*) from Followed fl where fl.useremail='"+email1+"'").uniqueResult();
+			uac.setGuanzhuCount(guanzhuCount);//关注数
+			Long fansCount=(Long) session.createQuery("select count(*) from Followed fl where fl.follwed_user='"+email1+"'").uniqueResult();
+			uac.setFansCount(fansCount);//粉丝数	
+			
+			usersList.add(uac);
 		}
 		return usersList;
 	}
@@ -74,7 +92,7 @@ public class GuanzhuDao {
 	
 	//从关注表中取出本人粉丝都有谁，有几个
 	@SuppressWarnings("null")
-	public List<Users> findFans(String myemail) {
+	public List<UserAndCount> findFans(String myemail) {
 		
 		Session session=this.sessionFactory.getCurrentSession();
 		Query q=session.createQuery("from Followed where follwed_user=?0");
@@ -82,15 +100,30 @@ public class GuanzhuDao {
 		List<Followed> fs = q.list();//粉丝的集合
 		
 		//创建一个粉丝的用户信息的集合
-		List<Users> usersList=new ArrayList<Users>();
+		List<UserAndCount> usersList=new ArrayList<UserAndCount>();
 		//根据上面获得的被关注人的email查找被关注人的信息
 		for(Followed f : fs) {
 			String email1=f.getUseremail();//获得粉丝的邮箱
-			Users fansUser=(Users)session.createQuery("from Users where email='"+email1+"'").uniqueResult();
-			
-			System.out.println(fansUser+"看看第三处是否能运行");
-			
-			usersList.add(fansUser);
+			//根据邮箱获得每个用户的信息
+			Users onlyfellowUser=(Users)session.createQuery("from Users where email='"+email1+"'").uniqueResult();
+			//创建一个实体，里面再绑定根据邮箱查到的攻略条数，行程数，关注数，粉丝数
+			UserAndCount uac=new UserAndCount();
+			uac.setEmail(onlyfellowUser.getEmail());
+			uac.setIcon(onlyfellowUser.getIcon());
+			uac.setUsername(onlyfellowUser.getUsername());
+				    
+			Long strategyCount=(Long) session.createQuery("select count(*) from Strategy st where st.user.email='"+email1+"'").uniqueResult();
+			uac.setStrategyCount(strategyCount);//攻略数	
+					
+			Long routeCount=(Long) session.createQuery("select count(*) from Journey jn where jn.user.email='"+email1+"'").uniqueResult();
+			uac.setRouteCount(routeCount);//行程数
+					
+			Long guanzhuCount=(Long) session.createQuery("select count(*) from Followed fl where fl.useremail='"+email1+"'").uniqueResult();
+			uac.setGuanzhuCount(guanzhuCount);//关注数
+			Long fansCount=(Long) session.createQuery("select count(*) from Followed fl where fl.follwed_user='"+email1+"'").uniqueResult();
+			uac.setFansCount(fansCount);//粉丝数	
+					
+			usersList.add(uac);
 		}
 		return usersList;//获得了粉丝用户的集合
 	}

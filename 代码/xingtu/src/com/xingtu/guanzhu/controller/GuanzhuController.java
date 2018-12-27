@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.xingtu.entity.Followed;
+import com.xingtu.entity.UserAndCount;
 import com.xingtu.entity.Users;
 import com.xingtu.guanzhu.service.GuanzhuService;
 import com.xingtu.user.service.UserService;
@@ -97,7 +98,7 @@ public class GuanzhuController {
 	
 		Users user= (Users) request.getSession().getAttribute("user");
 		String myemail=user.getEmail();		
-		List<Users> felloPerson=this.guanzhuService.findFollows1(myemail);		
+		List<UserAndCount> felloPerson=this.guanzhuService.findFollows1(myemail);		
 		request.setAttribute("felloPerson", felloPerson);		
 		return "fellow";
 	}
@@ -108,7 +109,7 @@ public class GuanzhuController {
 		//获取目前登录用户的邮箱
 		Users user=(Users) request.getSession().getAttribute("user");
 		String myemail=user.getEmail();
-		List<Users> fansPerson=this.guanzhuService.findFans1(myemail);
+		List<UserAndCount> fansPerson=this.guanzhuService.findFans1(myemail);
 		request.setAttribute("fansPerson", fansPerson);
 		return "fans";
 	}

@@ -102,4 +102,10 @@ public class JourneyDao {
 		int x=q.executeUpdate();
 		return x;//返回受影响的条数
 	}
+	//通过名字获取城市
+	public List<Scene> findCitybyname(String name){
+		Session session = sf.getCurrentSession();
+		Query q = session.createQuery("from Rmcity where ctname='"+name+"'");
+		return q.list();
+	}
 }
