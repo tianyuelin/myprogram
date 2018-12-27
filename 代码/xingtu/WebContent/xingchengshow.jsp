@@ -19,7 +19,9 @@
 <body>
 <jsp:include page="header.jsp" flush="true"></jsp:include>
 <div class="shhead">
-    <div class="shimg"><img src="${ctx }/${user.icon}"></div>
+    <div style="width: 80px;height: 80px;border-radius:50%;border: solid 1px #555; float: left;margin-top:5%;margin-left:20%" id="replaceImg">
+        <img id="finalImg" src="${ctx }/${user.icon}" width="80px" height="80px" style="border-radius:50%;">
+    </div>
     <div class="shtit">${journey.jtitle }<br />
        <div class="shxij">${user.username }&nbsp;&nbsp;&nbsp;|${journey.jtime }出发&nbsp;&nbsp;&nbsp;&nbsp;|共一天
        </div>

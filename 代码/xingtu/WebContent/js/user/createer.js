@@ -27,6 +27,8 @@ function addxq(obj){
 	var oldadd=obj.getElementsByTagName("div")[5];
 	var oldid=obj.getElementsByTagName("div")[1];
 	var fid= document.getElementById('zhong');//插入的父id
+	var zhongju=document.createElement("div");//创建新div存距离
+	var cartb=document.createElement("img");
 	var newdi= document.createElement("div");//创建新div
 	var myimg= document.createElement("img");//插入图片
 	var myname=document.createElement("div");//插入名称
@@ -35,14 +37,16 @@ function addxq(obj){
 	
 	var zuofid= document.getElementById('xingcheng');
 	var zuoxian=document.createElement("div");//创建显示距离的div
-	/*var zuospan1=document.createElement("span");
+	var zuospan1=document.createElement("span");
 	var zuospan2=document.createElement("span");
-	var zuospan3=document.createElement("span");*/
+	var zuospan3=document.createElement("span");
 	var zuod=document.createElement("div");//创建地点的div
 	var zuoname= document.createElement("input");//地点的名字
 	var yincang= document.createElement("input");//地点的Id
 	var youxuan= document.createElement("img");
 	youxuan.src="http://localhost:8080/xingtu/img/icon/greatroute.png";
+	cartb.src="http://localhost:8080/xingtu/img/icon/car.png";
+	zhongju.id='zj'+count;
 	newdi.id='xian'+count;
 	myname.id='di'+count;
 	myadd.id='pj'+count;
@@ -55,9 +59,9 @@ function addxq(obj){
 	zuoname.className="dz";
 	zuoname.style.border="none";
 	zuoname.style.width="80%";
-	/*zuospan1.id='fspan'+spancount;
+	zuospan1.id='fspan'+spancount;
 	zuospan2.id='sspan'+spancount;
-	zuospan3.id='tspan'+spancount;*/
+	/*zuospan3.id='tspan'+spancount;*/
 	myimg.src=oldimg.src;
 	myname.innerText=oldname.innerText;
 	myadd.innerText=oldadd.innerText;
@@ -73,13 +77,14 @@ function addxq(obj){
 	newdi.appendChild(myname);
 	newdi.appendChild(myadd);
 	newdi.appendChild(mya);
+	fid.appendChild(zhongju);
 	fid.appendChild(newdi);
 	zuofid.appendChild(zuoxian);
 	zuoxian.appendChild(youxuan);
 	zuod.appendChild(zuoname);
 	zuod.appendChild(yincang);
 	zuofid.appendChild(zuod);/*
-	zuoxian.appendChild(zuospan1);
+	zhongju.appendChild(zuospan1);
 	zuoxian.appendChild(zuospan2);
 	zuoxian.appendChild(zuospan3);*/
 	if(count>1){
@@ -97,10 +102,9 @@ function addxq(obj){
 			return ;
 		}
 		var plan = results.getPlan(0);
-		dis+=plan.getDistance(true)+' \n ';
+		dis+=plan.getDistance(true)+'；';
 		divertime+=plan.getDuration(true)+' \n ';
-		bustime = "公交所需时长："+plan.getDuration(true);
-		alert(bustime);
+		bustime = "    公交所需时长： "+plan.getDuration(true);
 	}
 	/*
 	var searchComplete2 = function (results){
@@ -121,9 +125,10 @@ function addxq(obj){
 	zuospan1.id='fspan'+spancount;
 	zuospan2.id='sspan'+spancount;
 	zuospan3.id='tspan'+spancount;
-	/*zuoxian.appendChild(zuospan1);
-	zuoxian.appendChild(zuospan2);
-	zuoxian.appendChild(zuospan3);*/
+	zhongju.appendChild(cartb);
+	zhongju.appendChild(zuospan1);
+	zhongju.appendChild(zuospan2);
+	/*zuoxian.appendChild(zuospan3);*/
 	var name1=document.getElementById('dim'+percount).value;
 	var name2=document.getElementById('dim'+count).value;
 	var id1= name1;

@@ -47,7 +47,7 @@ public class JourneyController {
 	@RequestMapping(value="/journeylist",method=RequestMethod.POST)
 	public String createJour(HttpServletRequest request,HttpSession session,@RequestParam(value="pageNum",defaultValue="1")int pageNum,@RequestParam(value="cityname")String[] cityname) {
 		/* 获取热门城市 */
-		System.out.println(cityname[1]);
+/*		System.out.println(cityname[1]);*/
 		Page<Scene> p = new Page<Scene>();
 		p.setCurrentPageNum(pageNum);
 		p.setPageSize(3);
