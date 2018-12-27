@@ -59,6 +59,7 @@ function addxq(obj){
 	zuoname.className="dz";
 	zuoname.style.border="none";
 	zuoname.style.width="80%";
+	zuoname.style.fontSize="25px";
 	zuospan1.id='fspan'+spancount;
 	zuospan2.id='sspan'+spancount;
 	/*zuospan3.id='tspan'+spancount;*/
@@ -143,7 +144,6 @@ function addxq(obj){
 	var transit2 = new BMap.TransitRoute(map, {renderOptions: {map: map},
 		onSearchComplete: searchComplete,
 		onPolylinesSet: function(){
-			alert(bustime)
 			document.getElementById("tspan"+spancount).innerText=bustime;
 		}});
 	transit.search(id1,id2);

@@ -39,6 +39,7 @@
         <div class="mybox">
 			<div id="remen">
 				<a href="#" onclick="retj()">热门推荐</a>
+				
 			</div>
 			<div id="wsc">
 				<a href="#" onclick="shc()">我的收藏</a>
@@ -70,7 +71,7 @@
                    <div class="pagination">
                     <a href="javascript:doPage(1,1)">首页</a>
                     <a href="javascript:doPage(${page.prePageNum },1);">上一页</a>
-                    <a href="javascript:doPage(${page.nextPageNum },1);">下一页</a>
+                    <a href="javascript:doPage(${page.nextPageNum },1);"><input type="text" value=""/>下一页</a>
                     <a href="javascript:doPage(${page.totalPageNum },1);">末页</a>
                   </div>
                 </div>
@@ -107,11 +108,10 @@
 <script type="text/javascript">
 		function doPage(n,n2){
 			//$('#you').html("");
-			alert(n);
 			$.ajax({
 			       type:"POST",
-			       url:"/xingtu/journey/journeyfenye",
-			       data:{'pageNum':n,'pageNum2':n2},
+			       url:"/xingtu/journey/journeylist",
+			       data:{'pageNum':n,'pageNum2':n2,'is':false},
 			       dataType: "html",   //返回值类型       使用json的话也可以，但是需要在JS中编写迭代的html代码
 			       cache:false,
 			       success:function(data){

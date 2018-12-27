@@ -15,7 +15,7 @@
 <link href="${ctx }/css/home/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-<form action="${ctx }/journey/journeylist"  method="post" >
+<form action="${ctx }/journey/journeylist?is=${true}"  method="post" >
 <jsp:include page="header.jsp" flush="true"></jsp:include>
 	<div class="all">
 		<div class="left" style="margin-top: 1.5%;border-right: 1px solid #ccc;">

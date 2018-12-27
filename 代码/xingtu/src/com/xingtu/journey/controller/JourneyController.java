@@ -1,5 +1,6 @@
 package com.xingtu.journey.controller;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
@@ -45,15 +46,32 @@ public class JourneyController {
 		return "createxingcheng";
 	}
 	@RequestMapping(value="/journeylist",method=RequestMethod.POST)
-	public String createJour(HttpServletRequest request,HttpSession session,@RequestParam(value="pageNum",defaultValue="1")int pageNum,@RequestParam(value="cityname")String[] cityname) {
+	public String createJour(HttpServletRequest request,HttpSession session,@RequestParam(value="pageNum",defaultValue="1")int pageNum,@RequestParam(value="cityname",defaultValue="null")String[] cityname,@RequestParam(value="is",defaultValue="false")boolean is) {
 		/* 获取热门城市 */
-/*		System.out.println(cityname[1]);*/
+		System.out.println(cityname[0]);
+		//将获取到的城市信息上传到request中，方便分页的使用
+		String []names=cityname;
+		if(!("null").equals(cityname[0])) {
+			session.setAttribute("cityname", names);
+		}
+		String[] ns = (String[]) session.getAttribute("cityname"); 
 		Page<Scene> p = new Page<Scene>();
 		p.setCurrentPageNum(pageNum);
 		p.setPageSize(3);
 		p.setNextPageNum(pageNum+1);
 		p.setPrePageNum(pageNum-1);
-		List<Scene> scens = js.getJourneyList(p.getCurrentPageNum(),p.getPageSize(),cityname);
+		List<Scene> scens=null;
+		if(("null").equals(cityname[0])){
+			System.out.println("city is null");
+			for(String name:ns) {
+				System.out.println(name);
+			}
+			 scens= js.getJourneyList(p.getCurrentPageNum(),p.getPageSize(),ns);
+		}else {
+			System.out.println("city is not null");
+			scens=js.getJourneyList(p.getCurrentPageNum(),p.getPageSize(),cityname);
+		}
+		//List<Scene> scens = js.getJourneyList(p.getCurrentPageNum(),p.getPageSize(),cityname);
 		p.setList(scens);
 		request.setAttribute("page", p);
 		Page<Sceneshoucang> p1 = new Page<Sceneshoucang>();
@@ -65,18 +83,26 @@ public class JourneyController {
 		List<Sceneshoucang> sce2=js.getScScene(u.getEmail(), p1.getCurrentPageNum(),p1.getPageSize());
 		p1.setList(sce2);
 		request.setAttribute("mypage", p1);
-		return "createer";
+		if(is==true) {
+			return "createer";
+		}else {
+			return "ajax";
+		}
+		
 	}
+	/*
 	@RequestMapping(value="/journeyfenye",method=RequestMethod.POST)
-	public String fenyeJour(HttpServletRequest request,HttpSession session,@RequestParam(value="cityname")String []cityname) {
-		/* 获取热门城市 */
+	public String fenyeJour(HttpServletRequest request,HttpSession session) {
+		// 获取热门城市 
 		int pageNum = request.getParameter("pageNum")==null?1:request.getParameter("pageNum").toString().trim()==""?1:Integer.parseInt(request.getParameter("pageNum").toString().trim());
 		int pageNum2 = request.getParameter("pageNum2")==null?1:request.getParameter("pageNum2").toString().trim()==""?1:Integer.parseInt(request.getParameter("pageNum2").toString().trim());
+		//String cityname =request.getParameter("citynames");
 		Page<Scene> p = new Page<Scene>();
 		p.setCurrentPageNum(pageNum);
 		p.setPageSize(3);
 		p.setNextPageNum(pageNum+1);
 		p.setPrePageNum(pageNum-1);
+		String []cityname = (String[]) request.getAttribute("citynames");
 		List<Scene> scens = js.getJourneyList(p.getCurrentPageNum(),p.getPageSize(),cityname);
 		p.setList(scens);
 		request.setAttribute("page", p);
@@ -90,10 +116,9 @@ public class JourneyController {
 		p1.setList(sce2);
 		System.out.println("seccess"+pageNum2);
 		request.setAttribute("mypage", p1);
-		//HashMap map = new HashMap();
-	   //map.put("mypage", p1);
 		return "ajax";
 	}
+	*/
 	//创建行程
 	@RequestMapping(value="/createxc",method=RequestMethod.POST)
 	public String createxc(@RequestParam(value="diid",required=false)String []sceneid,@RequestParam(value="jtime",required=false)String jtime,@RequestParam(value="jtitle",required=false)String jtitle,HttpSession session,HttpServletRequest request){
