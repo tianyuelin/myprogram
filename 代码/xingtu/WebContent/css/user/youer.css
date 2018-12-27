@@ -39,10 +39,11 @@
 }
 
 #xia1,#xia2,#xia3,#xia4,#xia5{
-	height:auto;
-	width:80%;
+	height:40px;
+	width:60%;
 	font-size:20px;
-	margin: auto;
+	margin-left:20px;
+
 }
 span{
 	font-size: 12px;
@@ -51,9 +52,10 @@ span{
 	display:none;
 }
 #zd1,#zd2,#zd3,#zd4,#zd5{
-	width:100%;
+	width:80%;
 	height:auto;
 	text-align: center;
+	margin-left:18%;
 }
 #zd1,#zd2,#zd3,#zd4,#zd5 input{
 	margin: auto;
