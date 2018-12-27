@@ -114,9 +114,9 @@
 				              <div class="sc1"><img src="${ctx }/${mygl.strategy.img}"></img></div>
 				              <div class="sz1">
 				                   <div style="width: 70px;height: 70px;border-radius:50%;border: solid 1px #555; float: left" id="replaceImg"  class="zztt">
-                                      <img id="finalImg" src="${ctx }/${mygl.user.icon}" width="70px" height="70px" style="border-radius:50%;">
+                                      <img id="finalImg" src="${ctx }/${mygl.strategy.user.icon}" width="70px" height="70px" style="border-radius:50%;">
                                    </div>
-				                   <div class="zzmz">${mygl.user.username}</div>
+				                   <div class="zzmz">${mygl.strategy.user.username}</div>
 				                   <a href="${ctx }/strategy/singleStrategy?StrategyId=${mygl.strategy.sId}" class="glmz">${mygl.strategy.title}</a>
 				                   <div class="glbq">${mygl.strategy.tag }</div>
 				              </div>

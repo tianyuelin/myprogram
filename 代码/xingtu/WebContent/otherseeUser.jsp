@@ -23,7 +23,10 @@
 		<div class="main-zt">
 			<div class="user-info">
 				<dt class="flpic">
-					<img src="${ctx }/${CenterOwn.icon }" />
+					<%-- <img src="${ctx }/${CenterOwn.icon }" /> --%>
+					<div style="width: 80px;height: 80px;border-radius:50%;border: solid 1px #555;" id="replaceImg"  >
+                     <img id="finalImg" src="${ctx }/${CenterOwn.icon }" width="80px" height="80px" style="border-radius:50%;">
+                </div>
 					<div style="float:left;" class="gz"> 
 					
 					<!-- 如果未关注 -->
@@ -118,8 +121,10 @@
 				           <div class="sphoto1">
 				              <div class="sc1"><img src="${ctx }/${mygl.strategy.img}"></img></div>
 				              <div class="sz1">
-				                   <div class="zztt"><img src="${ctx }/${mygl.user.icon}"></div>
-				                   <div class="zzmz">${mygl.user.username}</div>
+				                   <div style="width: 70px;height: 70px;border-radius:50%;border: solid 1px #555; float: left" id="replaceImg"  class="zztt">
+                                      <img id="finalImg" src="${ctx }/${mygl.strategy.user.icon}" width="70px" height="70px" style="border-radius:50%;">
+                                   </div>
+				                   <div class="zzmz">${mygl.strategy.user.username}</div>
 				                   <a href="${ctx }/strategy/singleStrategy?StrategyId=${mygl.strategy.sId}" class="glmz">${mygl.strategy.title}</a>
 				                   <div class="glbq">${mygl.strategy.tag }</div>
 				              </div>
