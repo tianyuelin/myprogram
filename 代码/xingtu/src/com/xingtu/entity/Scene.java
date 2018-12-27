@@ -27,6 +27,8 @@ public class Scene {
 	private String opentime;//����ʱ��
 	private String city;//����
 	private String img;//����ͼƬ
+	private int looktimes;
+	private int shoucangtimes;
 	private List<JourDiv> dj;
 	private List<Sceneshoucang> shoucang;
 	@Id
@@ -98,6 +100,19 @@ public class Scene {
 	}
 	public void setImg(String img) {
 		this.img = img;
+	}
+	
+	public int getLooktimes() {
+		return looktimes;
+	}
+	public void setLooktimes(int looktimes) {
+		this.looktimes = looktimes;
+	}
+	public int getShoucangtimes() {
+		return shoucangtimes;
+	}
+	public void setShoucangtimes(int shoucangtimes) {
+		this.shoucangtimes = shoucangtimes;
 	}
 	@OneToMany(mappedBy="scene",targetEntity=JourDiv.class,
 			cascade= {CascadeType.ALL})

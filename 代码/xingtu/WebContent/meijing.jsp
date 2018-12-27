@@ -62,8 +62,8 @@
                           </ul>
                           <div class="kd-usernetwork">
                             <ul class="kd-blogcomment">
-                                <li><a href="#" class="thcolorhover"><i class="fa fa-eye"></i>565</a></li>
-                              <li><a href="#" class="thcolorhover"><i class="fa fa-heart-o"></i> 456</a></li>
+                                <li><i class="fa fa-eye"></i>${scene.looktimes }</li>
+                              <li><i class="fa fa-heart-o"></i>${scene.shoucangtimes }</li>
                             </ul>
                           </div>
                         </section>
@@ -86,7 +86,7 @@
               <aside class="col-md-3">
                 
                <div class="widget widget_search">
-                  <div class="kd-section-title"><h3>位置查看</h3></div>
+                  <div class="kd-section-title"><h3>搜索地点</h3></div>
                   <form action="${ctx }/sence/findbyname" method="post">
                     <input type="text" placeholder="搜索地名" name="name">
                     <input type="submit" value="">
@@ -95,7 +95,7 @@
                 </div>
                 
                 <div class="widget widget_tab">
-                  <div class="kd-section-title"><h4>相关攻略</h4></div>
+                  <div class="kd-section-title"><h4>热门景点</h4></div>
                   <div class="kd-bookingtab">
 
                     <!-- Nav tabs -->

@@ -27,6 +27,7 @@ public class Strategy {
 	private String tag;//��ǩ
 	private String img;//ͼƬ
 	private int looktimes;
+	private int shoucangtimes;
 	private List<StrategyDiv> sd;
 	private List<Glshoucang> glshoucang;
 	@Id
@@ -75,6 +76,13 @@ public class Strategy {
 	}
 	public void setLooktimes(int looktimes) {
 		this.looktimes = looktimes;
+	}
+	
+	public int getShoucangtimes() {
+		return shoucangtimes;
+	}
+	public void setShoucangtimes(int shoucangtimes) {
+		this.shoucangtimes = shoucangtimes;
 	}
 	@OneToMany(mappedBy="strategy",targetEntity=StrategyDiv.class,
 			cascade= {CascadeType.ALL})

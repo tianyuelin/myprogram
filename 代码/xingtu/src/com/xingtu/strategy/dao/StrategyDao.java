@@ -74,6 +74,7 @@ public class StrategyDao {
 				sds.get(i).setAddress(addersses[i]);
 			}
 			s.setUser(user);
+			s.setLooktimes(0);
 			s.setStime(new Date());
 			s.setTitle(title);
 			session.save(s);
@@ -101,6 +102,9 @@ public class StrategyDao {
 	public Strategy findStrategyById(int id) {
 		Session session = this.sf.getCurrentSession();
 		Strategy s =(Strategy)session.createQuery("from Strategy where sId="+id).uniqueResult();
+		s.setLooktimes(s.getLooktimes()+1);
+		Query q = session.createQuery("update Strategy set looktimes ="+s.getLooktimes()+"where sId="+id);
+		q.executeUpdate();
 		return s;
 	}
 	//查询出最新攻略的三个
@@ -170,10 +174,12 @@ public class StrategyDao {
 		strategys.add(s);
 		Glshoucang gls=new Glshoucang();
 		gls.setUser(user);
+		s.setShoucangtimes(s.getShoucangtimes()+1);
+		Query q = session.createQuery("update Strategy set shoucangtimes ="+s.getShoucangtimes()+"where sId="+s.getsId());
+		q.executeUpdate();
 		gls.setStrategy(s);
 		session.save(gls);
 		return gls;
-			
 	}
 		//将收藏者删除
 	public int delectShoucanggl(int strategyid,Users user) {

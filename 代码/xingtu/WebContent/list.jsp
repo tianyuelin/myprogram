@@ -59,8 +59,8 @@
                           <p>${strategy.tag }</p>
                           <div class="kd-usernetwork">
                             <ul class="kd-blogcomment">
-                                <li><a href="#" class="thcolorhover"><i class="fa fa-eye"></i>565</a></li>
-                              <li><a href="#" class="thcolorhover"><i class="fa fa-heart-o"></i> 456</a></li>
+                                <li><i class="fa fa-eye"></i>${strategy.looktimes }</li>
+                              <li><i class="fa fa-heart-o"></i>${strategy.shoucangtimes }</li>
                             </ul>
                           </div>
                         </section>

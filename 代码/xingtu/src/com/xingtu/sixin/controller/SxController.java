@@ -56,6 +56,15 @@ public class SxController {
 		 Object obj=request.getSession().getAttribute("user");//此时obj一定非空，所以不用判断
 		 Users myuser = (Users)obj;
 		 String myemail=myuser.getEmail();
+		 
+		 //获得登录者的关注人数和粉丝人数
+		//获得粉丝数和关注者数
+		 Long FGCount=this.userService.findFGCount1(myemail);
+		 request.setAttribute("FGCount", FGCount);	
+		//获取粉丝的人数
+		Long fansCount = this.userService.findfansCount1(myemail);
+		request.setAttribute("fansCount",fansCount);
+		 
          //根据对方的邮箱获得对方的信息
 	     Users otheruser=this.userService.UserCenter(otheremail);
 	     request.setAttribute("otherpeople",otheruser);     
