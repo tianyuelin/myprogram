@@ -44,16 +44,16 @@ public class JourneyController {
 		request.setAttribute("citylist", list);
 		return "createxingcheng";
 	}
-	@RequestMapping(value="/journeylist",method=RequestMethod.GET)
-	public String createJour(HttpServletRequest request,HttpSession session,@RequestParam(value="pageNum",defaultValue="1")int pageNum) {
+	@RequestMapping(value="/journeylist",method=RequestMethod.POST)
+	public String createJour(HttpServletRequest request,HttpSession session,@RequestParam(value="pageNum",defaultValue="1")int pageNum,@RequestParam(value="cityname")String[] cityname) {
 		/* 获取热门城市 */
+		System.out.println(cityname[1]);
 		Page<Scene> p = new Page<Scene>();
 		p.setCurrentPageNum(pageNum);
 		p.setPageSize(3);
 		p.setNextPageNum(pageNum+1);
 		p.setPrePageNum(pageNum-1);
-		System.out.println(pageNum);
-		List<Scene> scens = js.getJourneyList(p.getCurrentPageNum(),p.getPageSize());
+		List<Scene> scens = js.getJourneyList(p.getCurrentPageNum(),p.getPageSize(),cityname);
 		p.setList(scens);
 		request.setAttribute("page", p);
 		Page<Sceneshoucang> p1 = new Page<Sceneshoucang>();
@@ -68,7 +68,7 @@ public class JourneyController {
 		return "createer";
 	}
 	@RequestMapping(value="/journeyfenye",method=RequestMethod.POST)
-	public String fenyeJour(HttpServletRequest request,HttpSession session) {
+	public String fenyeJour(HttpServletRequest request,HttpSession session,@RequestParam(value="cityname")String []cityname) {
 		/* 获取热门城市 */
 		int pageNum = request.getParameter("pageNum")==null?1:request.getParameter("pageNum").toString().trim()==""?1:Integer.parseInt(request.getParameter("pageNum").toString().trim());
 		int pageNum2 = request.getParameter("pageNum2")==null?1:request.getParameter("pageNum2").toString().trim()==""?1:Integer.parseInt(request.getParameter("pageNum2").toString().trim());
@@ -77,7 +77,7 @@ public class JourneyController {
 		p.setPageSize(3);
 		p.setNextPageNum(pageNum+1);
 		p.setPrePageNum(pageNum-1);
-		List<Scene> scens = js.getJourneyList(p.getCurrentPageNum(),p.getPageSize());
+		List<Scene> scens = js.getJourneyList(p.getCurrentPageNum(),p.getPageSize(),cityname);
 		p.setList(scens);
 		request.setAttribute("page", p);
 		Page<Sceneshoucang> p1 = new Page<Sceneshoucang>();

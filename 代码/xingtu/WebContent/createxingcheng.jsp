@@ -15,6 +15,7 @@
 <link href="${ctx }/css/home/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
+<form action="${ctx }/journey/journeylist"  method="post" >
 <jsp:include page="header.jsp" flush="true"></jsp:include>
 	<div class="all">
 		<div class="left" style="margin-top: 1.5%;border-right: 1px solid #ccc;">
@@ -24,18 +25,17 @@
 			         <div id="xu">从右侧添加想去的地方</div>
 			    </div>
 			</div>
-				<div class="bj">
-					<a href="${ctx }/journey/journeylist">开始编辑</a>
-				</div>
+			<input type="submit" value="开始编辑" class="bj" style="width: 50%; height: 25px" ></inupt>
+				
 		</div>
 		<div class="myright">
 			<div class="shang">
 				<div class="ti1">热门推荐</div>
 				<div class="ssk">
 					<form action="${ctx }/journey/findcitybyname" method="post">
-						<input type="text" style="width: 75%; height: 25px" placeholder="搜索想去的城市" name="ctname"> <input
-							type="submit" style="width: 20%; height: 25px" value="搜索" >
-					</form>
+						<input type="text" style="width: 75%; height: 25px" placeholder="搜索想去的城市" name="ctname"> 
+						<input type="submit" style="width: 20%; height: 25px" value="搜索" >
+ 					</form>
 				</div>
 			</div>
 			<div id="jd9">
@@ -49,6 +49,7 @@
 		</div>
 	</div>
 	<jsp:include page="footer.jsp" flush="true"></jsp:include>
+</form>
 </body>
 </html>
 <script src="${ctx }/js/home/jquery-1.11.3.min.js"></script>

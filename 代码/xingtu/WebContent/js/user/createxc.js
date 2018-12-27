@@ -14,18 +14,33 @@ function addcity(obj){
 	var fid= document.getElementById('titna');//插入的父id
 	/*var cit= document.getElementById('cna${citylist.ctid }');*/
 	var newdi= document.createElement("div");
-	var didi=document.createElement("div");
+	var didi=document.createElement("input");
 	var oldadd=obj.getElementsByTagName("div")[0];
-	didi.innerText=oldadd.innerText;
+	didi.value=oldadd.innerText;
+	didi.type="text";
+	didi.style.border="none";
+	didi.style.width="35%";
+	didi.style.height="40px";
+	didi.name="cityname";
+	didi.style.marginLeft="3%";
 	var lefimg= document.createElement("img");
 	var num=document.createElement("div");
-	var shu=document.createTextNode("1");
+	var shu=document.createElement("input");
 	var rigimg=document.createElement("img");
 	var delimg=document.createElement("img");
+	shu.type="text";
+	shu.style.border="none";
+	shu.style.width="70%";
+	shu.style.height="40px";
+	shu.name="tians";
+	shu.value=tianshu;
 	tianshu=1;
+	num.id='tis'+count;
+	num.style.width="10%";
+/*	num.style.marginLeft="65%";*/
 	newdi.id='myci'+count;
 	didi.id='dizhi'+count;
-	num.id='ts'+count;
+	shu.id='ts'+count;
 	lefimg.src="http://localhost:8080/xingtu/img/left-square.png";
 	lefimg.id='lef'+count;
 	rigimg.src="http://localhost:8080/xingtu/img/right-square.png";
@@ -80,15 +95,15 @@ $(document).on("click",'#lef1',function(){
 	var jian=document.getElementById('ts1');
 	if(tianshu1>1){
 		tianshu1--;
-		jian.innerText=tianshu1;
+		jian.value=tianshu1;
 	}else{
-		jian.innerText=1;
+		jian.value=1;
 	}
 })
 $(document).on("click","#rig1",function(){
 	var jia=document.getElementById('ts1');
 	tianshu1++;
-	jia.innerText=tianshu1;
+	jia.value=tianshu1;
 })
 $(document).on("click","#del1",function(){
 	$("div").remove("#myci1");
@@ -105,15 +120,15 @@ $(document).on("click",'#lef2',function(){
 	var jian=document.getElementById('ts2');
 	if(tianshu2>1){
 		tianshu2--;
-		jian.innerText=tianshu2;
+		jian.value=tianshu2;
 	}else{
-		jian.innerText=1;
+		jian.value=1;
 	}
 })
 $(document).on("click","#rig2",function(){
 	var jia=document.getElementById('ts2');
 	tianshu2++;
-	jia.innerText=tianshu2;
+	jia.value=tianshu2;
 })
 $(document).on("click","#del2",function(){
 	$("div").remove("#myci2");
@@ -130,15 +145,15 @@ $(document).on("click",'#lef3',function(){
 	var jian=document.getElementById('ts3');
 	if(tianshu3>1){
 		tianshu3--;
-		jian.innerText=tianshu3;
+		jian.value=tianshu3;
 	}else{
-		jian.innerText=1;
+		jian.value=1;
 	}
 })
 $(document).on("click","#rig3",function(){
 	var jia=document.getElementById('ts3');
 	tianshu3++;
-	jia.innerText=tianshu3;
+	jia.value=tianshu3;
 })
 $(document).on("click","#del3",function(){
 	$("div").remove("#myci3");
@@ -155,9 +170,9 @@ $(document).on("click",'#lef4',function(){
 	var jian=document.getElementById('ts4');
 	if(tianshu4>1){
 		tianshu4--;
-		jian.innerText=tianshu4;
+		jian.value=tianshu4;
 	}else{
-		jian.innerText=1;
+		jian.value=1;
 	}
 })
 $(document).on("click","#rig4",function(){

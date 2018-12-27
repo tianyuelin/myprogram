@@ -38,9 +38,21 @@ public class JourneyDao {
 	 * 查询该城市的热门景点
 	 * 
 	 */
-	public List<Scene> getJourneyList(int pageNum,int pageSize){
+	public List<Scene> getJourneyList(int pageNum,int pageSize,String[] cityname){
 		Session session = sf.getCurrentSession();
-		Query q = session.createQuery("from Scene s where s.img is not null");
+		String names="";
+		int i=0;
+		for(String name : cityname) {
+			i++;
+			if(i<cityname.length) {
+				names+="s.city='"+name+"' or ";
+			}if(i==cityname.length) {
+				names+="s.city='"+name+"'";
+			}
+		}
+		String sql = "from Scene s where ";
+		System.out.println(sql+names);
+		Query q = session.createQuery(sql+names);
 		q.setFirstResult((pageNum-1)*pageSize);
 		q.setMaxResults(pageSize);
 		return q.list();

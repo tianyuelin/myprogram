@@ -45,26 +45,31 @@
 	font-size:25px;
 	/*float:left;*/
 	display:inline;
+	float:left;
 }
-#ts1,#ts2,#ts3,#ts4,#ts5,#ts6,#ts7{
+#tis1,#tis2,#tis3,#tis4,#tis5,#tis6,#tis7{
 	display:inline;
 	font-size:20px;
+	float:left;
 }
 #lef1,#lef2,#lef3,#lef4,#lef5,#lef6,#lef7{
 	width:20px;
 	height:20px;
 	display:inline;
 	margin: 10px;
+	float:left;
 } 
 #rig1,#rig2,#rig3,#rig4,#rig5,#rig6,#rig7{
 	width:20px;
 	height:20px;
 	display:inline;
 	margin: 10px;
+	float:left;
 }
 #del1,#del2,#del3,#del4,#del5,#del6,#del7{
 	width:20px;
-	height:auto;
+	height:20px;
+	margin-top:15px;
 	display:inline;
 	margin-left: 8%;
 	float:right;
@@ -84,7 +89,7 @@
 	height:20px;
 	float:right;
 }
-.bj{
+/* .bj{
 	width:70%;
 	height:50px;
 	font-size:20px;
@@ -94,7 +99,7 @@
 	text-align:center;
 	border: 1px solid #ccc;
 	background-color: #ccc;
-}
+} */
 .bj a{
 	color: white;
 }

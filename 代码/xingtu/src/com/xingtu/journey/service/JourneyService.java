@@ -21,8 +21,8 @@ public class JourneyService {
 	public List<Scene> getCityList(){
 		return jd.getCityList();
 	}
-	public List<Scene> getJourneyList(int pageNum,int pageSize){
-		return jd.getJourneyList(pageNum,pageSize);
+	public List<Scene> getJourneyList(int pageNum,int pageSize,String[] cityname){
+		return jd.getJourneyList(pageNum, pageSize, cityname);
 	}
 	public List<Sceneshoucang> getScScene(String email,int pageNum,int pageSize){
 		return jd.getScScene(email,pageNum,pageSize);
