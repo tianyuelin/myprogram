@@ -153,21 +153,27 @@
 }
 .sz1{
 	float:left;
-	margin-top:20px;
+	margin-top:30px;
 	font-size:20px;
 	width:60%;
-	height:200px;
+	height:180px;
 }
 .zztt{
-	margin-left:10%;
+	margin-left:8%;
 }
-.zzmz,.glbq{
-	margin-left:10%;
+.zzmz{
+	padding-left:30%;
 	margin-top:5px;
+	width:40%;
+	height:30px;
+}
+.glbq{
+	margin-left:12%;
+	margin-top:15px;
 }
 .glmz{
-	margin-left:10%;
-	margin-top:10px;
+	margin-left:8%;
+	margin-top:20px;
 	font-size:24px;
 	width:60%;
 	

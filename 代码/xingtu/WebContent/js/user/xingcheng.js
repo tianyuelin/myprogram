@@ -72,7 +72,7 @@ function qdeeted4() {
 //添加小标题
 $('#add_f_title').click(function(){
 	titlecount++;
-	$('#xingcheng').append('<div id="part'+titlecount+'"><div id="ltitle'+titlecount+'"><input type="text" class="f_title" placeholder="NewTitle" onchange="changetitle()" id="title'+titlecount+'" name="ltitle"></div><div class="didian"><img src="../img/icon/dizhi.png"><input class="address" type="text" placeholder="添加地点" id="didian'+titlecount+'" onchange="changeaddress()" name="address"></div><div class="neirong"><textarea name=text id="content'+titlecount+'" cols="100" rows="8" style="width:700px;height:200px;visibility:hidden;"></textarea></div>');
+	$('#xingcheng').append('<div id="part'+titlecount+'"><div id="ltitle'+titlecount+'"><input type="text" class="f_title" placeholder="NewTitle" onchange="changetitle()" id="title'+titlecount+'" name="ltitle"></div><div class="didian"><img src="../img/icon/dizhi.png"><input class="address" type="text" placeholder="添加地点" id="didian'+titlecount+'" onchange="changeaddress()" name="address"></div><div class="neirong"><textarea name=text id="content'+titlecount+'" cols="100" rows="8" style="width:80%;height:200px;visibility:hidden;"></textarea></div>');
 	$("#gailan").append('<div id="t'+titlecount+'"><span>T：</span><span id="ltitle'+titlecount+'" class="lt">NewTitle</span><br/><span>地点：</span><span id="dizhi'+titlecount+'" class="dz">add</span><br></div>');
 	KindEditor.ready(function(K) {
 		var editor1 = K.create('textarea[id="content'+titlecount+'"]', {

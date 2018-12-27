@@ -113,7 +113,9 @@
 				           <div class="sphoto1">
 				              <div class="sc1"><img src="${ctx }/${mygl.strategy.img}"></img></div>
 				              <div class="sz1">
-				                   <div class="zztt"><img src="${ctx }/${mygl.user.icon}"></div>
+				                   <div style="width: 70px;height: 70px;border-radius:50%;border: solid 1px #555; float: left" id="replaceImg"  class="zztt">
+                                      <img id="finalImg" src="${ctx }/${mygl.user.icon}" width="70px" height="70px" style="border-radius:50%;">
+                                   </div>
 				                   <div class="zzmz">${mygl.user.username}</div>
 				                   <a href="${ctx }/strategy/singleStrategy?StrategyId=${mygl.strategy.sId}" class="glmz">${mygl.strategy.title}</a>
 				                   <div class="glbq">${mygl.strategy.tag }</div>

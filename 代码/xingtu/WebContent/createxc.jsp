@@ -41,8 +41,10 @@ String htmlData = request.getParameter("content1") != null ? request.getParamete
 <input type="file" style="opacity: 0; position:absolute;top:20px; width:100%;height: 350px;" id="cimg" name="headerimg" multiple/>
 <span class="spanchange">点击更换头图片</span>
 <div class="title">
-	<img alt="" src="${ctx }/${user.icon }">
-	<input type="text" name="title" placeholder="为你的游记起一个名字吧!" class="title_text"/>
+	<div style="width: 100px;height: 100px;border-radius:50%;border: solid 1px #555; float: left" id="replaceImg"  >
+          <img id="finalImg" src="${ctx }/${user.icon}" width="100px" height="100px" style="border-radius:50%;">
+     </div>
+	<input type="text" name="title" placeholder="为你的游记起一个名字吧!" class="title_text" style="margin-left:3%;margin-top:30px"/>
 </div>
 </div>
 <div class="create">
@@ -134,7 +136,7 @@ String htmlData = request.getParameter("content1") != null ? request.getParamete
 				<input class="address" type="text" placeholder='添加地点' id="didian0" onchange="changeaddress()" name="address">
 			</div>
 			<div class="neirong">
-			<textarea id="content0" cols="100" rows="8" style="width:700px;height:200px;visibility:hidden;" name="text"></textarea>
+			<textarea id="content0" cols="100" rows="8" style="width:80%;height:200px;visibility:hidden;" name="text"></textarea>
 			<!--
 			<textarea maxlength="2000" onkeydown="this.value=this.value.substring(0,2000)" onkeyup="this.value=this.value.substring(0,2000)" name="context">记录下这段旅途中那些美好的点点滴滴吧~</textarea>
               -->
