@@ -28,11 +28,6 @@
 					<h3 class="intro-title">
 						<span class="name" title="QTL">${user.username }</span>
 					</h3>
-					<div class="intro-body">
-						<form action="">
-						    <input type="text" placeholder="编辑个人签名" style="width:400px;">
-						</form>
-					</div>
 				</dd>
 			</div>
 			<div class="fruser-fans">

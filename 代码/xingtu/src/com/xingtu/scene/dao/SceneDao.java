@@ -136,7 +136,7 @@ public class SceneDao{
 	//通过名字获取景点
 	public List<Scene> findbyname(String name){
 		Session session = sf.getCurrentSession();
-		Query q = session.createQuery("from Scene where sname='"+name+"'");
+		Query q = session.createQuery("from Scene where sname like'%"+name+"%'");
 		return q.list();
 	}
 }

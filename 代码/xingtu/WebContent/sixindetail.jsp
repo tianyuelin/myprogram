@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
+     <c:set var="ctx" value="${pageContext.request.contextPath}"/>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -67,49 +68,43 @@
 		<div class="main-zt">
 			<div class="user-info">
 				<dt class="flpic">
-					<img src="${user.icon }" />
+				<div style="width: 100px;height: 100px;border-radius:50%;border: solid 1px #555;" id="replaceImg"  >
+                     <img id="finalImg" src="${ctx }/${user.icon}" width="100px" height="100px" style="border-radius:50%;">
+                </div>
 				</dt><!-- 个人头像 -->
 				<dd class="flintro">
 					<h3 class="intro-title">
 						<span class="name" title="QTL">${user.username }</span>
 					</h3>
-					<div class="intro-body">
-						<form action="">
-						    <input type="text" placeholder="编辑个人签名" style="width:400px;">
-						</form>
-					</div>
 				</dd>
 			</div>
 			<div class="fruser-fans">
 				<div class="fz">
 					<div class="shu">${FGCount }</div>
-					<div class="guzh">关注</div>
+					<div class="guzh"><a href="${ctx }/guanzhuUser">关注</a></div>
 				</div>
 				<div class="hz">|</div>
 				<div class="fy">
 					<div>${fansCount }</div>
-					<div>粉丝</div>
+					<div><a href="${ctx }/fansUser">粉丝</a></div>
 				</div>
 			</div>
 		</div>
 		<div class="mynav">
 			<ul id="mydao">
 				<li class="item item-hover item-active" data-beacon="myhomepage"><a
-					href="user.jsp">首页</a></li>
+					href="${ctx }/user/usercenter">首页</a></li>
 				<li class="item"><a
-					href="photo.jsp"
+					href="${ctx }/photo/findallphoto"
 					data-beacon="photos">相册</a></li>
 				<li class="item"><a
-					href="sixin.jsp"
+					href="${ctx }/sixinPage"
 					data-beacon="letter">消息</a></li>
 				<li class="item"><a
-					href="person.jsp"
-					data-beacon="letter">个人信息</a></li>
-				<li class="item"><a
-					href="createxingcheng.jsp"
+					href="${ctx }/journey/citylist"
 					data-beacon="letter">创建行程</a></li>
 				<li class="item"><a
-					href="createyouji.jsp"
+					href="${ctx }/strategy/opencreate"
 					data-beacon="letter">创建攻略</a></li>
 			</ul>
 		</div>
@@ -156,7 +151,10 @@
                      <c:forEach items="${list }" var="list1">
                      <c:if test="${list1.fromUserEm==user.email }">
                        <div style="margin-left:9%;margin-top:20px;float:left;width:50%">
-                         <div style="width:6%;float:left"><img src="img/icon11.png"/></div>
+                         <div style="width:6%;float:left"><div style="width: 50px;height: 50px;border-radius:50%;border: solid 1px #555;" id="replaceImg"  >
+                     <img id="finalImg" src="${ctx }/${user.icon}" width="50px" height="50px" style="border-radius:50%;">
+                		</div>
+                </div>
                          <div class="chatContent">${list1.content }</div>
                        </div>
                      </c:if>
@@ -166,7 +164,9 @@
                      <c:if test="${list1.fromUserEm==otherpeople.email}">
                        <div style="margin-top:20px;float:right;width:50%;margin-right:300px;">
                          <div class="chatContent" style="text-align:right">${list1.content }</div>
-                         <div style="width:6%;float:right"><img src="img/icon11.png"/></div>                     
+                         <div style="width:6%;float:right"><div style="width: 50px;height: 50px;border-radius:50%;border: solid 1px #555;" id="replaceImg"  >
+                     <img id="finalImg" src="${ctx }/${otherpeople.icon}" width="50px" height="50px" style="border-radius:50%;">
+                		</div></div>                     
                        </div>
                      </c:if>
                      

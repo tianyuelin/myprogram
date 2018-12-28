@@ -27,7 +27,6 @@ $(function () {
         $('.photo').click(function(){
             $('.miaoshu').show();
             $('.miaoshu-bg').show();
-            alert(this.id);
             $("#photoid").attr("value",this.id);
         });
     };
@@ -44,8 +43,6 @@ $(function () {
     H_miaoshu.run();
 });
 function showphoto(id){
-	alert(1);
-	alert(id);
     $('#info'+id).show();
     $('.miaoshushow-bg').show();
 }

@@ -54,7 +54,9 @@ public class IconDaoImpl {
 			}
 			
 			//将新头像的路径插入数据库
+			
 			Query q=session.createQuery("update Users us set us.icon=?0 where us.email=?1");
+			System.out.println(imgurl);
 			q.setParameter(0,imgurl);
 			q.setParameter(1, user.getEmail());
 			q.executeUpdate();	
