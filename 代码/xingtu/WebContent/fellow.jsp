@@ -102,8 +102,10 @@
 	    <!-- 关注者 -->
 	    <div class="seconddiv">
 	        <div style="float:left;width:480px;">
-	          <div style="float:left;margin-left:20px;margin-top:25px;">
-	            <img src="img/icon11.png"/>   <!-- 等插入头像之后添加 -->
+	          <div>
+	            <div style="width: 50px;height: 50px;border-radius:50%;border: solid 1px #555; float:left;margin-left:20px;margin-top:25px;" id="replaceImg"  >
+                     <img id="finalImg" src="${ctx }/${fp.icon}" width="50px" height="50px" style="border-radius:50%;">
+                </div>   <!-- 等插入头像之后添加 -->
 	          </div>
 	          <div style="float:left;margin-left:20px;">
 	            <div style="margin-top:25px;">${fp.username }</div>

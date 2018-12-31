@@ -12,6 +12,7 @@ import org.springframework.stereotype.Repository;
 
 import com.xingtu.entity.Sx;
 import com.xingtu.entity.SxAndCount;
+import com.xingtu.entity.Users;
 
 @Repository
 public class SxDao {
@@ -71,6 +72,15 @@ public class SxDao {
 			sc.setSxId(firstSx.getSxId());
 			sc.setSxtime(firstSx.getSxtime());
 			sc.setToUserEm(firstSx.getToUserEm());
+			
+			//得到对方的icon和username
+			Query q3=session.createQuery("from Users u where u.email=?0");
+			q3.setParameter(0, otheremail);
+			List<Users> userlist=q3.list();
+			Users firstUser=userlist.get(0);
+			sc.setIcon(firstUser.getIcon());
+			sc.setUsername(firstUser.getUsername());
+						
 			
 			//查找未读条数
 			Query q2=session.createQuery("from Sx s where s.fromUserEm=?0 and s.toUserEm=?1 and s.ifRead=0");

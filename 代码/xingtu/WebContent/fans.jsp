@@ -45,9 +45,11 @@
 		<div class="main-zt">
 			<div class="user-info">
 				<dt class="flpic">
-					<div style="width: 100px;height: 100px;border-radius:50%;border: solid 1px #555;" id="replaceImg"  >
+					<div>
+	            <div style="width: 100px;height:100px;border-radius:50%;border: solid 1px #555; id="replaceImg"  >
                      <img id="finalImg" src="${ctx }/${user.icon}" width="100px" height="100px" style="border-radius:50%;">
-                </div>
+                </div>   <!-- 等插入头像之后添加 -->
+	          </div>
 				</dt><!-- 个人头像 -->
 				<dd class="flintro">
 					<h3 class="intro-title">
@@ -106,8 +108,10 @@
 	    <!-- 粉丝1 -->
 	    <div class="seconddiv">
 	        <div style="float:left;width:480px;">
-	          <div style="float:left;margin-left:20px;margin-top:25px;">
-	            <img src="img/icon11.png"/>  
+	          <div>
+	            <div style="width: 50px;height: 50px;border-radius:50%;border: solid 1px #555; float:left;margin-left:20px;margin-top:25px;" id="replaceImg"  >
+                     <img id="finalImg" src="${ctx }/${fpn.icon}" width="50px" height="50px" style="border-radius:50%;"/>
+                </div>   <!-- 等插入头像之后添加 -->
 	          </div>
 	          <div style="float:left;margin-left:20px;">
 	            <div style="margin-top:25px;">${fpn.username }</div>

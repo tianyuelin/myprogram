@@ -10,7 +10,23 @@ public class SxAndCount {
 	private String toUserEm;
 	private int ifRead;
 	private Date sxtime;
-	private int unreadCount;
+	private int unreadCount;//未读条数
+	private String username;//对方的用户名
+	private String icon;//对方的头像
+	
+	public String getUsername() {
+		return username;
+	}
+	public void setUsername(String username) {
+		this.username = username;
+	}
+	public String getIcon() {
+		return icon;
+	}
+	public void setIcon(String icon) {
+		this.icon = icon;
+	}
+	
 	public int getUnreadCount() {
 		return unreadCount;
 	}

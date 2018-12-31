@@ -103,11 +103,11 @@
 	                  <div style="float:left;width:480px;">
 	                      <div style="float:left;margin-left:30px;margin-top:28px;">
 	                           <div style="width: 50px;height: 50px;border-radius:50%;border: solid 1px #555;" id="replaceImg"  >
-                     <img id="finalImg" src="${ctx }/${user.icon}" width="50px" height="50px" style="border-radius:50%;">
+                     <img id="finalImg" src="${ctx }/${fx.icon}" width="50px" height="50px" style="border-radius:50%;"> <!-- 对方的头像 -->
                 </div>
 	                      </div>
 	                  <div style="float:left;margin-left:20px;">
-	                      <div style="margin-top:25px;">${fx.fromUserEm }</div>
+	                      <div style="margin-top:25px;">${fx.username }</div>
 	                      <div style="color:gray;margin-top:15px;">${fx.content }</div>
 	                  </div>
 	                  </div>
