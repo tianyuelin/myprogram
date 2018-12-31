@@ -76,12 +76,12 @@ $(document).on('click','.close-miaoshushow',function(){
 			<div class="fruser-fans">
 				<div class="fz">
 					<div class="shu">${FGCount }</div>
-					<div class="guzh">关注</div>
+					<div class="guzh"><a href="${ctx }/guanzhuUser">关注</a></div>
 				</div>
 				<div class="hz">|</div>
 				<div class="fy">
 					<div>${fansCount }</div>
-					<div>粉丝</div>
+					<div><a href="#">粉丝</a></div>
 				</div>
 			</div>
 		</div>

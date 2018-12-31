@@ -82,7 +82,7 @@
 					href="${ctx }/photo/findallphoto"
 					data-beacon="photos">相册</a></li>
 				<li class="item"><a
-					href="sixin.jsp"
+					href="${ctx }/sixinPage"
 					data-beacon="letter">消息</a></li>
 				<li class="item"><a
 					href="${ctx }/journey/citylist"

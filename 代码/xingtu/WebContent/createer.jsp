@@ -71,7 +71,7 @@
                    <div class="pagination">
                     <a href="javascript:doPage(1,1)">首页</a>
                     <a href="javascript:doPage(${page.prePageNum },1);">上一页</a>
-                    <a href="javascript:doPage(${page.nextPageNum },1);"><input type="text" value=""/>下一页</a>
+                    <a href="javascript:doPage(${page.nextPageNum },1);">下一页</a>
                     <a href="javascript:doPage(${page.totalPageNum },1);">末页</a>
                   </div>
                 </div>
