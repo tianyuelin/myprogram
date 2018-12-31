@@ -37,9 +37,11 @@ function addxq(obj){
 	
 	var zuofid= document.getElementById('xingcheng');
 	var zuoxian=document.createElement("div");//创建显示距离的div
-	var zuospan1=document.createElement("span");
-	var zuospan2=document.createElement("span");
-	var zuospan3=document.createElement("span");
+	/*
+	var zuospan1=document.createElement("input");
+	var zuospan2=document.createElement("input");
+	var zuospan3=document.createElement("input");
+	*/
 	var zuod=document.createElement("div");//创建地点的div
 	var zuoname= document.createElement("input");//地点的名字
 	var yincang= document.createElement("input");//地点的Id
@@ -60,6 +62,7 @@ function addxq(obj){
 	zuoname.style.border="none";
 	zuoname.style.width="80%";
 	zuoname.style.fontSize="25px";
+	/*
 	zuospan1.id='fspan'+spancount;
 	zuospan2.id='sspan'+spancount;
 	/*zuospan3.id='tspan'+spancount;*/
@@ -119,16 +122,23 @@ function addxq(obj){
 	}
 	*/
 	var percount = count-1;
-	var zuospan1=document.createElement("span");
-	var zuospan2=document.createElement("span");
-	var zuospan3=document.createElement("span");
+	var zuospan1=document.createElement("input");
+	var zuospan2=document.createElement("input");
+	var zuospan3=document.createElement("input");
 	spancount++;
 	zuospan1.id='fspan'+spancount;
 	zuospan2.id='sspan'+spancount;
-	zuospan3.id='tspan'+spancount;
+	//zuospan3.id='tspan'+spancount;
+	zuospan1.type="text";
+	zuospan2.type="text";
+	zuospan3.type="text";
+	zuospan1.style.border="none";
+	zuospan1.style.width="80%";
+	zuospan1.style.fontSize="20px";
+	zuospan1.name="juli";
 	zhongju.appendChild(cartb);
 	zhongju.appendChild(zuospan1);
-	zhongju.appendChild(zuospan2);
+	//zhongju.appendChild(zuospan2);
 	/*zuoxian.appendChild(zuospan3);*/
 	var name1=document.getElementById('dim'+percount).value;
 	var name2=document.getElementById('dim'+count).value;
@@ -137,10 +147,9 @@ function addxq(obj){
 	var transit = new BMap.DrivingRoute(map, {renderOptions: {map: map},
 		onSearchComplete: searchComplete,
 		onPolylinesSet: function(){
-			document.getElementById('fspan'+spancount).innerText=dis;
-			document.getElementById('sspan'+spancount).innerText=divertime;
+			document.getElementById('fspan'+spancount).value=dis+divertime;
+			//document.getElementById('sspan'+spancount).value=divertime;
 	}});
-	
 	var transit2 = new BMap.TransitRoute(map, {renderOptions: {map: map},
 		onSearchComplete: searchComplete,
 		onPolylinesSet: function(){

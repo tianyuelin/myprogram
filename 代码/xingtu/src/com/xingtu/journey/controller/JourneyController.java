@@ -121,9 +121,14 @@ public class JourneyController {
 	*/
 	//创建行程
 	@RequestMapping(value="/createxc",method=RequestMethod.POST)
-	public String createxc(@RequestParam(value="diid",required=false)String []sceneid,@RequestParam(value="jtime",required=false)String jtime,@RequestParam(value="jtitle",required=false)String jtitle,HttpSession session,HttpServletRequest request){
+	public String createxc(@RequestParam(value="diid",required=false)String []sceneid,@RequestParam(value="jtime",required=false)String jtime,@RequestParam(value="jtitle",required=false)String jtitle,HttpSession session,HttpServletRequest request,@RequestParam(value="juli")String []julis){
 		Users u= (Users)session.getAttribute("user");
 		Journey journey=js.createJourney(sceneid, u, jtime, jtitle);
+		List<String> juli = new ArrayList<String>();
+		for(int i=0;i<julis.length;i++) {
+			juli.add(julis[i]);
+		}
+		request.setAttribute("juli", juli);
 		request.setAttribute("journey", journey);
 		return "xingchengshow";
 	}

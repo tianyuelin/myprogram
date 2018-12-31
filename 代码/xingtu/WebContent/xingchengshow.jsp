@@ -23,7 +23,7 @@
         <img id="finalImg" src="${ctx }/${user.icon}" width="80px" height="80px" style="border-radius:50%;">
     </div>
     <div class="shtit">${journey.jtitle }<br />
-       <div class="shxij">${user.username }&nbsp;&nbsp;&nbsp;|${journey.jtime }出发&nbsp;&nbsp;&nbsp;&nbsp;|共一天
+       <div class="shxij">${user.username }&nbsp;&nbsp;&nbsp;|${journey.jtime }出发&nbsp;&nbsp;&nbsp;&nbsp;
        </div>
     </div>
     
@@ -47,7 +47,11 @@
 				<td colspan="3" style="width: 100%;text-align: center;height: 50px;font-size:25px; font-weight: 600;">${journey.jtitle }</td>
 			</tr>
 		</thead>
+		<%!int count = 0; %>
 		<c:forEach items="${journey.jd}" var="myjour">
+		<%
+		request.setAttribute("count", count);
+		%>
 		<tr height="200px">
 			<td width="40%">
 				<div class="scene">
@@ -58,12 +62,21 @@
 					</div>
 				</div>
 			</td>
-			<td width="30%">游玩儿时长：<input type="text" style="border: none;" value="建议${myjour.scene.playtime }"/></td>
+			<td width="30%">游玩儿时长:<input type="text" style="border: none;" value="建议${myjour.scene.playtime }"/></td>
 			<td width="30%" style="text-align: left;line-height: 30px;">
 				<span>${myjour.scene.route}</span>
 			</td>
 		</tr>
+		<c:if test="${count>=0 }">
+			<c:if test="${juli[count]!=null }">
+			<tr>
+			<td colspan="3">${juli[count] }</td>
+			</tr>
+			</c:if>
+		</c:if>
+		<%count++; %>
 		</c:forEach>
+		<%count=0; %>
 	</table>
 </div>
 <jsp:include page="footer.jsp" flush="true"></jsp:include>
