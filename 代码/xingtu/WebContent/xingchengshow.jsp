@@ -55,22 +55,22 @@
 		<tr height="200px">
 			<td width="40%">
 				<div class="scene">
-					<img src="${myjour.scene.img}" style="float: left;margin-left:10px; " width="40%" height="180px;"/>
-					<div style="margin-left: 41%; text-align: left; width: 55%; margin-top: auto;margin-bottom: auto;">
+					<img src="${myjour.scene.img}" style="margin-left:15px; margin-top: 15px;" width="90%" height="auto;"/>
+					<div style="margin-left:15px; text-align: left; width: 90%; margin-top: auto;margin-bottom: auto;">
 						<span>地点：${myjour.scene.sname}</span><br>
 						<span>地址：</span><span style="text-align: left;">${myjour.scene.address}</span>
 					</div>
 				</div>
 			</td>
-			<td width="30%">游玩儿时长:<input type="text" style="border: none;" value="建议${myjour.scene.playtime }"/></td>
-			<td width="30%" style="text-align: left;line-height: 30px;">
+			<td style="padding-left: 60px;">游玩儿时长:<input type="text" style="border: none; display: inline;" value="建议${myjour.scene.playtime }"/></td>
+			<td style="text-align: left;line-height: 30px;">
 				<span>${myjour.scene.route}</span>
 			</td>
 		</tr>
 		<c:if test="${count>=0 }">
 			<c:if test="${juli[count]!=null }">
 			<tr>
-			<td colspan="3">${juli[count] }</td>
+			<td colspan="3" style="text-align: center;">${juli[count] }</td>
 			</tr>
 			</c:if>
 		</c:if>

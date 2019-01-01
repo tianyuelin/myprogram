@@ -10,11 +10,11 @@
 .spanchange{
 	position: absolute;
 	top: 0px;
-	left:87%;
+	left:85%;
 	color: white;
 	font-size: 25px;
 	font-weight: 600;
-	width: 13%;
+	width: 15%;
 	height: 35px;
 	text-align:center;
 	background-color: rgba(125,125,125,0.5);
@@ -58,7 +58,7 @@
 	border-top:none;
 	height:50px;
 	font-size:35px;
-	width: 77%;
+	width: 85%;
 	color: black;
 }
 #add_f_title:hover{
@@ -125,7 +125,7 @@ input{
 }
 .context{
 	margin: 10px;
-	width: 80%;
+	width: 85%;
 	border: 1px #eee solid;
 }
 textarea{
@@ -135,8 +135,8 @@ textarea{
 }
 
 .didian{
-	border-bottom: 1px #eee solid;
-	width: 80%;
+	border-bottom: 1px #ccc solid;
+	width: 85%;
 	background-color: #efefef;
 }
 .address{

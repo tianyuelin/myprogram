@@ -19,7 +19,7 @@
 <div class="title">
 	<a href="${ctx }/user/otherUserCenter?useremail=${strategy.user.email}">
 	      <div style="width: 100px;height: 100px;border-radius:50%;border: solid 1px #555; float: left" id="replaceImg"  >
-              <img id="finalImg" src="${ctx }/${user.icon}" width="100px" height="100px" style="border-radius:50%;">
+              <img id="finalImg" src="${ctx }/${strategy.user.icon}" width="100px" height="100px" style="border-radius:50%;">
           </div>
     </a>
 	<span id="stt" style="margin-top:3%;margin-top:10px">${strategy.title }</span>
