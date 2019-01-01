@@ -136,7 +136,7 @@ String htmlData = request.getParameter("content1") != null ? request.getParamete
 				<input class="address" type="text" placeholder='添加地点' id="didian0" onchange="changeaddress()" name="address">
 			</div>
 			<div class="neirong">
-			<textarea id="content0" cols="100" rows="8" style="width:80%;height:200px;visibility:hidden;" name="text"></textarea>
+			<textarea id="content0" cols="100" rows="8" style="width:85%;height:200px;visibility:hidden;" name="text"></textarea>
 			<!--
 			<textarea maxlength="2000" onkeydown="this.value=this.value.substring(0,2000)" onkeyup="this.value=this.value.substring(0,2000)" name="context">记录下这段旅途中那些美好的点点滴滴吧~</textarea>
               -->

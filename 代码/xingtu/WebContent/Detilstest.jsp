@@ -55,7 +55,7 @@
 			<div class="product_introduce">
 				<div class="product_picture" style="display: inline-block;">
 					<div class="product_picture1">
-						<a href="###"><img src="${imglist[1].imgsrc }"style="height: 400px"></a>
+						<a href="###"><img src="${imglist[1].imgsrc }"></a>
 						<span>点击查看更多图集</span>
 					</div>
 				</div>
