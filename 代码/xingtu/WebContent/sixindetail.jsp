@@ -7,7 +7,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <!-- 设置这个页面每20秒更新一次 -->
-<meta http-equiv="refresh" content="10"/>
+<meta http-equiv="refresh" content="15"/>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
 <link rel="stylesheet" href="css/user/demo.css">
@@ -133,10 +133,19 @@
                                  <!-- 表情按钮 -->
                                  <div style="float:left;margin-top:1%" id="face">表情</div>
                              </div>
-                             <div style="float:left">
-                                 <img src="img/icon11.png"/>
-                             </div>
+                             
+                             
+                             
+                             
+                             <div style="width:6%;float:left"><div style="width: 50px;height: 50px;border-radius:50%;border: solid 1px #555;" id="replaceImg"  >
+                     <img id="finalImg" src="${ctx }/${user.icon}" width="50px" height="50px" style="border-radius:50%;">
+                		</div>
+                             
+                             
+                             
+                             
                          </div>
+                         
                          <br/>
         
                      </form>                      
@@ -173,8 +182,7 @@
                      </c:forEach>
                      
                      </div>
-                     <div style="width: 80%"><span id="zhankai">展开</span></div>    
-                 	 <div style="width: 80%"><span id="shousuo" style="display: none">收缩</span></div>  
+                    
 	      </div>
 	   
 	</div>
