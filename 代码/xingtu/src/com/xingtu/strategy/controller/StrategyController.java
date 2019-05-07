@@ -1,6 +1,8 @@
 package com.xingtu.strategy.controller;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import javax.annotation.Resource;
@@ -20,6 +22,7 @@ import com.xingtu.entity.SceneImgs;
 import com.xingtu.entity.Sceneshoucang;
 import com.xingtu.entity.Strategy;
 import com.xingtu.entity.Users;
+import com.xingtu.log.StrategyLog;
 import com.xingtu.strategy.service.StrategyService;
 
 
@@ -38,6 +41,10 @@ public class StrategyController {
 		String path= session.getServletContext().getRealPath("/");
 		//E:\BigData\Eclipse\conding\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\xingtu\
 		Users u= (Users)session.getAttribute("user");
+		StrategyLog sl = new StrategyLog();
+		Date d = new Date();
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH-mm-ss");
+		sl.logsth(u.getEmail(), addresses,sdf.format(d));
 		//System.out.println(tags[0]);
 		Strategy strategy = ss.createStrategy(tags,titles, texts, addresses, title, u,file,path);
 		request.setAttribute("strategy", strategy);

@@ -1,6 +1,7 @@
 package com.xingtu.scene.controller;
 
-import java.util.ArrayList;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 import javax.annotation.Resource;
@@ -17,6 +18,7 @@ import com.xingtu.entity.Scene;
 import com.xingtu.entity.SceneImgs;
 import com.xingtu.entity.Sceneshoucang;
 import com.xingtu.entity.Users;
+import com.xingtu.log.Browse;
 import com.xingtu.scene.service.SceneService;
 
 @Controller
@@ -35,8 +37,11 @@ public class SceneController {
 		if (u == null) {
 			request.setAttribute("ifShoucang", false);
 		} else {
-
 			// 判断曾经是否已插入，若无，则插入，若有则返回已关注
+			Date d = new Date();
+			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH-mm-ss");
+			Browse blog = new Browse();
+			blog.logsth(u.getEmail(), s.getSceneId(), sdf.format(d));
 			Boolean b = this.ss.IfShouCang(id,u);
 			if (b) {// 已关注
 				request.setAttribute("ifShoucang", true); // 如果已关注，存入true,使页面显示已关注
@@ -70,9 +75,8 @@ public class SceneController {
 	@RequestMapping(value="/addshoucang",method=RequestMethod.GET)
 	public String addshoucang(HttpServletRequest request,@RequestParam(value="sceneid")int sceneid,HttpSession session) {
 		Users u= (Users)session.getAttribute("user");
-		Sceneshoucang ssc2=ss.InsertShoucang(sceneid, u);
+		ss.InsertShoucang(sceneid, u);
 		request.setAttribute("ifShoucang", true);//显示已关注
-		
 		Scene s = ss.findScene((int)sceneid);
 		List<SceneImgs> imgs = ss.findSceneimg(ss.findScene(sceneid).getSname());
 		System.out.println(imgs.size());

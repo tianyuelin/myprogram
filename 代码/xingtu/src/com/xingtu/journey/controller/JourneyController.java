@@ -1,7 +1,8 @@
 package com.xingtu.journey.controller;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.Date;
 import java.util.List;
 
 import javax.annotation.Resource;
@@ -12,8 +13,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.servlet.ModelAndView;
 
 import com.xingtu.entity.Glshoucang;
 import com.xingtu.entity.Journey;
@@ -23,6 +22,8 @@ import com.xingtu.entity.Sceneshoucang;
 import com.xingtu.entity.Strategy;
 import com.xingtu.entity.Users;
 import com.xingtu.journey.service.JourneyService;
+import com.xingtu.log.Browse;
+import com.xingtu.log.JourneyLog;
 import com.xingtu.user.service.UserService;
 
 @Controller
@@ -90,40 +91,19 @@ public class JourneyController {
 		}
 		
 	}
-	/*
-	@RequestMapping(value="/journeyfenye",method=RequestMethod.POST)
-	public String fenyeJour(HttpServletRequest request,HttpSession session) {
-		// 获取热门城市 
-		int pageNum = request.getParameter("pageNum")==null?1:request.getParameter("pageNum").toString().trim()==""?1:Integer.parseInt(request.getParameter("pageNum").toString().trim());
-		int pageNum2 = request.getParameter("pageNum2")==null?1:request.getParameter("pageNum2").toString().trim()==""?1:Integer.parseInt(request.getParameter("pageNum2").toString().trim());
-		//String cityname =request.getParameter("citynames");
-		Page<Scene> p = new Page<Scene>();
-		p.setCurrentPageNum(pageNum);
-		p.setPageSize(3);
-		p.setNextPageNum(pageNum+1);
-		p.setPrePageNum(pageNum-1);
-		String []cityname = (String[]) request.getAttribute("citynames");
-		List<Scene> scens = js.getJourneyList(p.getCurrentPageNum(),p.getPageSize(),cityname);
-		p.setList(scens);
-		request.setAttribute("page", p);
-		Page<Sceneshoucang> p1 = new Page<Sceneshoucang>();
-		p1.setCurrentPageNum(pageNum2);
-		p1.setPageSize(3);
-		p1.setNextPageNum(pageNum2+1);
-		p1.setPrePageNum(pageNum2-1);
-		Users u= (Users)session.getAttribute("user");
-		List<Sceneshoucang> sce2=js.getScScene(u.getEmail(), p1.getCurrentPageNum(),p1.getPageSize());
-		p1.setList(sce2);
-		System.out.println("seccess"+pageNum2);
-		request.setAttribute("mypage", p1);
-		return "ajax";
-	}
-	*/
 	//创建行程
 	@RequestMapping(value="/createxc",method=RequestMethod.POST)
 	public String createxc(@RequestParam(value="diid",required=false)String []sceneid,@RequestParam(value="jtime",required=false)String jtime,@RequestParam(value="jtitle",required=false)String jtitle,HttpSession session,HttpServletRequest request,@RequestParam(value="juli")String []julis){
 		Users u= (Users)session.getAttribute("user");
 		Journey journey=js.createJourney(sceneid, u, jtime, jtitle);
+		Date d = new Date();
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH-mm-ss");
+		Browse blog = new Browse();
+		for(String id : sceneid) {
+			
+			JourneyLog jl = new JourneyLog();
+			jl.logsth(u.getEmail(), id, sdf.format(d));
+		}
 		List<String> juli = new ArrayList<String>();
 		for(int i=0;i<julis.length;i++) {
 			juli.add(julis[i]);
