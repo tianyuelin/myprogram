@@ -19,6 +19,7 @@ import com.xingtu.entity.SceneImgs;
 import com.xingtu.entity.Sceneshoucang;
 import com.xingtu.entity.Users;
 import com.xingtu.log.Browse;
+import com.xingtu.log.Collectlog;
 import com.xingtu.scene.service.SceneService;
 
 @Controller
@@ -75,6 +76,10 @@ public class SceneController {
 	@RequestMapping(value="/addshoucang",method=RequestMethod.GET)
 	public String addshoucang(HttpServletRequest request,@RequestParam(value="sceneid")int sceneid,HttpSession session) {
 		Users u= (Users)session.getAttribute("user");
+		ss.InsertShoucang(sceneid, u);
+		//在此处添加收藏日志
+		Collectlog cll=new Collectlog();
+		cll.logsth(u.getEmail(), sceneid);
 		ss.InsertShoucang(sceneid, u);
 		request.setAttribute("ifShoucang", true);//显示已关注
 		Scene s = ss.findScene((int)sceneid);

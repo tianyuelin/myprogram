@@ -2,7 +2,6 @@
 <configuration scan="true" scanPeriod="60 second"
 	debug="false">
 	<contextName>xingtu</contextName>
-
 	<appender name="FILE" class="ch.qos.logback.core.FileAppender">
 		<file>D:\log\browse.log</file>
 		<append>true</append>
@@ -11,7 +10,6 @@
 			</pattern>
 		</encoder>
 	</appender>
-
 	<logger name="com.xingtu.log.Browse" level="INFO"
 		additivity="false">
 		<appender-ref ref="FILE" />
@@ -41,7 +39,18 @@
 		additivity="false">
 		<appender-ref ref="FILE2" />
 	</logger>
-	<root level="ERROR">
-		<appender-ref ref="STDOUT" />
-	</root>
+	<!-- 收藏log -->
+	<appender name="FILE3" class="ch.qos.logback.core.FileAppender">
+		<file>D:\log\collectlog.log</file>
+		<append>true</append>
+		<encoder>
+			<pattern>%msg%n
+			</pattern>
+		</encoder>
+	</appender>
+
+	<logger name="com.xingtu.log.Collectlog" level="DEBUG"
+		additivity="false">
+		<appender-ref ref="FILE3" />
+	</logger>
 </configuration>
