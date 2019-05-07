@@ -49,8 +49,34 @@
 		</encoder>
 	</appender>
 
-	<logger name="com.xingtu.log.Collectlog" level="DEBUG"
+	<logger name="com.xingtu.log.Collectlog" level="INFO"
 		additivity="false">
 		<appender-ref ref="FILE3" />
+	</logger>
+	
+	<appender name="FILE4" class="ch.qos.logback.core.FileAppender">
+		<file>D:\log\browsestrategy.log</file>
+		<append>true</append>
+		<encoder>
+			<pattern>%msg%n
+			</pattern>
+		</encoder>
+	</appender>
+
+	<logger name="com.xingtu.log.StrategyLog2" level="DEBUG"
+		additivity="false">
+		<appender-ref ref="FILE4" />
+	</logger>
+	<appender name="FILE5" class="ch.qos.logback.core.FileAppender">
+		<file>D:\log\collectstrategy.log</file>
+		<append>true</append>
+		<encoder>
+			<pattern>%msg%n
+			</pattern>
+		</encoder>
+	</appender>
+	<logger name="com.xingtu.log.StrategyLog3" level="INFO"
+		additivity="false">
+		<appender-ref ref="FILE5" />
 	</logger>
 </configuration>

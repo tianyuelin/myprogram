@@ -17,12 +17,10 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.xingtu.entity.Glshoucang;
 import com.xingtu.entity.Page;
-import com.xingtu.entity.Scene;
-import com.xingtu.entity.SceneImgs;
-import com.xingtu.entity.Sceneshoucang;
 import com.xingtu.entity.Strategy;
 import com.xingtu.entity.Users;
 import com.xingtu.log.StrategyLog;
+import com.xingtu.log.StrategyLog2;
 import com.xingtu.strategy.service.StrategyService;
 
 
@@ -81,7 +79,10 @@ public class StrategyController {
 		if (u == null) {
 				request.setAttribute("ifShoucanggl", false);
 		} else {
-
+				StrategyLog2 sl = new StrategyLog2();
+				Date d = new Date();
+				SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH-mm-ss");
+				sl.logsth(u.getEmail(), id,sdf.format(d));
 				// 判断曾经是否已插入，若无，则插入，若有则返回已关注
 				Boolean b = this.ss.IfShouCanggl(id,u);
 				if (b) {// 已关注
