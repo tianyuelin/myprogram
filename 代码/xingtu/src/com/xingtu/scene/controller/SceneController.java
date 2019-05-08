@@ -76,10 +76,12 @@ public class SceneController {
 	@RequestMapping(value="/addshoucang",method=RequestMethod.GET)
 	public String addshoucang(HttpServletRequest request,@RequestParam(value="sceneid")int sceneid,HttpSession session) {
 		Users u= (Users)session.getAttribute("user");
-		ss.InsertShoucang(sceneid, u);
 		//在此处添加收藏日志
 		Collectlog cll=new Collectlog();
-		cll.logsth(u.getEmail(), sceneid);
+		Date d=new Date();
+		SimpleDateFormat sdf=new SimpleDateFormat("yy-MM-dd HH-mm-ss");
+		String time=sdf.format(d);
+		cll.logsth(u.getEmail(), sceneid,time);
 		ss.InsertShoucang(sceneid, u);
 		request.setAttribute("ifShoucang", true);//显示已关注
 		Scene s = ss.findScene((int)sceneid);

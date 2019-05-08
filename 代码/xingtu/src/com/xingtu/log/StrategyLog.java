@@ -7,11 +7,14 @@ public class StrategyLog {
 	private static Logger log = LoggerFactory.getLogger(StrategyLog.class);
 	public void logsth(String email,String [] names,String time) {
 		String info = email+"::";
-		for(String name : names) {
-			info+=name;
-			info+=name+" ";
+		if(names!=null) {
+			for(String name : names) {
+				info+=name;
+				info+=name+" ";
+			}
+			info=info+"::"+time;
+			log.info(info);
 		}
-		info=info+"::"+time;
-		log.info(info);
+		
 	}
 }

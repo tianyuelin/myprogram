@@ -63,7 +63,7 @@
 		</encoder>
 	</appender>
 
-	<logger name="com.xingtu.log.StrategyLog2" level="DEBUG"
+	<logger name="com.xingtu.log.StrategyLog2" level="INFO"
 		additivity="false">
 		<appender-ref ref="FILE4" />
 	</logger>

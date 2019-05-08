@@ -21,6 +21,7 @@ import com.xingtu.entity.Strategy;
 import com.xingtu.entity.Users;
 import com.xingtu.log.StrategyLog;
 import com.xingtu.log.StrategyLog2;
+import com.xingtu.log.StrategyLog3;
 import com.xingtu.strategy.service.StrategyService;
 
 
@@ -144,13 +145,22 @@ public class StrategyController {
 	//取消收藏，为未收藏状态
 	@RequestMapping(value="/noshoucang",method=RequestMethod.GET)
 	public String deleshoucang(HttpServletRequest request,@RequestParam(value="StrategyId")int id,HttpSession session) {
-		Glshoucang ssc2=new Glshoucang();
-		Users u= (Users)session.getAttribute("user");
-		ssc2.setUser(u);
-		this.ss.delectShoucanggl(id,u);
-		request.setAttribute("ifShoucanggl", false);
-		Strategy s = ss.findSingleStrategy(id);	
-		request.setAttribute("strategy", s);
-		return "YouJishow";
+		Users u = (Users)session.getAttribute("user");
+		if(session.getAttribute("user")==null) {
+			return "sign";
+		}else {
+			Glshoucang ssc2=new Glshoucang();
+			StrategyLog3 sl = new StrategyLog3();
+			Date d = new Date();
+			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH-mm-ss");
+			sl.logsth(u.getEmail(), id,sdf.format(d));
+			ssc2.setUser(u);
+			this.ss.delectShoucanggl(id,u);
+			request.setAttribute("ifShoucanggl", false);
+			Strategy s = ss.findSingleStrategy(id);	
+			request.setAttribute("strategy", s);
+			return "YouJishow";
+		}
+		
 		}
 }
