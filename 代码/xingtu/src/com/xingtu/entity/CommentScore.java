@@ -13,7 +13,8 @@ public class CommentScore {
      private String username;
      private String name;
      private String pingfen;
-     
+     private String useremail;
+     private int sceneid;
     @Id
  	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	public int getId() {
@@ -40,7 +41,20 @@ public class CommentScore {
 	public void setPingfen(String pingfen) {
 		this.pingfen = pingfen;
 	}
-     
+	public String getUseremail() {
+		return useremail;
+	}
+	public void setUseremail(String useremail) {
+		this.useremail = useremail;
+	}
+	public int getSceneid() {
+		return sceneid;
+	}
+	public void setSceneid(int sceneid) {
+		this.sceneid = sceneid;
+	}
+	
+    
      
      
 }

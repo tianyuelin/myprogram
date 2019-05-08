@@ -35,4 +35,10 @@ public class CommentDao {
 	public void save(CommentScore cs)throws Exception{
 		this.sessionFactory.getCurrentSession().save(cs);	
 	}
+	//查询commentscore数据
+	public List<CommentScore> findAllPF(){
+		Session session=this.sessionFactory.getCurrentSession();
+		Query q=session.createQuery("from CommentScore cs");		
+		return q.list();
+	}
 }

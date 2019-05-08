@@ -110,13 +110,47 @@ public class CommentController {
 		request.setAttribute("singlescene", s);
 		request.setAttribute("imglist", imgs);
 		System.out.println("11");
-		//添加数据评分到数据库
-		String pf=request.getParameter("PF");
-		CommentScore cs=new CommentScore();
-		cs.setPingfen(pf);
-		cs.setUsername(u.getUsername());
-		cs.setName(s.getSname());
-		this.commentService.save(cs);		
+		
+//		查询PF库数据
+				List<CommentScore> listc=this.commentService.findAllPF();
+				for(CommentScore temp:listc) {
+					System.out.println(temp.getId());
+			}
+				System.out.println("PFF");
+			
+			boolean bl=true;
+			for(CommentScore temp : listc) {
+				
+	    		System.out.println("PPP");
+		        if(temp.getSceneid() == id  &&  temp.getUseremail().equals(u.getEmail())){           	 
+                	 bl=true;
+		         }
+	             else {
+		        	 bl=false;
+                 }
+        	}
+		
+//		boolean bl=this.commentService.findAllPF(id,u.getEmail());
+		
+		System.out.println(bl);
+		if(bl == true) {
+			System.out.println("该用户评论过了！");
+		}
+		else {
+         System.out.println("hhhh");
+          //添加数据评分到数据库
+         String pf=request.getParameter("PF");
+         CommentScore cs=new CommentScore();
+         cs.setPingfen(pf);
+         cs.setUsername(u.getUsername());
+         cs.setName(s.getSname());
+         cs.setUseremail(u.getEmail());
+         System.out.println(id);
+         cs.setSceneid(id);
+         this.commentService.save(cs);	
+		}
+				
+			
 		return "Detilstest";
 }
 }

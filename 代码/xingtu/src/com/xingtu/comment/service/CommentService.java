@@ -19,6 +19,10 @@ public class CommentService {
 	public List<Comments> findAll() {
 		return this.commentDao.findAll();
 	}
+	public  List<CommentScore> findAllPF() {
+		return this.commentDao.findAllPF();
+		
+	}
     public void save(Comments ct) {
     	try {
 			this.commentDao.save(ct);
@@ -36,4 +40,6 @@ public class CommentService {
 			e.printStackTrace();
 		}
     }
+    
+    
 }
