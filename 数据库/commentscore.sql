@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50532
 File Encoding         : 65001
 
-Date: 2019-05-08 10:17:17
+Date: 2019-05-08 17:22:15
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -24,10 +24,13 @@ CREATE TABLE `commentscore` (
   `username` varchar(10) DEFAULT NULL,
   `name` varchar(20) DEFAULT NULL,
   `pingfen` varchar(10) DEFAULT NULL,
+  `useremail` varchar(100) DEFAULT NULL,
+  `sceneid` int(10) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=31 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of commentscore
 -- ----------------------------
-INSERT INTO `commentscore` VALUES ('10', 'zhangi', '故宫', '6.0');
+INSERT INTO `commentscore` VALUES ('1', 'ew', '11', '11', 'hjhk', '1');
+INSERT INTO `commentscore` VALUES ('26', 'zhangsan', '故宫', '6.0', 'xingtu@163.com', '1');
