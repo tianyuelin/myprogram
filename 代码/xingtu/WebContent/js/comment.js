@@ -8,25 +8,6 @@
   var msgBox = document.getElementById('msgBox');
     var timerpinglun;
 
-  // 点击发送按钮发送消息
-  sendaa.onclick = function(){
-    if (area.value == '') {
-      warning.style.display = 'block';
-      clearTimeout(timerpinglun);
-      timerpinglun = setTimeout(function(){
-        warning.style.display = 'none';
-      },1000)
-    }else{
-      var li = document.createElement('li');
-      li.className = 'clearFix';
-      li.innerHTML = '<p class="pingluntime">'+new Date().toLocaleString()+'</p><br><font>李思思</font><br><font>'+area.value+'</font>';
-      msgBox.appendChild(li);
-      li.scrollIntoView();
-      area.value ='';
-      area.focus();
-    }
-  }
-  
   
   
   
