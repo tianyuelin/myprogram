@@ -20,6 +20,7 @@ import com.xingtu.entity.Comments;
 import com.xingtu.entity.Scene;
 import com.xingtu.entity.SceneImgs;
 import com.xingtu.entity.Users;
+import com.xingtu.log.Comment;
 import com.xingtu.scene.service.SceneService;
 
 @Controller
@@ -28,7 +29,7 @@ public class CommentController {
 	private CommentService commentService;
 	@Resource
 	private SceneService ss;
-	//保存评论到数据库
+	//淇濆瓨璇勮鍒版暟鎹簱
 	@RequestMapping(value="/save",method=RequestMethod.GET)
 	public String save(HttpServletRequest request,HttpSession session){
 		String q=request.getParameter("id");
@@ -38,19 +39,19 @@ public class CommentController {
 		Scene s = ss.findScene(id);
 		List<SceneImgs> imgs = ss.findSceneimg(ss.findScene(id).getSname());
 		System.out.println(imgs.size());
-		// 将关注者（登录用户）放入
+		// 灏嗗叧娉ㄨ�咃紙鐧诲綍鐢ㄦ埛锛夋斁鍏�
 		Users u= (Users)session.getAttribute("user");
 		if (u == null) {
 			request.setAttribute("ifShoucang", false);
 		} else {
-			// 判断曾经是否已插入，若无，则插入，若有则返回已关注
+			// 鍒ゆ柇鏇剧粡鏄惁宸叉彃鍏ワ紝鑻ユ棤锛屽垯鎻掑叆锛岃嫢鏈夊垯杩斿洖宸插叧娉�
 			Boolean b = this.ss.IfShouCang(id,u);
-			if (b) {// 已关注
-				request.setAttribute("ifShoucang", true); // 如果已关注，存入true,使页面显示已关注
+			if (b) {// 宸插叧娉�
+				request.setAttribute("ifShoucang", true); // 濡傛灉宸插叧娉紝瀛樺叆true,浣块〉闈㈡樉绀哄凡鍏虫敞
 				System.out.println(request.getAttribute("ifShoucang"));
-			} else {// 未关注
+			} else {// 鏈叧娉�
 				request.setAttribute("ifShoucang", false);
-				System.out.println("未关注");
+				System.out.println("鏈叧娉�");
 			}
 
 		}
@@ -58,17 +59,17 @@ public class CommentController {
 		request.setAttribute("singlescene", s);
 		request.setAttribute("imglist", imgs);
 		System.out.println("11");
-		//登录用户放入
+		//鐧诲綍鐢ㄦ埛鏀惧叆
 		Users user= (Users) request.getSession().getAttribute("user");
 		String comment = request.getParameter("comment");	
 		System.out.println(comment);
 		
-		//添加评论到数据库
+		//娣诲姞璇勮鍒版暟鎹簱
 		Comments ct=new Comments();
 		
 //		ct.setUsername("zhangsan");
 		ct.setComment(comment);
-		//存入当前登陆用户
+		//瀛樺叆褰撳墠鐧婚檰鐢ㄦ埛
         ct.setUsername(u.getUsername());
 		ct.setTime(new Date());
 		
@@ -79,7 +80,7 @@ public class CommentController {
 		
 		return "Detilstest";
 	}
-	//保存地点评分到数据库
+	//淇濆瓨鍦扮偣璇勫垎鍒版暟鎹簱
 	@RequestMapping(value="/savePF",method=RequestMethod.GET)
 	public String savepf(HttpServletRequest request,HttpSession session){
 		String q=request.getParameter("id");
@@ -89,19 +90,19 @@ public class CommentController {
 		Scene s = ss.findScene(id);
 		List<SceneImgs> imgs = ss.findSceneimg(ss.findScene(id).getSname());
 		System.out.println(imgs.size());
-		// 将关注者（登录用户）放入
+		// 灏嗗叧娉ㄨ�咃紙鐧诲綍鐢ㄦ埛锛夋斁鍏�
 		Users u= (Users)session.getAttribute("user");
 		if (u == null) {
 			request.setAttribute("ifShoucang", false);
 		} else {
-			// 判断曾经是否已插入，若无，则插入，若有则返回已关注
+			// 鍒ゆ柇鏇剧粡鏄惁宸叉彃鍏ワ紝鑻ユ棤锛屽垯鎻掑叆锛岃嫢鏈夊垯杩斿洖宸插叧娉�
 			Boolean b = this.ss.IfShouCang(id,u);
-			if (b) {// 已关注
-				request.setAttribute("ifShoucang", true); // 如果已关注，存入true,使页面显示已关注
+			if (b) {// 宸插叧娉�
+				request.setAttribute("ifShoucang", true); // 濡傛灉宸插叧娉紝瀛樺叆true,浣块〉闈㈡樉绀哄凡鍏虫敞
 				System.out.println(request.getAttribute("ifShoucang"));
-			} else {// 未关注
+			} else {// 鏈叧娉�
 				request.setAttribute("ifShoucang", false);
-				System.out.println("未关注");
+				System.out.println("鏈叧娉�");
 			}
 		}
 		List<Comments> list=this.commentService.findAll();
@@ -110,13 +111,15 @@ public class CommentController {
 		request.setAttribute("singlescene", s);
 		request.setAttribute("imglist", imgs);
 		System.out.println("11");
-		//添加数据评分到数据库
+		//娣诲姞鏁版嵁璇勫垎鍒版暟鎹簱
 		String pf=request.getParameter("PF");
 		CommentScore cs=new CommentScore();
 		cs.setPingfen(pf);
 		cs.setUsername(u.getUsername());
 		cs.setName(s.getSname());
-		this.commentService.save(cs);		
+		this.commentService.save(cs);	
+		Comment comment=new Comment();
+		comment.logsth(u.getEmail(), s.getSceneId(), pf);
 		return "Detilstest";
 }
 }

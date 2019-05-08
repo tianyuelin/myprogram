@@ -79,4 +79,17 @@
 		additivity="false">
 		<appender-ref ref="FILE5" />
 	</logger>
+	
+	<appender name="FILE6" class="ch.qos.logback.core.FileAppender">
+		<file>D:\log\commentstrategy.log</file>
+		<append>true</append>
+		<encoder>
+			<pattern>%msg%n
+			</pattern>
+		</encoder>
+	</appender>
+	<logger name="com.xingtu.log.Comment" level="INFO"
+		additivity="false">
+		<appender-ref ref="FILE6" />
+	</logger>
 </configuration>
