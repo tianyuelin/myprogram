@@ -28,7 +28,7 @@ public class CommentController {
 	private CommentService commentService;
 	@Resource
 	private SceneService ss;
-	//保存数据到数据库
+	//保存评论到数据库
 	@RequestMapping(value="/save",method=RequestMethod.GET)
 	public String save(HttpServletRequest request,HttpSession session){
 		String q=request.getParameter("id");
@@ -79,7 +79,7 @@ public class CommentController {
 		
 		return "Detilstest";
 	}
-	
+	//保存地点评分到数据库
 	@RequestMapping(value="/savePF",method=RequestMethod.GET)
 	public String savepf(HttpServletRequest request,HttpSession session){
 		String q=request.getParameter("id");
@@ -114,6 +114,7 @@ public class CommentController {
 		String pf=request.getParameter("PF");
 		CommentScore cs=new CommentScore();
 		cs.setPingfen(pf);
+		cs.setUsername(u.getUsername());
 		cs.setName(s.getSname());
 		this.commentService.save(cs);		
 		return "Detilstest";
