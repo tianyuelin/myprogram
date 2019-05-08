@@ -1,0 +1,182 @@
+*{
+
+	padding: 0;
+	margin: 0;
+	list-style-type: none;
+	text-decoration:none;
+}
+
+.pinglunzong{
+	width: 810px;
+	margin: 0px auto;
+}
+.talkMsg{
+	width: 810px;
+	height: 500px;
+	overflow-y: auto;
+	border-bottom: 1px solid #e2e1df;
+}
+
+.clearFix:after{
+	content: "";
+	display: block;
+	clear: both;
+}
+.pingluntime{
+	color: #808080;
+	font-size: 10px;
+	line-height: 30px;
+}
+
+
+
+.conText{
+	padding: 10px;
+	max-width: 380px;
+	line-height: 22px;
+	border-radius: 8px;
+	font-size: 12px;
+	float: left;
+	
+}
+
+
+.myHead{
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+	background: url(myHead.jpg) center center;
+	background-size: cover;
+}
+
+.talkInp{
+	height: 150px;
+}
+
+.area{
+	width: 456px;
+	padding: 5px 10px;
+	height: 150px;
+	resize: none;
+	outline: none;
+	border: none;
+    background-color:#DCDCDC;
+}
+
+.btnaa{
+	float: right;
+}
+.btnaa li{
+	font-weight: bold;
+	cursor: default;
+	display: block;
+	float: left;
+	height: 24px;
+	line-height: 24px;
+	padding: 0 16px;
+	border-radius: 4px;
+	font-size: 12px;
+	background-color: #dbd1be;
+}
+
+.sendaa{
+	position: relative;
+}
+.sendaa:after{
+	content: "▼";
+	color: #6e695f;
+}
+
+.warning{
+	width: 150px;
+	height: 50px;
+	border: 1px solid lightblue;
+	border-radius: 8px;
+	padding: 0 5px;
+	position: absolute;
+	left: -70px;
+	top: -55px;
+	display: none;
+}
+
+#starRating{
+    margin-left: 20%;
+}
+
+
+
+
+
+#starRating .photo span {
+    position: relative;
+    display: inline-block;
+    width: 44px;
+    height: 42px;
+    overflow: hidden;
+    margin-right: 23px;
+    cursor: pointer;
+}
+#starRating .photo span:last-child {
+    margin-right: 0px;
+}
+#starRating .photo span .nohigh {
+    position: absolute;
+    width: 44px;
+    height: 42px;
+    top: 0;
+    left: 0;
+    background: url("../images/starstar.png");
+}
+#starRating .photo span .high {
+    position: absolute;
+    width: 44px;
+    height: 42px;
+    top: 0;
+    left: 0;
+    background: url("../images/starstar1.png");
+}
+#starRating .starNum {
+    font-size: 26px;
+    color: #de4414;
+    margin-top: 4px;
+    margin-bottom: 10px;
+}
+#starRating .bottoms {
+    height: 54px;
+    border-top: 1px solid #d8d8d8;
+}
+#starRating .photo {
+    margin-top: 30px;
+}
+#starRating .bottoms a {
+    margin-bottom: 0;
+}
+#starRating .bottoms .garyBtn {
+    margin-right: 57px!important;
+}
+#starRating .bottoms a {
+    width: 130px;
+    height: 35px;
+    line-height: 35px;
+    border-radius: 3px;
+    display: inline-block;
+    font-size: 16px;
+    transition: all 0.2s linear;
+    margin: 16px 0 22px;
+    text-align: center;
+    cursor: pointer;
+}
+.garyBtn {
+    margin-right: 60px!important;
+    background-color: #e1e1e1;
+    color: #999999;
+}
+.blueBtn {
+    background-color: #1968b1;
+    color: #fff;
+}
+.blueBtn:hover {
+    background: #0e73d0;
+}
+
+

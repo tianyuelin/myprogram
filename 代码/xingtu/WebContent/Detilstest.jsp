@@ -15,6 +15,7 @@
 <script src="${ctx }/js/home/bootstrap.min.js"></script>
 <script src="${ctx }/js/home/swiper.min.js"></script>
 <script src="${ctx }/js/home/main.js"></script>
+<link href="${ctx }/css/comment.css" rel="stylesheet">
 <script type="text/javascript" src="${ctx }/js/xiangqing/script.js"></script>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
@@ -136,13 +137,186 @@
 	</div>
 	<div class="map"><div id="allmap"></div></div>
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="xiazong">
+
+        
+        <div style=" width: 810px;    margin:0px auto;">  <h1 style="width: 810px"   >评论区</h1> </div>
+
+
+        <div class="pinglunzong">
+				<div class="talkMsg">
+					<ul id="msgBox">
+						<li class="clearFix">
+							<p class="pingluntime">2017/10/12 16:59:32</p>
+							<p class="pingluncontent">
+							张三
+								<!-- <img style="float: left; width: 120px;height: 50px;" src="images/ping2.png"> -->
+                                
+                    	
+							</p>
+							<br>
+
+							<p>
+								<font>希望越来越多的人关心心理，真的不容忽视, 面朝大海，春暖花开，让我们不断成长，不断完善自己，加油。</font>
+							</p>
+
+						</li>
+
+
+
+						<li class="clearFix">
+							<p class="pingluntime">2017/10/12 16:59:32</p>
+							<p class="pingluncontent">
+							李四
+								<!-- <img style="float: left; width: 120px;height: 50px;" src="images/ping3.png"> -->
+			       
+			        	
+							</p>
+							<br>
+							<p>
+								<font>希望我们学校也有团辅活动，我也喜欢音乐，也想去学画画，在这也做了心理测评，感觉挺不错的，会再尝试。</font>
+							</p>
+
+						</li>
+
+						<li class="clearFix">
+							<p class="pingluntime">2017/10/12 16:59:32</p>
+							<p class="pingluncontent">
+							王五
+								<!-- <img style="float: left; width: 120px;height: 50px;" src="images/ping4.png"> -->
+			       
+			        	
+							</p>
+							<br>
+							<p>
+								<font>愿我们为了彼此，成为更好的自己，积极成长，愿有人陪你颠沛流离，如果没有，愿你成为自己的太阳。</font>
+							</p>
+
+						</li>
+
+
+					  
+					
+					</ul>
+				</div> <!-- "talkMsg" -->
+
+				<div class="talkInp">
+					
+					<textarea class="area"></textarea>
+					<ul class="btnaa">
+						<li class="sendaa">
+							评论(s)
+							<p class="warning">发送内容不能为空，请重新输入</p>
+						</li>
+					</ul>
+				</div>  <!-- talkInp -->
+			 </div>
+
+
+       
+
+
+
+
+
+    </div><!-- xiazong -->
+    
+    
+    
+<!--评星 -->
+<div id="starRating" >
+    <p class="photo">
+        <span><i class="high"></i><i class="nohigh"></i></span>
+        <span><i class="high"></i><i class="nohigh"></i></span>
+        <span><i class="high"></i><i class="nohigh"></i></span>
+        <span><i class="high"></i><i class="nohigh"></i></span>
+        <span><i class="high"></i><i class="nohigh"></i></span>
+    </p>
+    <p class="starNum">0.0分</p>
+    <div class="bottoms">
+        <a class="garyBtn cancleStar">取消评分</a><a class="blueBtn sureStar">确认</a>
+    </div>
+</div>
+<script>
+    $(function () {
+        //评分
+        var starRating = 0;
+        $('.photo span').on('mouseenter',function () {
+            var index = $(this).index()+1;
+            $(this).prevAll().find('.high').css('z-index',1)
+            $(this).find('.high').css('z-index',1)
+            $(this).nextAll().find('.high').css('z-index',0)
+            $('.starNum').html((index*2).toFixed(1)+'分')
+        })
+        $('.photo').on('mouseleave',function () {
+            $(this).find('.high').css('z-index',0)
+            var count = starRating / 2
+            if(count == 5) {
+                $('.photo span').find('.high').css('z-index',1);
+            } else {
+                $('.photo span').eq(count).prevAll().find('.high').css('z-index',1);
+            }
+            $('.starNum').html(starRating.toFixed(1)+'分')
+        })
+        $('.photo span').on('click',function () {
+            var index = $(this).index()+1;
+            $(this).prevAll().find('.high').css('z-index',1)
+            $(this).find('.high').css('z-index',1)
+            starRating = index*2;
+            $('.starNum').html(starRating.toFixed(1)+'分');
+            // alert('评分：是哪嘞'+(starRating.toFixed(1)+'分'))
+        })
+        //取消评分
+        $('.cancleStar').on('click',function () {
+            starRating = 0;
+            $('.photo span').find('.high').css('z-index',0);
+            $('.starNum').html(starRating.toFixed(1)+'分');
+        })
+        //确定评分
+        $('.sureStar').on('click',function () {
+            if(starRating===0) {
+                alert('最低一颗星！');
+            } else {
+               alert('评分lalala先看看是哪：'+(starRating.toFixed(1)+'分'))
+            }
+        })
+    })
+</script>
+    
+    
+    
+    
+    
+    
 <div style="clear: both;">
 <%@include file="footer.jsp" %>
 </div>
+
+
+ 
+
 </body>
 <script src="${ctx }/js/xiangqing/detils.js"></script>
 <script src="${ctx }/js/xiangqing/jquery-1.4.2.js"></script>
 <script src="${ctx }/js/xiangqing/new_file.js"></script>
+<script src="${ctx }/js/comment.js"></script>
 </html>
 <script type="text/javascript">
 	// 百度地图API功能 
