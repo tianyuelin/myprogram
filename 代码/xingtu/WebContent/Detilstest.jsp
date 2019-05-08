@@ -138,22 +138,6 @@
 	<div class="map"><div id="allmap"></div></div>
 </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div class="xiazong">
 
         
@@ -163,10 +147,12 @@
         <div class="pinglunzong">
 				<div class="talkMsg">
 					<ul id="msgBox">
+					
+					<c:forEach items="${commentslist}" var="ctl">
 						<li class="clearFix">
-							<p class="pingluntime">2017/10/12 16:59:32</p>
+							<p class="pingluntime">${ctl.time}</p>
 							<p class="pingluncontent">
-							张三
+							${ctl.username}
 								<!-- <img style="float: left; width: 120px;height: 50px;" src="images/ping2.png"> -->
                                 
                     	
@@ -174,74 +160,34 @@
 							<br>
 
 							<p>
-								<font>希望越来越多的人关心心理，真的不容忽视, 面朝大海，春暖花开，让我们不断成长，不断完善自己，加油。</font>
+								<font>${ctl.comment}</font>
 							</p>
 
 						</li>
 
+                   </c:forEach>
 
-
-						<li class="clearFix">
-							<p class="pingluntime">2017/10/12 16:59:32</p>
-							<p class="pingluncontent">
-							李四
-								<!-- <img style="float: left; width: 120px;height: 50px;" src="images/ping3.png"> -->
-			       
-			        	
-							</p>
-							<br>
-							<p>
-								<font>希望我们学校也有团辅活动，我也喜欢音乐，也想去学画画，在这也做了心理测评，感觉挺不错的，会再尝试。</font>
-							</p>
-
-						</li>
-
-						<li class="clearFix">
-							<p class="pingluntime">2017/10/12 16:59:32</p>
-							<p class="pingluncontent">
-							王五
-								<!-- <img style="float: left; width: 120px;height: 50px;" src="images/ping4.png"> -->
-			       
-			        	
-							</p>
-							<br>
-							<p>
-								<font>愿我们为了彼此，成为更好的自己，积极成长，愿有人陪你颠沛流离，如果没有，愿你成为自己的太阳。</font>
-							</p>
-
-						</li>
+					
 
 
 					  
 					
 					</ul>
 				</div> <!-- "talkMsg" -->
-
 				<div class="talkInp">
-					
-					<textarea class="area"></textarea>
-					<ul class="btnaa">
-						<li class="sendaa">
-							评论(s)
-							<p class="warning">发送内容不能为空，请重新输入</p>
-						</li>
-					</ul>
+				<form id="form" action="${ctx }/save" >
+				    <input name="id" type="hidden" value="${singlescene.sceneId}">
+					<input type="text" name="comment" style="width:600px;height:50px;"/>					
+					<input type="submit" value="评论"/>
+				</form>
 				</div>  <!-- talkInp -->
 			 </div>
-
-
-       
-
-
-
-
 
     </div><!-- xiazong -->
     
     
-    
 <!--评星 -->
-<div id="starRating" >
+<div id="starRating" style="margin-left:600px;">
     <p class="photo">
         <span><i class="high"></i><i class="nohigh"></i></span>
         <span><i class="high"></i><i class="nohigh"></i></span>
@@ -249,9 +195,16 @@
         <span><i class="high"></i><i class="nohigh"></i></span>
         <span><i class="high"></i><i class="nohigh"></i></span>
     </p>
-    <p class="starNum">0.0分</p>
+   
+    
+    <form action="${ctx }/savePF">
+    <input name="id" type="hidden" value="${singlescene.sceneId}">
+    <input id="PF" type="text" name="PF" value="">
+    <input type="submit" value="确认">
+    <p class="sureStar"></p>
+    </form>
     <div class="bottoms">
-        <a class="garyBtn cancleStar">取消评分</a><a class="blueBtn sureStar">确认</a>
+        <a class="garyBtn cancleStar">取消评分</a>
     </div>
 </div>
 <script>
@@ -264,6 +217,7 @@
             $(this).find('.high').css('z-index',1)
             $(this).nextAll().find('.high').css('z-index',0)
             $('.starNum').html((index*2).toFixed(1)+'分')
+            document.getElementById('PF').value=(index*2).toFixed(1);
         })
         $('.photo').on('mouseleave',function () {
             $(this).find('.high').css('z-index',0)
@@ -274,6 +228,7 @@
                 $('.photo span').eq(count).prevAll().find('.high').css('z-index',1);
             }
             $('.starNum').html(starRating.toFixed(1)+'分')
+            document.getElementById('PF').value=starRating.toFixed(1);
         })
         $('.photo span').on('click',function () {
             var index = $(this).index()+1;
@@ -292,9 +247,9 @@
         //确定评分
         $('.sureStar').on('click',function () {
             if(starRating===0) {
-                alert('最低一颗星！');
+            	$('.sureStar').html('最低一颗星！');
             } else {
-               alert('评分lalala先看看是哪：'+(starRating.toFixed(1)+'分'))
+            	$('.sureStar').html('评分lalala先看看是哪：'+(starRating.toFixed(1)+'分'))
             }
         })
     })
@@ -302,13 +257,9 @@
     
     
     
-    
-    
-    
 <div style="clear: both;">
 <%@include file="footer.jsp" %>
 </div>
-
 
  
 
@@ -331,4 +282,23 @@
         ]}));	  
 	map.setCurrentCity("北京");          // 设置地图显示的城市 此项是必须设置的
 	map.enableScrollWheelZoom(true);     //开启鼠标滚轮缩放
+	
+	
 </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
