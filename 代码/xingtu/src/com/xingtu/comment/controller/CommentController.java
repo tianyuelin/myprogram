@@ -29,7 +29,7 @@ public class CommentController {
 	private CommentService commentService;
 	@Resource
 	private SceneService ss;
-	//淇濆瓨璇勮鍒版暟鎹簱
+	//保存评论到数据库
 	@RequestMapping(value="/save",method=RequestMethod.GET)
 	public String save(HttpServletRequest request,HttpSession session){
 		String q=request.getParameter("id");
@@ -39,19 +39,19 @@ public class CommentController {
 		Scene s = ss.findScene(id);
 		List<SceneImgs> imgs = ss.findSceneimg(ss.findScene(id).getSname());
 		System.out.println(imgs.size());
-		// 灏嗗叧娉ㄨ�咃紙鐧诲綍鐢ㄦ埛锛夋斁鍏�
+		// 将关注者（登录用户）放入
 		Users u= (Users)session.getAttribute("user");
 		if (u == null) {
 			request.setAttribute("ifShoucang", false);
 		} else {
-			// 鍒ゆ柇鏇剧粡鏄惁宸叉彃鍏ワ紝鑻ユ棤锛屽垯鎻掑叆锛岃嫢鏈夊垯杩斿洖宸插叧娉�
+			// 判断曾经是否已插入，若无，则插入，若有则返回已关注
 			Boolean b = this.ss.IfShouCang(id,u);
-			if (b) {// 宸插叧娉�
-				request.setAttribute("ifShoucang", true); // 濡傛灉宸插叧娉紝瀛樺叆true,浣块〉闈㈡樉绀哄凡鍏虫敞
+			if (b) {//已关注
+				request.setAttribute("ifShoucang", true); // 如果已关注，存入true,使页面显示已关注
 				System.out.println(request.getAttribute("ifShoucang"));
-			} else {// 鏈叧娉�
+			} else {//未关注
 				request.setAttribute("ifShoucang", false);
-				System.out.println("鏈叧娉�");
+				System.out.println("未关注");
 			}
 
 		}
@@ -59,17 +59,16 @@ public class CommentController {
 		request.setAttribute("singlescene", s);
 		request.setAttribute("imglist", imgs);
 		System.out.println("11");
-		//鐧诲綍鐢ㄦ埛鏀惧叆
-		Users user= (Users) request.getSession().getAttribute("user");
+        //获得页面评论
 		String comment = request.getParameter("comment");	
 		System.out.println(comment);
 		
-		//娣诲姞璇勮鍒版暟鎹簱
+		//将评论保存到数据库
 		Comments ct=new Comments();
 		
 //		ct.setUsername("zhangsan");
 		ct.setComment(comment);
-		//瀛樺叆褰撳墠鐧婚檰鐢ㄦ埛
+		//保存当前用户
         ct.setUsername(u.getUsername());
 		ct.setTime(new Date());
 		
@@ -80,7 +79,7 @@ public class CommentController {
 		
 		return "Detilstest";
 	}
-	//淇濆瓨鍦扮偣璇勫垎鍒版暟鎹簱
+	//保存评分到数据库 一个用户一个景点评论一次
 	@RequestMapping(value="/savePF",method=RequestMethod.GET)
 	public String savepf(HttpServletRequest request,HttpSession session){
 		String q=request.getParameter("id");
@@ -90,19 +89,19 @@ public class CommentController {
 		Scene s = ss.findScene(id);
 		List<SceneImgs> imgs = ss.findSceneimg(ss.findScene(id).getSname());
 		System.out.println(imgs.size());
-		// 灏嗗叧娉ㄨ�咃紙鐧诲綍鐢ㄦ埛锛夋斁鍏�
+		//获取当前用户
 		Users u= (Users)session.getAttribute("user");
 		if (u == null) {
 			request.setAttribute("ifShoucang", false);
 		} else {
-			// 鍒ゆ柇鏇剧粡鏄惁宸叉彃鍏ワ紝鑻ユ棤锛屽垯鎻掑叆锛岃嫢鏈夊垯杩斿洖宸插叧娉�
+			// 判断曾经是否已插入，若无，则插入，若有则返回已关注
 			Boolean b = this.ss.IfShouCang(id,u);
-			if (b) {// 宸插叧娉�
-				request.setAttribute("ifShoucang", true); // 濡傛灉宸插叧娉紝瀛樺叆true,浣块〉闈㈡樉绀哄凡鍏虫敞
+			if (b) {// 已关注
+				request.setAttribute("ifShoucang", true); //如果已关注，存入true,使页面显示已关注
 				System.out.println(request.getAttribute("ifShoucang"));
-			} else {// 鏈叧娉�
+			} else {// 未关注
 				request.setAttribute("ifShoucang", false);
-				System.out.println("鏈叧娉�");
+				System.out.println("未关注");
 			}
 		}
 		List<Comments> list=this.commentService.findAll();
@@ -118,8 +117,8 @@ public class CommentController {
 					System.out.println(temp.getId());
 			}
 				System.out.println("PFF");
-			
-			boolean bl=true;
+		//判断数据库中是否已经存在同一个用户与一个景点的评论，有返回true  没有返回false
+			boolean bl=false;
 			for(CommentScore temp : listc) {
 				
 	    		System.out.println("PPP");
@@ -131,13 +130,13 @@ public class CommentController {
                  }
         	}
 		
-//		boolean bl=this.commentService.findAllPF(id,u.getEmail());
-		
+
+		//如果有显示已评论
 		System.out.println(bl);
 		if(bl == true) {
 			System.out.println("该用户评论过了！");
 		}
-		else {
+		else {//如果没有用户在该地点评论则保存评分到数据库
          System.out.println("hhhh");
           //添加数据评分到数据库
          String pf=request.getParameter("PF");
