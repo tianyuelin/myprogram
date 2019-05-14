@@ -43,13 +43,15 @@ public class IndexController {
 		
 		
 		//从数据库commonmentSorce中查询景点的评分并求均值  并修改scene中的sorce值。
-		int a=this.sceneDao.record();
-		System.out.println(a);
-		for(int i=1;i<a;i++) {
-		float avg=this.commentDao.findavg(i);
-		System.out.println(avg);
-		this.sceneService.update(i, avg);
-		}
+//		int a=this.sceneDao.record();
+//		System.out.println(a);
+//		for(int i=1;i<a;i++) {
+//		float avg=this.commentDao.findavg(i);
+//		System.out.println(avg);
+//		if(avg!=0) {
+//		this.sceneService.update(i, avg);
+//		}
+//		}
 		
 		return "index";
 	}

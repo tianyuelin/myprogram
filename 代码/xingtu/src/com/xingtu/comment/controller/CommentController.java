@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.xingtu.comment.dao.CommentDao;
 import com.xingtu.comment.service.CommentService;
 import com.xingtu.entity.CommentScore;
 import com.xingtu.entity.Comments;
@@ -29,6 +30,11 @@ public class CommentController {
 	private CommentService commentService;
 	@Resource
 	private SceneService ss;
+	@Resource
+	private CommentDao commentDao;
+	@Resource
+	private SceneService sceneService;
+	
 	//保存评论到数据库
 	@RequestMapping(value="/save",method=RequestMethod.GET)
 	public String save(HttpServletRequest request,HttpSession session){
@@ -149,7 +155,15 @@ public class CommentController {
          System.out.println(id);
          cs.setSceneid(id);
          this.commentService.save(cs);	
+         
+         
+         
 		}
+		
+		//保存评分到scene中
+		float avg=this.commentDao.findavg(id);
+		this.sceneService.update(id, avg);
+		
 		return "Detilstest";
 }
 }
