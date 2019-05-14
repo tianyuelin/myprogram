@@ -140,8 +140,9 @@ public class CommentController {
          System.out.println("hhhh");
           //添加数据评分到数据库
          String pf=request.getParameter("PF");
+         float b=Float.parseFloat(pf);
          CommentScore cs=new CommentScore();
-         cs.setPingfen(pf);
+         cs.setPingfen(b);
          cs.setUsername(u.getUsername());
          cs.setName(s.getSname());
          cs.setUseremail(u.getEmail());

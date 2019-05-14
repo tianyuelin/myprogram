@@ -36,6 +36,25 @@ public class SceneDao{
 		Query q = session.createQuery("from SceneImgs where pname='"+s.getSname()+"'");
 		return s;
 	}
+	//根据id修改scene中的评分
+	public void update(int id,float avg) {
+	    float a=(float)avg;
+		Session session = sf.getCurrentSession();
+		Scene s = (Scene)session.createQuery("from Scene where sceneId="+id).uniqueResult();
+		Query q = session.createQuery("update Scene set score="+a+"where sceneId="+id);
+	    q.executeUpdate();
+	}
+	//查询scene中有多少记录
+	public int record() {
+		Session session=sf.getCurrentSession();
+		Query q=session.createQuery("select count(*) from Scene sc");
+		if(q.uniqueResult()!=null) {
+		int a=Integer.parseInt(q.uniqueResult().toString());
+		return a;
+		}else {
+		return 0;
+		}
+	}
 	public List<SceneImgs> findSceneImgs(String name){
 		Session session = sf.getCurrentSession();
 		Query q = session.createQuery("from SceneImgs where pname='"+name+"'");

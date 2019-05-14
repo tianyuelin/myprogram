@@ -41,4 +41,17 @@ public class CommentDao {
 		Query q=session.createQuery("from CommentScore cs");		
 		return q.list();
 	}
+	//根据Id查询commontscore里面评分的平均值
+	public float findavg(int id) {
+		Session session=this.sessionFactory.getCurrentSession();
+		Query q=session.createQuery("select avg(cs.pingfen) from CommentScore cs where cs.sceneid="+id);
+		if(q.uniqueResult()!=null) {
+		float avg=Float.parseFloat(q.uniqueResult().toString());			
+		System.out.println("22");
+		return avg;
+		}else {
+        return 0;
+		}
+		}
+		
 }
