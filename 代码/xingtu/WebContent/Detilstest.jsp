@@ -216,8 +216,8 @@
             $(this).prevAll().find('.high').css('z-index',1)
             $(this).find('.high').css('z-index',1)
             $(this).nextAll().find('.high').css('z-index',0)
-            $('.starNum').html((index*2).toFixed(1)+'分')
-            document.getElementById('PF').value=(index*2).toFixed(1);
+            $('.starNum').html((index*2).toFixed(1)/2+'分')
+            document.getElementById('PF').value=(index*2).toFixed(1)/2;
         })
         $('.photo').on('mouseleave',function () {
             $(this).find('.high').css('z-index',0)
@@ -227,15 +227,15 @@
             } else {
                 $('.photo span').eq(count).prevAll().find('.high').css('z-index',1);
             }
-            $('.starNum').html(starRating.toFixed(1)+'分')
-            document.getElementById('PF').value=starRating.toFixed(1);
+            $('.starNum').html(starRating.toFixed(1)/2+'分')
+            document.getElementById('PF').value=starRating.toFixed(1)/2;
         })
         $('.photo span').on('click',function () {
             var index = $(this).index()+1;
             $(this).prevAll().find('.high').css('z-index',1)
             $(this).find('.high').css('z-index',1)
             starRating = index*2;
-            $('.starNum').html(starRating.toFixed(1)+'分');
+            $('.starNum').html(starRating.toFixed(1)/2+'分');
             // alert('评分：是哪嘞'+(starRating.toFixed(1)+'分'))
         })
         //取消评分
