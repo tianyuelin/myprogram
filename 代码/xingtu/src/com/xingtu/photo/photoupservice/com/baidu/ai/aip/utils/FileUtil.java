@@ -40,10 +40,8 @@ public class FileUtil {
         	System.out.println("file not exists");
             throw new FileNotFoundException(filePath);
         } else {
-        	System.out.println("file exists");
             ByteArrayOutputStream bos = new ByteArrayOutputStream((int) file.length());
             BufferedInputStream in = null;
-
             try {
                 in = new BufferedInputStream(new FileInputStream(file));
                 short bufSize = 1024;
@@ -53,7 +51,6 @@ public class FileUtil {
                 	System.out.println("len1");
                     bos.write(buffer, 0, len1);
                 }
-
                 byte[] var7 = bos.toByteArray();
                 return var7;
             } finally {

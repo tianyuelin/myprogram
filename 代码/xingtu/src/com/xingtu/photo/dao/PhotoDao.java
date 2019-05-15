@@ -50,19 +50,18 @@ public class PhotoDao {
 					String photopath = dirPath
 							+file.getOriginalFilename();
 					System.out.println(photopath);
-					yuan=ir.imagerecognize(photopath);
-					
 					p.setSrc("img\\"+user.getEmail()+dateDir+"\\"
 							+file.getOriginalFilename());
 					p.setEmail(user);
 					p.setUptime(new Date());
-					p.setAddress(yuan);
 					session.save(p);
 					photos.add(p);
 					int i=0;
 					while((i=is.read())!=-1) {
 						fos.write(i);
 					}
+					yuan=ir.imagerecognize(photopath);
+					p.setAddress(yuan);
 					is.close();
 					fos.flush();
 					fos.close();

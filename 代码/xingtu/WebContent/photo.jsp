@@ -118,12 +118,12 @@ $(document).on('click','.close-miaoshushow',function(){
 	<div style="margin-bottom: 25px;width: 75%;margin: auto;margin-left: 20.5%; height: 600px;">
 		<a href="${ctx }/upphoto.jsp"><img src="${ctx }/img/up.png" width="15%" height="150px" style="margin: 10px;"/></a>
 		<c:forEach items="${photos.list}" var="photo">
-		<c:if test="${photo.address==null&&photo.people==null&&photo.phototime==null }">
+		<c:if test="${photo.people==null&&photo.phototime==null }">
 		<a href="javascript:void(0);">
 			<img src="${ctx }/${photo.src}"class="photo" alt="" width="15%" height="150px" style="margin: 10px;" id="${photo.id }"/>
 		</a>
 		</c:if>
-		<c:if test="${photo.address!=null||photo.people!=null||photo.phototime!=null }">
+		<c:if test="${photo.people!=null||photo.phototime!=null }">
 		<a>
 			<img src="${ctx }/${photo.src}" alt="" width="15%" height="150px" style="margin: 10px;" id="${photo.id }" onclick="showphoto(this.id)"/>
 		</a>
