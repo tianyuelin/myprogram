@@ -157,7 +157,7 @@ $(document).on('click','.close-miaoshushow',function(){
         <div class="miaoshu-input">
         	<input type="text" name="photoid" style="display: none" id="photoid" value=""/>
             <label>地&nbsp;点&nbsp;：</label>
-            <input type="text" placeholder="为照片添加地点"  name="address" class="list-input"/>
+            <input type="text" placeholder="${photo.address}"  name="address" class="list-input"/>
         </div>
         <div class="miaoshu-input">
             <label>出行人物：</label>

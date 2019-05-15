@@ -31,7 +31,7 @@ public class PhotoController {
 	public String upPhoto(@RequestParam(value="files")MultipartFile []files,HttpServletRequest request,HttpSession session,@RequestParam(value="pageNum",defaultValue="1")int pageNum,@RequestParam(value="searchpeople",defaultValue="null")String searchpeople,@RequestParam(value="searchaddress",defaultValue="null")String searchaddress,@RequestParam(value="searchdate",defaultValue="null")String searchdate) {
 		String path= session.getServletContext().getRealPath("/");
 		Users u = (Users)session.getAttribute("user");
-		ps.upPhoto(files, path, u); 
+		String yuan=ps.upPhoto(files, path, u); 
 		Page<Photo> p = new Page<Photo>();
 		p.setCurrentPageNum(pageNum);
 		p.setPageSize(14);
@@ -40,6 +40,8 @@ public class PhotoController {
 		List<Photo> photos = ps.findphoto(u,p.getCurrentPageNum(),p.getPageSize(),searchaddress,searchpeople,searchdate);
 		p.setList(photos);
 		request.setAttribute("photos", p);
+		request.setAttribute("yuan", yuan);
+		System.out.println("controller"+yuan);
 		return "photo";
 	}
 	@RequestMapping(value="/findallphoto",method=RequestMethod.GET)

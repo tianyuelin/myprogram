@@ -88,6 +88,7 @@ public class CommentController {
 	//保存评分到数据库 一个用户一个景点评论一次
 	@RequestMapping(value="/savePF",method=RequestMethod.GET)
 	public String savepf(HttpServletRequest request,HttpSession session){
+		Comment comment=new Comment();
 		String q=request.getParameter("id");
 		int id=Integer.parseInt(q);
 		System.out.println(q);
@@ -160,6 +161,8 @@ public class CommentController {
          
 		}
 		
+		
+		comment.logsth(u.getEmail(), id, q);
 		//保存评分到scene中
 		float avg=this.commentDao.findavg(id);
 		this.sceneService.update(id, avg);
