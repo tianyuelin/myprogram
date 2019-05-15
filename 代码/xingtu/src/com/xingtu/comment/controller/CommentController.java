@@ -46,6 +46,7 @@ public class CommentController {
 		Users u= (Users)session.getAttribute("user");
 		if (u == null) {
 			request.setAttribute("ifShoucang", false);
+			return "sign";
 		} else {
 			// 判断曾经是否已插入，若无，则插入，若有则返回已关注
 			Boolean b = this.ss.IfShouCang(id,u);
@@ -97,6 +98,7 @@ public class CommentController {
 		Users u= (Users)session.getAttribute("user");
 		if (u == null) {
 			request.setAttribute("ifShoucang", false);
+			return "sign";
 		} else {
 			// 判断曾经是否已插入，若无，则插入，若有则返回已关注
 			Boolean b = this.ss.IfShouCang(id,u);
@@ -122,7 +124,7 @@ public class CommentController {
 			}
 				System.out.println("PFF");
 		//判断数据库中是否已经存在同一个用户与一个景点的评论，有返回true  没有返回false
-			boolean bl=false;
+			boolean bl=true;
 			for(CommentScore temp : listc) {
 				
 	    		System.out.println("PPP");

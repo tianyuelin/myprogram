@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.xingtu.comment.service.CommentService;
+import com.xingtu.entity.Comments;
 import com.xingtu.entity.Page;
 import com.xingtu.entity.Scene;
 import com.xingtu.entity.SceneImgs;
@@ -27,6 +29,8 @@ import com.xingtu.scene.service.SceneService;
 public class SceneController {
 	@Resource
 	private SceneService ss;
+	@Resource
+	private CommentService commentService;
 	//进入景点详情页，并且判断是否已经收藏
 	@RequestMapping(value="/singlesence",method=RequestMethod.GET)
 	public String findSingleScene(HttpServletRequest request,@RequestParam("id") int id,HttpSession session) {
@@ -55,6 +59,13 @@ public class SceneController {
 		}
 		request.setAttribute("singlescene", s);
 		request.setAttribute("imglist", imgs);
+		
+		
+		//显示评论
+		List<Comments> list=this.commentService.findAll();
+		request.setAttribute("commentslist", list);
+		
+		
 		return "Detilstest";
 	}
 	@RequestMapping(value="/allsence",method=RequestMethod.GET)
