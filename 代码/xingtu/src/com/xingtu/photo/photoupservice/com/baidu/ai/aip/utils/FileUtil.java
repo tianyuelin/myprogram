@@ -34,10 +34,13 @@ public class FileUtil {
      * 根据文件路径读取byte[] 数组
      */
     public static byte[] readFileByBytes(String filePath) throws IOException {
-        File file = new File(filePath);
+        System.out.println("fileUtil:"+filePath);
+    	File file = new File(filePath);
         if (!file.exists()) {
+        	System.out.println("file not exists");
             throw new FileNotFoundException(filePath);
         } else {
+        	System.out.println("file exists");
             ByteArrayOutputStream bos = new ByteArrayOutputStream((int) file.length());
             BufferedInputStream in = null;
 
@@ -47,6 +50,7 @@ public class FileUtil {
                 byte[] buffer = new byte[bufSize];
                 int len1;
                 while (-1 != (len1 = in.read(buffer, 0, bufSize))) {
+                	System.out.println("len1");
                     bos.write(buffer, 0, len1);
                 }
 

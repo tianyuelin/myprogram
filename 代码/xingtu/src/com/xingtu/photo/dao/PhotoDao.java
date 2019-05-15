@@ -37,9 +37,8 @@ public class PhotoDao {
 			if(!file.isEmpty()){
 				try {
 					InputStream is=file.getInputStream();
-					String dateDir = new SimpleDateFormat("yyyy/MM/dd").format(new Date());
-					String dirPath = path+"img\\"+user.getEmail()+dateDir;
-					System.out.println(dirPath);
+					String dateDir = new SimpleDateFormat("yyyyMMdd").format(new Date());
+					String dirPath = path+"img\\"+user.getEmail()+dateDir+"\\";
 					File foder=new File(dirPath);
 					if(!foder.exists()) {
 						foder.mkdirs();
@@ -48,17 +47,12 @@ public class PhotoDao {
 					FileOutputStream fos=new FileOutputStream(
 							dirPath
 							+file.getOriginalFilename());
-					System.out.println("yaojinxingle");
-					 yuan=ir.imagerecognize("F:/xingtushixunxiangmudasanxia/images/g.jpg");
+					String photopath = dirPath
+							+file.getOriginalFilename();
+					System.out.println(photopath);
+					yuan=ir.imagerecognize(photopath);
 					
-                   System.out.println(yuan);
-					System.out.println("diaoyongla");
-	
-					
-					
-					
-					
-					p.setSrc("img\\"+user.getEmail()+dateDir
+					p.setSrc("img\\"+user.getEmail()+dateDir+"\\"
 							+file.getOriginalFilename());
 					p.setEmail(user);
 					p.setUptime(new Date());
