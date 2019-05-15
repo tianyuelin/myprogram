@@ -19,12 +19,15 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.xingtu.entity.Photo;
 import com.xingtu.entity.Users;
+import com.xingtu.photo.photoupservice.imageRecognize.ImageRecognize;
 
 @Repository
 public class PhotoDao {
 	@Resource
 	private SessionFactory sf;
-	public void upPhoto(MultipartFile [] files,String path,Users user){
+	public String upPhoto(MultipartFile [] files,String path,Users user){
+		ImageRecognize ir=new ImageRecognize();
+		String yuan="";
 		Session session  = sf.getCurrentSession();
 		List<Photo> photos = new ArrayList<Photo>(0);//创建photo对象
 		System.out.println(files==null);
@@ -45,10 +48,21 @@ public class PhotoDao {
 					FileOutputStream fos=new FileOutputStream(
 							dirPath
 							+file.getOriginalFilename());
+					System.out.println("yaojinxingle");
+					 yuan=ir.imagerecognize("F:/xingtushixunxiangmudasanxia/images/g.jpg");
+					
+                   System.out.println(yuan);
+					System.out.println("diaoyongla");
+	
+					
+					
+					
+					
 					p.setSrc("img\\"+user.getEmail()+dateDir
 							+file.getOriginalFilename());
 					p.setEmail(user);
 					p.setUptime(new Date());
+					p.setAddress(yuan);
 					session.save(p);
 					photos.add(p);
 					int i=0;
@@ -63,7 +77,28 @@ public class PhotoDao {
 				}
 			}
 		}
+		return yuan;
 	}
+	
+//	public String aaaaaaafindPhoto(){
+//		System.out.println("findptoto");
+//		ImageRecognize ir=new ImageRecognize();
+//
+//					
+////					ir.imagerecognize("F:/xingtushixunxiangmudasanxia/images1/"+file.getOriginalFilename());
+//					String yuan=ir.imagerecognize("F:/xingtushixunxiangmudasanxia/images/g.jpg");
+//					
+//                    System.out.println(yuan);
+//					System.out.println("diaoyongla");
+//		return yuan;
+//				
+//	}
+	
+	
+	
+	
+	
+	
 	public List<Photo> findAllPhoto(Users u,int pageNum,int pageSize,String searchaddress,String searchpeople,String searchdate){
 		Session session = sf.getCurrentSession();
 		Query q;

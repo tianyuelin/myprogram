@@ -36,6 +36,25 @@ public class SceneDao{
 		Query q = session.createQuery("from SceneImgs where pname='"+s.getSname()+"'");
 		return s;
 	}
+	//根据id修改scene中的评分
+	public void update(int id,float avg) {
+	    float a=(float)avg;
+		Session session = sf.getCurrentSession();
+		Scene s = (Scene)session.createQuery("from Scene where sceneId="+id).uniqueResult();
+		Query q = session.createQuery("update Scene set score="+a+"where sceneId="+id);
+	    q.executeUpdate();
+	}
+	//查询scene中有多少记录
+	public int record() {
+		Session session=sf.getCurrentSession();
+		Query q=session.createQuery("select count(*) from Scene sc");
+		if(q.uniqueResult()!=null) {
+		int a=Integer.parseInt(q.uniqueResult().toString());
+		return a;
+		}else {
+		return 0;
+		}
+	}
 	public List<SceneImgs> findSceneImgs(String name){
 		Session session = sf.getCurrentSession();
 		Query q = session.createQuery("from SceneImgs where pname='"+name+"'");
@@ -138,5 +157,31 @@ public class SceneDao{
 		Session session = sf.getCurrentSession();
 		Query q = session.createQuery("from Scene where sname like'%"+name+"%'");
 		return q.list();
+	}
+	//获取推荐景点
+	public List<Scene> findTjScene(List<String> sceneid){
+		List<Scene> scenes = new ArrayList<Scene>();
+		Session session = sf.getCurrentSession();
+		for(String id :sceneid) {
+			Scene s = (Scene)session.createQuery("from Scene where sceneId="+id).uniqueResult();
+			scenes.add(s);
+		}
+		//如果推荐的超过六个，取出前六个
+		List<Scene> Tj = new ArrayList<Scene>();
+		if(scenes.size()>6) {
+			for(int i=0;i<6;i++) {
+				Tj.add(scenes.get(i));
+			}
+			return Tj;
+		}else {
+			Query q = session.createQuery("from Scene where img is not null");
+			q.setFirstResult(0);
+			q.setMaxResults(6-scenes.size());
+			for(Scene s:(List<Scene>)q.list()) {
+				scenes.add(s);
+			}
+		}
+		//如果小于6个的话
+		return scenes;
 	}
 }

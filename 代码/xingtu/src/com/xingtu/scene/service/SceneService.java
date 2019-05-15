@@ -22,6 +22,9 @@ public class SceneService {
 		System.out.println("service"+sd.findSceneById(id).getTicketPrice());
 		return sd.findSceneById(id);
 	}
+	public void update(int id,float avg) {
+		this.sd.update(id, avg);
+	}
 	public List<SceneImgs> findSceneimg(String name) {
 		return sd.findSceneImgs(name);
 	}
@@ -52,5 +55,8 @@ public class SceneService {
 	}
 	public List<Scene> findByName(String name){
 		return sd.findbyname(name);
+	}
+	public List<Scene> TjScene(List<String> id){
+		return sd.findTjScene(id);
 	}
 }

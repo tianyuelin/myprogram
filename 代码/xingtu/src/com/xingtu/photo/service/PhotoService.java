@@ -17,8 +17,11 @@ import com.xingtu.photo.dao.PhotoDao;
 public class PhotoService {
 	@Resource
 	private PhotoDao pd;
-	public void upPhoto(MultipartFile []files,String path,Users user){
-		pd.upPhoto(files, path, user);
+	public String upPhoto(MultipartFile []files,String path,Users user){
+		System.out.println("jinruservice");
+		String yuan=pd.upPhoto(files, path, user);
+//		String yuan=pd.aaaaaaafindPhoto();
+		return yuan;
 	}
 	public List<Photo> findphoto(Users u,int pageNum,int pageSize,String searchaddress,String searchpeople,String searchdate){
 		return pd.findAllPhoto(u,pageNum,pageSize,searchaddress,searchpeople,searchdate);

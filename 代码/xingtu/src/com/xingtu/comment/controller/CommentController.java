@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.xingtu.comment.dao.CommentDao;
 import com.xingtu.comment.service.CommentService;
 import com.xingtu.entity.CommentScore;
 import com.xingtu.entity.Comments;
@@ -29,6 +30,11 @@ public class CommentController {
 	private CommentService commentService;
 	@Resource
 	private SceneService ss;
+	@Resource
+	private CommentDao commentDao;
+	@Resource
+	private SceneService sceneService;
+	
 	//保存评论到数据库
 	@RequestMapping(value="/save",method=RequestMethod.GET)
 	public String save(HttpServletRequest request,HttpSession session){
@@ -82,6 +88,7 @@ public class CommentController {
 	//保存评分到数据库 一个用户一个景点评论一次
 	@RequestMapping(value="/savePF",method=RequestMethod.GET)
 	public String savepf(HttpServletRequest request,HttpSession session){
+		Comment comment=new Comment();
 		String q=request.getParameter("id");
 		int id=Integer.parseInt(q);
 		System.out.println(q);
@@ -140,15 +147,26 @@ public class CommentController {
          System.out.println("hhhh");
           //添加数据评分到数据库
          String pf=request.getParameter("PF");
+         float b=Float.parseFloat(pf);
          CommentScore cs=new CommentScore();
-         cs.setPingfen(pf);
+         cs.setPingfen(b);
          cs.setUsername(u.getUsername());
          cs.setName(s.getSname());
          cs.setUseremail(u.getEmail());
          System.out.println(id);
          cs.setSceneid(id);
          this.commentService.save(cs);	
+         
+         
+         
 		}
+		
+		
+		comment.logsth(u.getEmail(), id, q);
+		//保存评分到scene中
+		float avg=this.commentDao.findavg(id);
+		this.sceneService.update(id, avg);
+		
 		return "Detilstest";
 }
 }
