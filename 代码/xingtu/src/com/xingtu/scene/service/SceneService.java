@@ -56,4 +56,7 @@ public class SceneService {
 	public List<Scene> findByName(String name){
 		return sd.findbyname(name);
 	}
+	public List<Scene> TjScene(List<String> id){
+		return sd.findTjScene(id);
+	}
 }

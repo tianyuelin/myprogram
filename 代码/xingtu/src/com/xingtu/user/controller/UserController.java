@@ -22,6 +22,7 @@ import com.xingtu.entity.Users;
 import com.xingtu.guanzhu.service.GuanzhuService;
 import com.xingtu.scene.service.SceneService;
 import com.xingtu.user.service.UserService;
+import com.xingtu.util.ReadLog;
 
 @Controller
 @RequestMapping("/user")
@@ -63,8 +64,15 @@ public class UserController {
 			Users user = this.userService.UserCenter(users.getEmail());
 			session.setAttribute("isSigned",issigned);//定义一个是否已登录的接口
 			session.setAttribute("user", user);
-			List<Scene> list1=ss.getSceList();
-			request.setAttribute("scelist", list1);
+			ReadLog rl = new ReadLog();
+			List<String> sceneid = rl.Tj(users);
+			if(sceneid==null) {
+				List<Scene> list1=ss.getSceList();
+				request.setAttribute("scelist", list1);
+			}else {
+				List<Scene>list = ss.TjScene(sceneid);
+				request.setAttribute("scelist", list);
+			}
 			return "index";
 		}
 		else {

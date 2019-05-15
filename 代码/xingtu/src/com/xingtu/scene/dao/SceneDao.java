@@ -158,4 +158,30 @@ public class SceneDao{
 		Query q = session.createQuery("from Scene where sname like'%"+name+"%'");
 		return q.list();
 	}
+	//获取推荐景点
+	public List<Scene> findTjScene(List<String> sceneid){
+		List<Scene> scenes = new ArrayList<Scene>();
+		Session session = sf.getCurrentSession();
+		for(String id :sceneid) {
+			Scene s = (Scene)session.createQuery("from Scene where sceneId="+id).uniqueResult();
+			scenes.add(s);
+		}
+		//如果推荐的超过六个，取出前六个
+		List<Scene> Tj = new ArrayList<Scene>();
+		if(scenes.size()>6) {
+			for(int i=0;i<6;i++) {
+				Tj.add(scenes.get(i));
+			}
+			return Tj;
+		}else {
+			Query q = session.createQuery("from Scene where img is not null");
+			q.setFirstResult(0);
+			q.setMaxResults(6-scenes.size());
+			for(Scene s:(List<Scene>)q.list()) {
+				scenes.add(s);
+			}
+		}
+		//如果小于6个的话
+		return scenes;
+	}
 }
