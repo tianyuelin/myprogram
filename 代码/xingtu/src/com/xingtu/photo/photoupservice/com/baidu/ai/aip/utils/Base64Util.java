@@ -19,6 +19,7 @@ public class Base64Util {
 
         int i;
         for (i = 0; i < from.length; ++i) {
+        	
             for (num %= 8; num < 8; num += 6) {
                 switch (num) {
                     case 0:

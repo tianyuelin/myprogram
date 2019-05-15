@@ -8,11 +8,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.util.SystemPropertyUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.servlet.ModelAndView;
 
 import com.xingtu.comment.dao.CommentDao;
 import com.xingtu.comment.service.CommentService;
@@ -155,14 +152,10 @@ public class CommentController {
          cs.setUseremail(u.getEmail());
          System.out.println(id);
          cs.setSceneid(id);
-         this.commentService.save(cs);	
-         
-         
-         
+         comment.logsth(u.getEmail(), id, b);
+         this.commentService.save(cs);
 		}
 		
-		
-		comment.logsth(u.getEmail(), id, q);
 		//保存评分到scene中
 		float avg=this.commentDao.findavg(id);
 		this.sceneService.update(id, avg);
