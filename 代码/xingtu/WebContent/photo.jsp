@@ -28,6 +28,7 @@ $(function () {
             $('.miaoshu').show();
             $('.miaoshu-bg').show();
             $("#photoid").attr("value",this.id);
+            $("#photoaddress").attr("value",this.name);
         });
     };
     H_miaoshu.closemiaoshu = function(){
@@ -45,11 +46,13 @@ $(function () {
 function showphoto(id){
     $('#info'+id).show();
     $('.miaoshushow-bg').show();
+
 }
 $(document).on('click','.close-miaoshushow',function(){
 	$('.miaoshushow').hide();
     $('.miaoshushow-bg').hide();
 });
+
 </script>
 </head>
 <body>
@@ -120,7 +123,7 @@ $(document).on('click','.close-miaoshushow',function(){
 		<c:forEach items="${photos.list}" var="photo">
 		<c:if test="${photo.people==null&&photo.phototime==null }">
 		<a href="javascript:void(0);">
-			<img src="${ctx }/${photo.src}"class="photo" alt="" width="15%" height="150px" style="margin: 10px;" id="${photo.id }"/>
+			<img src="${ctx }/${photo.src}"class="photo"  name="${photo.address }" alt="" width="15%" height="150px" style="margin: 10px;" id="${photo.id }"/>
 		</a>
 		</c:if>
 		<c:if test="${photo.people!=null||photo.phototime!=null }">
@@ -136,7 +139,7 @@ $(document).on('click','.close-miaoshushow',function(){
     		<div class="miaoshushow-title">照片描述信息<span><a href="javascript:void(0);" class="close-miaoshushow" onclick="close()">关闭</a></span></div>
     		<div class="miaoshushow-input-content">
         	<div class="miaoshushow-input">
-        		<label>地&nbsp;点&nbsp;：<span id="address">${photo.address }</span></label>
+        		<label>地&nbsp;点&nbsp;：<span id="address2">${photo.address }</span></label>
         	</div>
         	<div class="miaoshushow-input">
             <label>出行人物：<span id="people">${photo.people }</span></label>
@@ -152,12 +155,13 @@ $(document).on('click','.close-miaoshushow',function(){
 	</div>
 	<div class="miaoshu">
 	<form action="${ctx }/photo/photoinfo" method="post">
+	
     <div class="miaoshu-title">照片描述信息<span><a href="javascript:void(0);" class="close-miaoshu">关闭</a></span></div>
     <div class="miaoshu-input-content">
         <div class="miaoshu-input">
         	<input type="text" name="photoid" style="display: none" id="photoid" value=""/>
             <label>地&nbsp;点&nbsp;：</label>
-            <input type="text" placeholder="${photo.address}"  name="address" class="list-input"/>
+            <input type="text" name="photoaddress"  class="list-input" id="photoaddress" value=""/>
         </div>
         <div class="miaoshu-input">
             <label>出行人物：</label>
