@@ -86,6 +86,25 @@ public class SceneDao{
 		q.setMaxResults(3);
 		return q.list();
 	}
+	//根据sceneidlist获取热门景点
+	public List<Scene> getBaseItemScene(List sceneidList){
+		List<Scene> hotScene=new ArrayList<Scene>();
+		Session session=sf.getCurrentSession();
+		for(int j=0;j<sceneidList.size();j++) {
+			int currentid=(int) sceneidList.get(j); //看看此处是否有错
+			Query q=session.createQuery("from Scene where sceneId=?0");
+			q.setParameter(0, currentid);
+			Scene scene1=(Scene) q.list().get(0);
+			hotScene.add(scene1);
+		}
+		return hotScene;
+
+	}
+	
+	
+	
+	
+	
 	public void addshoucang(int id,Users u) {
 		Session session = sf.getCurrentSession();
 		Scene scene = (Scene)session.createQuery("from Scene where sceneId="+id).uniqueResult();

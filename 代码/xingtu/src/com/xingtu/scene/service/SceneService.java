@@ -37,6 +37,12 @@ public class SceneService {
 	public List<Scene> getHotScene(){
 		return sd.getHotScene();
 	}
+	//获取热门景点
+	public List<Scene> getBaseItemScene(List sceneidList){
+		return sd.getBaseItemScene(sceneidList);
+	}
+	
+	
 	//判断是否已收藏
 	public Boolean IfShouCang(int sceneid,Users user) {
 		return sd.IfShouCang(sceneid, user);

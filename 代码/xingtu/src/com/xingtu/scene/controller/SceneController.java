@@ -1,5 +1,6 @@
 package com.xingtu.scene.controller;
 
+import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
@@ -20,6 +21,7 @@ import com.xingtu.entity.Sceneshoucang;
 import com.xingtu.entity.Users;
 import com.xingtu.log.Browse;
 import com.xingtu.log.Collectlog;
+import com.xingtu.recommend.InvokeByRuntime;
 import com.xingtu.scene.service.SceneService;
 
 @Controller
@@ -57,8 +59,9 @@ public class SceneController {
 		request.setAttribute("imglist", imgs);
 		return "Detilstest";
 	}
+	//景点页从此处获得景点
 	@RequestMapping(value="/allsence",method=RequestMethod.GET)
-	public String findScenes(HttpServletRequest request,@RequestParam(value="pageNum",defaultValue="1")int pageNum) {
+	public String findScenes(HttpServletRequest request,HttpSession session,@RequestParam(value="pageNum",defaultValue="1")int pageNum) {
 		Page<Scene> p = new Page<Scene>();
 		p.setCurrentPageNum(pageNum);
 		p.setPageSize(8);
@@ -67,8 +70,29 @@ public class SceneController {
 		System.out.println(pageNum);
 		List<Scene> scenes = ss.findAllScene(p.getCurrentPageNum(),p.getPageSize());
 		p.setList(scenes);
-		List<Scene> hotscene = ss.getHotScene();
-		request.setAttribute("hotscene", hotscene);
+		
+		//设置热门景点
+		
+		//1.把此时的用户传入
+		Object user=session.getAttribute("user");
+		if(user!=null) {
+			Users users=(Users)user;
+			InvokeByRuntime ibr=new InvokeByRuntime();
+			try {
+				List scenelist=ibr.getHotSecneid(users);
+				//根据找到的景点id找到相应的热门景点
+				List<Scene> hotscene=ss.getBaseItemScene(scenelist);
+				request.setAttribute("hotscene", hotscene);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+//List<Scene> hotscene = ss.getHotScene();
+		
 		request.setAttribute("page", p);
 		return "meijing";
 	}
