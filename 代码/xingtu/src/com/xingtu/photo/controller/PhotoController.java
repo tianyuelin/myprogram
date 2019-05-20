@@ -1,6 +1,5 @@
 package com.xingtu.photo.controller;
 
-import java.util.Date;
 import java.util.List;
 
 import javax.annotation.Resource;
@@ -15,7 +14,6 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.xingtu.entity.Page;
 import com.xingtu.entity.Photo;
-import com.xingtu.entity.Scene;
 import com.xingtu.entity.Users;
 import com.xingtu.photo.service.PhotoService;
 import com.xingtu.user.service.UserService;
@@ -67,8 +65,6 @@ public class PhotoController {
 		//获取粉丝的人数
 		Long fansCount = this.userService.findfansCount1(myemail);
 		request.setAttribute("fansCount",fansCount);
-		
-
 		return "photo";
 	}
 
@@ -79,11 +75,11 @@ public class PhotoController {
 		p.setPageSize(14);
 		p.setNextPageNum(pageNum+1);
 		p.setPrePageNum(pageNum-1);
+		ps.updatePhoto(people, address, id, phototime);
 		Users u = (Users)session.getAttribute("user");
 		List<Photo> photos = ps.findphoto(u,p.getCurrentPageNum(),p.getPageSize(),searchaddress,searchpeople,searchdate);
 		p.setList(photos);
 		request.setAttribute("photos", p);
-		ps.updatePhoto(people, address, id, phototime);
 		return "photo";
 	}
 	

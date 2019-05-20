@@ -61,7 +61,10 @@ public class PhotoDao {
 						fos.write(i);
 					}
 					yuan=ir.imagerecognize(photopath);
-					p.setAddress(yuan);
+					if(!yuan.equals("notfind")&&yuan!=null) {
+						p.setAddress(yuan);
+					}
+					
 					is.close();
 					fos.flush();
 					fos.close();

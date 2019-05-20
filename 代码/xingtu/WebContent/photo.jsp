@@ -28,7 +28,10 @@ $(function () {
             $('.miaoshu').show();
             $('.miaoshu-bg').show();
             $("#photoid").attr("value",this.id);
-            $("#photoaddress").attr("value",this.name);
+            if($("#photoaddress").val().length==0){
+            	alert("1");
+            	$("#photoaddress").attr("value",this.name);
+            }
         });
     };
     H_miaoshu.closemiaoshu = function(){
@@ -187,12 +190,5 @@ $(document).on('click','.close-miaoshushow',function(){
 </div>
 	<jsp:include page="footer.jsp" flush="true"></jsp:include>
 
-
-	
-
-           
-	
-	
-	
 	</body>
 </html>
