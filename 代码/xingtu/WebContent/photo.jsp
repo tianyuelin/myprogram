@@ -29,7 +29,6 @@ $(function () {
             $('.miaoshu-bg').show();
             $("#photoid").attr("value",this.id);
             if($("#photoaddress").val().length==0){
-            	alert("1");
             	$("#photoaddress").attr("value",this.name);
             }
         });
