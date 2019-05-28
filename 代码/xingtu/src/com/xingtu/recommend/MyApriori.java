@@ -4,9 +4,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.InputStreamReader;
 import java.util.*;
-
 import javax.annotation.Resource;
-
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
@@ -21,106 +19,72 @@ public class MyApriori {
     static  List<List<String>> frequentItemset=new ArrayList<>();//存储所有的频繁项集
     static List<Mymap> map = new ArrayList();//存放频繁项集和对应的支持度技术
     @RequestMapping("/apriori")
-    public void apri(String args[]){
+    public void apri(String add){
         /*************读取数据集**************/
         record = as.find();
         //控制台输出记录
         System.out.println("读取数据集record成功===================================");
         ShowData(record);
-
-
-        Apriori();//调用Apriori算法获得频繁项集
+        Apriori(add);//调用Apriori算法获得频繁项集
         System.out.println("频繁模式挖掘完毕。\n\n\n\n\n进行关联度挖掘，最小支持度百分比为："+MIN_SUPPROT+"  最小置信度为："+MIN_CONFIDENCE);
-
-
-
          AssociationRulesMining();//挖掘关联规则
     }
-
-    /**********************************************
-     * ****************读取数据********************/
-    public static List<List<String>> getRecord(String url) {
-        List<List<String>> record = new ArrayList<List<String>>();
-        try {
-            String encoding = "UTF-8"; // 字符编码(可解决中文乱码问题 )
-            File file = new File(url);
-            if (file.isFile() && file.exists()) {
-                InputStreamReader read = new InputStreamReader(
-                        new FileInputStream(file), encoding);
-                BufferedReader bufferedReader = new BufferedReader(read);
-                String lineTXT = null;
-                while ((lineTXT = bufferedReader.readLine()) != null) {//读一行文件
-                    String[] lineString = lineTXT.split(",");
-                    List<String> lineList = new ArrayList<String>();
-                    for (int i = 0; i < lineString.length; i++) {
-                        lineList.add(lineString[i]);
-                    }
-                    record.add(lineList);
-                }
-
-                read.close();
-            } else {
-                System.out.println("找不到指定的文件！");
-            }
-        } catch (Exception e) {
-            System.out.println("读取文件内容操作出错");
-            e.printStackTrace();
-        }
-        return record;
-    }
-
-
-
-
-    public static void Apriori()           /**实现apriori算法**/
+    public static Set<String> Apriori(String add)           /**实现apriori算法**/
     {
         //************获取候选1项集**************
         System.out.println("第一次扫描后的1级 备选集CandidateItemset");
         List<List<String>> CandidateItemset = findFirstCandidate();
         ShowData(CandidateItemset);
-
-
-
         //************获取频繁1项集***************
         System.out.println("第一次扫描后的1级 频繁集FrequentItemset");
         List<List<String>> FrequentItemset = getSupprotedItemset(CandidateItemset);
         AddToFrequenceItem(FrequentItemset);//添加到所有的频繁项集中
         //控制台输出1项频繁集
         ShowData(FrequentItemset);
-
-
          //*****************************迭代过程**********************************
         times=2;
         while(endTag!=true){
-
             System.out.println("*******************************第"+times+"次扫描后备选集");
             //**********连接操作****获取候选times项集**************
             List<List<String>> nextCandidateItemset = getNextCandidate(FrequentItemset);
             //输出所有的候选项集
             ShowData(nextCandidateItemset);
-
-
             /**************计数操作***由候选k项集选择出频繁k项集****************/
             System.out.println("*******************************第"+times+"次扫描后频繁集");
             List<List<String>> nextFrequentItemset = getSupprotedItemset(nextCandidateItemset);
             AddToFrequenceItem(nextFrequentItemset);//添加到所有的频繁项集中
             //输出所有的频繁项集
             ShowData(nextFrequentItemset);
-
-
             //*********如果循环结束，输出最大模式**************
             if(endTag == true){
                 System.out.println("\n\n\nApriori算法--->最大频繁集==================================");
                 ShowData(FrequentItemset);
+                Set<String> s = new HashSet<String>();
+                for(int i = 0;i<FrequentItemset.size();i++) {
+                	if(FrequentItemset.get(i).contains(add)) {
+                		for(int j=0;j<FrequentItemset.get(i).size();j++) {
+                			if(!add.equals(FrequentItemset.get(i).get(j))) {
+                				s.add(FrequentItemset.get(i).get(j));
+                			}
+                		}
+                	}
+                }
+                if(s!=null) {
+                	System.out.println("******************************************");
+                	for(String a : s) {
+                    	System.out.print(a+"  ");
+                    }
+                	System.out.println();
+                	System.out.println("******************************************");
+                }
+                return s;
             }
             //****************下一次循环初值********************
             FrequentItemset = nextFrequentItemset;
             times++;//迭代次数加一
         }
+        return null;
     }
-
-
-
     public static void AssociationRulesMining()//关联规则挖掘
     {
         for(int i=0;i<frequentItemset.size();i++)
@@ -137,11 +101,8 @@ public class MyApriori {
                         System.out.println("置信度为：" + conf);
                 }
             }
-
             }
         }
-
-
     public  static  double isAssociationRules(List<String> s1,List<String> s2,List<String> tem)//判断是否为关联规则
     {
         double confidence=0;
@@ -164,9 +125,7 @@ public class MyApriori {
         }
         else
             return 0;
-
     }
-
     public static int getCount(List<String> in)//根据频繁项集得到 其支持度计数
     {
         int rt=0;
@@ -181,8 +140,6 @@ public class MyApriori {
         return rt;
 
     }
-
-
     public static  List<String> gets2set(List<String> tem, List<String> s1)//计算tem减去s1后的集合即为s2
     {
         List<String> result=new ArrayList<>();
@@ -195,13 +152,10 @@ public class MyApriori {
         }
         return  result;
     }
-
-
     public static List<List<String>> getSubSet(List<String> set){
         List<List<String>> result = new ArrayList<>();	//用来存放子集的集合，如{{},{1},{2},{1,2}}
         int length = set.size();
         int num = length==0 ? 0 : 1<<(length);	//2的n次方，若集合set为空，num为0；若集合set有4个元素，那么num为16.
-
         //从0到2^n-1（[00...00]到[11...11]）
         for(int i = 1; i < num-1; i++){
             List<String> subSet = new ArrayList<>();
@@ -218,11 +172,6 @@ public class MyApriori {
         }
         return result;
     }
-
-
-
-
-
     public  static  boolean  AddToFrequenceItem(List<List<String>> fre)
     {
 
@@ -232,9 +181,6 @@ public class MyApriori {
         }
         return true;
     }
-
-
-
     public static  void ShowData(List<List<String>> CandidateItemset)//显示出candidateitem中的所有的项集
     {
         for(int i=0;i<CandidateItemset.size();i++){
@@ -245,10 +191,6 @@ public class MyApriori {
             System.out.println();
         }
     }
-
-
-
-
     /**
      ******************************************************* 有当前频繁项集自连接求下一次候选集
      */
@@ -283,9 +225,6 @@ public class MyApriori {
         }
         return nextCandidateItemset;
     }
-
-
-
     /**
      * 判断新添加元素形成的候选集是否在新的候选集中
      */
@@ -301,8 +240,6 @@ public class MyApriori {
                 return false;
         return true;
     }
-
-
     /**
      * 由k项候选集剪枝得到k项频繁集
      * @param CandidateItemset
@@ -328,10 +265,6 @@ public class MyApriori {
             System.out.println("*****************无满足支持度的"+times+"项集,结束连接");
         return supportedItemset;
     }
-
-
-
-
     /**
      * 统计record中出现list集合的个数
      */
@@ -356,7 +289,6 @@ public class MyApriori {
         return count;//返回支持度计数
 
     }
-
     /**
      * 获得一项候选集
      * @return
@@ -381,10 +313,6 @@ public class MyApriori {
         return tableList;//返回所有的商品
     }
 }
-
-
-
-
 class  Mymap{//自定义的map类，一个对象存放一个频繁项集以及其支持度计数
     public List<String> li=new LinkedList<>();
     public  int count;
@@ -394,12 +322,10 @@ class  Mymap{//自定义的map类，一个对象存放一个频繁项集以及�
         li=l;
         count=c;
     }
-
     public int getcount()//返回得到当前频繁项集的支持度计数
     {
         return count;
     }
-
     public boolean isListEqual(List<String> in)//判断传入的频繁项集是否和本频繁项集相同
     {
         if(in.size()!=li.size())//先判断大小是否相同
