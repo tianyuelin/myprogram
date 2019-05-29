@@ -46,6 +46,4 @@ public class Beijing {
 	public void setCity(String city) {
 		this.city = city;
 	}
-	
-
 }

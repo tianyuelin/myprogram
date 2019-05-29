@@ -49,7 +49,6 @@ public class JourneyController {
 	@RequestMapping(value="/journeylist",method=RequestMethod.POST)
 	public String createJour(HttpServletRequest request,HttpSession session,@RequestParam(value="pageNum",defaultValue="1")int pageNum,@RequestParam(value="cityname",defaultValue="null")String[] cityname,@RequestParam(value="is",defaultValue="false")boolean is) {
 		/* 获取热门城市 */
-		System.out.println(cityname[0]);
 		//将获取到的城市信息上传到request中，方便分页的使用
 		String []names=cityname;
 		if(!("null").equals(cityname[0])) {
@@ -63,10 +62,6 @@ public class JourneyController {
 		p.setPrePageNum(pageNum-1);
 		List<Scene> scens=null;
 		if(("null").equals(cityname[0])){
-			System.out.println("city is null");
-			for(String name:ns) {
-				System.out.println(name);
-			}
 			 scens= js.getJourneyList(p.getCurrentPageNum(),p.getPageSize(),ns);
 		}else {
 			System.out.println("city is not null");
@@ -74,7 +69,7 @@ public class JourneyController {
 		}
 		//List<Scene> scens = js.getJourneyList(p.getCurrentPageNum(),p.getPageSize(),cityname);
 		p.setList(scens);
-		request.setAttribute("page", p);
+		session.setAttribute("page", p);
 		Page<Sceneshoucang> p1 = new Page<Sceneshoucang>();
 		p1.setCurrentPageNum(pageNum);
 		p1.setPageSize(3);

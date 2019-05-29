@@ -57,7 +57,7 @@
                    </form>
                </div>
                <c:forEach var="journeylist" items="${page.list }">
-               <div class="jing1" id="jing${journeylist.sceneId}" onclick="addxq(this)">
+               <div class="jing1" id="jing${journeylist.sceneId}" name="${journeylist.sname }" onclick="addxq(this);doApriori(this);">
                    <div class="jd1"><img id="im${journeylist.sceneId}" src="${journeylist.img}"></div>
                    <div class="jx1" id="jx${journeylist.sceneId}">${journeylist.sceneId}</div>
                    <div class="jie1" id="ji${journeylist.sceneId}">${journeylist.sname}</div>
@@ -120,6 +120,33 @@
 			           $('#fenye').html(data);
 			       },
 			       error:function(XMLHttpRequest,textStatus,errorThrown){
+			    	   alert(XMLHttpRequest.readyState);
+			    	   alert(textStatus);
+			    	   alert(errorThrown);
+			    	   }
+			   });
+		}
+	</script>
+	<script type="text/javascript">
+		function doApriori(obj){
+			//$('#you').html("");
+			alert("doApriori");
+			alert(obj.getAttribute("name"))
+			obj.getAttribute("name")
+			var name = obj.getAttribute("name");
+			$.ajax({
+			       type:"GET",
+			       url:"/xingtu/apriori",
+			       data:{'add':name,'is':false},
+			       dataType: "html",   //返回值类型       使用json的话也可以，但是需要在JS中编写迭代的html代码
+			       cache:false,
+			       success:function(data){
+			    	   //alert(1);
+			           //$("#you").load(location.href+" #you");
+			           $('#fenye').html(data);
+			       },
+			       error:function(XMLHttpRequest,textStatus,errorThrown){
+			    	   alert("ajax error")
 			    	   alert(XMLHttpRequest.readyState);
 			    	   alert(textStatus);
 			    	   alert(errorThrown);

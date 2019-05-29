@@ -81,40 +81,6 @@ String htmlData = request.getParameter("content1") != null ? request.getParamete
     		</div>
     		<div style="clear: both; width: 80px;margin: auto"><a id="changeTag">换一批</a></div>
 		</div>
-		<!--  
-		<div id="add_address"  onmouseover="jia4()" onmouseout="qjia4()" onclick="jia4()">
-			<img src="${ctx }/img/icon/jia.png" id="jia4">
-			<span style="margin-left: 7px;">添加地点</span>
-		</div>
-		<div id="add_text"  onmouseover="jia2()" onmouseout="qjia2()" onclick="jia2()">
-			<img src="${ctx }/img/icon/jia.png" id="jia2">
-			<span style="margin-left: 7px;">添加内容</span>
-		</div>
-		-->
-		<!-- 
-		<div id="add_img"  onmouseover="jia3()" onmouseout="qjia3()">
-			<img src="${ctx }/img/icon/jia.png" id="jia3">
-			<input type="file" style="opacity: 0; display: inline; width:5px;" id="uploadimg">
-			<span>添加图片</span>
-		</div>
-		<div id="di"  onmouseover="deleteed()" onmouseout="qdeeted()">
-			<img src="${ctx }/img/icon/delete.png" id="d1">
-			<input type="file" style="opacity: 0; display: inline; width:5px;" id="uploadimg">
-			<span>删除图片</span>
-		</div>
-		
-		 
-		<div id="dtext"  onmouseover="deleteed3()" onmouseout="qdeeted3()">
-			<img src="${ctx }/img/icon/delete.png" id="d3">
-			<input type="file" style="opacity: 0; display: inline; width:5px;" id="uploadimg">
-			<span>删除内容</span>
-		</div>
-		<div id="da"  onmouseover="deleteed2()" onmouseout="qdeeted2()">
-			<img src="${ctx }/img/icon/delete.png" id="d2">
-			<input type="file" style="opacity: 0; display: inline; width:5px;" id="uploadimg">
-			<span>删除地点</span>
-		</div>
-		-->
 		<div class="mulu">
 			<h3>游记概览</h3>
 			<div id="gailan">

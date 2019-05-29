@@ -1,33 +1,63 @@
 package com.xingtu.recommend;
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.InputStreamReader;
 import java.util.*;
 import javax.annotation.Resource;
+import javax.servlet.http.HttpSession;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import com.xingtu.entity.Page;
+import com.xingtu.entity.Scene;
+import com.xingtu.scene.service.SceneService;
 @Controller
 public class MyApriori {
 	@Resource
 	private AprioriService as;
-    public static  int times=0;//迭代次数
+	@Resource
+	private SceneService ss;
+	public static  int times=0;//迭代次数
     private static  double MIN_SUPPROT = 0.02;//最小支持度百分比
     private static   double MIN_CONFIDENCE=0.5;//最小置信度
     private static boolean endTag = false;//循环状态，迭代标识
     static List<List<String>> record = new ArrayList<List<String>>();//数据集
     static  List<List<String>> frequentItemset=new ArrayList<>();//存储所有的频繁项集
     static List<Mymap> map = new ArrayList();//存放频繁项集和对应的支持度技术
-    @RequestMapping("/apriori")
-    public void apri(String add){
+    @RequestMapping(value = "/apriori",method=RequestMethod.GET)
+    public String apri(@RequestParam("add")String add,HttpSession session,@RequestParam(value="is",defaultValue="false")boolean is){
         /*************读取数据集**************/
         record = as.find();
         //控制台输出记录
         System.out.println("读取数据集record成功===================================");
         ShowData(record);
-        Apriori(add);//调用Apriori算法获得频繁项集
-        System.out.println("频繁模式挖掘完毕。\n\n\n\n\n进行关联度挖掘，最小支持度百分比为："+MIN_SUPPROT+"  最小置信度为："+MIN_CONFIDENCE);
-         AssociationRulesMining();//挖掘关联规则
+        Set<String> scencename = Apriori(add);//调用Apriori算法获得频繁项集
+        List<Scene> s = new ArrayList<Scene>();
+        for(String name :scencename) {
+        	//System.out.println(name);
+        	List<Scene> scene = ss.findByName(name);
+        	for(Scene ss : scene) {
+        		System.out.println(ss.getSname());
+        		s.add(ss);
+        	}
+        }
+        Page p = (Page) session.getAttribute("page");
+        if(p==null) {
+        	System.out.println("p为空");
+        }
+        List<Scene> scene2 = new ArrayList<Scene>();
+        scene2.add(s.get(0));
+        scene2.add(s.get(1));
+        scene2.add(s.get(2));
+        p.setList(scene2);
+        session.setAttribute("page", p);
+       // System.out.println("频繁模式挖掘完毕。\n\n\n\n\n进行关联度挖掘，最小支持度百分比为："+MIN_SUPPROT+"  最小置信度为："+MIN_CONFIDENCE);
+     //    AssociationRulesMining();//挖掘关联规则
+        if(is==true) {
+			return "createer";
+		}else {
+			return "ajax";
+		}
     }
     public static Set<String> Apriori(String add)           /**实现apriori算法**/
     {
