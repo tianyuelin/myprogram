@@ -163,7 +163,6 @@ public class SceneDao{
 			int id=sc.getScene().getSceneId();//获取景点的id
 			Scene shoucangscene=(Scene)session.createQuery("from Scene where sceneId='"+id+"'").uniqueResult();
 				
-			System.out.println(shoucangscene+"看看第三处是否能运行");
 			SceneList.add(shoucangscene);
 		}
 		return SceneList;

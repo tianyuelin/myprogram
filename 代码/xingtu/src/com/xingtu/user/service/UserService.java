@@ -11,7 +11,6 @@ import org.springframework.transaction.annotation.Transactional;
 import com.xingtu.entity.Glshoucang;
 import com.xingtu.entity.Journey;
 import com.xingtu.entity.Md5Encode;
-import com.xingtu.entity.Scene;
 import com.xingtu.entity.Sceneshoucang;
 import com.xingtu.entity.Strategy;
 import com.xingtu.entity.Users;

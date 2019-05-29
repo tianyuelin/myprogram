@@ -3,9 +3,6 @@ package com.xingtu.comment.dao;
 import java.util.List;
 
 import javax.annotation.Resource;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 
 import org.hibernate.Query;
 import org.hibernate.Session;
@@ -46,8 +43,7 @@ public class CommentDao {
 		Session session=this.sessionFactory.getCurrentSession();
 		Query q=session.createQuery("select avg(cs.pingfen) from CommentScore cs where cs.sceneid="+id);
 		if(q.uniqueResult()!=null) {
-		float avg=Float.parseFloat(q.uniqueResult().toString());			
-		System.out.println("22");
+		float avg=Float.parseFloat(q.uniqueResult().toString());
 		return avg;
 		}else {
         return 0;

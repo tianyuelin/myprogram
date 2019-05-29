@@ -9,7 +9,6 @@ public class AprioriService {
 	@Resource
 	private ReadData rd;
 	public List<List<String>> find(){
-		System.out.println("SERVICE");
 		return rd.findadd();
 	}
 

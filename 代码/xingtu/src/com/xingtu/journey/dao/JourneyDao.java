@@ -9,14 +9,12 @@ import javax.annotation.Resource;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.hibernate.Transaction;
 import org.springframework.stereotype.Repository;
 
 import com.xingtu.entity.JourDiv;
 import com.xingtu.entity.Journey;
 import com.xingtu.entity.Scene;
 import com.xingtu.entity.Sceneshoucang;
-import com.xingtu.entity.StrategyDiv;
 import com.xingtu.entity.Users;
 
 @Repository
@@ -51,7 +49,6 @@ public class JourneyDao {
 			}
 		}
 		String sql = "from Scene s where ";
-		System.out.println(sql+names);
 		Query q = session.createQuery(sql+names);
 		q.setFirstResult((pageNum-1)*pageSize);
 		q.setMaxResults(pageSize);

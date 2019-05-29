@@ -2,20 +2,13 @@ package com.xingtu.user.dao;
 import java.util.List;
 
 import javax.annotation.Resource;
-import javax.servlet.http.HttpServletRequest;
-
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-
-import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Repository;
-
-import com.sun.net.httpserver.HttpContext;
 import com.xingtu.entity.Glshoucang;
 import com.xingtu.entity.Journey;
 import com.xingtu.entity.Md5Encode;
-import com.xingtu.entity.Scene;
 import com.xingtu.entity.Sceneshoucang;
 import com.xingtu.entity.Strategy;
 import com.xingtu.entity.Users;

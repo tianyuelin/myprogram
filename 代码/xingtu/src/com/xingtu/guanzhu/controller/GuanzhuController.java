@@ -4,7 +4,6 @@ import java.util.List;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -60,7 +59,6 @@ public class GuanzhuController {
 	public String tonoGuanzhu(@RequestParam("bepersonemail") String bepersonemail,HttpServletRequest request) {
 		//已经判断出了已关注
 		Followed followed2=new Followed();
-		System.out.println(bepersonemail);
 		//将被关注者的email放入
 		followed2.setFollwed_user(bepersonemail);		
 		//将关注者（登录用户）放入
