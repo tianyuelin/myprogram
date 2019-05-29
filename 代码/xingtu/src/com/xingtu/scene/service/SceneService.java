@@ -42,6 +42,10 @@ public class SceneService {
 		return sd.getBaseItemScene(sceneidList);
 	}
 	
+	public List<Scene> getHotSceneList(){
+		return sd.getHotScene();
+	}
+	
 	
 	//判断是否已收藏
 	public Boolean IfShouCang(int sceneid,Users user) {

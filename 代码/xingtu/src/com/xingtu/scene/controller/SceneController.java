@@ -91,9 +91,19 @@ public class SceneController {
 			InvokeByRuntime ibr=new InvokeByRuntime();
 			try {
 				List scenelist=ibr.getHotSecneid(users);
+				
+				if(scenelist.size()==0) {
+					List<Scene> hotscene=ss.getHotSceneList();
+					request.setAttribute("hotscene", hotscene);
+					
+				}
+				else {
 				//根据找到的景点id找到相应的热门景点
-				List<Scene> hotscene=ss.getBaseItemScene(scenelist);
-				request.setAttribute("hotscene", hotscene);
+				    List<Scene> hotscene=ss.getBaseItemScene(scenelist);
+				    request.setAttribute("hotscene", hotscene);
+				
+				}
+				
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();

@@ -79,7 +79,7 @@ public class SceneDao{
 		return q.list();
 	}
 	//获取热门景点
-	public List<Scene>getHotScene(){
+	public List<Scene> getHotScene(){
 		Session session = sf.getCurrentSession();
 		Query q = session.createQuery("from Scene where img is not null order by score");
 		q.setFirstResult(3);
@@ -100,9 +100,6 @@ public class SceneDao{
 		return hotScene;
 
 	}
-	
-	
-	
 	
 	
 	public void addshoucang(int id,Users u) {
