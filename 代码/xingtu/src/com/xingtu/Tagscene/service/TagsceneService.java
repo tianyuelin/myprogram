@@ -1,6 +1,8 @@
 package com.xingtu.Tagscene.service;
 
 import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 import javax.annotation.Resource;
 
@@ -14,8 +16,11 @@ import com.xingtu.Tagscene.dao.TagsceneDao;
 public class TagsceneService {
 	@Resource
 	private TagsceneDao tagsceneDao;
-	public List<String> findtag(){
+	public Set<String> findtag(){
 		return this.tagsceneDao.findAll();
+	}
+	public List<Map<String,List<String>>> fandsand(){
+		return this.tagsceneDao.sandt();
 	}
 }
 

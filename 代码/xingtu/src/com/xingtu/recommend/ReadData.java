@@ -18,7 +18,7 @@ public class ReadData {
 	public List<List<String>> findadd(){
 		List<List<String>> record = new ArrayList<List<String>>();
 		Session session=this.sessionFactory.getCurrentSession();
-		Query q=session.createQuery("select didian from Beijing");
+		Query q=session.createQuery("select didian from Tag");
 		List<String> list = q.list();
 		List<String> add = new ArrayList<String>();
 		for (String s : list) {

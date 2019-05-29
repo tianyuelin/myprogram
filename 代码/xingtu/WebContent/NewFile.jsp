@@ -7,6 +7,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-<jsp:forward page="apriori"></jsp:forward>
+<a href="/xingtu/test">test</a>
+<br>
+<a href="/xingtu/tag">save</a>
 </body>
 </html>
