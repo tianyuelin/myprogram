@@ -35,7 +35,7 @@ public class PhotoController {
 		p.setPageSize(14);
 		p.setNextPageNum(pageNum+1);
 		p.setPrePageNum(pageNum-1);
-		List<Photo> photos = ps.findphoto(u,p.getCurrentPageNum(),p.getPageSize(),searchaddress,searchpeople,searchdate);
+		List<Photo> photos = ps.findphoto(u,p.getCurrentPageNum(),p.getPageSize(),searchaddress,searchpeople,searchdate);//从此处上传照片信息
 		p.setList(photos);
 		request.setAttribute("photos", p);
 		request.setAttribute("yuan", yuan);
@@ -69,12 +69,13 @@ public class PhotoController {
 	}
 
 	@RequestMapping(value="/photoinfo",method=RequestMethod.POST)
-	public String updatePhoto(HttpSession session,HttpServletRequest request,@RequestParam(value="address",defaultValue="null")String address,@RequestParam(value="people",defaultValue="null")String people,@RequestParam(value="phototime",defaultValue="null")String phototime,@RequestParam(value="photoid")String id,@RequestParam(value="pageNum",defaultValue="1")int pageNum,@RequestParam(value="searchpeople",defaultValue="null")String searchpeople,@RequestParam(value="searchaddress",defaultValue="null")String searchaddress,@RequestParam(value="searchdate",defaultValue="null")String searchdate) {
+	public String updatePhoto(HttpSession session,HttpServletRequest request,@RequestParam(value="photoaddress",defaultValue="null")String address,@RequestParam(value="people",defaultValue="null")String people,@RequestParam(value="phototime",defaultValue="null")String phototime,@RequestParam(value="photoid")String id,@RequestParam(value="pageNum",defaultValue="1")int pageNum,@RequestParam(value="searchpeople",defaultValue="null")String searchpeople,@RequestParam(value="searchaddress",defaultValue="null")String searchaddress,@RequestParam(value="searchdate",defaultValue="null")String searchdate) {
 		Page<Photo> p = new Page<Photo>();
 		p.setCurrentPageNum(pageNum);
 		p.setPageSize(14);
 		p.setNextPageNum(pageNum+1);
 		p.setPrePageNum(pageNum-1);
+		System.out.println("--------------看看此处是否能够插入地址==================="+address);
 		ps.updatePhoto(people, address, id, phototime);
 		Users u = (Users)session.getAttribute("user");
 		List<Photo> photos = ps.findphoto(u,p.getCurrentPageNum(),p.getPageSize(),searchaddress,searchpeople,searchdate);

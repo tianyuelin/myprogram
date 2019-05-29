@@ -28,9 +28,7 @@ $(function () {
             $('.miaoshu').show();
             $('.miaoshu-bg').show();
             $("#photoid").attr("value",this.id);
-            if($("#photoaddress").val().length==0){
             	$("#photoaddress").attr("value",this.name);
-            }
         });
     };
     H_miaoshu.closemiaoshu = function(){
