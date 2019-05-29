@@ -111,7 +111,6 @@ public class ReadLog {
         				}
         				if(itemRecommendDegree>=0.5) {
         					tjscene.add(item);
-        					System.out.print(item+" ");
         				}
         				//System.out.println("The item "+item+" for "+recommendUser +"'s recommended degree:"+itemRecommendDegree);
         			}

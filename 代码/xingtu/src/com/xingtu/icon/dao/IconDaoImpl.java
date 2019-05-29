@@ -1,7 +1,6 @@
 package com.xingtu.icon.dao;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -34,7 +33,6 @@ public class IconDaoImpl {
 				File folder=new File(dirPath);
 				if(!folder.exists()) {
 					folder.mkdirs();
-					System.out.println("创建目录");
 				}
 				FileOutputStream fos;
 				fos = new FileOutputStream(dirPath+file.getOriginalFilename());
@@ -56,7 +54,6 @@ public class IconDaoImpl {
 			//将新头像的路径插入数据库
 			
 			Query q=session.createQuery("update Users us set us.icon=?0 where us.email=?1");
-			System.out.println(imgurl);
 			q.setParameter(0,imgurl);
 			q.setParameter(1, user.getEmail());
 			q.executeUpdate();	

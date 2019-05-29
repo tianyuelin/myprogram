@@ -18,7 +18,6 @@ public class PhotoService {
 	@Resource
 	private PhotoDao pd;
 	public String upPhoto(MultipartFile []files,String path,Users user){
-		System.out.println("jinruservice");
 		String yuan=pd.upPhoto(files, path, user);
 //		String yuan=pd.aaaaaaafindPhoto();
 		return yuan;

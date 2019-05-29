@@ -130,8 +130,6 @@
 	<script type="text/javascript">
 		function doApriori(obj){
 			//$('#you').html("");
-			alert("doApriori");
-			alert(obj.getAttribute("name"))
 			obj.getAttribute("name")
 			var name = obj.getAttribute("name");
 			$.ajax({

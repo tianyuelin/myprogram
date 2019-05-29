@@ -64,7 +64,6 @@ public class JourneyController {
 		if(("null").equals(cityname[0])){
 			 scens= js.getJourneyList(p.getCurrentPageNum(),p.getPageSize(),ns);
 		}else {
-			System.out.println("city is not null");
 			scens=js.getJourneyList(p.getCurrentPageNum(),p.getPageSize(),cityname);
 		}
 		//List<Scene> scens = js.getJourneyList(p.getCurrentPageNum(),p.getPageSize(),cityname);

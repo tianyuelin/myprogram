@@ -29,8 +29,8 @@ public class MyApriori {
         /*************读取数据集**************/
         record = as.find();
         //控制台输出记录
-        System.out.println("读取数据集record成功===================================");
-        ShowData(record);
+        //System.out.println("读取数据集record成功===================================");
+        //ShowData(record);
         Set<String> scencename = Apriori(add);//调用Apriori算法获得频繁项集
         List<Scene> s = new ArrayList<Scene>();
         for(String name :scencename) {
@@ -42,9 +42,9 @@ public class MyApriori {
         	}
         }
         Page p = (Page) session.getAttribute("page");
-        if(p==null) {
-        	System.out.println("p为空");
-        }
+//        if(p==null) {
+//        	System.out.println("p为空");
+//        }
         List<Scene> scene2 = new ArrayList<Scene>();
         scene2.add(s.get(0));
         scene2.add(s.get(1));
@@ -62,33 +62,33 @@ public class MyApriori {
     public static Set<String> Apriori(String add)           /**实现apriori算法**/
     {
         //************获取候选1项集**************
-        System.out.println("第一次扫描后的1级 备选集CandidateItemset");
+       // System.out.println("第一次扫描后的1级 备选集CandidateItemset");
         List<List<String>> CandidateItemset = findFirstCandidate();
-        ShowData(CandidateItemset);
+       // ShowData(CandidateItemset);
         //************获取频繁1项集***************
-        System.out.println("第一次扫描后的1级 频繁集FrequentItemset");
+     //   System.out.println("第一次扫描后的1级 频繁集FrequentItemset");
         List<List<String>> FrequentItemset = getSupprotedItemset(CandidateItemset);
         AddToFrequenceItem(FrequentItemset);//添加到所有的频繁项集中
         //控制台输出1项频繁集
-        ShowData(FrequentItemset);
+       // ShowData(FrequentItemset);
          //*****************************迭代过程**********************************
         times=2;
         while(endTag!=true){
-            System.out.println("*******************************第"+times+"次扫描后备选集");
+            //System.out.println("*******************************第"+times+"次扫描后备选集");
             //**********连接操作****获取候选times项集**************
             List<List<String>> nextCandidateItemset = getNextCandidate(FrequentItemset);
             //输出所有的候选项集
-            ShowData(nextCandidateItemset);
+           // ShowData(nextCandidateItemset);
             /**************计数操作***由候选k项集选择出频繁k项集****************/
-            System.out.println("*******************************第"+times+"次扫描后频繁集");
+            //System.out.println("*******************************第"+times+"次扫描后频繁集");
             List<List<String>> nextFrequentItemset = getSupprotedItemset(nextCandidateItemset);
             AddToFrequenceItem(nextFrequentItemset);//添加到所有的频繁项集中
             //输出所有的频繁项集
-            ShowData(nextFrequentItemset);
+            //ShowData(nextFrequentItemset);
             //*********如果循环结束，输出最大模式**************
             if(endTag == true){
-                System.out.println("\n\n\nApriori算法--->最大频繁集==================================");
-                ShowData(FrequentItemset);
+              //  System.out.println("\n\n\nApriori算法--->最大频繁集==================================");
+                //ShowData(FrequentItemset);
                 Set<String> s = new HashSet<String>();
                 for(int i = 0;i<FrequentItemset.size();i++) {
                 	if(FrequentItemset.get(i).contains(add)) {
@@ -99,14 +99,14 @@ public class MyApriori {
                 		}
                 	}
                 }
-                if(s!=null) {
-                	System.out.println("******************************************");
-                	for(String a : s) {
-                    	System.out.print(a+"  ");
-                    }
-                	System.out.println();
-                	System.out.println("******************************************");
-                }
+//                if(s!=null) {
+//                	System.out.println("******************************************");
+//                	for(String a : s) {
+//                    	System.out.print(a+"  ");
+//                    }
+//                	System.out.println();
+//                	System.out.println("******************************************");
+//                }
                 return s;
             }
             //****************下一次循环初值********************
@@ -146,7 +146,7 @@ public class MyApriori {
 
             if(confidence>=MIN_CONFIDENCE)
             {
-                System.out.print("关联规则："+ s1.toString()+"=>>"+s2.toString()+"   ");
+                //System.out.print("关联规则："+ s1.toString()+"=>>"+s2.toString()+"   ");
                 return confidence;
             }
             else

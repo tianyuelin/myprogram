@@ -9,7 +9,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.xingtu.entity.Followed;
 import com.xingtu.entity.UserAndCount;
-import com.xingtu.entity.Users;
 import com.xingtu.guanzhu.dao.GuanzhuDao;
 
 @Service

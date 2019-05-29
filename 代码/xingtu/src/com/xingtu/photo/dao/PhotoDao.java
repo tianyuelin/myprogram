@@ -30,8 +30,6 @@ public class PhotoDao {
 		String yuan="";
 		Session session  = sf.getCurrentSession();
 		List<Photo> photos = new ArrayList<Photo>(0);//创建photo对象
-		System.out.println(files==null);
-		System.out.println(files.length);
 		for(MultipartFile file : files) {
 			Photo p = new Photo();
 			if(!file.isEmpty()){
@@ -42,14 +40,12 @@ public class PhotoDao {
 					File foder=new File(dirPath);
 					if(!foder.exists()) {
 						foder.mkdirs();
-						System.out.println("创建目录");
 					}
 					FileOutputStream fos=new FileOutputStream(
 							dirPath
 							+file.getOriginalFilename());
 					String photopath = dirPath
 							+file.getOriginalFilename();
-					System.out.println(photopath);
 					p.setSrc("img\\"+user.getEmail()+dateDir+"\\"
 							+file.getOriginalFilename());
 					p.setEmail(user);
@@ -75,23 +71,6 @@ public class PhotoDao {
 		}
 		return yuan;
 	}
-	
-//	public String aaaaaaafindPhoto(){
-//		System.out.println("findptoto");
-//		ImageRecognize ir=new ImageRecognize();
-//
-//					
-////					ir.imagerecognize("F:/xingtushixunxiangmudasanxia/images1/"+file.getOriginalFilename());
-//					String yuan=ir.imagerecognize("F:/xingtushixunxiangmudasanxia/images/g.jpg");
-//					
-//                    System.out.println(yuan);
-//					System.out.println("diaoyongla");
-//		return yuan;
-//				
-//	}
-	
-	
-	
 	
 	
 	

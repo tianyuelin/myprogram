@@ -26,7 +26,6 @@ public class SxDao {
 		session.save(sx);
 		String myemail=sx.getFromUserEm();
 		String otheremail=sx.getToUserEm();
-		System.out.println(otheremail);
 		//查出数据
 		Query q=session.createQuery("from Sx where fromUserEm in(?0,?1) and toUserEm in(?0,?1) order by sxId desc");
 		q.setParameter(0, myemail);

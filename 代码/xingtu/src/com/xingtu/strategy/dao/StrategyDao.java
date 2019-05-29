@@ -17,8 +17,6 @@ import org.springframework.stereotype.Repository;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.xingtu.entity.Glshoucang;
-import com.xingtu.entity.Scene;
-import com.xingtu.entity.Sceneshoucang;
 import com.xingtu.entity.Strategy;
 import com.xingtu.entity.StrategyDiv;
 import com.xingtu.entity.Users;
@@ -36,11 +34,9 @@ public class StrategyDao {
 			try {
 				InputStream is=file.getInputStream();//�õ����������
 				String dirPath = path+"img\\"+user.getEmail()+"\\strategy";
-				System.out.println(dirPath);
 				File foder=new File(dirPath);
 				if(!foder.exists()) {
 					foder.mkdirs();
-					System.out.println("创建目录");
 				}
 				FileOutputStream fos=new FileOutputStream(
 						dirPath
@@ -78,7 +74,6 @@ public class StrategyDao {
 			s.setStime(new Date());
 			s.setTitle(title);
 			session.save(s);
-			System.out.println("�������ݿ�");
 			for(int i=0;i<sds.size();i++) {
 				sds.get(i).setStrategy(s);
 				session.save(sds.get(i));
@@ -208,7 +203,6 @@ public class StrategyDao {
 			int id=gl.getStrategy().getsId();//获取景点的id
 			Strategy shoucanggl=(Strategy)session.createQuery("from Strategy where sId='"+id+"'").uniqueResult();
 					
-			System.out.println(shoucanggl+"看看第三处是否能运行");
 			StrateList.add(shoucanggl);
 		}
 		return StrateList;

@@ -88,10 +88,9 @@ public class StrategyController {
 				Boolean b = this.ss.IfShouCanggl(id,u);
 				if (b) {// 已关注
 					request.setAttribute("ifShoucanggl", true); // 如果已关注，存入true,使页面显示已关注
-					System.out.println(request.getAttribute("ifShoucanggl"));
+					
 				} else {// 未关注
 					request.setAttribute("ifShoucanggl", false);
-					System.out.println("未关注");
 				}
 
 			}

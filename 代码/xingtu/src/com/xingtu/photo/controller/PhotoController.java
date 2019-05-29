@@ -39,7 +39,6 @@ public class PhotoController {
 		p.setList(photos);
 		request.setAttribute("photos", p);
 		request.setAttribute("yuan", yuan);
-		System.out.println("controller"+yuan);
 		return "photo";
 	}
 	@RequestMapping(value="/findallphoto",method=RequestMethod.GET)

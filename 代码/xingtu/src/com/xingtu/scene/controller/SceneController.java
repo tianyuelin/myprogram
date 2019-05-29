@@ -38,7 +38,6 @@ public class SceneController {
 	public String findSingleScene(HttpServletRequest request,@RequestParam("id") int id,HttpSession session) {
 		Scene s = ss.findScene(id);
 		List<SceneImgs> imgs = ss.findSceneimg(ss.findScene(id).getSname());
-		System.out.println(imgs.size());
 		// 将关注者（登录用户）放入
 		Users u= (Users)session.getAttribute("user");
 		if (u == null) {
@@ -52,10 +51,8 @@ public class SceneController {
 			Boolean b = this.ss.IfShouCang(id,u);
 			if (b) {// 已关注
 				request.setAttribute("ifShoucang", true); // 如果已关注，存入true,使页面显示已关注
-				System.out.println(request.getAttribute("ifShoucang"));
 			} else {// 未关注
 				request.setAttribute("ifShoucang", false);
-				System.out.println("未关注");
 			}
 
 		}
@@ -78,7 +75,6 @@ public class SceneController {
 		p.setPageSize(8);
 		p.setNextPageNum(pageNum+1);
 		p.setPrePageNum(pageNum-1);
-		System.out.println(pageNum);
 		List<Scene> scenes = ss.findAllScene(p.getCurrentPageNum(),p.getPageSize());
 		p.setList(scenes);
 		
@@ -131,7 +127,6 @@ public class SceneController {
 		request.setAttribute("ifShoucang", true);//显示已关注
 		Scene s = ss.findScene((int)sceneid);
 		List<SceneImgs> imgs = ss.findSceneimg(ss.findScene(sceneid).getSname());
-		System.out.println(imgs.size());
 		request.setAttribute("singlescene", s);
 		request.setAttribute("imglist", imgs);
 		return "Detilstest";
@@ -146,7 +141,6 @@ public class SceneController {
 		request.setAttribute("ifShoucang", false);
 		Scene s = ss.findScene((int)sceneid);
 		List<SceneImgs> imgs = ss.findSceneimg(ss.findScene(sceneid).getSname());
-		System.out.println(imgs.size());
 		request.setAttribute("singlescene", s);
 		request.setAttribute("imglist", imgs);
 		return "Detilstest";
@@ -158,7 +152,6 @@ public class SceneController {
 		p.setPageSize(8);
 		p.setNextPageNum(pageNum+1);
 		p.setPrePageNum(pageNum-1);
-		System.out.println(pageNum);
 		List<Scene> scenes = ss.findByName(name);
 		p.setList(scenes);
 		List<Scene> hotscene = ss.getHotScene();
