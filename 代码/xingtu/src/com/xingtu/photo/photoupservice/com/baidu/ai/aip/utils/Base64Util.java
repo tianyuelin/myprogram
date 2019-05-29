@@ -1,5 +1,10 @@
 package com.xingtu.photo.photoupservice.com.baidu.ai.aip.utils;
 
+/**
+ * 连接百度图形识别所要实现的类1
+ * @author lenovo
+ *
+ */
 public class Base64Util {
 	private static final char last2byte = (char) Integer.parseInt("00000011", 2);
     private static final char last4byte = (char) Integer.parseInt("00001111", 2);

@@ -8,7 +8,11 @@ import java.net.URL;
 import java.util.List;
 import java.util.Map;
 
-
+/**
+ * 连接百度图形识别所要实现的类3
+ * @author lenovo
+ *
+ */
 public class HttpUtil {
 	public static String post(String requestUrl, String accessToken, String params)
             throws Exception {

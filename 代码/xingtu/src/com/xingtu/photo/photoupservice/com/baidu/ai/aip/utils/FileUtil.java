@@ -1,7 +1,11 @@
 package com.xingtu.photo.photoupservice.com.baidu.ai.aip.utils;
 
 import java.io.*;
-
+/**
+ * 连接百度图形识别所要实现的类2
+ * @author lenovo
+ *
+ */
 public class FileUtil {
 	/**
      * 读取文件内容，作为字符串返回
