@@ -141,7 +141,7 @@
 <div class="xiazong">
 
         
-        <div style=" width: 810px;    margin:0px auto;">  <h1 style="width: 810px"   >评论区</h1> </div>
+        <div class="alapinglun" style=" width: 80%;    margin:0px auto;">  <h1 style="width: 810px"   >评论区</h1> </div>
 
 
         <div class="pinglunzong">
@@ -150,7 +150,7 @@
 					
 					<c:forEach items="${commentslist}" var="ctl">
 						<li class="clearFix">
-							<p class="pingluntime">${ctl.time}</p>
+							<p class="pingluntime">${ctl.time}  ${ctl.username}      </p>
 							<p class="pingluncontent">
 							${ctl.username}
 								<!-- <img style="float: left; width: 120px;height: 50px;" src="images/ping2.png"> -->
