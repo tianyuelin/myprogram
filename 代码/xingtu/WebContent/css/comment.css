@@ -11,11 +11,21 @@
 	margin: 0px auto;
 	background-color:#E6F3F9;
 }
+
 .talkMsg{
 
 	height: 500px;
 	overflow-y: auto;
 	border-bottom: 1px solid #e2e1df;
+}
+
+.zongxiao{
+	width:95%;
+	margin-left:5%;
+}
+
+.timefloat{
+	float:left;
 }
 .alapinglun{
 	color:#00baad;
@@ -28,13 +38,37 @@
 	display: block;
 	clear: both;
 }
+
+.yiqi{
+	width:100%;
+}
 .pingluntime{
-	color: #808080;
+	color: #00baad;
 	font-size: 20px;
 	line-height: 30px;
+	width:150px;
+	float:left;
+	font-weight:bold;
+
+}
+
+.pinglunname{
+	color: #00baad;
+	font-weight:bold;
+	font-size: 13px;
+	line-height: 30px;
+	width:400px;
+	float:left;
+	
+
+	
 }
 
 
+.co{
+	color: #808080;
+	font-weight:bold;
+}
 
 .conText{
 	padding: 10px;

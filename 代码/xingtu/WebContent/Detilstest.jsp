@@ -140,29 +140,52 @@
 
 <div class="xiazong">
 
+
         
         <div class="alapinglun" style=" width: 80%;    margin:0px auto;">  <h1 style="width: 810px"   >评论区</h1> </div>
 
 
         <div class="pinglunzong">
+           <div  class="zongxiao">
 				<div class="talkMsg">
 					<ul id="msgBox">
 					
 					<c:forEach items="${commentslist}" var="ctl">
+					
+					
+					
+					
+					
+					
 						<li class="clearFix">
-							<p class="pingluntime">${ctl.time}  ${ctl.username}      </p>
+						 
+						   <div  class="yiqi">
+						        <div  class="pingluntime"> ${ctl.username}  </div>
+						        <div  class="pinglunname"> ${ctl.time}</div>
+						   </div>
+						   <br>
+						   <br>
+						   
+						 <div class="co">${ctl.comment}</div> 
+						   
+						  
+						<hr>
+						
+						<!--<p class="pingluntime">           ${ctl.time}      </p>
 							<p class="pingluncontent">
-							${ctl.username}
+							${ctl.username}  -->
+						
+							
 								<!-- <img style="float: left; width: 120px;height: 50px;" src="images/ping2.png"> -->
-                                
-                    	
-							</p>
+                            <!-- 	</p>
 							<br>
 
 							<p>
 								<font>${ctl.comment}</font>
 							</p>
-
+                             -->    
+                    	
+						
 						</li>
 
                    </c:forEach>
@@ -183,6 +206,7 @@
 				</div>  <!-- talkInp -->
 			 </div>
 
+</div>
     </div><!-- xiazong -->
     
     
