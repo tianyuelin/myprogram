@@ -160,6 +160,7 @@
 						<li class="clearFix">
 						 
 						   <div  class="yiqi">
+						       <!--<img style="float: left; width: 120px;height: 50px;" src=" ${user.icon}">  --> 
 						        <div  class="pingluntime"> ${ctl.username}  </div>
 						        <div  class="pinglunname"> ${ctl.time}</div>
 						   </div>
@@ -201,7 +202,7 @@
 				<form id="form" action="${ctx }/save" >
 				    <input name="id" type="hidden" value="${singlescene.sceneId}">
 					<input type="text" name="comment" style="width:600px;height:50px;"/>					
-					<input type="submit" value="评论"/>
+					<input type="submit" class="ssubmit" value="评论"/>
 				</form>
 				</div>  <!-- talkInp -->
 			 </div>
@@ -211,7 +212,7 @@
     
     
 <!--评星 -->
-<div id="starRating" style="margin-left:600px;">
+<div id="starRating" " >
     <p class="photo">
         <span><i class="high"></i><i class="nohigh"></i></span>
         <span><i class="high"></i><i class="nohigh"></i></span>
@@ -224,7 +225,7 @@
     <form action="${ctx }/savePF">
     <input name="id" type="hidden" value="${singlescene.sceneId}">
     <input id="PF" type="text" name="PF" value="">
-    <input type="submit" value="确认">
+    <input type="submit" class="qsubmit" value="确认">
     <p class="sureStar"></p>
     </form>
     <div class="bottoms">
