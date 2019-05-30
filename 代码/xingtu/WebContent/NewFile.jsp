@@ -10,5 +10,9 @@
 <a href="/xingtu/test">test</a>
 <br>
 <a href="/xingtu/tag">save</a>
+<br>
+<a href="/xingtu/julei">123</a>
+<br>
+<a href="/xingtu/kmeans">kmeans</a>
 </body>
 </html>

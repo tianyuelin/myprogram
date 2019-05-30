@@ -15,6 +15,8 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.stereotype.Repository;
 
+import com.xingtu.entity.Julei;
+
 @Repository
 public class TagsceneDao {
 	@Resource
@@ -44,7 +46,7 @@ public class TagsceneDao {
 		for(Object[] o : olist) {
 			List<String> add = new ArrayList<String>();
 			String []temp=((String)o[1]).split("：");
-			String []address =temp[1].split(">");
+			String []address =temp[1].split(">");//有重复名称
 			String [] tags = ((String)o[0]).split(" ");
 			for(String name : address) {
 				Map<String,List<String>> map = new HashMap<String,List<String>>();
@@ -54,4 +56,89 @@ public class TagsceneDao {
 		}
 		return sandt;
 	}
+	public List<Map<String,float[]>> julei(List<Map<String,List<String>>> LM,Set<String> SS) {
+		List<Map<String,float[]>> data = new ArrayList<Map<String,float[]>>();
+		//将聚类数据保存到list里
+		 System.out.println("322");
+//		List<Julei> list1=new ArrayList<Julei>();
+		for(int i=0;i<LM.size();i++) {
+	     System.out.println(LM.get(i));
+		 Map<String,List<String>> MS=LM.get(i);
+         //将需要聚类的list转换为数值型。
+         
+         List<String> list3=new ArrayList<String>(SS);
+         System.out.println(list3);
+//         for(int w=0;w<list3.size();w++) {
+        	 System.out.println(list3.size());
+        	 System.out.println("55");
+        	 System.out.println(MS.keySet().iterator().next());
+        	List<String> list2=MS.get(MS.keySet().iterator().next());
+        	System.out.println(list2);
+        	System.out.println("556");
+        	//List<String> list=new ArrayList<String>();
+        	float [] num = new float[48];
+//        	for(int m=0;m<list3.size();m++) {
+//               	 num[m]=0;
+//             for(int q=0;q<list2.size();q++) {
+//            	    System.out.println(list2.get(q));
+//        	 if(list2.get(q).equals(list3.get(m))){
+//        		 list.remove(m);
+//        		 list.add("1");
+//        	 }
+//        	 }
+//        	}
+        	for(int m =0;m<list3.size();m++) {
+        		if(list2.contains(list3.get(m))) {
+        			num[m]=m;
+        		}else {
+        			num[m]=0;
+        		}
+        	}
+        	System.out.println(num);
+        	Map<String,float[]> resultdata = new HashMap<String,float[]>();
+        	resultdata.put(LM.get(i).keySet().iterator().next(),num );
+        	data.add(resultdata);
+        	//        	String list = "";
+//        	for(float a :num) {
+//        		list=list+a+",";
+//        	}
+        	 //存到聚类表
+//        	String m=new String();
+//        	System.out.println(m.join(",",list));
+//        	System.out.println("68");
+//        	m=m.join(",",list);
+//        	System.out.println(m);
+//            Julei jl=new Julei();
+//            
+//            System.out.println(MS.keySet().iterator().next());
+//            jl.setScene(MS.keySet().iterator().next());
+//            jl.setTaglist(m);
+   		 
+            //this.sessionFactory.getCurrentSession().save(jl);
+//         }
+         
+         
+         
+        
+		}	
+			
+			return data;
+	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

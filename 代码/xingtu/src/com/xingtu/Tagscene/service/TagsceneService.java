@@ -22,5 +22,8 @@ public class TagsceneService {
 	public List<Map<String,List<String>>> fandsand(){
 		return this.tagsceneDao.sandt();
 	}
+	public List<Map<String,float[]>> julei(List<Map<String,List<String>>> LM,Set<String> SS) {
+		return this.tagsceneDao.julei(LM, SS);
+	}
 }
 
