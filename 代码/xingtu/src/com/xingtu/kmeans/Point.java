@@ -10,8 +10,16 @@ public class Point {
         this.localArray = localArray;
         this.name = name;
     }
- 
-    public Point(float[] localArray) {
+    
+    public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public Point(float[] localArray) {
         this.id = -1; //表示不属于任意一个类
         this.localArray = localArray;
     }

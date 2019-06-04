@@ -18,12 +18,18 @@ public class Cluster {
         this.center = center;
         this.members = members;
     }
- 
-    public void addPoint(Point newPoint) {
+    
+    public void setId(int id) {
+		this.id = id;
+	}
+
+	public void setMembers(List<Point> members) {
+		this.members = members;
+	}
+
+	public void addPoint(Point newPoint) {
         if (!members.contains(newPoint)){
             members.add(newPoint);
-        }else{
-            System.out.println("样本数据点 {"+newPoint.toString()+"} 已经存在！");
         }
     }
  

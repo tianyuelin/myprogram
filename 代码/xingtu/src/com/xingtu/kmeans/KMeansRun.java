@@ -11,16 +11,14 @@ import java.util.Set;
 public class KMeansRun {  
     private int kNum;                             //簇的个数
     private int iterNum = 10;                     //迭代次数
- 
     private int iterMaxTimes = 100000;            //单次迭代最大运行次数
     private int iterRunTimes = 0;                 //单次迭代实际运行次数
     private float disDiff = (float) 0.01;         //单次迭代终止条件，两次运行中类中心的距离差
- 
     private Map<String,float[]> original_data =null;    //用于存放，原始数据集  
     private static List<Point> pointList = null;  //用于存放，原始数据集所构建的点集
     private DistanceCompute disC = new DistanceCompute();
     private int len = 0;                          //用于记录每个数据点的维度
- 
+    private int result = -1;
 //    public KMeansRun(int k, List<float[]> original_data) {
 //        this.kNum = k;
 //        this.original_data = original_data;
@@ -30,6 +28,7 @@ public class KMeansRun {
 //        //初始化点集。
 //        init();
 //    }
+    
     public KMeansRun(int k, Map<String,float[]> original_data) {
         this.kNum = k;
         this.original_data = original_data;
@@ -40,7 +39,15 @@ public class KMeansRun {
         init();
     }
  
-    /**
+    public int getResult() {
+		return result;
+	}
+
+	public void setResult(int result) {
+		this.result = result;
+	}
+
+	/**
      * 检查规范
      */
     private void check() {
@@ -68,11 +75,7 @@ public class KMeansRun {
         int i=0;
         while(iter.hasNext()) {
         	String name = iter.next();
-        	System.out.println("***********************************");
-        	System.out.println(name);
-        	System.out.println("***********************************");
         	pointList.add(new Point(i,original_data.get(name),name));
-        	
         	i++;
         }
 //        for (int i = 0, j = original_data.size(); i < j; i++){
@@ -94,6 +97,7 @@ public class KMeansRun {
                 if (cluster.getCenter().equals(point)) {
                     flag = false;
                 }
+                
             }
             // 如果随机选取的点没有被选中过，则生成一个cluster
             if (flag) {
@@ -118,6 +122,9 @@ public class KMeansRun {
                     min_dis = tmp_dis;
                     point.setClusterId(cluster.getId());
                     point.setDist(min_dis);
+                    if("test".equals(point.getName())) {
+                		result = cluster.getId();
+                	}
                 }
             }
         }
