@@ -1,6 +1,8 @@
 package com.xingtu.Tagscene.controller;
 
 import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -37,38 +39,30 @@ public class TagsceneController {
 	public void julei() {
 		System.out.println("222");
 		Set<String> SS=this.tagsceneService.findtag();
-		List<Map<String,List<String>>> LM=this.tagsceneService.fandsand();
+		Map<String,List<String>> LM=this.tagsceneService.fandsand();
 		this.tagsceneService.julei(LM, SS);
 	}
 	@RequestMapping(value="/kmeans",method=RequestMethod.GET)
 	public void kmeans() {
-		 ArrayList<float[]> dataSet = new ArrayList<float[]>();
-//	        dataSet.add(new float[] { 1, 2, 3,1,2,3,1,2,3,1,2,3,1,2,3,1,2,3,1,2,3,1,2,3,1,2,3,1,2,3,1,2,3,1,2,3,1,2,3,1,2,3,1,2,3,1,2,3});
-//	        dataSet.add(new float[] { 3, 3, 3 ,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3});
-//	        dataSet.add(new float[] { 3, 4, 4,3, 4, 4,3, 4, 4,3, 4, 4,3, 4, 4,3, 4, 4,3, 4, 4,3, 4, 4,3, 4, 4,3, 4, 4,3, 4, 4,3, 4, 4,3, 4, 4,3, 4, 4,3, 4, 4,3, 4, 4});
-//	        dataSet.add(new float[] { 5, 6, 5,5, 6, 5,5, 6, 5,5, 6, 5,5, 6, 5,5, 6, 5,5, 6, 5,5, 6, 5,5, 6, 5,5, 6, 5,5, 6, 5,5, 6, 5,5, 6, 5,5, 6, 5,5, 6, 5,5, 6, 5});
-//	        dataSet.add(new float[] { 8, 9, 6,8, 9, 6,8, 9, 6,8, 9, 6,8, 9, 6,8, 9, 6,8, 9, 6,8, 9, 6,8, 9, 6,8, 9, 6,8, 9, 6,8, 9, 6,8, 9, 6,8, 9, 6,8, 9, 6,8, 9, 6});
-//	        dataSet.add(new float[] { 4, 5, 4,4, 5, 4,4, 5, 4,4, 5, 4,4, 5, 4,4, 5, 4,4, 5, 4,4, 5, 4,4, 5, 4,4, 5, 4,4, 5, 4,4, 5, 4,4, 5, 4,4, 5, 4,4, 5, 4,4, 5, 4});
-//	        dataSet.add(new float[] { 6, 4, 2,6, 4, 2,6, 4, 2,6, 4, 2,6, 4, 2,6, 4, 2,6, 4, 2,6, 4, 2,6, 4, 2,6, 4, 2,6, 4, 2,6, 4, 2,6, 4, 2,6, 4, 2,6, 4, 2,6, 4, 2});
-//	        dataSet.add(new float[] { 3, 9, 7,3, 9, 7,3, 9, 7,3, 9, 7,3, 9, 7,3, 9, 7,3, 9, 7,3, 9, 7,3, 9, 7,3, 9, 7,3, 9, 7,3, 9, 7,3, 9, 7,3, 9, 7,3, 9, 7,3, 9, 7});
-//	        dataSet.add(new float[] { 5, 9, 8,5, 9, 8,5, 9, 8,5, 9, 8,5, 9, 8,5, 9, 8,5, 9, 8,5, 9, 8,5, 9, 8,5, 9, 8,5, 9, 8,5, 9, 8,5, 9, 8,5, 9, 8,5, 9, 8,5, 9, 8});
-//	        dataSet.add(new float[] { 4, 2, 10,4, 2, 10,4, 2, 10,4, 2, 10,4, 2, 10,4, 2, 10,4, 2, 10,4, 2, 10,4, 2, 10,4, 2, 10,4, 2, 10,4, 2, 10,4, 2, 10,4, 2, 10,4, 2, 10,4, 2, 10});
-//	        dataSet.add(new float[] { 1, 9, 12,1, 9, 12,1, 9, 12,1, 9, 12,1, 9, 12,1, 9, 12,1, 9, 12,1, 9, 12,1, 9, 12,1, 9, 12,1, 9, 12,1, 9, 12,1, 9, 12,1, 9, 12,1, 9, 12,1, 9, 12});
-//	        dataSet.add(new float[] { 7, 8, 112,7, 8, 112,7, 8, 112,7, 8, 112,7, 8, 112,7, 8, 112,7, 8, 112,7, 8, 112,7, 8, 112,7, 8, 112,7, 8, 112,7, 8, 112,7, 8, 112,7, 8, 112,7, 8, 112,7, 8, 112});
-//	        dataSet.add(new float[] { 7, 8, 4,7, 8, 4,7, 8, 4,7, 8, 4,7, 8, 4,7, 8, 4,7, 8, 4,7, 8, 4,7, 8, 4,7, 8, 4,7, 8, 4,7, 8, 4,7, 8, 4,7, 8, 4,7, 8, 4,7, 8, 4});
+//		 ArrayList<float[]> dataSet = new ArrayList<float[]>();
 		 	Set<String> SS=this.tagsceneService.findtag();
-			List<Map<String,List<String>>> LM=this.tagsceneService.fandsand();
-			List<Map<String,float[]>> data = this.tagsceneService.julei(LM, SS);
-			for(Map<String,float[]> map :data ) {
-				dataSet.add(map.get(map.keySet().iterator().next()));
-			}
-	        KMeansRun kRun =new KMeansRun(4, dataSet);
-	 
+			Map<String,List<String>> LM=this.tagsceneService.fandsand();
+			Map<String,float[]> data = this.tagsceneService.julei(LM, SS);
+//			Set<String> keys= new HashSet<String>();
+//			keys = data.keySet();
+//			Iterator<String> iter= keys.iterator();
+//			while(iter.hasNext()) {
+//				String name = iter.next();
+//				dataSet.add(data.get(name));
+//			}
+//	        KMeansRun kRun =new KMeansRun(4, dataSet);
+			System.out.println("controller中");
+			System.out.println(data.size());
+			KMeansRun kRun =new KMeansRun(4, data);
 	        Set<Cluster> clusterSet = kRun.run();
 	        System.out.println("单次迭代运行次数："+kRun.getIterTimes());
 	        for (Cluster cluster : clusterSet) {
 	            System.out.println(cluster);
 	        }
 	}
-	
 }

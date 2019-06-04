@@ -2,7 +2,9 @@ package com.xingtu.kmeans;
 
 import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 import java.util.Random;
 import java.util.Set;
  
@@ -14,15 +16,24 @@ public class KMeansRun {
     private int iterRunTimes = 0;                 //单次迭代实际运行次数
     private float disDiff = (float) 0.01;         //单次迭代终止条件，两次运行中类中心的距离差
  
-    private List<float[]> original_data =null;    //用于存放，原始数据集  
+    private Map<String,float[]> original_data =null;    //用于存放，原始数据集  
     private static List<Point> pointList = null;  //用于存放，原始数据集所构建的点集
     private DistanceCompute disC = new DistanceCompute();
     private int len = 0;                          //用于记录每个数据点的维度
  
-    public KMeansRun(int k, List<float[]> original_data) {
+//    public KMeansRun(int k, List<float[]> original_data) {
+//        this.kNum = k;
+//        this.original_data = original_data;
+//        this.len = original_data.get(0).length; 
+//        //检查规范
+//        check();
+//        //初始化点集。
+//        init();
+//    }
+    public KMeansRun(int k, Map<String,float[]> original_data) {
         this.kNum = k;
         this.original_data = original_data;
-        this.len = original_data.get(0).length; 
+        this.len = 48; 
         //检查规范
         check();
         //初始化点集。
@@ -44,11 +55,29 @@ public class KMeansRun {
     /** 
      * 初始化数据集，把数组转化为Point类型。
      */
+//    private void init() {
+//        pointList = new ArrayList<Point>();
+//        for (int i = 0, j = original_data.size(); i < j; i++){
+//            pointList.add(new Point(i, original_data.get(i)));
+//        }
+//    }
     private void init() {
         pointList = new ArrayList<Point>();
-        for (int i = 0, j = original_data.size(); i < j; i++){
-            pointList.add(new Point(i, original_data.get(i)));
+        Set keys = original_data.keySet();
+        Iterator<String> iter = keys.iterator();
+        int i=0;
+        while(iter.hasNext()) {
+        	String name = iter.next();
+        	System.out.println("***********************************");
+        	System.out.println(name);
+        	System.out.println("***********************************");
+        	pointList.add(new Point(i,original_data.get(name),name));
+        	
+        	i++;
         }
+//        for (int i = 0, j = original_data.size(); i < j; i++){
+//            pointList.add(new Point(i, original_data.get(i)));
+//        }
     }
  
     /** 

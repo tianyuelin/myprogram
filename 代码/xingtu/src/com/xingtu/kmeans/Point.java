@@ -4,10 +4,11 @@ public class Point {
     private int id;
     private int clusterId;  // 标识属于哪个类中心。
     private float dist;     // 标识和所属类中心的距离。
- 
-    public Point(int id, float[] localArray) {
+    private String name;
+    public Point(int id, float[] localArray,String name) {
         this.id = id;
         this.localArray = localArray;
+        this.name = name;
     }
  
     public Point(float[] localArray) {
@@ -38,13 +39,9 @@ public class Point {
     public void setDist(float dist) {
         this.dist = dist;
     }
- 
     @Override
     public String toString() {
-        String result = "Point_id=" + id + "  [";
-        for (int i = 0; i < localArray.length; i++) {
-            result += localArray[i] + " ";
-        }
+        String result = "Point_name=" + name ;
         return result.trim()+"] clusterId: "+clusterId+" dist: "+dist;
     }
  
