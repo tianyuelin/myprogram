@@ -2,6 +2,7 @@ package com.xingtu.scene.dao;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 import javax.annotation.Resource;
 
@@ -198,5 +199,30 @@ public class SceneDao{
 		}
 		//如果小于6个的话
 		return scenes;
+	}
+	//通过名字获取景点
+	public List<Scene> findbynames(Set<String> names){
+		//List<Scene> scenes = new ArrayList<Scene>();
+		Session session = sf.getCurrentSession();
+//		for(String name :names) {
+//			Query q = session.createQuery("from Scene where sname like'%"+name+"%'");
+//			for(Scene s:(List<Scene>)q.list()) {
+//				scenes.add(s);
+//			}
+//		}
+		String sql="from Scene where ";
+		int i =0;
+		for(String name:names) {
+			i++;
+			String temp = "sname like'%"+name+"%' or ";
+			if(i==names.size()) {
+				temp = "sname like'%"+name+"%'";
+			}
+			sql+=temp;
+		}
+		Query q = session.createQuery(sql);
+		q.setFirstResult(0);
+		q.setMaxResults(8);
+		return q.list();
 	}
 }

@@ -1,6 +1,7 @@
 package com.xingtu.scene.service;
 
 import java.util.List;
+import java.util.Set;
 
 import javax.annotation.Resource;
 
@@ -67,5 +68,8 @@ public class SceneService {
 	}
 	public List<Scene> TjScene(List<String> id){
 		return sd.findTjScene(id);
+	}
+	public List<Scene> findByNames(Set<String> names){
+		return sd.findbynames(names);
 	}
 }
