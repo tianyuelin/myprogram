@@ -16,7 +16,7 @@ public class InvokeByRuntime {
 		String useremail=user.getEmail();
 	    List scenelist=new ArrayList();
 		String exe="python";
-		String command="D:\\xingtufile\\test.py";
+		String command="recommend/test.py";  //D:\\xingtufile\\test.py
 		String[] cmdArr=new String[] {exe,command,useremail};
 		Process process=Runtime.getRuntime().exec(cmdArr);
 		InputStream is=process.getInputStream();
