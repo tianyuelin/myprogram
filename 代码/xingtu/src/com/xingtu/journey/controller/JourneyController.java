@@ -41,7 +41,7 @@ public class JourneyController {
 		return "createxingcheng";
 	}
 	@RequestMapping(value="/findcitybyname",method=RequestMethod.POST)
-	public String findCitybyname(@RequestParam(value="ctname")String name,HttpServletRequest request) {
+	public String findCitybyname(@RequestParam(value="ctname")String name,HttpServletRequest request,HttpSession session) {
 		List<Scene> list=js.findCitybyname(name);
 		request.setAttribute("citylist", list);
 		return "createxingcheng";
@@ -64,6 +64,7 @@ public class JourneyController {
 		if(("null").equals(cityname[0])){
 			 scens= js.getJourneyList(p.getCurrentPageNum(),p.getPageSize(),ns);
 		}else {
+			System.out.println("city is not null");
 			scens=js.getJourneyList(p.getCurrentPageNum(),p.getPageSize(),cityname);
 		}
 		//List<Scene> scens = js.getJourneyList(p.getCurrentPageNum(),p.getPageSize(),cityname);

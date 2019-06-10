@@ -15,10 +15,21 @@ import org.springframework.stereotype.Repository;
 public class ReadData {
 	@Resource
 	private SessionFactory sessionFactory;
-	public List<List<String>> findadd(){
+	public List<List<String>> findadd(String[] city){
 		List<List<String>> record = new ArrayList<List<String>>();
 		Session session=this.sessionFactory.getCurrentSession();
-		Query q=session.createQuery("select didian from Tag");
+		String names="";
+		int i=0;
+		for(String name : city) {
+			i++;
+			if(i<city.length) {
+				names+="city='"+name+"' or ";
+			}if(i==city.length) {
+				names+="city='"+name+"'";
+			}
+		}
+		String sql = "select didian from Beijing where ";
+		Query q = session.createQuery(sql+names);
 		List<String> list = q.list();
 		List<String> add = new ArrayList<String>();
 		for (String s : list) {
