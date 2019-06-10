@@ -201,7 +201,7 @@
 				<div class="talkInp">
 				<form id="form" action="${ctx }/save" >
 				    <input name="id" type="hidden" value="${singlescene.sceneId}">
-					<input type="text" name="comment" style="width:600px;height:50px;"/>					
+					<input type="text" name="comment" style="width:95%;height:50px;"/>					
 					<input type="submit" class="ssubmit" value="评论"/>
 				</form>
 				</div>  <!-- talkInp -->

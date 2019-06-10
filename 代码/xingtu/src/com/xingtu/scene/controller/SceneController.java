@@ -108,6 +108,10 @@ public class SceneController {
 				e.printStackTrace();
 			}
 		}
+		else {
+			List<Scene> hotscene=ss.getHotSceneList();
+			request.setAttribute("hotscene", hotscene);
+		}
 //List<Scene> hotscene = ss.getHotScene();
 		
 		request.setAttribute("page", p);

@@ -6,15 +6,20 @@
 	text-decoration:none;
 }
 
+.xiazong{
+	height:300px;
+}
 .pinglunzong{
 	width: 80%;
 	margin: 0px auto;
 	background-color:#E6F3F9;
+	height: 200px;
 }
 
 .talkMsg{
 
-	height: 500px;
+	height: 200px;
+	weight:80%;
 	overflow-y: auto;
 	border-bottom: 1px solid #e2e1df;
 }
@@ -31,6 +36,7 @@
 	color:#00baad;
 	font-weight:bold;
 }
+
 
 
 .clearFix:after{
@@ -99,7 +105,9 @@
 }
 
 .talkInp{
+	margin-left:-50px;
 	height: 50px;
+	
 }
 
 .area{
