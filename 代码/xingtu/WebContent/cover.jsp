@@ -7,13 +7,6 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
-<!-- 
-<title>index</title>
-<link rel="stylesheet" href="css/index/reset.css" type="text/css" />
-<link rel="stylesheet" href="css/index/style.css" type="text/css" />
-<script src="js/index/modernizr.js"></script>
- -->
  <title>index</title>
  <link rel="stylesheet" href="${ctx }/css/covercss/reset.css" type="text/css"/>
  <link rel="stylesheet" href="${ctx }/css/covercss/style.css" type="text/css"/>
