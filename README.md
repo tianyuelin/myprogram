@@ -47,9 +47,9 @@
 - 瞿婷婷（质量专家、UI设计师、开发工程师、测试工程师）
   - Email：[1581015545@qq.com](mailto:1581015545@qq.com)
   - Github：[https://github.com/qutingting1998]https://github.com/qutingting1998)
-- 齐雪婷（质量专家、UI设计师、开发工程师、测试工程师）
-  - Email：[14703313561@163.com](mailto:14703313561@163.com)
-  - Github：[https://github.com/yangxiaoyu98](https://github.com/yangxiaoyu98)
+- 齐雪婷（数据库设计师、UI设计师、开发工程师、测试工程师）
+  - Email：[598422315@qq.com](mailto:598422315@qq.com)
+  - Github：[https://github.com/QiXueting](https://github.com/QiXueting)
 
 ### 项目截图
 <h3>欢迎页</h3>
