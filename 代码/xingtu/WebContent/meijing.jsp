@@ -156,7 +156,6 @@
                 </div>
                 
                 <div class="widget widget_tab">
-                  <div class="kd-section-title"><h4>热门景点</h4></div>
                   <div class="kd-bookingtab">
 
                     <!-- Nav tabs -->

@@ -21,6 +21,7 @@ import com.xingtu.entity.Strategy;
 import com.xingtu.entity.Users;
 import com.xingtu.guanzhu.service.GuanzhuService;
 import com.xingtu.scene.service.SceneService;
+import com.xingtu.strategy.service.StrategyService;
 import com.xingtu.user.service.UserService;
 import com.xingtu.util.ReadLog;
 
@@ -33,12 +34,15 @@ public class UserController {
 	private UserService userService;
 	@Resource
 	private GuanzhuService guanzhuService;
-	
+	@Resource
+	private StrategyService strategyservice;
 	
 	private Boolean issigned=false;
 	//注册控制器
 	@RequestMapping(value="/registController",method=RequestMethod.POST)
 	public String getRegistPerson(Users users,HttpSession session,HttpServletRequest request,@RequestParam("chkpwd") String chkpwd) { //参数要想使用user，必须保证表单属性name与数据库属性相同
+		List<Strategy> list2 = strategyservice.findIndexStrategy();
+		request.setAttribute("indexStrategy", list2);
 		String mymes=this.userService.getRegistPerson1(users);//b用来判断是否能够成功注册，b是字符串
 		chkpwd=Md5Encode.getMD5(chkpwd.toString().getBytes());//获得其MD5码
 		if(users.getPassword().equals(chkpwd) && !mymes.equals("该邮箱已存在，可直接登录")) {
@@ -59,6 +63,8 @@ public class UserController {
 	//登录控制器
 	@RequestMapping(value="/loginController",method=RequestMethod.POST)
 	public String getLoginPerson(Users users,HttpSession session,HttpServletRequest request) {
+		List<Strategy> list2 = strategyservice.findIndexStrategy();
+		request.setAttribute("indexStrategy", list2);
 		if(this.userService.getLoginPerson1(users)==true) {
 			issigned=true;
 			Users user = this.userService.UserCenter(users.getEmail());

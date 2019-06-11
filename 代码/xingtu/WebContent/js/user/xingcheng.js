@@ -142,7 +142,6 @@ $(document).on('click', '#dtext',function(){
 */
 //删除图片
 $(document).on('click', '#dt',function(){
-	alert(1)
 	if(titlecount!=0){
 		$("div").remove('#part'+titlecount);
 		titlecount--;

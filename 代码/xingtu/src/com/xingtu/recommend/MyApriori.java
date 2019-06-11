@@ -73,7 +73,7 @@ public class MyApriori {
             //*********如果循环结束，输出最大模式**************
             if(endTag == true){
                 Set<String> s = new HashSet<String>();
-                System.out.println("FrequentItemset.size()="+FrequentItemset.size());
+//                System.out.println("FrequentItemset.size()="+FrequentItemset.size());
                 for(int i = 0;i<FrequentItemset.size();i++) {
                 	if(FrequentItemset.get(i).contains(add)) {
                 		for(int j=0;j<FrequentItemset.get(i).size();j++) {
@@ -84,14 +84,14 @@ public class MyApriori {
                 		
                 	}
                 }
-                if(s!=null) {
-                	System.out.println("*******************************************");
-                	for(String name :s) {
-                		System.out.print(name+"  ");
-                	}
-                	System.out.println();
-                	System.out.println("*******************************************");
-                }
+//                if(s!=null) {
+//                	System.out.println("*******************************************");
+//                	for(String name :s) {
+//                		System.out.print(name+"  ");
+//                	}
+//                	System.out.println();
+//                	System.out.println("*******************************************");
+//                }
                 return s;
             }
             //****************下一次循环初值********************
@@ -131,7 +131,7 @@ public class MyApriori {
 
             if(confidence>=MIN_CONFIDENCE)
             {
-                System.out.print("关联规则："+ s1.toString()+"=>>"+s2.toString()+"   ");
+                //System.out.print("关联规则："+ s1.toString()+"=>>"+s2.toString()+"   ");
                 return confidence;
             }
             else

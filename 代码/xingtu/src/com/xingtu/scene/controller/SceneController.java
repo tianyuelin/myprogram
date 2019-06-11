@@ -81,39 +81,38 @@ public class SceneController {
 		//设置热门景点
 		
 		//1.把此时的用户传入
-		Object user=session.getAttribute("user");
-		if(user!=null) {
-			Users users=(Users)user;
-			InvokeByRuntime ibr=new InvokeByRuntime();
-			try {
-				List scenelist=ibr.getHotSecneid(users);
-				
-				if(scenelist.size()==0) {
+//		Object user=session.getAttribute("user");
+//		if(user!=null) {
+//			Users users=(Users)user;
+//			InvokeByRuntime ibr=new InvokeByRuntime();
+//			try {
+//				List scenelist=ibr.getHotSecneid(users);
+//				
+//				if(scenelist.size()==0) {
 					List<Scene> hotscene=ss.getHotSceneList();
 					request.setAttribute("hotscene", hotscene);
-					
-				}
-				else {
-				//根据找到的景点id找到相应的热门景点
-				    List<Scene> hotscene=ss.getBaseItemScene(scenelist);
-				    request.setAttribute("hotscene", hotscene);
-				
-				}
-				
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		}
-		else {
-			List<Scene> hotscene=ss.getHotSceneList();
-			request.setAttribute("hotscene", hotscene);
-		}
-//List<Scene> hotscene = ss.getHotScene();
-		
+//					
+//				}
+//				else {
+//				//根据找到的景点id找到相应的热门景点
+////				    List<Scene> hotscene=ss.getBaseItemScene(scenelist);
+////				    request.setAttribute("hotscene", hotscene);
+//				
+//				}
+//				
+//			} catch (InterruptedException e) {
+//				// TODO Auto-generated catch block
+//				e.printStackTrace();
+//			} catch (IOException e) {
+//				// TODO Auto-generated catch block
+//				e.printStackTrace();
+//			}
+//		}
+//		else {
+//			List<Scene> hotscene=ss.getHotSceneList();
+//			request.setAttribute("hotscene", hotscene);
+//		}
+//List<Scene> hotscene = ss.getHotScene();	
 		request.setAttribute("page", p);
 		return "meijing";
 	}
