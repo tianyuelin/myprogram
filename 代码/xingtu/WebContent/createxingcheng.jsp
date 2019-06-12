@@ -19,7 +19,7 @@
 <jsp:include page="header.jsp" flush="true"></jsp:include>
 	<div class="all">
 		<div class="left" style="margin-top: 1.5%;border-right: 1px solid #ccc;">
-			<div class="tit">已选目的地</div>
+			<div class="tit" style="font-size: 22px;">已选目的地</div>
 			<div id="titna">
 			    <div id="did0" >
 			         <div id="xu">从右侧添加想去的地方</div>
