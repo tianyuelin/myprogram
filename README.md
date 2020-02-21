@@ -24,8 +24,6 @@
 
 用行途！帮助你去记录你的回忆信息，让你定向回忆！
 
-### 项目地址
-- Github：[https://github.com/baocaiqian/QTL-JAVA)
 
 ### 项目成员
 
